@@ -124,6 +124,8 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="img\imgM.png" />
+    <Content Include="img\logo2.png" />
     <Content Include="PG_Inicio.aspx" />
     <Content Include="PG_Login.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
