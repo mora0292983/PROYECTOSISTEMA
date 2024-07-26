@@ -126,6 +126,7 @@
     <Content Include="Global.asax" />
     <Content Include="img\imgM.png" />
     <Content Include="img\logo2.png" />
+    <Content Include="PG_Expediente.aspx" />
     <Content Include="PG_Inicio.aspx" />
     <Content Include="PG_Login.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -223,6 +224,13 @@
     </Compile>
     <Compile Include="PaginaMaestra.Master.designer.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PG_Expediente.aspx.cs">
+      <DependentUpon>PG_Expediente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PG_Expediente.aspx.designer.cs">
+      <DependentUpon>PG_Expediente.aspx</DependentUpon>
     </Compile>
     <Compile Include="PG_Inicio.aspx.cs">
       <DependentUpon>PG_Inicio.aspx</DependentUpon>
