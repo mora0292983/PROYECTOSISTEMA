@@ -129,6 +129,7 @@
     <Content Include="PG_Expediente.aspx" />
     <Content Include="PG_Inicio.aspx" />
     <Content Include="PG_Login.aspx" />
+    <Content Include="PG_Vacaciones.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -245,6 +246,13 @@
     </Compile>
     <Compile Include="PG_Login.aspx.designer.cs">
       <DependentUpon>PG_Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PG_Vacaciones.aspx.cs">
+      <DependentUpon>PG_Vacaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PG_Vacaciones.aspx.designer.cs">
+      <DependentUpon>PG_Vacaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
