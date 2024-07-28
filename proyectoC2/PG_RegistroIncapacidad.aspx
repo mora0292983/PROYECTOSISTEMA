@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaMaestra.master.cs" Inherits="proyectoC2.PaginaMaestra" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PG_RegistroIncapacidad.aspx.cs" Inherits="proyectoC2.PG_RegistroIncapacidad" %>
 
 <!DOCTYPE html>
 
@@ -52,25 +52,131 @@ img.emoji {
 .bottom-circle-container {
     position: relative;
     width: 100%;
-	margin-top: 300px;
+	 margin-top: -100px; /* Reduce este valor para subir el footer */
     height: 10px; /* Ajusta la altura según sea necesario */
 
 }
 
 .bottom-circle {
     position: absolute;
-	margin-top: 370px;
-    width: 700px;
-    height: 500px;
+	margin-top: 20px;
+    width: 850px;
+    height: 320px;
     background-color:#7154FC;
     border-radius: 50%;
     bottom: 0;
-    left: -30px;
+    left: -110px;
     transform: translateY(50%); /* Ajusta para que el círculo esté justo encima del footer */
      z-index: -1; /* Asegura que el círculo esté detrás de otros elementos */
 }
 footer {
-    margin-top: 70px; /* Ajusta este valor para agregar más espacio debajo del contenido */
+      margin-top: 25px; /* Reduce este valor para subir el footer */
+     width: 1500px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
+	margin-left: -20px; /* Ajusta este valor para mover el footer hacia la izquierda */
+}
+  .main-content3 {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: auto;
+     padding: 20px;
+     gap: 20px;
+	 margin-top: 55px; /* Ajusta este valor para mover la imagen hacia abajo */
+ }
+
+ .content-box {
+     background-color: #fff;
+     border-radius: 8px;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     width: 45%;
+     max-width: 550px;
+     padding: 20px;
+     box-sizing: border-box;
+ }
+
+ .content-box h2 {
+     color: #7154FC; /* Morado */
+     font-weight: bold;
+     margin-top: 0;
+     text-align: center;
+ }
+
+ .small-title {
+     color: #585555;
+     font-size: 14px;
+     font-weight: bold;
+     margin: 10px 0;
+ }
+
+ .form-group {
+     margin-bottom: 15px;
+ }
+
+ .form-group label {
+     display: block;
+    
+     margin-bottom: 5px;
+ }
+
+ .form-group input,
+ .form-group select,
+ .form-group textarea,
+ .form-group .asp-control {
+     width: 100%;
+     padding: 10px;
+     border-radius: 5px;
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+ }
+
+ .form-group textarea {
+     resize: vertical;
+ }
+
+ .btn-submit {
+     background-color: #7154FC;
+     color: white;
+     padding: 10px 15px;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     width: 100%;
+     font-size: 16px;
+ }
+
+ .btn-submit:hover {
+     background-color: #5a005a;
+ }
+
+ .image-box {
+     margin-top: 80px; /* Ajusta este valor para mover la imagen hacia abajo */
+     margin-left: 20px; /* Ajusta este valor para mover la imagen hacia la derecha */
+ }
+
+ .image-box img {
+     width: 100%;
+     height: 100%;
+     border-radius: 8px;
+     object-fit: cover;
+ }
+
+ .form-inline {
+     display: flex;
+     justify-content: space-between;
+ }
+
+ .form-inline .form-group {
+     width: 48%;
+ }
+
+/* Selecciona el contenedor del menú */
+.jet-nav-wrap {
+    margin-left: -160px; /* Ajusta este valor según tus necesidades */
+}
+
+/* Opcionalmente, puedes especificar la clase del menú principal si deseas más precisión */
+.jet-nav-wrap.jet-mobile-menu.jet-mobile-menu--right-side {
+    margin-left: -190px; /* Ajusta este valor según tus necesidades */
 }
 </style>
 
@@ -246,10 +352,42 @@ footer {
 	
 
     <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+    
+        <div class="main-content3">
+            <div class="image-box">
+                <img src="img/empleado.png" alt="Imagen de Ejemplo">
+            </div>
+            <div class="content-box">
+                <h2>Incapacidades</h2>
+                <div class="small-title">Registrar Incapacidad</div>
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label for="nombreDepartamento">Empleado:</label>
+                         <asp:DropDownList ID="nombreDepartamento" runat="server" CssClass="asp-control"></asp:DropDownList>
+                    </div>
+                    <div class="form-group">
+                        <label for="cantidadEmpleados">Tipo de Incapacidad:</label>
+                         <asp:DropDownList ID="DropDownList1" runat="server" CssClass="asp-control"></asp:DropDownList>
+                    </div>
+                </div>
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label for="fechaInicio">Fecha Inicio:</label>
+                        <asp:TextBox ID="fechaInicio" runat="server" CssClass="asp-control" TextMode="Date" />
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaFin">Fecha Fin:</label>
+                        <asp:TextBox ID="fechaFin" runat="server" CssClass="asp-control" TextMode="Date" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Motivo:</label>
+                    <asp:TextBox ID="descripcion" runat="server" CssClass="asp-control" TextMode="MultiLine" Rows="4" />
+                </div>
+                <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Registrar" />
+            </div>
         </div>
+   
     </form>
   <!-- Círculo Inferior Izquierdo -->
   <div class="bottom-circle-container">

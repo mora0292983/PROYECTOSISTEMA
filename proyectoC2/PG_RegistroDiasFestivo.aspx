@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaMaestra.master.cs" Inherits="proyectoC2.PaginaMaestra" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PG_RegistroDiasFestivo.aspx.cs" Inherits="proyectoC2.PG_RegistroDiasFestivo" %>
 
 <!DOCTYPE html>
 
@@ -52,25 +52,115 @@ img.emoji {
 .bottom-circle-container {
     position: relative;
     width: 100%;
-	margin-top: 300px;
+	 margin-top: -100px; /* Reduce este valor para subir el footer */
     height: 10px; /* Ajusta la altura según sea necesario */
 
 }
 
 .bottom-circle {
     position: absolute;
-	margin-top: 370px;
-    width: 700px;
-    height: 500px;
+	margin-top: 20px;
+    width: 850px;
+    height: 320px;
     background-color:#7154FC;
     border-radius: 50%;
     bottom: 0;
-    left: -30px;
+    left: -110px;
     transform: translateY(50%); /* Ajusta para que el círculo esté justo encima del footer */
      z-index: -1; /* Asegura que el círculo esté detrás de otros elementos */
 }
 footer {
-    margin-top: 70px; /* Ajusta este valor para agregar más espacio debajo del contenido */
+      margin-top: 62px; /* Reduce este valor para subir el footer */
+     width: 1500px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
+	margin-left: -20px; /* Ajusta este valor para mover el footer hacia la izquierda */
+}
+  .main-content3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+      padding: 20px;
+      gap: 20px;
+	   margin-top: 50px; /* Ajusta este valor para mover la imagen hacia abajo */
+  }
+
+  .content-box {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 45%;
+      max-width: 550px;
+      padding: 20px;
+      box-sizing: border-box;
+  }
+
+  .content-box h2 {
+      color: #7154FC; /* Morado */
+      font-weight: bold;
+      margin-top: 0;
+      text-align: center;
+  }
+
+  .form-group {
+      margin-bottom: 15px;
+  }
+
+  .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea,
+  .form-group .asp-control {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+  }
+
+  .form-group textarea {
+      resize: vertical;
+  }
+
+  .btn-submit {
+      background-color: #7154FC;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+  }
+
+  .btn-submit:hover {
+      background-color: #5a005a;
+  }
+
+  .image-box {
+      margin-top: 70px; /* Ajusta este valor para mover la imagen hacia abajo */
+      margin-left: 10px; /* Ajusta este valor para mover la imagen hacia la derecha */
+  }
+
+  .image-box img {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+  }
+
+/* Selecciona el contenedor del menú */
+.jet-nav-wrap {
+    margin-left: -160px; /* Ajusta este valor según tus necesidades */
+}
+
+/* Opcionalmente, puedes especificar la clase del menú principal si deseas más precisión */
+.jet-nav-wrap.jet-mobile-menu.jet-mobile-menu--right-side {
+    margin-left: -190px; /* Ajusta este valor según tus necesidades */
 }
 </style>
 
@@ -246,10 +336,39 @@ footer {
 	
 
     <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
+     <div class="main-content3">
+    <div class="image-box">
+        <img src="img/jefe1.png" alt="Imagen de Ejemplo">
+    </div>
+    <div class="content-box">
+        <h2>Registro de Días Festivos</h2>
+     
+            <div class="form-group">
+                <label for="fecha">Fecha:</label>
+                <asp:TextBox ID="fecha" runat="server" CssClass="asp-control" TextMode="Date" />
+            </div>
+            <div class="form-group">
+                <label for="pago">Pago Obligatorio:</label>
+                <asp:DropDownList ID="pago" runat="server" CssClass="asp-control">
+                    <asp:ListItem Value="si" Text="Sí" />
+                    <asp:ListItem Value="no" Text="No" />
+                </asp:DropDownList>
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado:</label>
+                <asp:DropDownList ID="estado" runat="server" CssClass="asp-control">
+                    <asp:ListItem Value="activo" Text="Activo" />
+                    <asp:ListItem Value="inactivo" Text="Inactivo" />
+                </asp:DropDownList>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <asp:TextBox ID="descripcion" runat="server" CssClass="asp-control" TextMode="MultiLine" Rows="4" />
+            </div>
+            <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Registrar" />
+
+    </div>
+</div>
     </form>
   <!-- Círculo Inferior Izquierdo -->
   <div class="bottom-circle-container">
@@ -478,5 +597,4 @@ footer {
 
 <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-P9FT69');</script><!-- End Google Tag Manager --></body>
 </html>
-
 

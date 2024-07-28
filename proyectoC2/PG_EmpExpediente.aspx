@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaMaestra.master.cs" Inherits="proyectoC2.PaginaMaestra" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PG_EmpExpediente.aspx.cs" Inherits="proyectoC2.PG_EmpExpediente" %>
 
 <!DOCTYPE html>
 
@@ -60,17 +60,90 @@ img.emoji {
 .bottom-circle {
     position: absolute;
 	margin-top: 370px;
-    width: 700px;
-    height: 500px;
+    width: 1600px;
+    height: 380px;
     background-color:#7154FC;
     border-radius: 50%;
     bottom: 0;
-    left: -30px;
+    left: -110px;
     transform: translateY(50%); /* Ajusta para que el círculo esté justo encima del footer */
      z-index: -1; /* Asegura que el círculo esté detrás de otros elementos */
 }
 footer {
-    margin-top: 70px; /* Ajusta este valor para agregar más espacio debajo del contenido */
+    margin-top: 50px; /* Ajusta este valor para agregar más espacio debajo del contenido */
+     width: 1500px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
+	margin-left: -20px; /* Ajusta este valor para mover el footer hacia la izquierda */
+}
+.main-content3 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea el cuadro al inicio del contenedor verticalmente */
+    height: calc(100vh - 60px);
+    padding: 20px;
+    margin-top: 50px; /* Ajusta este valor para mover el cuadro hacia abajo */
+}
+
+.content-box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    max-width: 600px;
+    padding: 10px; /* Reduce el padding para disminuir la altura */
+}
+
+.form-section {
+    margin-bottom: 10px; /* Reduce el margen inferior para disminuir la altura */
+}
+
+.form-section h3 {
+    background-color: #7154FC;
+    color: #fff;
+    padding: 5px; /* Reduce el padding para hacer el cuadro morado más pequeño */
+    border-radius: 4px;
+    margin-top: 0;
+    text-align: center;
+     font-size: 25px;
+}
+
+label {
+    display: block;
+    margin: 5px 0; /* Reduce el margen para disminuir la altura */
+}
+
+.search-box {
+    width: 100%;
+    padding: 8px; /* Reduce el padding para disminuir la altura */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 45px; /* Ajusta la altura de los textbox */
+}
+
+button[type="submit"] {
+    background-color: #7154FC;
+	margin-top: 10px;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #5a0cac;
+}
+
+/* Selecciona el contenedor del menú */
+.jet-nav-wrap {
+    margin-left: -160px; /* Ajusta este valor según tus necesidades */
+}
+
+/* Opcionalmente, puedes especificar la clase del menú principal si deseas más precisión */
+.jet-nav-wrap.jet-mobile-menu.jet-mobile-menu--right-side {
+    margin-left: -190px; /* Ajusta este valor según tus necesidades */
 }
 </style>
 
@@ -246,10 +319,47 @@ footer {
 	
 
     <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+       <div class="main-content3">
+    <div class="content-box">
+        <div class="form-section">
+            <h3>Información Personal</h3>
+            <form>
+                <label for="nombre">Nombre</label>
+                <asp:TextBox ID="nombre" runat="server" CssClass="search-box" placeholder="Nombre" />
+                
+                <label for="apellido">Apellido</label>
+                <asp:TextBox ID="apellido" runat="server" CssClass="search-box" placeholder="Apellido" />
+                
+                <label for="cedula">Cédula</label>
+                <asp:TextBox ID="cedula" runat="server" CssClass="search-box" placeholder="Cédula" />
+                
+                <label for="fecha-nacimiento">Fecha de Nacimiento</label>
+                <asp:TextBox ID="fechaNacimiento" runat="server" CssClass="search-box" TextMode="Date" />
+            </form>
         </div>
+        <div class="form-section">
+            <h3>Información de Contacto</h3>
+            <form>
+                <label for="direccion">Dirección</label>
+                <asp:TextBox ID="direccion" runat="server" CssClass="search-box" placeholder="Dirección" />
+                
+                <label for="ciudad">Ciudad</label>
+                <asp:TextBox ID="ciudad" runat="server" CssClass="search-box" placeholder="Ciudad" />
+                
+                <label for="provincia">Provincia</label>
+                <asp:TextBox ID="provincia" runat="server" CssClass="search-box" placeholder="Provincia" />
+                
+                <label for="telefono">Teléfono</label>
+                <asp:TextBox ID="telefono" runat="server" CssClass="search-box" placeholder="Teléfono" />
+                
+                <label for="correo">Correo</label>
+                <asp:TextBox ID="correo" runat="server" CssClass="search-box" placeholder="Correo" />
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
     </form>
   <!-- Círculo Inferior Izquierdo -->
   <div class="bottom-circle-container">
@@ -478,5 +588,3 @@ footer {
 
 <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-P9FT69');</script><!-- End Google Tag Manager --></body>
 </html>
-
-
