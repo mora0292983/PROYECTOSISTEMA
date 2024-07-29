@@ -129,6 +129,7 @@
     <Content Include="img\jefe1.png" />
     <Content Include="img\logo2.png" />
     <Content Include="PG_ControlIncapacidades.aspx" />
+    <Content Include="PG_Departamentos.aspx" />
     <Content Include="PG_EmpExpediente.aspx" />
     <Content Include="PG_Expediente.aspx" />
     <Content Include="PG_Inicio.aspx" />
@@ -239,6 +240,13 @@
     </Compile>
     <Compile Include="PG_ControlIncapacidades.aspx.designer.cs">
       <DependentUpon>PG_ControlIncapacidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PG_Departamentos.aspx.cs">
+      <DependentUpon>PG_Departamentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PG_Departamentos.aspx.designer.cs">
+      <DependentUpon>PG_Departamentos.aspx</DependentUpon>
     </Compile>
     <Compile Include="PG_EmpExpediente.aspx.cs">
       <DependentUpon>PG_EmpExpediente.aspx</DependentUpon>
