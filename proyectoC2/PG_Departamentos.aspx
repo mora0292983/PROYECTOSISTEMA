@@ -82,7 +82,7 @@ footer {
        padding: 60px;
        gap: 20px;
 
-       margin-right:-400px;
+       margin-right:-350px;
    }
 
    .content-box-container {
@@ -91,7 +91,7 @@ footer {
        align-items: flex-start;
        gap: 20px;
        width: 100%;
-       max-width: 1200px;
+       max-width: 1000px;
    }
 
    .content-box {
@@ -210,7 +210,7 @@ footer {
        height: auto;
        border-radius: 8px;
        object-fit: cover;
-         margin-left:-200px;
+         margin-left:-150px;
    }
 
    .gridview-style {
