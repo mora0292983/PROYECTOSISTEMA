@@ -184,7 +184,7 @@ img.emoji {
     <ul class="submenu">
         <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
         <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
-        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
+          <li class="submenu-item"><a href="PG_EmpExpediente.aspx">Expediente del empleado</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
@@ -206,7 +206,7 @@ img.emoji {
     <ul class="submenu">
         <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
         <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
-        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
+         <li class="submenu-item"><a href="PG_RegistroIncapacidad.aspx">Registro Incapacidad</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
@@ -237,9 +237,6 @@ img.emoji {
         <span class="jet-nav-link-text">Puestos    Rebajos</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Departamento.aspx">Departamentos</a></li>
-        <li class="submenu-item"><a href="PG_RegistroTurnos.aspx">Turnos</a></li>
-        <li class="submenu-item"><a href="PG_RegistroPuestos.aspx">Puestos</a></li>
 		<li class="submenu-item"><a href="HistoricoPuestos.aspx">Historicos de Puestos</a></li>
         <li class="submenu-item"><a href="HistoricoEmpPuestos.aspx">Modulo del empleado</a></li>
         <!-- Agrega más elementos del submenú aquí -->

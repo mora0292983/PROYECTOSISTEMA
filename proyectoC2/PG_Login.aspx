@@ -47,145 +47,145 @@
             right: 0;
         }
 
-        .main-content3 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: calc(100vh - 60px);
-            padding: 100px;
-        }
+      .main-content3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+    padding: 100px;
+}
 
-        .content-box {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 1100px;
-            display: flex;
-        }
+.content-box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 1100px;
+    display: flex;
+}
 
-            .content-box img {
-                border-top-left-radius: 8px;
-                border-bottom-left-radius: 8px;
-                width: 50%;
-                object-fit: cover;
-            }
+.content-box img {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    width: 50%;
+    object-fit: cover;
+}
 
-        .login-form {
-            padding: 100px;
-            right: 30px;
-            width: 45%;
-            height: 10%;
-          
-            border-radius: 8px;
-            box-sizing: border-box;
-        }
+.login-form {
+    padding: 100px;
+    width: 50%;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
 
-            .login-form h2 {
-                margin-bottom: 20px;
-                color: #333;
-            }
+.login-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
 
-            .login-form .textbox {
-                width: calc(120% - 40px);
-                padding: 15px;
-                margin-bottom: 15px;
-                border: 1px solid #ddd;
-                border-radius: 20px; /* Bordes redondeados */
-                background-color: #f1f1f1; /* Color gris claro */
-            }
+.login-form .textbox {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px; /* Bordes redondeados */
+    background-color: #f1f1f1; /* Color gris claro */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
 
-            .login-form button {
-                width: 120%;
-                padding: 15px;
-                background-color: #7154FC;
-                border: none;
-                color: #fff;
-                border-radius: 20px; /* Bordes redondeados */
-                font-size: 16px;
-                cursor: pointer;
-                margin-bottom: 10px;
-            }
+.login-form .btn-buscar {
+    width: 100%;
+    padding: 15px;
+    background-color: #7154FC;
+    border: none;
+    color: #fff;
+    border-radius: 20px; /* Bordes redondeados */
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
 
-                .login-form button:hover {
-                    background-color: #7154FC;
-                }
+.login-form .btn-buscar:hover {
+    background-color: #5e35b1; /* Color morado más oscuro para el hover */
+}
 
-            .login-form a {
-                color: #7154FC;
-                text-decoration: none;
-                font-size: 14px;
-            }
+.login-form a {
+    color: #7154FC;
+    text-decoration: none;
+    font-size: 14px;
+}
 
-                .login-form a:hover {
-                    text-decoration: underline;
-                }
+.login-form a:hover {
+    text-decoration: underline;
+}
 
-        /* Estilos para la ventana modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.4);
-            justify-content: center;
-            align-items: center;
-        }
+/* Estilos para la ventana modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
 
-        .modal-content {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            width: 80%;
-            max-width: 600px;
-            margin: auto;
-        }
+.modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+}
 
-            .modal-content h2 {
-                margin-top: 0;
-            }
+.modal-content h2 {
+    margin-top: 0;
+}
 
-            .modal-content input {
-                width: calc(100% - 20px);
-                padding: 10px;
-                margin-bottom: 15px;
-                border: 1px solid #ddd;
-                border-radius: 20px;
-                background-color: #f1f1f1;
-            }
+.modal-content input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background-color: #f1f1f1;
+}
 
-            .modal-content button {
-                width: 100%;
-                padding: 10px;
-                background-color: #007BFF;
-                border: none;
-                color: #fff;
-                border-radius: 20px;
-                font-size: 16px;
-                cursor: pointer;
-            }
+.modal-content button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-                .modal-content button:hover {
-                    background-color: #0056b3;
-                }
+.modal-content button:hover {
+    background-color: #0056b3;
+}
 
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
 
-            .close:hover,
-            .close:focus {
-                color: #000;
-                text-decoration: none;
-                cursor: pointer;
-            }
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
  /* Estilos para el círculo inferior izquierdo */
  .bottom-circle-container {
      position: relative;
@@ -206,6 +206,31 @@
      transform: translateY(50%); /* Ajusta para que el círculo esté justo encima del footer */
       z-index: -1; /* Asegura que el círculo esté detrás de otros elementos */
  }
+ /* Estilo para el mensaje de éxito */
+.mensaje-exito {
+    color: #7154FC;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #7154FC;
+    border-radius: 5px;
+    background-color: #e6f9e6;
+    text-align: center;
+    margin-top: 10px;
+	   margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilo para el mensaje de error */
+.mensaje-error {
+    color: red;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+    background-color: #f9e6e6;
+    text-align: center;
+    margin-top: 10px;
+}
     </style>
 
 <style id='imperionthemestyleinlinecss' type='text/css'>
@@ -256,12 +281,13 @@
         <div class="content-box">
             <img src="img/imgM.png" alt="Imagen de Ejemplo">
             <div class="login-form">
-                <h2>Inicio de Sesión</h2>
-                <form>
-                    <input type="text" class="textbox" placeholder="Usuario" required>
-                    <input type="password" class="textbox" placeholder="Contraseña" required>
-                    <button type="submit">Iniciar Sesión</button>
-                    <a href="#" id="register-link">Registrarse</a>
+               <h2>Inicio de Sesión</h2>
+             <form id="loginForm" runat="server">
+                <asp:TextBox ID="txtdescripcion" runat="server" CssClass="textbox" placeholder="Usuario" MaxLength="200" />
+                <asp:TextBox ID="txtpassword" runat="server" CssClass="textbox" TextMode="Password" placeholder="Contraseña" MaxLength="200" />
+                <asp:Button ID="continuar" runat="server" Text="Guardar" CssClass="btn-buscar" OnClick="btncontinuar_Click" />
+                <asp:Label ID="lblMensaje" runat="server" Text="" />
+                <a href="#" id="register-link">Registrarse</a>
                 </form>
             </div>
         </div>

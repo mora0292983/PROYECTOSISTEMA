@@ -207,6 +207,51 @@ footer {
 .jet-nav-wrap.jet-mobile-menu.jet-mobile-menu--right-side {
     margin-left: -190px; /* Ajusta este valor según tus necesidades */
 }
+/* Estilos del submenú */
+.submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #fff; /* Color de fondo del submenú */
+    border-radius: 4px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    transition: opacity 0.3s, visibility 0.3s; /* Transiciones suaves */
+}
+
+/* Estilos de los elementos del submenú */
+.submenu-item {
+    border-bottom: 1px solid #ddd; /* Línea divisoria entre elementos */
+}
+
+.submenu-item:last-child {
+    border-bottom: none; /* Elimina la línea divisoria del último elemento */
+}
+
+.submenu-item a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333; /* Color del texto del submenú */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+}
+
+/* Cambia el color del texto del submenú al pasar el ratón por encima */
+.submenu-item a:hover {
+    background-color: #f0f0f0; /* Color de fondo al pasar el ratón */
+    color: #007bff; /* Color del texto al pasar el ratón */
+}
+
+/* Mostrar el submenú al pasar el ratón por encima del elemento del menú */
+.menu-item:hover .submenu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
 </style>
 
 
@@ -282,11 +327,53 @@ footer {
 				<div class="elementor-widget-container">
 			<div class="jet-nav-wrap jet-mobile-menu jet-mobile-menu--right-side" data-mobile-layout="right-side">
 <div class="jet-nav__mobile-trigger jet-nav-mobile-trigger-align-right">
-	<span class="jet-nav__mobile-trigger-open jet-blocks-icon"><i aria-hidden="true" class="fas fa-bars"></i></span>	<span class="jet-nav__mobile-trigger-close jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></span></div><div class="menu-main-container"><div class="jet-nav jet-nav--horizontal"><div class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item jet-nav__item-177 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Home</span></a></div>
-<div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-118 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Services</span></a></div>
-<div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-119 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#projects" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Projects</span></a></div>
-<div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-120 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#pricing" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Pricing</span></a></div>
-<div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-121 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#contact" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Contact</span></a></div>
+	<span class="jet-nav__mobile-trigger-open jet-blocks-icon"><i aria-hidden="true" class="fas fa-bars"></i></span>	<span class="jet-nav__mobile-trigger-close jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></span></div><div class="menu-main-container"><div class="jet-nav jet-nav--horizontal"><div class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item jet-nav__item-177 jet-nav__item"><a href="PG_Inicio.aspx" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Home</span></a></div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
+    <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
+        <span class="jet-nav-link-text">Vacaciones</span>
+    </a>
+    <ul class="submenu">
+        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
+        <li class="submenu-item"><a href="PG_RegistroDiasFestivo.aspx">Dias Festivos</a></li>
+        <li class="submenu-item"><a href="PG_VacacionesColectivas.aspx">Vacaciones Colectivas</a></li>
+        <!-- Agrega más elementos del submenú aquí -->
+    </ul>
+</div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
+    <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
+        <span class="jet-nav-link-text">Actividades</span>
+    </a>
+    <ul class="submenu">
+        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
+        <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
+        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
+        <!-- Agrega más elementos del submenú aquí -->
+    </ul>
+</div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
+    <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
+        <span class="jet-nav-link-text">Inconsistencias</span>
+    </a>
+    <ul class="submenu">
+        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
+        <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
+        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
+        <!-- Agrega más elementos del submenú aquí -->
+    </ul>
+</div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
+    <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
+        <span class="jet-nav-link-text">Puestos    Rebajos</span>
+    </a>
+    <ul class="submenu">
+        <li class="submenu-item"><a href="PG_Departamentos.aspx">Departamentos</a></li>
+        <li class="submenu-item"><a href="RegistroTurnos.aspx">Turnos</a></li>
+        <li class="submenu-item"><a href="RegistroPuestos.aspx">Puestos</a></li>
+        <li class="submenu-item"><a href="HistoricoPuestos.aspx">Historicos de Puestos</a></li>
+<li class="submenu-item"><a href="HistoricoEmpPuestos.aspx">Modulo del empleado</a></li>
+        <!-- Agrega más elementos del submenú aquí -->
+    </ul>
+</div>
 <div class="jet-nav__mobile-close-btn jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></div></div></div></div>		</div>
 				</div>
 						</div>

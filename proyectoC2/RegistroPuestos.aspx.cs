@@ -14,8 +14,11 @@ namespace proyectoC2
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
-		}
+            if (!IsPostBack)
+            {
+                LoadData();
+            }
+        }
         private void LoadData()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
