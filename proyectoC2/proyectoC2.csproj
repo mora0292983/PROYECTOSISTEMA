@@ -124,6 +124,8 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="HistoricoEmpPuestos.aspx" />
+    <Content Include="HistoricoPuestos.aspx" />
     <Content Include="img\empleado.png" />
     <Content Include="img\imgM.png" />
     <Content Include="img\jefe1.png" />
@@ -138,6 +140,8 @@
     <Content Include="PG_RegistroIncapacidad.aspx" />
     <Content Include="PG_Vacaciones.aspx" />
     <Content Include="PG_VacacionesColectivas.aspx" />
+    <Content Include="RegistroPuestos.aspx" />
+    <Content Include="RegistroTurnos.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -227,6 +231,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HistoricoEmpPuestos.aspx.cs">
+      <DependentUpon>HistoricoEmpPuestos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HistoricoEmpPuestos.aspx.designer.cs">
+      <DependentUpon>HistoricoEmpPuestos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HistoricoPuestos.aspx.cs">
+      <DependentUpon>HistoricoPuestos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HistoricoPuestos.aspx.designer.cs">
+      <DependentUpon>HistoricoPuestos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PaginaMaestra.Master.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -305,6 +323,20 @@
       <DependentUpon>PG_VacacionesColectivas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroPuestos.aspx.cs">
+      <DependentUpon>RegistroPuestos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroPuestos.aspx.designer.cs">
+      <DependentUpon>RegistroPuestos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroTurnos.aspx.cs">
+      <DependentUpon>RegistroTurnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroTurnos.aspx.designer.cs">
+      <DependentUpon>RegistroTurnos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
