@@ -130,6 +130,7 @@
     <Content Include="img\imgM.png" />
     <Content Include="img\jefe1.png" />
     <Content Include="img\logo2.png" />
+    <Content Include="JustificacionInconsistencias.aspx" />
     <Content Include="PG_ControlIncapacidades.aspx" />
     <Content Include="PG_Departamentos.aspx" />
     <Content Include="PG_EmpExpediente.aspx" />
@@ -142,6 +143,7 @@
     <Content Include="PG_RegistroIncapacidad.aspx" />
     <Content Include="PG_Vacaciones.aspx" />
     <Content Include="PG_VacacionesColectivas.aspx" />
+    <Content Include="RegistroActividadRealizada.aspx" />
     <Content Include="RegistroPuestos.aspx" />
     <Content Include="RegistroTurnos.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -249,6 +251,13 @@
     <Compile Include="HistoricoPuestos.aspx.designer.cs">
       <DependentUpon>HistoricoPuestos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="JustificacionInconsistencias.aspx.cs">
+      <DependentUpon>JustificacionInconsistencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JustificacionInconsistencias.aspx.designer.cs">
+      <DependentUpon>JustificacionInconsistencias.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PaginaMaestra.Master.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -341,6 +350,13 @@
       <DependentUpon>PG_VacacionesColectivas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroActividadRealizada.aspx.cs">
+      <DependentUpon>RegistroActividadRealizada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroActividadRealizada.aspx.designer.cs">
+      <DependentUpon>RegistroActividadRealizada.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RegistroPuestos.aspx.cs">
       <DependentUpon>RegistroPuestos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
