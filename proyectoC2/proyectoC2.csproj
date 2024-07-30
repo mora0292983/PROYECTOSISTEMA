@@ -129,12 +129,19 @@
     <Content Include="img\jefe1.png" />
     <Content Include="img\logo2.png" />
     <Content Include="PG_ControlIncapacidades.aspx" />
+    <Content Include="PG_ControlMarcas.aspx" />
     <Content Include="PG_EmpExpediente.aspx" />
     <Content Include="PG_Expediente.aspx" />
     <Content Include="PG_Inicio.aspx" />
     <Content Include="PG_Login.aspx" />
+    <Content Include="PG_Permiso.aspx" />
+    <Content Include="PG_Rebajos.aspx" />
+    <Content Include="PG_RebajosSalariales.aspx" />
     <Content Include="PG_RegistroDiasFestivo.aspx" />
     <Content Include="PG_RegistroIncapacidad.aspx" />
+    <Content Include="PG_Reposicion.aspx" />
+    <Content Include="PG_SolicitudPermiso.aspx" />
+    <Content Include="PG_SolicitudReposicion.aspx" />
     <Content Include="PG_Vacaciones.aspx" />
     <Content Include="PG_VacacionesColectivas.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -240,6 +247,13 @@
     <Compile Include="PG_ControlIncapacidades.aspx.designer.cs">
       <DependentUpon>PG_ControlIncapacidades.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PG_ControlMarcas.aspx.cs">
+      <DependentUpon>PG_ControlMarcas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PG_ControlMarcas.aspx.designer.cs">
+      <DependentUpon>PG_ControlMarcas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PG_EmpExpediente.aspx.cs">
       <DependentUpon>PG_EmpExpediente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -268,6 +282,27 @@
     <Compile Include="PG_Login.aspx.designer.cs">
       <DependentUpon>PG_Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PG_Permiso.aspx.cs">
+      <DependentUpon>PG_Permiso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PG_Permiso.aspx.designer.cs">
+      <DependentUpon>PG_Permiso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PG_Rebajos.aspx.cs">
+      <DependentUpon>PG_Rebajos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PG_Rebajos.aspx.designer.cs">
+      <DependentUpon>PG_Rebajos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PG_RebajosSalariales.aspx.cs">
+      <DependentUpon>PG_RebajosSalariales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PG_RebajosSalariales.aspx.designer.cs">
+      <DependentUpon>PG_RebajosSalariales.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PG_RegistroDiasFestivo.aspx.cs">
       <DependentUpon>PG_RegistroDiasFestivo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -281,6 +316,24 @@
     </Compile>
     <Compile Include="PG_RegistroIncapacidad.aspx.designer.cs">
       <DependentUpon>PG_RegistroIncapacidad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PG_Reposicion.aspx.cs">
+      <DependentUpon>PG_Reposicion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PG_SolicitudPermiso.aspx.cs">
+      <DependentUpon>PG_SolicitudPermiso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PG_SolicitudPermiso.aspx.designer.cs">
+      <DependentUpon>PG_SolicitudPermiso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PG_SolicitudReposicion.aspx.cs">
+      <DependentUpon>PG_SolicitudReposicion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PG_SolicitudReposicion.aspx.designer.cs">
+      <DependentUpon>PG_SolicitudReposicion.aspx</DependentUpon>
     </Compile>
     <Compile Include="PG_Vacaciones.aspx.cs">
       <DependentUpon>PG_Vacaciones.aspx</DependentUpon>
@@ -332,6 +385,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
