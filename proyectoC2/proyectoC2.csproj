@@ -135,6 +135,8 @@
     <Content Include="PG_EmpExpediente.aspx" />
     <Content Include="PG_Expediente.aspx" />
     <Content Include="PG_Inicio.aspx" />
+    <Content Include="PG_InicioJe.aspx" />
+    <Content Include="PG_InicioLogin.aspx" />
     <Content Include="PG_Login.aspx" />
     <Content Include="PG_RegistroDiasFestivo.aspx" />
     <Content Include="PG_RegistroIncapacidad.aspx" />
@@ -288,6 +290,20 @@
     </Compile>
     <Compile Include="PG_Inicio.aspx.designer.cs">
       <DependentUpon>PG_Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PG_InicioJe.aspx.cs">
+      <DependentUpon>PG_InicioJe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PG_InicioJe.aspx.designer.cs">
+      <DependentUpon>PG_InicioJe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PG_InicioLogin.aspx.cs">
+      <DependentUpon>PG_InicioLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PG_InicioLogin.aspx.designer.cs">
+      <DependentUpon>PG_InicioLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="PG_Login.aspx.cs">
       <DependentUpon>PG_Login.aspx</DependentUpon>
