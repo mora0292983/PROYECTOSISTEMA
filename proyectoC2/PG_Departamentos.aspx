@@ -85,202 +85,189 @@ footer {
        margin-right:-350px;
    }
 
-   .content-box-container {
-       display: flex;
-       flex-direction: row;
-       align-items: flex-start;
-       gap: 20px;
-       width: 100%;
-       max-width: 1000px;
-   }
+  /* Estilos para el contenedor de contenido */
+.content-box-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+}
 
-   .content-box {
-       background-color: #fff;
-       border-radius: 8px;
-       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-       width: 60%;
-       padding: 20px;
-       box-sizing: border-box;
-       position: relative;
-   }
+/* Estilos para el cuadro de contenido */
+.content-box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
 
-   .content-box h2 {
-       color: #7154FC;
-       font-weight: bold;
-       margin-top: 0;
-       text-align: center;
-   }
+/* Estilos para el encabezado en el cuadro de contenido */
+.content-box h2 {
+    color: #7154FC;
+    font-weight: bold;
+    margin-top: 0;
+    text-align: center;
+}
 
-   .form-group {
-       margin-bottom: 15px;
-   }
+/* Estilos para los grupos de formulario */
+.form-group {
+    margin-bottom: 15px;
+}
 
-   .form-group label {
-       display: block;
-       font-weight: bold;
-       margin-bottom: 5px;
-   }
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
 
-   .asp-control {
-       width: 100%;
-       padding: 10px;
-       border-radius: 5px;
-       border: 1px solid #ccc;
-       box-sizing: border-box;
-   }
+/* Estilos para los TextBox */
+.search-box {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
 
-   .link-button {
-       display: inline-block;
-       background-color: #7154FC;
-       color: white;
-       padding: 10px 15px;
-       border-radius: 5px;
-       text-align: center;
-       text-decoration: none;
-       font-size: 16px;
-       cursor: pointer;
-       margin-bottom: 10px;
-       border: none;
-       width: 100%;
-       box-sizing: border-box;
-   }
+/* Estilos para los botones de enlace */
+.link-button, .link-button-eliminar, .link-button-editar {
+    display: inline-block;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+}
 
-   .link-button-eliminar {
-       display: inline-block;
-       background-color: #FF4C4C;
-       color: white;
-       padding: 10px 15px;
-       border-radius: 5px;
-       text-align: center;
-       text-decoration: none;
-       font-size: 16px;
-       cursor: pointer;
-       margin-bottom: 10px;
-       border: none;
-       width: 100%;
-       box-sizing: border-box;
-   }
+.link-button {
+    background-color: #7154FC;
+}
 
-   .link-button-editar {
-       display: inline-block;
-       background-color: #4C9BFC;
-       color: white;
-       padding: 10px 15px;
-       border-radius: 5px;
-       text-align: center;
-       text-decoration: none;
-       font-size: 16px;
-       cursor: pointer;
-       margin-bottom: 10px;
-       border: none;
-       width: 100%;
-       box-sizing: border-box;
-   }
+.link-button-eliminar {
+    background-color: #FF4C4C;
+}
 
-   .link-button:hover {
-       background-color: #5a005a;
-   }
+.link-button-editar {
+    background-color: #7154FC;
+}
 
-   .link-button-eliminar:hover {
-       background-color: #cc0000;
-   }
+.link-button:hover {
+    background-color: #5a005a;
+}
 
-   .link-button-editar:hover {
-       background-color: #357ae8;
-   }
+.link-button-eliminar:hover {
+    background-color: #cc0000;
+}
 
-   .link-buttons-container {
-       display: flex;
-       flex-direction: column;
-       gap: 10px;
-       position: absolute;
-       top: 260px;
-       right: 190px;
+.link-button-editar:hover {
+    background-color: #357ae8;
+}
 
-   }
+/* Estilos para el contenedor de botones de enlace */
+.link-buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 260px;
+    right: 190px;
+}
 
-   .image-box {
-       width: 45%;
-       max-width: 150px;
-       
-   }
+/* Estilos para la caja de imagen */
+.image-box {
+    width: 45%;
+    max-width: 150px;
+}
 
-   .image-box img {
-       width: 300px;
-       height: auto;
-       border-radius: 8px;
-       object-fit: cover;
-         margin-left:-150px;
-   }
+.image-box img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-left: -150px;
+}
 
-   .gridview-style {
-       width: 100%;
-       border-collapse: collapse;
-       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-       font-family: Arial, sans-serif;
-   }
+/* Estilos para la tabla GridView */
+.gridview-style {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
 
-   .gridview-style th {
-       background-color: #7154FC;
-       color: white;
-       padding: 10px;
-       text-align: left;
-       border-bottom: 2px solid #ddd;
-   }
+.gridview-style th {
+    background-color: #7154FC;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+}
 
-   .gridview-style td {
-       padding: 10px;
-       border-bottom: 1px solid #ddd;
-   }
+.gridview-style td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
 
-   .gridview-style tr:nth-child(even) {
-       background-color: #f9f9f9;
-   }
+.gridview-style tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
 
-   .gridview-style tr:hover {
-       background-color: #f1f1f1;
-   }
+.gridview-style tr:hover {
+    background-color: #f1f1f1;
+}
 
-   .gridview-style th, .gridview-style td {
-       border: 1px solid #ddd;
-   }
+.gridview-style th, .gridview-style td {
+    border: 1px solid #ddd;
+}
 
-   /* Estilos para los modales */
-   .modal {
-       display: none;
-       position: fixed;
-       z-index: 1;
-       left: 0;
-       top: 0;
-       width: 100%;
-       height: 100%;
-       overflow: auto;
-       background-color: rgba(0, 0, 0, 0.4);
-   }
+/* Estilos para los modales */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
 
-   .modal-content {
-       background-color: #fefefe;
-       margin: 15% auto;
-       padding: 20px;
-       border: 1px solid #888;
-       width: 80%;
-       max-width: 500px;
-       border-radius: 8px;
-   }
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+}
 
-   .close {
-       color: #aaa;
-       float: right;
-       font-size: 28px;
-       font-weight: bold;
-   }
+/* Estilos para el botón de cerrar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
 
-   .close:hover,
-   .close:focus {
-       color: black;
-       text-decoration: none;
-       cursor: pointer;
-   }
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 /* Selecciona el contenedor del menú */
 .jet-nav-wrap {
@@ -290,6 +277,31 @@ footer {
 /* Opcionalmente, puedes especificar la clase del menú principal si deseas más precisión */
 .jet-nav-wrap.jet-mobile-menu.jet-mobile-menu--right-side {
     margin-left: -190px; /* Ajusta este valor según tus necesidades */
+}
+/* Estilo para el mensaje de éxito */
+.mensaje-exito {
+    color: #7154FC;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #7154FC;
+    border-radius: 5px;
+    background-color: #e6f9e6;
+    text-align: center;
+    margin-top: 10px;
+	   margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilo para el mensaje de error */
+.mensaje-error {
+    color: red;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+    background-color: #f9e6e6;
+    text-align: center;
+    margin-top: 10px;
 }
 </style>
 
@@ -480,13 +492,16 @@ footer {
                   </Columns>
               </asp:GridView>
           </div>
+           
           <!-- Botones fuera del cuadro blanco -->
           <div class="link-buttons-container">
               <a href="#modalNuevo" class="link-button" onclick="openModal('modalNuevo')">Nuevo</a>
               <a href="#modalEliminar" class="link-button-eliminar" onclick="openModal('modalEliminar')">Eliminar</a>
               <a href="#modalEditar" class="link-button-editar" onclick="openModal('modalEditar')">Editar</a>
+             
           </div>
       </div>
+          <asp:Button ID="Button1" runat="server" Text="Enviar" CssClass="btn-buscar" OnClick="btncontinuar_Click" />
   </div>
   
   <!-- Modal Nuevo -->
@@ -497,13 +512,14 @@ footer {
           <!-- Contenido del formulario para nuevo departamento -->
           <div class="form-group">
               <label for="nombreDepartamento">Nombre del Departamento:</label>
-              <input type="text" id="nombreDepartamento" class="asp-control" />
+              <asp:TextBox ID="txtnombreDepartamento" runat="server" CssClass="search-box" placeholder="nombreDepàrtamento" MaxLength="200" />
           </div>
           <div class="form-group">
               <label for="descripcion">Descripción:</label>
-              <textarea id="descripcion" class="asp-control"></textarea>
+               <asp:TextBox ID="txtdescripcion" runat="server" CssClass="search-box" placeholder="descripcion" MaxLength="200" />
           </div>
-          <button class="btn" onclick="saveNewDepartment()">Guardar</button>
+          <asp:Button ID="continuar" runat="server" Text="Guardar" CssClass="btn-buscar" OnClick="btncontinuar_Click" />
+          <asp:Label ID="lblMensaje" runat="server" Text="" />
       </div>
   </div>
 
@@ -515,9 +531,9 @@ footer {
           <!-- Contenido del formulario para eliminar departamento -->
           <div class="form-group">
               <label for="nombreDepartamentoEliminar">Nombre del Departamento:</label>
-              <input type="text" id="nombreDepartamentoEliminar" class="asp-control" />
+               <asp:TextBox ID="txtnombreDepartamentoEliminar" runat="server" CssClass="search-box" placeholder="nombreDepartamentoEliminar" MaxLength="200" />
           </div>
-          <button class="btn" onclick="deleteDepartment()">Eliminar</button>
+          <asp:Button ID="continuar1" runat="server" Text="Eliminar" CssClass="btn-buscar" OnClick="btncontinuar1_Click" />
       </div>
   </div>
 
@@ -529,17 +545,17 @@ footer {
           <!-- Contenido del formulario para editar departamento -->
           <div class="form-group">
               <label for="nombreDepartamentoActual">Nombre Actual del Departamento:</label>
-              <input type="text" id="nombreDepartamentoActual" class="asp-control" />
+               <asp:TextBox ID="txtNombreActual" runat="server" CssClass="search-box" placeholder="Nombre Actual"></asp:TextBox>
           </div>
           <div class="form-group">
               <label for="nuevoNombreDepartamento">Nuevo Nombre del Departamento:</label>
-              <input type="text" id="nuevoNombreDepartamento" class="asp-control" />
+              <asp:TextBox ID="txtNuevoNombre" runat="server" CssClass="search-box" placeholder="Nuevo Nombre"></asp:TextBox>
           </div>
           <div class="form-group">
               <label for="nuevaDescripcion">Nueva Descripción:</label>
-              <textarea id="nuevaDescripcion" class="asp-control"></textarea>
+              <asp:TextBox ID="txtNuevaDescripcion" runat="server" CssClass="search-box" placeholder="Nueva Descripción"></asp:TextBox>
           </div>
-          <button class="btn" onclick="editDepartment()">Guardar Cambios</button>
+           <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click" CssClass="btn-buscar" />
       </div>
   </div>
 

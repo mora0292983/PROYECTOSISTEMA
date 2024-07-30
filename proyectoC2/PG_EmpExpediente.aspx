@@ -52,7 +52,7 @@ img.emoji {
 .bottom-circle-container {
     position: relative;
     width: 100%;
-	margin-top: 300px;
+	margin-top: 600px;
     height: 10px; /* Ajusta la altura según sea necesario */
 
 }
@@ -70,7 +70,7 @@ img.emoji {
      z-index: -1; /* Asegura que el círculo esté detrás de otros elementos */
 }
 footer {
-    margin-top: 50px; /* Ajusta este valor para agregar más espacio debajo del contenido */
+    margin-top: 80px; /* Ajusta este valor para agregar más espacio debajo del contenido */
      width: 1500px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
 	margin-left: -20px; /* Ajusta este valor para mover el footer hacia la izquierda */
 }
@@ -79,63 +79,66 @@ footer {
     justify-content: center;
     align-items: flex-start; /* Alinea el cuadro al inicio del contenedor verticalmente */
     height: calc(100vh - 60px);
-    padding: 20px;
-    margin-top: 50px; /* Ajusta este valor para mover el cuadro hacia abajo */
+    padding: 20px; /* Aumenta el padding del contenedor */
+    margin-top: 0px;
 }
 
 .content-box {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 40%;
-    max-width: 600px;
-    padding: 10px; /* Reduce el padding para disminuir la altura */
+    width: 50%; /* Aumenta el ancho del cuadro blanco */
+    max-width: 800px; /* Ajusta el ancho máximo según sea necesario */
+    padding: 20px; /* Aumenta el padding para dar más espacio interno */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
 }
 
 .form-section {
-    margin-bottom: 10px; /* Reduce el margen inferior para disminuir la altura */
+    margin-bottom: 20px; /* Aumenta el margen inferior para separar las secciones */
 }
 
 .form-section h3 {
     background-color: #7154FC;
     color: #fff;
-    padding: 5px; /* Reduce el padding para hacer el cuadro morado más pequeño */
+    padding: 10px; /* Aumenta el padding para hacer el cuadro morado más grande */
     border-radius: 4px;
     margin-top: 0;
     text-align: center;
-     font-size: 25px;
+    font-size: 30px; /* Aumenta el tamaño de la fuente del título */
 }
 
 label {
     display: block;
-    margin: 5px 0; /* Reduce el margen para disminuir la altura */
+    margin: 10px 0; /* Aumenta el margen para mayor separación entre las etiquetas y los campos */
 }
 
 .search-box {
-    width: 100%;
-    padding: 8px; /* Reduce el padding para disminuir la altura */
+    width: 100%; /* Asegura que los campos de texto ocupen todo el ancho disponible */
+    padding: 10px; /* Aumenta el padding para que los campos sean más grandes */
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    height: 45px; /* Ajusta la altura de los textbox */
+    height: 50px; /* Aumenta la altura de los campos de texto */
 }
 
-button[type="submit"] {
+.btn-buscar {
     background-color: #7154FC;
-	margin-top: 10px;
     color: #fff;
-    padding: 10px 20px;
+    padding: 15px 25px; /* Aumenta el padding del botón */
     border: none;
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
-    font-size: 16px;
+    font-size: 18px; /* Aumenta el tamaño de la fuente del botón */
+    display: inline-block; /* Asegura que el botón se alinee correctamente */
+    text-align: center; /* Centra el texto en el botón */
+    margin-top: 20px; /* Espacio arriba del botón */
+    margin-bottom: 20px; /* Espacio abajo del botón */
 }
 
-button[type="submit"]:hover {
+.btn-buscar:hover {
     background-color: #5a0cac;
 }
-
 /* Selecciona el contenedor del menú */
 .jet-nav-wrap {
     margin-left: -160px; /* Ajusta este valor según tus necesidades */
@@ -144,6 +147,31 @@ button[type="submit"]:hover {
 /* Opcionalmente, puedes especificar la clase del menú principal si deseas más precisión */
 .jet-nav-wrap.jet-mobile-menu.jet-mobile-menu--right-side {
     margin-left: -190px; /* Ajusta este valor según tus necesidades */
+}
+/* Estilo para el mensaje de éxito */
+.mensaje-exito {
+    color: #7154FC;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #7154FC;
+    border-radius: 5px;
+    background-color: #e6f9e6;
+    text-align: center;
+    margin-top: 10px;
+	   margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilo para el mensaje de error */
+.mensaje-error {
+    color: red;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+    background-color: #f9e6e6;
+    text-align: center;
+    margin-top: 10px;
 }
 </style>
 
@@ -315,52 +343,91 @@ button[type="submit"]:hover {
 			</header><!-- #masthead -->
 
 
+<form id="form1" runat="server">
+    <div class="main-content3">
+        <div class="content-box">
+            <div class="form-section">
+                <h3>Información Personal</h3>
+                <asp:Panel ID="PersonalPanel" runat="server">
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <asp:TextBox ID="txtnombre" runat="server" CssClass="search-box" placeholder="Nombre" MaxLength="200" />
+                        <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtnombre" ErrorMessage="Nombre es requerido" ForeColor="Red" Display="Dynamic" />
+                        <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="txtnombre" ValidationExpression=".{1,200}" ErrorMessage="El nombre no debe exceder 200 caracteres" ForeColor="Red" Display="Dynamic" />
+                    </div>
 
-	
+                    <div>
+                        <label for="apellido">Apellido</label>
+                        <asp:TextBox ID="txtapellido" runat="server" CssClass="search-box" placeholder="Apellido" MaxLength="200" />
+                        <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ControlToValidate="txtapellido" ErrorMessage="Apellido es requerido" ForeColor="Red" Display="Dynamic" />
+                        <asp:RegularExpressionValidator ID="revApellido" runat="server" ControlToValidate="txtapellido" ValidationExpression=".{1,200}" ErrorMessage="El apellido no debe exceder 200 caracteres" ForeColor="Red" Display="Dynamic" />
+                    </div>
 
-    <form id="form1" runat="server">
-       <div class="main-content3">
-    <div class="content-box">
-        <div class="form-section">
-            <h3>Información Personal</h3>
-            <form>
-                <label for="nombre">Nombre</label>
-                <asp:TextBox ID="nombre" runat="server" CssClass="search-box" placeholder="Nombre" />
+                    <div>
+                        <label for="cedula">Cédula</label>
+                        <asp:TextBox ID="txtcedula" runat="server" CssClass="search-box" placeholder="Cédula" MaxLength="200" />
+                        <asp:RequiredFieldValidator ID="rfvCedula" runat="server" ControlToValidate="txtcedula" ErrorMessage="Cédula es requerida" ForeColor="Red" Display="Dynamic" />
+                        <asp:RegularExpressionValidator ID="revCedula" runat="server" ControlToValidate="txtcedula" ValidationExpression=".{1,200}" ErrorMessage="La cédula no debe exceder 200 caracteres" ForeColor="Red" Display="Dynamic" />
+                    </div>
+
+                    <div>
+                        <label for="fecha-nacimiento">Fecha de Nacimiento</label>
+                        <asp:TextBox ID="txtfechaNacimiento" runat="server" CssClass="search-box" TextMode="Date" />
+                        <asp:RequiredFieldValidator ID="rfvFechaNacimiento" runat="server" ControlToValidate="txtfechaNacimiento" ErrorMessage="Fecha de nacimiento es requerida" ForeColor="Red" Display="Dynamic" />
+                    </div>
+                </asp:Panel>
+            </div>
+            <div class="form-section">
+                <h3>Información de Contacto</h3>
+                <asp:Panel ID="ContactoPanel" runat="server">
+                    <div>
+                        <label for="direccion">Dirección</label>
+                        <asp:TextBox ID="txtdireccion" runat="server" CssClass="search-box" placeholder="Dirección" MaxLength="200" />
+                        <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtdireccion" ErrorMessage="Dirección es requerida" ForeColor="Red" Display="Dynamic" />
+                        <asp:RegularExpressionValidator ID="revDireccion" runat="server" ControlToValidate="txtdireccion" ValidationExpression=".{1,200}" ErrorMessage="La dirección no debe exceder 200 caracteres" ForeColor="Red" Display="Dynamic" />
+                    </div>
+
+                    <div>
+                        <label for="ciudad">Ciudad</label>
+                        <asp:TextBox ID="txtciudad" runat="server" CssClass="search-box" placeholder="Ciudad" MaxLength="200" />
+                        <asp:RequiredFieldValidator ID="rfvCiudad" runat="server" ControlToValidate="txtciudad" ErrorMessage="Ciudad es requerida" ForeColor="Red" Display="Dynamic" />
+                        <asp:RegularExpressionValidator ID="revCiudad" runat="server" ControlToValidate="txtciudad" ValidationExpression=".{1,200}" ErrorMessage="La ciudad no debe exceder 200 caracteres" ForeColor="Red" Display="Dynamic" />
+                    </div>
+
+                    <div>
+                        <label for="provincia">Provincia</label>
+                        <asp:TextBox ID="txtprovincia" runat="server" CssClass="search-box" placeholder="Provincia" MaxLength="200" />
+                        <asp:RequiredFieldValidator ID="rfvProvincia" runat="server" ControlToValidate="txtprovincia" ErrorMessage="Provincia es requerida" ForeColor="Red" Display="Dynamic" />
+                        <asp:RegularExpressionValidator ID="revProvincia" runat="server" ControlToValidate="txtprovincia" ValidationExpression=".{1,200}" ErrorMessage="La provincia no debe exceder 200 caracteres" ForeColor="Red" Display="Dynamic" />
+                    </div>
+
+                    <div>
+                        <label for="telefono">Teléfono</label>
+                        <asp:TextBox ID="txttelefono" runat="server" CssClass="search-box" placeholder="Teléfono" MaxLength="200" />
+                        <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ControlToValidate="txttelefono" ErrorMessage="Teléfono es requerido" ForeColor="Red" Display="Dynamic" />
+                        <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txttelefono" ValidationExpression=".{1,200}" ErrorMessage="El teléfono no debe exceder 200 caracteres" ForeColor="Red" Display="Dynamic" />
+                    </div>
+
+                    <div>
+                        <label for="correo">Correo</label>
+                        <asp:TextBox ID="txtcorreo" runat="server" CssClass="search-box" placeholder="Correo" MaxLength="200" />
+                        <asp:RequiredFieldValidator ID="rfvCorreo" runat="server" ControlToValidate="txtcorreo" ErrorMessage="Correo es requerido" ForeColor="Red" Display="Dynamic" />
+                        <asp:RegularExpressionValidator ID="revCorreo" runat="server" ControlToValidate="txtcorreo" ValidationExpression=".{1,200}" ErrorMessage="El correo no debe exceder 200 caracteres" ForeColor="Red" Display="Dynamic" />
+                    </div>
+
+                    <!-- Aquí está el botón con JavaScript -->
+				<asp:Button ID="continuar" runat="server" Text="Enviar" CssClass="btn-buscar" OnClick="btncontinuar_Click" />
                 
-                <label for="apellido">Apellido</label>
-                <asp:TextBox ID="apellido" runat="server" CssClass="search-box" placeholder="Apellido" />
-                
-                <label for="cedula">Cédula</label>
-                <asp:TextBox ID="cedula" runat="server" CssClass="search-box" placeholder="Cédula" />
-                
-                <label for="fecha-nacimiento">Fecha de Nacimiento</label>
-                <asp:TextBox ID="fechaNacimiento" runat="server" CssClass="search-box" TextMode="Date" />
-            </form>
-        </div>
-        <div class="form-section">
-            <h3>Información de Contacto</h3>
-            <form>
-                <label for="direccion">Dirección</label>
-                <asp:TextBox ID="direccion" runat="server" CssClass="search-box" placeholder="Dirección" />
-                
-                <label for="ciudad">Ciudad</label>
-                <asp:TextBox ID="ciudad" runat="server" CssClass="search-box" placeholder="Ciudad" />
-                
-                <label for="provincia">Provincia</label>
-                <asp:TextBox ID="provincia" runat="server" CssClass="search-box" placeholder="Provincia" />
-                
-                <label for="telefono">Teléfono</label>
-                <asp:TextBox ID="telefono" runat="server" CssClass="search-box" placeholder="Teléfono" />
-                
-                <label for="correo">Correo</label>
-                <asp:TextBox ID="correo" runat="server" CssClass="search-box" placeholder="Correo" />
-                
-                <button type="submit">Enviar</button>
-            </form>
+					
+                </asp:Panel>
+				<asp:Label ID="lblMensaje" runat="server" Text="" />
+            </div>
+
         </div>
     </div>
-</div>
-    </form>
+</form>
+
+
   <!-- Círculo Inferior Izquierdo -->
   <div class="bottom-circle-container">
       <div class="bottom-circle"></div>
