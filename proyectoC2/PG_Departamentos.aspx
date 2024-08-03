@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PG_Departamentos.aspx.cs" Inherits="proyectoC2.PG_Departamentos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="pg_departamentos.aspx.cs" Inherits="proyectoC2.PG_Departamentos" %>
 
 <!DOCTYPE html>
 
@@ -348,6 +348,25 @@ footer {
     opacity: 1;
     visibility: visible;
 }
+/* Contenedor del logo y el título */
+.elementor-jet-logo {
+    text-align: center; /* Centra el contenido dentro del contenedor */
+}
+/* Imagen del logo */
+.jet-logo__img {
+    display: block; /* Asegura que el logo se muestre como un bloque */
+    margin: 0 auto; /* Centra el logo horizontalmente */
+}
+
+/* Título debajo del logo */
+.jet-logo__title {
+    font-size: 14px; /* Tamaño del texto del título */
+	font-weight: 500; /* Negrita moderada */
+    color: #333; /* Color del texto del título */
+    margin-top: 10px; /* Espacio entre el logo y el título */
+    text-transform: uppercase; /* Opcional: convierte el texto a mayúsculas */
+	 margin-left: -100px;
+}
 </style>
 
 
@@ -411,6 +430,7 @@ footer {
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-logo jet-blocks"><div class="jet-logo jet-logo-type-image jet-logo-display-block">
 <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="jet-logo__link"><img src="img/logo2.png" class="jet-logo__img" alt="Imperion" width="128" height="44" srcset="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/logo_retina.png 2x"></a></div>
+<p class="jet-logo__title">Supervisora</p>
 </div>		</div>
 				</div>
 						</div>

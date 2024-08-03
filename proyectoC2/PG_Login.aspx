@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PG_Login.aspx.cs" Inherits="proyectoC2.PG_Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="pg_login.aspx.cs" Inherits="proyectoC2.PG_Login" %>
 
 <!DOCTYPE html>
 

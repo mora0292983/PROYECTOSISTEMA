@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PG_RegistroIncapacidad.aspx.cs" Inherits="proyectoC2.PG_RegistroIncapacidad" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="pg_registroincapacidad.aspx.cs" Inherits="proyectoC2.PG_RegistroIncapacidad" %>
 
 <!DOCTYPE html>
 
@@ -178,8 +178,35 @@ footer {
 .jet-nav-wrap.jet-mobile-menu.jet-mobile-menu--right-side {
     margin-left: -190px; /* Ajusta este valor según tus necesidades */
 }
-</style>
 
+ /* Estilo general para el mensaje */
+    /* Estilo general para el mensaje */
+    .mensaje {
+        padding: 15px;
+        border-radius: 5px; /* Redondeo opcional para bordes */
+        margin-bottom: 15px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        width: 100%; /* Asegura que el mensaje ocupa el ancho completo del contenedor */
+        box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+        border-width: 2px;
+        border-style: solid;
+        background-color: transparent; /* Fondo transparente */
+        color: inherit; /* Hereda el color del borde */
+    }
+
+    /* Estilo para mensajes de éxito */
+    .mensaje-exito {
+        border-color: #28a745; /* Verde */
+        color: #28a745; /* Color del texto verde */
+    }
+
+    /* Estilo para mensajes de error */
+    .mensaje-error {
+        border-color: #dc3545; /* Rojo */
+        color: #dc3545; /* Color del texto rojo */
+    }
 
 
 
@@ -363,7 +390,7 @@ footer {
                 <div class="form-inline">
                     <div class="form-group">
                         <label for="nombreDepartamento">Empleado:</label>
-                         <asp:DropDownList ID="nombreDepartamento" runat="server" CssClass="asp-control"></asp:DropDownList>
+                         <asp:DropDownList ID="nombreEmpleado" runat="server" CssClass="asp-control"></asp:DropDownList>
                     </div>
                     <div class="form-group">
                         <label for="cantidadEmpleados">Tipo de Incapacidad:</label>
@@ -384,7 +411,8 @@ footer {
                     <label for="descripcion">Motivo:</label>
                     <asp:TextBox ID="descripcion" runat="server" CssClass="asp-control" TextMode="MultiLine" Rows="4" />
                 </div>
-                <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Registrar" />
+                <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Enviar" OnClick="btnEnviar_Click" />
+				<asp:Label ID="lblMensaje" runat="server" Text="" />
             </div>
         </div>
    
