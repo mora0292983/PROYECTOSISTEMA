@@ -105,8 +105,8 @@ img.emoji {
 	padding: 1px;
 }
 .custom-button {
-    background-color: #7154FC; /* Color de fondo morado */
-    color: white; /* Color del texto */
+    background-color: rgba(113, 84, 252, 0.2); /* Color de fondo morado con transparencia */
+    color: #7154FC; /* Color del texto (morado para que contraste con el fondo) */
     width: 150px; /* Ancho del botón */
     height: 40px; /* Altura del botón */
     border: none; /* Sin borde */
@@ -114,11 +114,14 @@ img.emoji {
     font-size: 16px; /* Tamaño de fuente */
     font-weight: bold; /* Negrita */
     cursor: pointer; /* Cursor de puntero al pasar sobre el botón */
-    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transición suave para el color de fondo y sombra */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera para el efecto de profundidad */
 }
 
 .custom-button:hover {
-    background-color: #7154FC; /* Color de fondo morado más claro al pasar el ratón */
+    background-color: rgba(113, 84, 252, 0.4); /* Color de fondo morado más oscuro con transparencia al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa al pasar el ratón para mayor efecto de profundidad */
+
 }
 /* Contenedor del logo y el título */
 .elementor-jet-logo {
@@ -138,8 +141,11 @@ img.emoji {
     margin-top: 10px; /* Espacio entre el logo y el título */
     text-transform: uppercase; /* Opcional: convierte el texto a mayúsculas */
 	 margin-left: -100px;
+
 }
+
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>	
 <link rel='stylesheet' id='wpblocklibrarycss'  href='https://ld-wp73.template-help.com/imperion/corporatelanding/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2' type='text/css' media='all' />	
 <link rel='stylesheet' id='contactform7css'  href='https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.1.4' type='text/css' media='all' />
 <link rel='stylesheet' id='fontawesomecss'  href='https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css?ver=4.7.0' type='text/css' media='all' />
@@ -199,7 +205,7 @@ img.emoji {
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-logo jet-blocks"><div class="jet-logo jet-logo-type-image jet-logo-display-block">
 <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="jet-logo__link"><img src="img/logo2.png" class="jet-logo__img" alt="Imperion" width="128" height="44" srcset="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/logo_retina.png 2x"></a></div>
-<p class="jet-logo__title">Supervisora</p>
+
 </div>		</div>
 				</div>
 						</div>
@@ -234,25 +240,26 @@ img.emoji {
 </div>
 <div class="jet-search__popup-trigger-container">
 	<button type="button" class="jet-search__popup-trigger"><span class="jet-search__popup-trigger-icon jet-blocks-icon"><i aria-hidden="true" class="fas fa-search"></i></span></button>
-	 <button type="button" 
-                style="
-                    background-color: #7154FC; /* Color de fondo morado */
-                    color: white; /* Color del texto */
-                    width: 490px; /* Ancho del botón */
-                    height: 70px; /* Altura del botón */
-                    border: 1px solid black; /* Borde negro de 2 píxeles */
-                    border-radius: 5px; /* Bordes redondeados */
-                    font-size: 18px; /* Tamaño de fuente */
-                    font-weight: bold; /* Negrita */
-                    cursor: pointer; /* Cursor de puntero al pasar sobre el botón */
-              
-                    text-align: center; /* Alineación del texto en el centro */
-                    line-height: 30px; /* Altura de línea igual a la altura del botón para centrar el texto verticalmente */
-					padding:5px;
-                " 
-                onclick="iniciarSesion();">
-            iniciar Sesion
-        </button>
+	<button type="button" 
+        style="
+            background-color: rgba(113, 84, 252, 0.2); /* Color de fondo morado con transparencia */
+            color: white; /* Color del texto morado para contraste */
+            width: 500px; /* Ancho del botón */
+            height: 70px; /* Altura del botón */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            font-size: 18px; /* Tamaño de fuente */
+            font-weight: bold; /* Negrita */
+            cursor: pointer; /* Cursor de puntero al pasar sobre el botón */
+            text-align: center; /* Alineación del texto en el centro */
+            line-height: 70px; /* Altura de línea igual a la altura del botón para centrar el texto verticalmente */
+            padding: 0; /* Sin relleno adicional */
+            transition: background-color 0.3s, box-shadow 0.3s; /* Transición suave para el color de fondo y sombra */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera para el efecto de profundidad */
+        " 
+        onclick="iniciarSesion();">
+    Iniciar Sesión
+</button>
 </div></div></div>		</div>
 				</div>
 						</div>
@@ -369,10 +376,13 @@ img.emoji {
 				<div class="elementor-element elementor-element-66cd5083 elementor-widget elementor-widget-heading" data-id="66cd5083" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
 			<h1 class="elementor-heading-title elementor-size-default">A GestionPro</h1>
+					
 		<div class="elementor-divider">
 <span class="elementor-divider-separator"></span>
 				</div>
+				
 				</div>
+						<span class="elementor-divider-separator"></span>
 				<div class="elementor-element elementor-element-5ce663f8 elementor-widget elementor-widget-heading" data-id="5ce663f8" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
 			<h5 class="elementor-heading-title elementor-size-default">
@@ -381,7 +391,7 @@ img.emoji {
 				<div class="elementor-element elementor-element-617f47da elementor-widget elementor-widget-divider" data-id="617f47da" data-element_type="widget" data-widget_type="divider.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-divider">
-			<span class="elementor-divider-separator"></span>
+			
 		</div>
 				</div>
 				</div>
@@ -454,7 +464,7 @@ img.emoji {
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-c4bbb20 elementor-widget elementor-widget-heading" data-id="c4bbb20" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h5 class="elementor-heading-title elementor-size-default">welcome to our website!</h5>		</div>
+				</div>
 				</div>
 				<div class="elementor-element elementor-element-12a7950a elementor-widget elementor-widget-spacer" data-id="12a7950a" data-element_type="widget" data-widget_type="spacer.default">
 				<div class="elementor-widget-container">
@@ -465,16 +475,16 @@ img.emoji {
 				</div>
 				<div class="elementor-element elementor-element-522c93a3 elementor-widget elementor-widget-heading" data-id="522c93a3" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h2 class="elementor-heading-title elementor-size-default">Your Success</h2>		</div>
+			<h2 class="elementor-heading-title elementor-size-default">Descubre la Forma</h2>		</div>
 				</div>
 				<div class="elementor-element elementor-element-2fa53f1e elementor-widget elementor-widget-jet-headline" data-id="2fa53f1e" data-element_type="widget" data-widget_type="jet-headline.default">
 				<div class="elementor-widget-container">
-			<h2 class="jet-headline jet-headline--direction-horizontal"><span class="jet-headline__part jet-headline__first"><span class="jet-headline__label">in Business</span></span><span class="jet-headline__space">&nbsp;</span><span class="jet-headline__part jet-headline__second"><span class="jet-headline__label">is Our 
+			<h2 class="jet-headline jet-headline--direction-horizontal"><span class="jet-headline__part jet-headline__first"><span class="jet-headline__label">Más Fácil </span></span><span class="jet-headline__space">&nbsp;</span><span class="jet-headline__part jet-headline__second"><span class="jet-headline__label">de
 </span></span></h2>		</div>
 				</div>
 				<div class="elementor-element elementor-element-59f9e1c2 elementor-widget elementor-widget-heading" data-id="59f9e1c2" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h2 class="elementor-heading-title elementor-size-default">Duty</h2>		</div>
+			<h2 class="elementor-heading-title elementor-size-default">Gestionar Tu Trabajo</h2>		</div>
 				</div>
 				<div class="elementor-element elementor-element-41de20d2 elementor-widget elementor-widget-divider" data-id="41de20d2" data-element_type="widget" data-widget_type="divider.default">
 				<div class="elementor-widget-container">
@@ -498,24 +508,23 @@ img.emoji {
 				</div>
 				<div class="elementor-element elementor-element-2522016e elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id="2522016e" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-text-editor elementor-clearfix">With a community of over 400 million users (and a  majority age group being 18 to 29), wouldn’t you want to make sure you’re monitoring what people are posting on social networks? Especially if the demographic of your audience falls in that age range.
+					<div class="elementor-text-editor elementor-clearfix">Como parte de nuestro equipo, queremos simplificar tu experiencia laboral con herramientas que faciliten la gestión de tus actividades diarias. Nuestra plataforma te permite realizar un seguimiento de tu tiempo de manera efectiva, acceder a información sobre tus horarios y actividades, y tener una visión clara de tus beneficios y solicitudes.
 
 </div>
 				</div>
 				</div>
 				<div class="jet-satellite-widget elementor-element elementor-element-2049c501 elementor-widget elementor-widget-text-editor" data-jet-tricks-settings="{&quot;satellite&quot;:&quot;true&quot;,&quot;satelliteType&quot;:&quot;text&quot;,&quot;satellitePosition&quot;:&quot;top-left&quot;}" data-id="2049c501" data-element_type="widget" data-widget_type="text-editor.default">
 		<div class="jet-tricks-satellite jet-tricks-satellite--top-left"><div class="jet-tricks-satellite__inner"><div class="jet-tricks-satellite__text"><span>"</span></div></div></div>		<div class="elementor-widget-container">
-					<div class="elementor-text-editor elementor-clearfix">“We know how to achieve success and complete the bravest goals with minimum expenses!”</div>
-				</div>
+					
 				</div>
 				<div class="elementor-element elementor-element-56f470f5 elementor-widget elementor-widget-text-editor" data-id="56f470f5" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-text-editor elementor-clearfix">– KARL DOE, Company CEO</div>
+				
 				</div>
 				</div>
 				<div class="elementor-element elementor-element-6db5cf5b elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id="6db5cf5b" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-text-editor elementor-clearfix">We provide various business services to help our clients to handle different issues and boost their business. We work with analytics, finance, marketing, production, SEO, promotion, etc.</div>
+					<div class="elementor-text-editor elementor-clearfix">Con una interfaz intuitiva, tendrás todo lo que necesitas al alcance de tu mano, desde la consulta de tus registros hasta la actualización de tu perfil. Explora y aprovecha las funcionalidades que te ofrecemos para optimizar tu tiempo y mantenerte al tanto de todas tus gestiones laborales.</div>
 				</div>
 				</div>
 						</div>
@@ -543,7 +552,7 @@ img.emoji {
 				</div>
 				<div class="elementor-element elementor-element-2ed3e997 elementor-widget elementor-widget-heading" data-id="2ed3e997" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h2 class="elementor-heading-title elementor-size-default">Your Success</h2>		</div>
+		
 				</div>
 				<div class="elementor-element elementor-element-78f60270 elementor-widget elementor-widget-jet-headline" data-id="78f60270" data-element_type="widget" data-widget_type="jet-headline.default">
 				<div class="elementor-widget-container">
@@ -552,7 +561,7 @@ img.emoji {
 				</div>
 				<div class="elementor-element elementor-element-250eb538 elementor-widget elementor-widget-heading" data-id="250eb538" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h2 class="elementor-heading-title elementor-size-default">Duty</h2>		</div>
+		
 				</div>
 				<div class="elementor-element elementor-element-5fe643be elementor-widget elementor-widget-divider" data-id="5fe643be" data-element_type="widget" data-widget_type="divider.default">
 				<div class="elementor-widget-container">
@@ -602,37 +611,7 @@ img.emoji {
 						</div>
 			</div>
 		</section>
-				<section class="elementor-element elementor-element-2c43c12e elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="2c43c12e" data-element_type="section" id="services" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-						<div class="elementor-container elementor-column-gap-default">
-				<div class="elementor-row">
-				<div class="elementor-element elementor-element-7b34d09a elementor-column elementor-col-100 elementor-inner-column" data-id="7b34d09a" data-element_type="column">
-			<div class="elementor-column-wrap  elementor-element-populated">
-					<div class="elementor-widget-wrap">
-				<div class="elementor-element elementor-element-69f452d4 elementor-widget elementor-widget-heading" data-id="69f452d4" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-			<h5 class="elementor-heading-title elementor-size-default">Quick, Smart & Great Solutions
-</h5>		</div>
-				</div>
-				<div class="elementor-element elementor-element-268e100a elementor-widget elementor-widget-divider" data-id="268e100a" data-element_type="widget" data-widget_type="divider.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-divider">
-			<span class="elementor-divider-separator"></span>
-		</div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-28fa25b6 elementor-widget elementor-widget-text-editor" data-id="28fa25b6" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-text-editor elementor-clearfix">We stand for business transparency, fair play and equal rights for every stakeholder. We follow legislation and help our clients take care of taxes and complex financial statements.
-
-</div>
-				</div>
-				</div>
-						</div>
-			</div>
-		</div>
-						</div>
-			</div>
-		</section>
+				
 				<section class="elementor-element elementor-element-78c25885 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="78c25885" data-element_type="section">
 						<div class="elementor-container elementor-column-gap-default">
 				<div class="elementor-row">
@@ -643,10 +622,10 @@ img.emoji {
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-animated-box jet-elements"><div class="jet-animated-box jet-box-effect-3" data-settings='{"switchEventType":"hover"}'>
 	<div class="jet-animated-box__front"><div class="jet-animated-box__overlay"></div>
-		<div class="jet-animated-box__inner"><div class="jet-animated-box__icon jet-animated-box__icon--front"><div class="jet-animated-box-icon-inner"><span class="jet-elements-icon"><i aria-hidden="true" class="far fa-hand-peace"></i></span></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--front">Development</h3><p class="jet-animated-box__description jet-animated-box__description--front">We put emphasis on bringing your business to another level, on its development and positive changes.</p></div></div>
+		<div class="jet-animated-box__inner"><div class=""><div class="jet-animated-box-icon-inner"><i  "></i></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--front">Agilidad y Flexibilidad</h3><p class="jet-animated-box__description jet-animated-box__description--front">Adoptamos un enfoque ágil y flexible para adaptarnos rápidamente a las necesidades cambiantes del mercado y de nuestros clientes.</p></div></div>
 	</div>
 	<div class="jet-animated-box__back"><div class="jet-animated-box__overlay"></div>
-		<div class="jet-animated-box__inner"><div class="jet-animated-box__icon jet-animated-box__icon--back"><div class="jet-animated-box-icon-inner"><span class="jet-elements-icon"><i class="fa fa-hand-peace-o" aria-hidden="true"></i></span></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--back">Development</h3><p class="jet-animated-box__description jet-animated-box__description--back">We put emphasis on bringing your business to another level, on its development and positive changes.</p></div></div>
+		<div class="jet-animated-box__inner"><div class=""><div class="jet-animated-box-icon-inner"><i "></i></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--back">Agilidad y Flexibilidad</h3><p class="jet-animated-box__description jet-animated-box__description--back">Adoptamos un enfoque ágil y flexible para adaptarnos rápidamente a las necesidades cambiantes del mercado y de nuestros clientes.</p></div></div>
 	</div>
 </div>
 </div>		</div>
@@ -661,10 +640,10 @@ img.emoji {
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-animated-box jet-elements"><div class="jet-animated-box jet-box-effect-3" data-settings='{"switchEventType":"hover"}'>
 	<div class="jet-animated-box__front"><div class="jet-animated-box__overlay"></div>
-		<div class="jet-animated-box__inner"><div class="jet-animated-box__icon jet-animated-box__icon--front"><div class="jet-animated-box-icon-inner"><span class="jet-elements-icon"><i aria-hidden="true" class="iconsmind iconsmind-support"></i></span></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--front">Integration</h3><p class="jet-animated-box__description jet-animated-box__description--front">During our work we integrate principles of fair play. We turn ideas into actions, delivering qualified help to our clients.</p></div></div>
+		<div class="jet-animated-box__inner"><div class=""><div class=""><i</i></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--front">Integridad y Transparencia</h3><p class="jet-animated-box__description jet-animated-box__description--front">La integridad y la transparencia son los pilares de nuestra ética empresarial. Mantenemos una comunicación abierta y honesta con nuestros clientes</p></div></div>
 	</div>
 	<div class="jet-animated-box__back"><div class="jet-animated-box__overlay"></div>
-		<div class="jet-animated-box__inner"><div class="jet-animated-box__icon jet-animated-box__icon--back"><div class="jet-animated-box-icon-inner"><span class="jet-elements-icon"><i class="iconsmind iconsmind-support" aria-hidden="true"></i></span></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--back">Integration</h3><p class="jet-animated-box__description jet-animated-box__description--back">During our work we integrate principles of fair play. We turn ideas into actions, delivering qualified help to our clients.</p></div></div>
+		<div class="jet-animated-box__inner"><div class=""><div class="jet-animated-box-icon-inner"><span class=""><i ></i></span></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--back">Integridad y Transparencia</h3><p class="jet-animated-box__description jet-animated-box__description--back">La integridad y la transparencia son los pilares de nuestra ética empresarial. Mantenemos una comunicación abierta y honesta con nuestros clientes</p></div></div>
 	</div>
 </div>
 </div>		</div>
@@ -679,10 +658,10 @@ img.emoji {
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-animated-box jet-elements"><div class="jet-animated-box jet-box-effect-3" data-settings='{"switchEventType":"hover"}'>
 	<div class="jet-animated-box__front"><div class="jet-animated-box__overlay"></div>
-		<div class="jet-animated-box__inner"><div class="jet-animated-box__icon jet-animated-box__icon--front"><div class="jet-animated-box-icon-inner"><span class="jet-elements-icon"><i aria-hidden="true" class="far fa-star"></i></span></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--front">Responsibility</h3><p class="jet-animated-box__description jet-animated-box__description--front">Our responsibility is to provide you with the right solutions, clear and accurate calculations.</p></div></div>
+		<div class="jet-animated-box__inner"><div class=""><div class=""><i "></i></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--front">Responsabilidad y Cumplimiento</h3><p class="jet-animated-box__description jet-animated-box__description--front">Estamos profundamente comprometidos con la responsabilidad y el cumplimiento de todas las normativas y regulaciones aplicables.</p></div></div>
 	</div>
 	<div class="jet-animated-box__back"><div class="jet-animated-box__overlay"></div>
-		<div class="jet-animated-box__inner"><div class="jet-animated-box__icon jet-animated-box__icon--back"><div class="jet-animated-box-icon-inner"><span class="jet-elements-icon"><i aria-hidden="true" class="far fa-star"></i></span></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--back">Responsibility</h3><p class="jet-animated-box__description jet-animated-box__description--back">Our responsibility is to provide you with the right solutions, clear and accurate calculations.</p></div></div>
+		<div class="jet-animated-box__inner"><div class=""><div class=""><i  "></i></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--back">Responsabilidad y Cumplimiento</h3><p class="jet-animated-box__description jet-animated-box__description--back">Estamos profundamente comprometidos con la responsabilidad y el cumplimiento de todas las normativas y regulaciones aplicables.</p></div></div>
 	</div>
 </div>
 </div>		</div>
@@ -703,10 +682,10 @@ img.emoji {
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-animated-box jet-elements"><div class="jet-animated-box jet-box-effect-3" data-settings='{"switchEventType":"hover"}'>
 	<div class="jet-animated-box__front"><div class="jet-animated-box__overlay"></div>
-		<div class="jet-animated-box__inner"><div class="jet-animated-box__icon jet-animated-box__icon--front"><div class="jet-animated-box-icon-inner"><span class="jet-elements-icon"><i class="iconsmind iconsmind-paper" aria-hidden="true"></i></span></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--front">Business Plan</h3><p class="jet-animated-box__description jet-animated-box__description--front">We work closely with you to understand your goals and then develop your entire business plan.</p></div></div>
+		<div class="jet-animated-box__inner"><div class=""><div class="jet-animated-box-icon-inner"><i></i></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--front">Eficiencia en la Gestión Empresarial</h3><p class="jet-animated-box__description jet-animated-box__description--front">Nos enfocamos en la eficiencia en la gestión de actividades empresariales. Implementamos procesos optimizados y herramientas avanzadas para garantizar que cada aspecto de nuestras operaciones sea ágil y efectivo.</p></div></div>
 	</div>
 	<div class="jet-animated-box__back"><div class="jet-animated-box__overlay"></div>
-		<div class="jet-animated-box__inner"><div class="jet-animated-box__icon jet-animated-box__icon--back"><div class="jet-animated-box-icon-inner"><span class="jet-elements-icon"><i class="iconsmind iconsmind-paper" aria-hidden="true"></i></span></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--back">Business Plan</h3><p class="jet-animated-box__description jet-animated-box__description--back">We work closely with you to understand your goals and then develop your entire business plan.</p></div></div>
+		<div class="jet-animated-box__inner"><div class=""><div class="jet-animated-box-icon-inner"><i></i></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--back">Eficiencia en la Gestión Empresarial</h3><p class="jet-animated-box__description jet-animated-box__description--back">Nos enfocamos en la eficiencia en la gestión de actividades empresariales. Implementamos procesos optimizados y herramientas avanzadas para garantizar que cada aspecto de nuestras operaciones sea ágil y efectivo.</p></div></div>
 	</div>
 </div>
 </div>		</div>
@@ -721,10 +700,10 @@ img.emoji {
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-animated-box jet-elements"><div class="jet-animated-box jet-box-effect-3" data-settings='{"switchEventType":"hover"}'>
 	<div class="jet-animated-box__front"><div class="jet-animated-box__overlay"></div>
-		<div class="jet-animated-box__inner"><div class="jet-animated-box__icon jet-animated-box__icon--front"><div class="jet-animated-box-icon-inner"><span class="jet-elements-icon"><i class="fa fa-line-chart" aria-hidden="true"></i></span></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--front">Market Research</h3><p class="jet-animated-box__description jet-animated-box__description--front">Develop a deeper understanding of market trends, threats, opportunities, competitors and customers.</p></div></div>
+		<div class="jet-animated-box__inner"><div class=""><div class="jet-animated-box-icon-inner"><i></i></></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--front">Innovación Continua</h3><p class="jet-animated-box__description jet-animated-box__description--front">En GestionPro, la innovación es el motor de nuestro éxito. Estamos dedicados a incorporar las últimas tecnologías y tendencias para ofrecer soluciones avanzadas y efectivas .</p></div></div>
 	</div>
 	<div class="jet-animated-box__back"><div class="jet-animated-box__overlay"></div>
-		<div class="jet-animated-box__inner"><div class="jet-animated-box__icon jet-animated-box__icon--back"><div class="jet-animated-box-icon-inner"><span class="jet-elements-icon"><i class="fa fa-line-chart" aria-hidden="true"></i></span></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--back">Market Research</h3><p class="jet-animated-box__description jet-animated-box__description--back">Develop a deeper understanding of market trends, threats, opportunities, competitors and customers.</p></div></div>
+		<div class="jet-animated-box__inner"><div class=""><div class="jet-animated-box-icon-inner"><i></i></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--back">Innovación Continua</h3><p class="jet-animated-box__description jet-animated-box__description--back">En GestionPro, la innovación es el motor de nuestro éxito. Estamos dedicados a incorporar las últimas tecnologías y tendencias para ofrecer soluciones avanzadas y efectivas .</p></div></div>
 	</div>
 </div>
 </div>		</div>
@@ -739,10 +718,10 @@ img.emoji {
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-animated-box jet-elements"><div class="jet-animated-box jet-box-effect-3" data-settings='{"switchEventType":"hover"}'>
 	<div class="jet-animated-box__front"><div class="jet-animated-box__overlay"></div>
-		<div class="jet-animated-box__inner"><div class="jet-animated-box__icon jet-animated-box__icon--front"><div class="jet-animated-box-icon-inner"><span class="jet-elements-icon"><i class="iconsmind iconsmind-satelite-2" aria-hidden="true"></i></span></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--front">Stimulate Innovation</h3><p class="jet-animated-box__description jet-animated-box__description--front">Find a better way to break through. Innovate boldly, and intelligently, to create and deliver new value.</p></div></div>
+		<div class="jet-animated-box__inner"><div class="jet-animated-box__icon jet-animated-box__icon--front"><div class="jet-animated-box-icon-inner"><i></i></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--front">Atención Personalizada</h3><p class="jet-animated-box__description jet-animated-box__description--front"> Ofrecemos un servicio personalizado y adaptado, colaborando estrechamente con nuestros clientes para desarrollar soluciones que se alineen perfectamente con sus objetivos y desafíos específicos.</p></div></div>
 	</div>
 	<div class="jet-animated-box__back"><div class="jet-animated-box__overlay"></div>
-		<div class="jet-animated-box__inner"><div class="jet-animated-box__icon jet-animated-box__icon--back"><div class="jet-animated-box-icon-inner"><span class="jet-elements-icon"><i class="iconsmind iconsmind-satelite-2" aria-hidden="true"></i></span></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--back">Stimulate Innovation</h3><p class="jet-animated-box__description jet-animated-box__description--back">Find a better way to break through. Innovate boldly, and intelligently, to create and deliver new value.</p></div></div>
+		<div class="jet-animated-box__inner"><div class="jet-animated-box__icon jet-animated-box__icon--back"><div class="jet-animated-box-icon-inner"><i></i></div></div><div class="jet-animated-box__content"><h3 class="jet-animated-box__title jet-animated-box__title--back">Atención Personalizada</h3><p class="jet-animated-box__description jet-animated-box__description--back"> Ofrecemos un servicio personalizado y adaptado, colaborando estrechamente con nuestros clientes para desarrollar soluciones que se alineen perfectamente con sus objetivos y desafíos específicos.</p></div></div>
 	</div>
 </div>
 </div>		</div>
@@ -761,13 +740,13 @@ img.emoji {
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-4f839f77 elementor-widget elementor-widget-heading" data-id="4f839f77" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h5 class="elementor-heading-title elementor-size-default">RECENT CASE STUDIES
+			<h5 class="elementor-heading-title elementor-size-default">
 
 </h5>		</div>
 				</div>
 				<div class="elementor-element elementor-element-665bd14d elementor-widget elementor-widget-heading" data-id="665bd14d" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h2 class="elementor-heading-title elementor-size-default">Our Latest Projects</h2>		</div>
+			<h2 class="elementor-heading-title elementor-size-default">Descubre mas sobre nuestros servicios</h2>		</div>
 				</div>
 				<div class="elementor-element elementor-element-394de8ce elementor-widget elementor-widget-divider" data-id="394de8ce" data-element_type="widget" data-widget_type="divider.default">
 				<div class="elementor-widget-container">
@@ -801,88 +780,88 @@ img.emoji {
 	<div class="jet-portfolio__inner">
 		<a class="jet-portfolio__link " href="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/project-1.jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="39f7d312">
 			<div class="jet-portfolio__image">
-				<img class="jet-portfolio__image-instance" src="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/project-1.jpg" width="1600" height="1622"  alt="project-1.jpg">				<div class="jet-portfolio__image-loader"><span></span></div>
+				<img class="jet-portfolio__image-instance" src="img/marcas2.jpg" width="1600" height="1622"  alt="project-1.jpg">				<div class="jet-portfolio__image-loader"><span></span></div>
 			</div>
 		</a>
 		<div class="jet-portfolio__content">
-			<div class="jet-portfolio__content-inner"><h4 class="jet-portfolio__title">Getting Started</h4><h6 class="jet-portfolio__category"></h6><p class="jet-portfolio__desc">We work closely with you to understand your goals and then develop your entire business plan.</p></div>
+			<div class="jet-portfolio__content-inner"><h4 class="jet-portfolio__title">Control de Marcas y Horarios</h4><h6 class="jet-portfolio__category"></h6><p class="jet-portfolio__desc">Gestiona el registro de entrada y salida de tus empleados con precisión, controlando horas trabajadas y gestionando marcas de manera efectiva.</p></div>
 		</div>
 	</div>
 </article><article class="jet-portfolio__item visible-status" data-slug="{&quot;0&quot;:&quot;all&quot;}">
 	<div class="jet-portfolio__inner">
 		<a class="jet-portfolio__link " href="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/project-2.jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="39f7d312">
 			<div class="jet-portfolio__image">
-				<img class="jet-portfolio__image-instance" src="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/project-2.jpg" width="1600" height="1622"  alt="project-2.jpg">				<div class="jet-portfolio__image-loader"><span></span></div>
+				<img class="jet-portfolio__image-instance" src="img/horas3.jpg" width="1600" height="1622"  alt="project-2.jpg">				<div class="jet-portfolio__image-loader"><span></span></div>
 			</div>
 		</a>
 		<div class="jet-portfolio__content">
-			<div class="jet-portfolio__content-inner"><h4 class="jet-portfolio__title">Global Private Equity Report 2017</h4><h6 class="jet-portfolio__category"></h6><p class="jet-portfolio__desc">Our management consulting services focus on our clients’ most critical issues. </p></div>
+			<div class="jet-portfolio__content-inner"><h4 class="jet-portfolio__title">Gestión de Horas Extras </h4><h6 class="jet-portfolio__category"></h6><p class="jet-portfolio__desc">Administra las horas extras de tus empleados con facilidad, desde el registro hasta la aprobación, garantizando cumplimiento con las normativas y políticas de la empresa.</p></div>
 		</div>
 	</div>
 </article><article class="jet-portfolio__item visible-status" data-slug="{&quot;0&quot;:&quot;all&quot;}">
 	<div class="jet-portfolio__inner">
 		<a class="jet-portfolio__link " href="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/project-3.jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="39f7d312">
 			<div class="jet-portfolio__image">
-				<img class="jet-portfolio__image-instance" src="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/project-3.jpg" width="1600" height="1622"  alt="project-3.jpg">				<div class="jet-portfolio__image-loader"><span></span></div>
+				<img class="jet-portfolio__image-instance" src="img/vaca2.jpg" width="1600" height="1622"  alt="project-3.jpg">				<div class="jet-portfolio__image-loader"><span></span></div>
 			</div>
 		</a>
 		<div class="jet-portfolio__content">
-			<div class="jet-portfolio__content-inner"><h4 class="jet-portfolio__title">Reinventing the Role of Medical Affairs</h4><h6 class="jet-portfolio__category"></h6><p class="jet-portfolio__desc">We know how to achieve success and complete the bravest goals with minimum expenses!</p></div>
+			<div class="jet-portfolio__content-inner"><h4 class="jet-portfolio__title">Vacaciones</h4><h6 class="jet-portfolio__category"></h6><p class="jet-portfolio__desc">Administra las vacaciones de tus empleados con facilidad, desde el registro hasta la aprobación, garantizando cumplimiento con las normativas y políticas de la empresa.</p></div>
 		</div>
 	</div>
 </article><article class="jet-portfolio__item visible-status" data-slug="{&quot;0&quot;:&quot;all&quot;}">
 	<div class="jet-portfolio__inner">
 		<a class="jet-portfolio__link " href="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/project-4.jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="39f7d312">
 			<div class="jet-portfolio__image">
-				<img class="jet-portfolio__image-instance" src="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/project-4.jpg" width="1600" height="1622"  alt="project-4.jpg">				<div class="jet-portfolio__image-loader"><span></span></div>
+				<img class="jet-portfolio__image-instance" src="img/permiso.jpg" width="1600" height="1622"  alt="project-4.jpg">				<div class="jet-portfolio__image-loader"><span></span></div>
 			</div>
 		</a>
 		<div class="jet-portfolio__content">
-			<div class="jet-portfolio__content-inner"><h4 class="jet-portfolio__title">Winning the Race for Digital Commerce</h4><h6 class="jet-portfolio__category"></h6><p class="jet-portfolio__desc">We put emphasis on bringing your business to another level, on its development and positive changes</p></div>
+			<div class="jet-portfolio__content-inner"><h4 class="jet-portfolio__title">Reposición de Trabajo y Permisos</h4><h6 class="jet-portfolio__category"></h6><p class="jet-portfolio__desc">Organiza la reposición de horas y permisos de manera eficiente, asegurando la continuidad operativa y un seguimiento riguroso de cada solicitud.</p></div>
 		</div>
 	</div>
 </article><article class="jet-portfolio__item visible-status" data-slug="{&quot;0&quot;:&quot;all&quot;}">
 	<div class="jet-portfolio__inner">
 		<a class="jet-portfolio__link " href="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/project-5.jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="39f7d312">
 			<div class="jet-portfolio__image">
-				<img class="jet-portfolio__image-instance" src="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/project-5.jpg" width="1600" height="1622"  alt="project-5.jpg">				<div class="jet-portfolio__image-loader"><span></span></div>
+				<img class="jet-portfolio__image-instance" src="img/control.jpg" width="1600" height="1622"  alt="project-5.jpg">				<div class="jet-portfolio__image-loader"><span></span></div>
 			</div>
 		</a>
 		<div class="jet-portfolio__content">
-			<div class="jet-portfolio__content-inner"><h4 class="jet-portfolio__title">Leading consumer products companies in 2017</h4><h6 class="jet-portfolio__category"></h6><p class="jet-portfolio__desc">During our work we integrate principles of fair play. We turn ideas into actions, delivering qualified help to our clients.</p></div>
+			<div class="jet-portfolio__content-inner"><h4 class="jet-portfolio__title">Control de Actividades y Puestos</h4><h6 class="jet-portfolio__category"></h6><p class="jet-portfolio__desc">Supervisa y registra las actividades diarias, gestiona puestos de trabajo y turnos, y asegura una visión clara de la productividad y desempeño de tu equipo.</p></div>
 		</div>
 	</div>
 </article><article class="jet-portfolio__item visible-status" data-slug="{&quot;0&quot;:&quot;all&quot;}">
 	<div class="jet-portfolio__inner">
 		<a class="jet-portfolio__link " href="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/project-6.jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="39f7d312">
 			<div class="jet-portfolio__image">
-				<img class="jet-portfolio__image-instance" src="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/project-6.jpg" width="1600" height="1622"  alt="project-6.jpg">				<div class="jet-portfolio__image-loader"><span></span></div>
+				<img class="jet-portfolio__image-instance" src="img/inconsistencia.jpg" width="1600" height="1622"  alt="project-6.jpg">				<div class="jet-portfolio__image-loader"><span></span></div>
 			</div>
 		</a>
 		<div class="jet-portfolio__content">
-			<div class="jet-portfolio__content-inner"><h4 class="jet-portfolio__title">Turning Your Site Into a Sales Machine</h4><h6 class="jet-portfolio__category"></h6><p class="jet-portfolio__desc">Our responsibility is to provide you with the right solutions, clear and accurate calculations.</p></div>
+			<div class="jet-portfolio__content-inner"><h4 class="jet-portfolio__title">Gestión de Inconsistencias</h4><h6 class="jet-portfolio__category"></h6><p class="jet-portfolio__desc">Maneja inconsistencias con un sistema robusto para registro, justificación y control, minimizando el impacto en la operación de tu empresa.</p></div>
 		</div>
 	</div>
 </article><article class="jet-portfolio__item visible-status" data-slug="{&quot;0&quot;:&quot;all&quot;}">
 	<div class="jet-portfolio__inner">
 		<a class="jet-portfolio__link " href="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/project-7.jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="39f7d312">
 			<div class="jet-portfolio__image">
-				<img class="jet-portfolio__image-instance" src="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/project-7.jpg" width="1600" height="1622"  alt="project-7.jpg">				<div class="jet-portfolio__image-loader"><span></span></div>
+				<img class="jet-portfolio__image-instance" src="img/incapacidad2.jpg" width="1600" height="1622"  alt="project-7.jpg">				<div class="jet-portfolio__image-loader"><span></span></div>
 			</div>
 		</a>
 		<div class="jet-portfolio__content">
-			<div class="jet-portfolio__content-inner"><h4 class="jet-portfolio__title">The SDN Effect on Network Security</h4><h6 class="jet-portfolio__category"></h6><p class="jet-portfolio__desc">For enterprise organizations around the world, Software Defined Networking (SDN) is transforming the way we build</p></div>
+			<div class="jet-portfolio__content-inner"><h4 class="jet-portfolio__title">Incapacidades</h4><h6 class="jet-portfolio__category"></h6><p class="jet-portfolio__desc">Gestiona las incapacidades con un sistema robusto para su registro, justificación y resolución. Minimiza el impacto en la operación con un control efectivo.</p></div>
 		</div>
 	</div>
 </article><article class="jet-portfolio__item visible-status" data-slug="{&quot;0&quot;:&quot;all&quot;}">
 	<div class="jet-portfolio__inner">
 		<a class="jet-portfolio__link " href="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/project-8.jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="39f7d312">
 			<div class="jet-portfolio__image">
-				<img class="jet-portfolio__image-instance" src="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/project-8.jpg" width="1600" height="1622"  alt="project-8.jpg">				<div class="jet-portfolio__image-loader"><span></span></div>
+				<img class="jet-portfolio__image-instance" src="img/rebajos.jpg" width="1600" height="1622"  alt="project-8.jpg">				<div class="jet-portfolio__image-loader"><span></span></div>
 			</div>
 		</a>
 		<div class="jet-portfolio__content">
-			<div class="jet-portfolio__content-inner"><h4 class="jet-portfolio__title">Prioritizing Tax Benefits</h4><h6 class="jet-portfolio__category"></h6><p class="jet-portfolio__desc">Two kinds of clients scare me most. The first ask me as they pick up their tax return what they can do to lower their tax bill</p></div>
+			<div class="jet-portfolio__content-inner"><h4 class="jet-portfolio__title">Rebajos</h4><h6 class="jet-portfolio__category"></h6><p class="jet-portfolio__desc">Gestiona rebajos con precisión, asegurando una administración justa y transparente para todos los empleados.</p></div>
 		</div>
 	</div>
 </article></div></div>
@@ -894,599 +873,11 @@ img.emoji {
 						</div>
 			</div>
 		</section>
-				<section class="elementor-element elementor-element-f81f5c2 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="f81f5c2" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-						<div class="elementor-container elementor-column-gap-default">
-				<div class="elementor-row">
-				<div class="elementor-element elementor-element-6fd5c93a elementor-column elementor-col-25 elementor-top-column" data-id="6fd5c93a" data-element_type="column">
-			<div class="elementor-column-wrap  elementor-element-populated">
-					<div class="elementor-widget-wrap">
-				<div class="elementor-element elementor-element-24ecb65 elementor-view-default elementor-widget elementor-widget-icon" data-id="24ecb65" data-element_type="widget" data-widget_type="icon.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-icon-wrapper">
-			<div class="elementor-icon elementor-animation-shrink">
-			<i aria-hidden="true" class="iconsmind iconsmind-add-user"></i>			</div>
-		</div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-9bbcf69 elementor-widget elementor-widget-counter" data-id="9bbcf69" data-element_type="widget" data-widget_type="counter.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-counter">
-			<div class="elementor-counter-number-wrapper">
-				<span class="elementor-counter-number-prefix"></span>
-				<span class="elementor-counter-number" data-duration="2000" data-to-value="7158" data-from-value="0" data-delimiter=".">0</span>
-				<span class="elementor-counter-number-suffix"></span>
-			</div>
-							<div class="elementor-counter-title">HAPPY CLIENTS</div>
-					</div>
-				</div>
-				</div>
-						</div>
-			</div>
-		</div>
-				<div class="elementor-element elementor-element-c88e4e8 elementor-column elementor-col-25 elementor-top-column" data-id="c88e4e8" data-element_type="column">
-			<div class="elementor-column-wrap  elementor-element-populated">
-					<div class="elementor-widget-wrap">
-				<div class="elementor-element elementor-element-78b6486 elementor-view-default elementor-widget elementor-widget-icon" data-id="78b6486" data-element_type="widget" data-widget_type="icon.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-icon-wrapper">
-			<div class="elementor-icon elementor-animation-shrink">
-			<i aria-hidden="true" class="iconsmind iconsmind-suitcase"></i>			</div>
-		</div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-702b2b8 elementor-widget elementor-widget-counter" data-id="702b2b8" data-element_type="widget" data-widget_type="counter.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-counter">
-			<div class="elementor-counter-number-wrapper">
-				<span class="elementor-counter-number-prefix"></span>
-				<span class="elementor-counter-number" data-duration="2000" data-to-value="2324" data-from-value="0" data-delimiter=".">0</span>
-				<span class="elementor-counter-number-suffix"></span>
-			</div>
-							<div class="elementor-counter-title">PROJECTS FINISHED</div>
-					</div>
-				</div>
-				</div>
-						</div>
-			</div>
-		</div>
-				<div class="elementor-element elementor-element-3270677 elementor-column elementor-col-25 elementor-top-column" data-id="3270677" data-element_type="column">
-			<div class="elementor-column-wrap  elementor-element-populated">
-					<div class="elementor-widget-wrap">
-				<div class="elementor-element elementor-element-78bcce7 elementor-view-default elementor-widget elementor-widget-icon" data-id="78bcce7" data-element_type="widget" data-widget_type="icon.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-icon-wrapper">
-			<div class="elementor-icon elementor-animation-shrink">
-			<i aria-hidden="true" class="iconsmind iconsmind-coffee"></i>			</div>
-		</div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-0ba16c8 elementor-widget elementor-widget-counter" data-id="0ba16c8" data-element_type="widget" data-widget_type="counter.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-counter">
-			<div class="elementor-counter-number-wrapper">
-				<span class="elementor-counter-number-prefix"></span>
-				<span class="elementor-counter-number" data-duration="2000" data-to-value="5280" data-from-value="0" data-delimiter=".">0</span>
-				<span class="elementor-counter-number-suffix"></span>
-			</div>
-							<div class="elementor-counter-title">COUPS OF COFFEE</div>
-					</div>
-				</div>
-				</div>
-						</div>
-			</div>
-		</div>
-				<div class="elementor-element elementor-element-ec32b1d elementor-column elementor-col-25 elementor-top-column" data-id="ec32b1d" data-element_type="column">
-			<div class="elementor-column-wrap  elementor-element-populated">
-					<div class="elementor-widget-wrap">
-				<div class="elementor-element elementor-element-043458f elementor-view-default elementor-widget elementor-widget-icon" data-id="043458f" data-element_type="widget" data-widget_type="icon.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-icon-wrapper">
-			<div class="elementor-icon elementor-animation-shrink">
-			<i aria-hidden="true" class="iconsmind iconsmind-clock-forward"></i>			</div>
-		</div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-fb4c8c2 elementor-widget elementor-widget-counter" data-id="fb4c8c2" data-element_type="widget" data-widget_type="counter.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-counter">
-			<div class="elementor-counter-number-wrapper">
-				<span class="elementor-counter-number-prefix"></span>
-				<span class="elementor-counter-number" data-duration="2000" data-to-value="3129" data-from-value="0" data-delimiter=".">0</span>
-				<span class="elementor-counter-number-suffix"></span>
-			</div>
-							<div class="elementor-counter-title">WORKING HOURS</div>
-					</div>
-				</div>
-				</div>
-						</div>
-			</div>
-		</div>
-						</div>
-			</div>
-		</section>
-				<section class="elementor-element elementor-element-6b47deb elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="6b47deb" data-element_type="section" data-settings="{&quot;shape_divider_bottom&quot;:&quot;waves&quot;}">
-					<div class="elementor-shape elementor-shape-bottom" data-negative="false">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
-	<path class="elementor-shape-fill" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
-	c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
-	c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"/>
-</svg>		</div>
-					<div class="elementor-container elementor-column-gap-default">
-				<div class="elementor-row">
-				<div class="elementor-element elementor-element-7865f653 elementor-column elementor-col-50 elementor-top-column" data-id="7865f653" data-element_type="column">
-			<div class="elementor-column-wrap  elementor-element-populated">
-					<div class="elementor-widget-wrap">
-				<div class="jet-parallax-widget elementor-element elementor-element-16bd79ba elementor-widget elementor-widget-image" data-jet-tricks-settings="{&quot;parallax&quot;:&quot;true&quot;,&quot;invert&quot;:&quot;false&quot;,&quot;speed&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:25},&quot;stickyOn&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;]}" data-id="16bd79ba" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-image">
-										<img width="801" height="508" src="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/bg-phone-2-1.png" class="attachment-full size-full" alt="" srcset="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/bg-phone-2-1.png 801w, https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/bg-phone-2-1-300x190.png 300w, https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/bg-phone-2-1-768x487.png 768w, https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/bg-phone-2-1-600x381.png 600w" sizes="(max-width: 801px) 100vw, 801px" />											</div>
-				</div>
-				</div>
-						</div>
-			</div>
-		</div>
-				<div class="elementor-element elementor-element-64236000 elementor-column elementor-col-50 elementor-top-column" data-id="64236000" data-element_type="column">
-			<div class="elementor-column-wrap  elementor-element-populated">
-					<div class="elementor-widget-wrap">
-				<div class="elementor-element elementor-element-330c2c56 elementor-widget elementor-widget-spacer" data-id="330c2c56" data-element_type="widget" data-widget_type="spacer.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
-		</div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-6c6b716e elementor-widget elementor-widget-heading" data-id="6c6b716e" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-			<h5 class="elementor-heading-title elementor-size-default">We Are Ahead of the Market</h5>		</div>
-				</div>
-				<div class="elementor-element elementor-element-60ab1565 elementor-widget elementor-widget-divider" data-id="60ab1565" data-element_type="widget" data-widget_type="divider.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-divider">
-			<span class="elementor-divider-separator"></span>
-		</div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-57c89db1 elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id="57c89db1" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-text-editor elementor-clearfix">We know how to stand out from your competitors and we gladly provide our clients with various keys to achieve their goals and become successful member of business environment.</div>
-				</div>
-				</div>
-				<section class="elementor-element elementor-element-105a835f elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="105a835f" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-default">
-				<div class="elementor-row">
-				<div class="elementor-element elementor-element-12ad1231 elementor-column elementor-col-50 elementor-inner-column" data-id="12ad1231" data-element_type="column">
-			<div class="elementor-column-wrap  elementor-element-populated">
-					<div class="elementor-widget-wrap">
-				<div class="elementor-element elementor-element-38ded738 elementor-mobile-align-center elementor-widget elementor-widget-button" data-id="38ded738" data-element_type="widget" data-widget_type="button.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-button-wrapper">
-			<a href="#contact" class="elementor-button-link elementor-button elementor-size-md" role="button">
-						<span class="elementor-button-content-wrapper">
-						<span class="elementor-button-text">contact us</span>
-		</span>
-					</a>
-		</div>
-				</div>
-				</div>
-						</div>
-			</div>
-		</div>
-				<div class="elementor-element elementor-element-635f629a elementor-column elementor-col-50 elementor-inner-column" data-id="635f629a" data-element_type="column">
-			<div class="elementor-column-wrap  elementor-element-populated">
-					<div class="elementor-widget-wrap">
-				<div class="elementor-element elementor-element-27fd1d6e elementor-mobile-align-center elementor-widget elementor-widget-button" data-id="27fd1d6e" data-element_type="widget" data-widget_type="button.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-button-wrapper">
-			<a href="#projects" class="elementor-button-link elementor-button elementor-size-md" role="button">
-						<span class="elementor-button-content-wrapper">
-						<span class="elementor-button-text">our project</span>
-		</span>
-					</a>
-		</div>
-				</div>
-				</div>
-						</div>
-			</div>
-		</div>
-						</div>
-			</div>
-		</section>
-						</div>
-			</div>
-		</div>
-						</div>
-			</div>
-		</section>
-				<section class="elementor-element elementor-element-67e30bb7 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="67e30bb7" data-element_type="section" id="pricing" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-						<div class="elementor-container elementor-column-gap-default">
-				<div class="elementor-row">
-				<div class="elementor-element elementor-element-52018b01 elementor-column elementor-col-100 elementor-top-column" data-id="52018b01" data-element_type="column">
-			<div class="elementor-column-wrap  elementor-element-populated">
-					<div class="elementor-widget-wrap">
-				<div class="elementor-element elementor-element-2257e1b0 elementor-widget elementor-widget-heading" data-id="2257e1b0" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-			<h5 class="elementor-heading-title elementor-size-default">Choose Your Pricing Plan</h5>		</div>
-				</div>
-				<div class="elementor-element elementor-element-3fd3cad0 elementor-widget elementor-widget-divider" data-id="3fd3cad0" data-element_type="widget" data-widget_type="divider.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-divider">
-			<span class="elementor-divider-separator"></span>
-		</div>
-				</div>
-				</div>
-				<section class="elementor-element elementor-element-597f088a elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="597f088a" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-default">
-				<div class="elementor-row">
-				<div class="elementor-element elementor-element-6055b09f elementor-column elementor-col-33 elementor-inner-column" data-id="6055b09f" data-element_type="column">
-			<div class="elementor-column-wrap  elementor-element-populated">
-					<div class="elementor-widget-wrap">
-				<div class="elementor-element elementor-element-5fcbb4f1 elementor-widget elementor-widget-jet-pricing-table" data-id="5fcbb4f1" data-element_type="widget" data-widget_type="jet-pricing-table.default">
-				<div class="elementor-widget-container">
-			<div class="elementor-jet-pricing-table jet-elements"><div class="pricing-table ">
-	<div class="pricing-table__heading">
-	<div class="pricing-table__icon"><div class="pricing-table__icon-box"><span class="jet-elements-icon"><i aria-hidden="true" class="iconsmind iconsmind-bell-1"></i></span></div></div>	<h2 class="pricing-table__title">Basic</h2>	<h4 class="pricing-table__subtitle">Monthly Package</h4></div>	<div class="pricing-table__price"><span class="pricing-table__price-prefix">$</span><span class="pricing-table__price-val">29</span><span class="pricing-table__price-suffix">.00</span></div>	<div class="pricing-table__features"><div class="pricing-feature pricing-feature-b78a6ae item-included">
-	<div class="pricing-feature__inner"><span class="item-bullet jet-elements-icon"><i aria-hidden="true" class="fas fa-check"></i></span><span class="pricing-feature__text">Finance</span></div>
-</div><div class="pricing-feature pricing-feature-8f3b0e2 item-included">
-	<div class="pricing-feature__inner"><span class="item-bullet jet-elements-icon"><i aria-hidden="true" class="fas fa-check"></i></span><span class="pricing-feature__text">Risk Management</span></div>
-</div><div class="pricing-feature pricing-feature-0fd8524 item-included">
-	<div class="pricing-feature__inner"><span class="item-bullet jet-elements-icon"><i aria-hidden="true" class="fas fa-check"></i></span><span class="pricing-feature__text">Audit & Accounting</span></div>
-</div><div class="pricing-feature pricing-feature-e2d85eb item-included">
-	<div class="pricing-feature__inner"><span class="item-bullet jet-elements-icon"><i aria-hidden="true" class="fas fa-check"></i></span><span class="pricing-feature__text">Marketing</span></div>
-</div></div>	<div class="pricing-table__action">
-		<a class="elementor-button elementor-size-md pricing-table-button button-auto-size" href="#projects">select plan</a>
-	</div>	</div>
-</div>		</div>
-				</div>
-						</div>
-			</div>
-		</div>
-				<div class="elementor-element elementor-element-6c65db4b elementor-column elementor-col-33 elementor-inner-column" data-id="6c65db4b" data-element_type="column">
-			<div class="elementor-column-wrap  elementor-element-populated">
-					<div class="elementor-widget-wrap">
-				<div class="elementor-element elementor-element-139caea elementor-widget elementor-widget-jet-pricing-table" data-id="139caea" data-element_type="widget" data-widget_type="jet-pricing-table.default">
-				<div class="elementor-widget-container">
-			<div class="elementor-jet-pricing-table jet-elements"><div class="pricing-table ">
-	<div class="pricing-table__heading">
-	<div class="pricing-table__icon"><div class="pricing-table__icon-box"><span class="jet-elements-icon"><i class="iconsmind iconsmind-clouds" aria-hidden="true"></i></span></div></div>	<h2 class="pricing-table__title">Advanced</h2>	<h4 class="pricing-table__subtitle">Monthly Package</h4></div>	<div class="pricing-table__price"><span class="pricing-table__price-prefix">$</span><span class="pricing-table__price-val">40</span><span class="pricing-table__price-suffix">.00</span></div>	<div class="pricing-table__features"><div class="pricing-feature pricing-feature-b78a6ae item-included">
-	<div class="pricing-feature__inner"><span class="item-bullet jet-elements-icon"><i aria-hidden="true" class="fas fa-check"></i></span><span class="pricing-feature__text">Business Plan</span></div>
-</div><div class="pricing-feature pricing-feature-8f3b0e2 item-included">
-	<div class="pricing-feature__inner"><span class="item-bullet jet-elements-icon"><i aria-hidden="true" class="fas fa-check"></i></span><span class="pricing-feature__text">Marketing Research</span></div>
-</div><div class="pricing-feature pricing-feature-0fd8524 item-included">
-	<div class="pricing-feature__inner"><span class="item-bullet jet-elements-icon"><i aria-hidden="true" class="fas fa-check"></i></span><span class="pricing-feature__text">Expenses Analysis</span></div>
-</div><div class="pricing-feature pricing-feature-e2d85eb item-included">
-	<div class="pricing-feature__inner"><span class="item-bullet jet-elements-icon"><i aria-hidden="true" class="fas fa-check"></i></span><span class="pricing-feature__text">Strategy Ideas</span></div>
-</div></div>	<div class="pricing-table__action">
-		<a class="elementor-button elementor-size-md pricing-table-button button-auto-size" href="#projects">select plan</a>
-	</div>	</div>
-</div>		</div>
-				</div>
-						</div>
-			</div>
-		</div>
-				<div class="elementor-element elementor-element-5f96cdb9 elementor-column elementor-col-33 elementor-inner-column" data-id="5f96cdb9" data-element_type="column">
-			<div class="elementor-column-wrap  elementor-element-populated">
-					<div class="elementor-widget-wrap">
-				<div class="elementor-element elementor-element-159b27cb elementor-widget elementor-widget-jet-pricing-table" data-id="159b27cb" data-element_type="widget" data-widget_type="jet-pricing-table.default">
-				<div class="elementor-widget-container">
-			<div class="elementor-jet-pricing-table jet-elements"><div class="pricing-table ">
-	<div class="pricing-table__heading">
-	<div class="pricing-table__icon"><div class="pricing-table__icon-box"><span class="jet-elements-icon"><i aria-hidden="true" class="far fa-star"></i></span></div></div>	<h2 class="pricing-table__title">Deluxe</h2>	<h4 class="pricing-table__subtitle">Monthly Package</h4></div>	<div class="pricing-table__price"><span class="pricing-table__price-prefix">$</span><span class="pricing-table__price-val">75</span><span class="pricing-table__price-suffix">.00</span></div>	<div class="pricing-table__features"><div class="pricing-feature pricing-feature-b78a6ae item-included">
-	<div class="pricing-feature__inner"><span class="item-bullet jet-elements-icon"><i aria-hidden="true" class="fas fa-check"></i></span><span class="pricing-feature__text">Business Consulting</span></div>
-</div><div class="pricing-feature pricing-feature-8f3b0e2 item-included">
-	<div class="pricing-feature__inner"><span class="item-bullet jet-elements-icon"><i aria-hidden="true" class="fas fa-check"></i></span><span class="pricing-feature__text">Audit & Accounting</span></div>
-</div><div class="pricing-feature pricing-feature-0fd8524 item-included">
-	<div class="pricing-feature__inner"><span class="item-bullet jet-elements-icon"><i aria-hidden="true" class="fas fa-check"></i></span><span class="pricing-feature__text">Marketing Plan and Strategy</span></div>
-</div><div class="pricing-feature pricing-feature-e2d85eb item-included">
-	<div class="pricing-feature__inner"><span class="item-bullet jet-elements-icon"><i aria-hidden="true" class="fas fa-check"></i></span><span class="pricing-feature__text">Law Assistance</span></div>
-</div></div>	<div class="pricing-table__action">
-		<a class="elementor-button elementor-size-md pricing-table-button button-auto-size" href="#projects">select plan</a>
-	</div>	</div>
-</div>		</div>
-				</div>
-						</div>
-			</div>
-		</div>
-						</div>
-			</div>
-		</section>
-						</div>
-			</div>
-		</div>
-						</div>
-			</div>
-		</section>
-				<section class="elementor-element elementor-element-1e971c5a elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="1e971c5a" data-element_type="section" data-settings="{&quot;shape_divider_top&quot;:&quot;waves&quot;,&quot;shape_divider_bottom&quot;:&quot;waves&quot;}">
-					<div class="elementor-shape elementor-shape-top" data-negative="false">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
-	<path class="elementor-shape-fill" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
-	c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
-	c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"/>
-</svg>		</div>
-				<div class="elementor-shape elementor-shape-bottom" data-negative="false">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
-	<path class="elementor-shape-fill" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
-	c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
-	c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"/>
-</svg>		</div>
-					<div class="elementor-container elementor-column-gap-default">
-				<div class="elementor-row">
-				<div class="elementor-element elementor-element-54080fbd elementor-column elementor-col-100 elementor-top-column" data-id="54080fbd" data-element_type="column">
-			<div class="elementor-column-wrap  elementor-element-populated">
-					<div class="elementor-widget-wrap">
-				<div class="elementor-element elementor-element-2381818f elementor-widget elementor-widget-heading" data-id="2381818f" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-			<h5 class="elementor-heading-title elementor-size-default">What People Say
-</h5>		</div>
-				</div>
-				<div class="elementor-element elementor-element-5f1de1be elementor-widget elementor-widget-divider" data-id="5f1de1be" data-element_type="widget" data-widget_type="divider.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-divider">
-			<span class="elementor-divider-separator"></span>
-		</div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-2549f91b elementor-widget elementor-widget-spacer" data-id="2549f91b" data-element_type="widget" data-widget_type="spacer.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
-		</div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-310f5240 elementor-widget elementor-widget-jet-testimonials" data-id="310f5240" data-element_type="widget" data-widget_type="jet-testimonials.default">
-				<div class="elementor-widget-container">
-			<div class="elementor-jet-testimonials jet-elements">
-<div class="jet-testimonials jet-equal-cols">
-	<div class="jet-testimonials__instance elementor-slick-slider" data-settings='{"slidesToShow":{"desktop":1,"tablet":0,"mobile":0},"autoplaySpeed":5000,"autoplay":true,"infinite":true,"adaptiveHeight":true,"pauseOnHover":false,"speed":500,"arrows":false,"dots":true,"slidesToScroll":1,"prevArrow":".jet-testimonial__prev-arrow-310f5240","nextArrow":".jet-testimonial__next-arrow-310f5240","rtl":false}' dir="ltr"><div class="jet-testimonials__item">
-	<div class="jet-testimonials__item-inner">
-		<div class="jet-testimonials__content"><figure class="jet-testimonials__figure"><img class="jet-testimonials__tag-img" src="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/testimonials-1.jpg" alt="testimonials-1.jpg"></figure><p class="jet-testimonials__comment"><span>Thanks to Imperion team I started my new business and managed to expand my previous one. My business partner also used Imperion service for his company and was very satisfied. As for now we don't have any financial problems and profitable business.</span></p><div class="jet-testimonials__name"><span>Emma Doe</span></div><div class="jet-testimonials__position"><span>Company CEO</span></div></div>
-	</div>
-</div>
-
-<div class="jet-testimonials__item">
-	<div class="jet-testimonials__item-inner">
-		<div class="jet-testimonials__content"><figure class="jet-testimonials__figure"><img class="jet-testimonials__tag-img" src="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/testi-2.jpg" alt="testi-2.jpg"></figure><h5 class="jet-testimonials__title">Marta Stewart</h5><p class="jet-testimonials__comment"><span>I loved Imperion's approach to business. I selected my personal consultant, provided him with all the necessary information and was sure my business paperwork is in safe. My consultant helps me every month when I need to pay taxes and salary to my team.</span></p><div class="jet-testimonials__name"><span>Emma Doe</span></div><div class="jet-testimonials__position"><span>Company CEO</span></div></div>
-	</div>
-</div>
-
-<div class="jet-testimonials__item">
-	<div class="jet-testimonials__item-inner">
-		<div class="jet-testimonials__content"><figure class="jet-testimonials__figure"><img class="jet-testimonials__tag-img" src="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/testi-3.jpg" alt="testi-3.jpg"></figure><p class="jet-testimonials__comment"><span>Metricon is a great company with professional and talented experts. I worked with several of them and I can say, they know their job perfectly. Thanks to Imperion I've successfully passed fiscal audit and made some changes in my business, which is now beneficial!</span></p><div class="jet-testimonials__name"><span>Tom Ford</span></div><div class="jet-testimonials__position"><span>Company CEO</span></div></div>
-	</div>
-</div>
-
-</div>
-</div>
-</div>		</div>
-				</div>
-						</div>
-			</div>
-		</div>
-						</div>
-			</div>
-		</section>
-				<section class="elementor-element elementor-element-2a9925f9 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="2a9925f9" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_bottom_negative&quot;:&quot;yes&quot;,&quot;shape_divider_bottom&quot;:&quot;waves&quot;}">
-					<div class="elementor-shape elementor-shape-bottom" data-negative="true">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
-	<path class="elementor-shape-fill" d="M790.5,93.1c-59.3-5.3-116.8-18-192.6-50c-29.6-12.7-76.9-31-100.5-35.9c-23.6-4.9-52.6-7.8-75.5-5.3
-	c-10.2,1.1-22.6,1.4-50.1,7.4c-27.2,6.3-58.2,16.6-79.4,24.7c-41.3,15.9-94.9,21.9-134,22.6C72,58.2,0,25.8,0,25.8V100h1000V65.3
-	c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"/>
-</svg>		</div>
-					<div class="elementor-container elementor-column-gap-default">
-				<div class="elementor-row">
-				<div class="elementor-element elementor-element-7bd4df15 elementor-column elementor-col-50 elementor-top-column" data-id="7bd4df15" data-element_type="column">
-			<div class="elementor-column-wrap  elementor-element-populated">
-					<div class="elementor-widget-wrap">
-				<div class="elementor-element elementor-element-347de091 elementor-widget elementor-widget-spacer" data-id="347de091" data-element_type="widget" data-widget_type="spacer.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
-		</div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-71eb0f94 elementor-widget elementor-widget-heading" data-id="71eb0f94" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-			<h5 class="elementor-heading-title elementor-size-default">subscribe to our newsletter
-</h5>		</div>
-				</div>
-				<div class="elementor-element elementor-element-6bae92af elementor-widget elementor-widget-spacer" data-id="6bae92af" data-element_type="widget" data-widget_type="spacer.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
-		</div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-61a76493 elementor-widget elementor-widget-jet-headline" data-id="61a76493" data-element_type="widget" data-widget_type="jet-headline.default">
-				<div class="elementor-widget-container">
-			<h2 class="jet-headline jet-headline--direction-horizontal"><span class="jet-headline__part jet-headline__first"><span class="jet-headline__label">Get the </span></span><span class="jet-headline__space">&nbsp;</span><span class="jet-headline__part jet-headline__second"><span class="jet-headline__label">Latest News </span></span></h2>		</div>
-				</div>
-				<div class="elementor-element elementor-element-f0b4be6 elementor-widget elementor-widget-heading" data-id="f0b4be6" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-			<h2 class="elementor-heading-title elementor-size-default">from Innovative team</h2>		</div>
-				</div>
-				<div class="elementor-element elementor-element-5427ffba elementor-widget elementor-widget-divider" data-id="5427ffba" data-element_type="widget" data-widget_type="divider.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-divider">
-			<span class="elementor-divider-separator"></span>
-		</div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-24b818ce elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id="24b818ce" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-text-editor elementor-clearfix">Keep up with our always upcoming product features and technologies. Enter your e-mail and subscribe to our newsletter.
-</div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-24cbd9b elementor-widget elementor-widget-spacer" data-id="24cbd9b" data-element_type="widget" data-widget_type="spacer.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
-		</div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-4a480117 elementor-widget elementor-widget-jet-subscribe-form" data-id="4a480117" data-element_type="widget" data-widget_type="jet-subscribe-form.default">
-				<div class="elementor-widget-container">
-			<div class="elementor-jet-subscribe-form jet-elements"><div class="jet-subscribe-form jet-subscribe-form--block-layout" data-settings="{&quot;redirect&quot;:false,&quot;redirect_url&quot;:&quot;#&quot;,&quot;use_target_list_id&quot;:false,&quot;target_list_id&quot;:&quot;&quot;}">
-	<form method="POST" action="#" class="jet-subscribe-form__form">
-		<div class="jet-subscribe-form__input-group">
-			<div class="jet-subscribe-form__fields">
-				<input class="jet-subscribe-form__input jet-subscribe-form__mail-field" type="email" name="email" placeholder="Your Mail" data-instance-data="[]"></div>
-			<a class="jet-subscribe-form__submit elementor-button elementor-size-md" href="#"><span class="jet-subscribe-form__submit-text">Subscribe</span></a>		</div>
-		<div class="jet-subscribe-form__message"><div class="jet-subscribe-form__message-inner"><span></span></div></div>
-	</form>
-</div>
-</div>		</div>
-				</div>
-						</div>
-			</div>
-		</div>
-				<div class="elementor-element elementor-element-1c6479f0 elementor-column elementor-col-50 elementor-top-column" data-id="1c6479f0" data-element_type="column">
-			<div class="elementor-column-wrap  elementor-element-populated">
-					<div class="elementor-widget-wrap">
-				<div class="jet-parallax-widget elementor-element elementor-element-144dbcfa elementor-widget elementor-widget-image" data-jet-tricks-settings="{&quot;parallax&quot;:&quot;true&quot;,&quot;invert&quot;:&quot;false&quot;,&quot;speed&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:30},&quot;stickyOn&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;]}" data-id="144dbcfa" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-image">
-										<img width="737" height="1024" src="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/img-subscribe-737x1024.png" class="attachment-large size-large" alt="" srcset="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/img-subscribe-737x1024.png 737w, https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/img-subscribe-216x300.png 216w, https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/img-subscribe-600x834.png 600w, https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/img-subscribe.png 750w" sizes="(max-width: 737px) 100vw, 737px" />											</div>
-				</div>
-				</div>
-						</div>
-			</div>
-		</div>
-						</div>
-			</div>
-		</section>
-				<section class="elementor-element elementor-element-7542fc65 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7542fc65" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_top&quot;:&quot;waves&quot;}">
-					<div class="elementor-shape elementor-shape-top" data-negative="false">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
-	<path class="elementor-shape-fill" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
-	c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
-	c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"/>
-</svg>		</div>
-					<div class="elementor-container elementor-column-gap-default">
-				<div class="elementor-row">
-				<div class="elementor-element elementor-element-50425864 elementor-column elementor-col-100 elementor-top-column" data-id="50425864" data-element_type="column">
-			<div class="elementor-column-wrap  elementor-element-populated">
-					<div class="elementor-widget-wrap">
-				<div class="elementor-element elementor-element-4cc8e7b3 elementor-widget elementor-widget-heading" data-id="4cc8e7b3" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-			<h5 class="elementor-heading-title elementor-size-default">We Advance the Market</h5>		</div>
-				</div>
-				<div class="elementor-element elementor-element-2c2564a7 elementor-widget elementor-widget-divider" data-id="2c2564a7" data-element_type="widget" data-widget_type="divider.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-divider">
-			<span class="elementor-divider-separator"></span>
-		</div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-73624c6f elementor-widget elementor-widget-jet-posts" data-id="73624c6f" data-element_type="widget" data-widget_type="jet-posts.default">
-				<div class="elementor-widget-container">
-			<div class="elementor-jet-posts jet-elements"><div class="jet-posts col-row "><div class="jet-posts__item col-desk-3 col-tab-3">
-	<div class="jet-posts__inner-box"><div class="post-thumbnail"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/prioritizing-tax-benefits/" class="post-thumbnail__link"><img class="post-thumbnail__img wp-post-image" src="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/post-landing3.jpg" alt="Prioritizing Tax Benefits" width="770" height="460"></a></div><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/prioritizing-tax-benefits/">Prioritizing Tax Benefits</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:26+00:00" title="2019-07-05T13:32:26+00:00">July 5, 2019</time></a></span></div><div class="entry-excerpt">Two kinds of clients scare me most. The first ask me as they pick up their&hellip;</div></div></div>
-</div>
-<div class="jet-posts__item col-desk-3 col-tab-3">
-	<div class="jet-posts__inner-box"><div class="post-thumbnail"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/the-sdn-effect-on-network/" class="post-thumbnail__link"><img class="post-thumbnail__img wp-post-image" src="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/post-landing2.jpg" alt="The SDN Effect on Network" width="770" height="460"></a></div><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/the-sdn-effect-on-network/">The SDN Effect on Network</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:07+00:00" title="2019-07-05T13:32:07+00:00">July 5, 2019</time></a></span></div><div class="entry-excerpt">For enterprise organizations around the world, Software Defined Networking (SDN) is transforming the way we build&hellip;</div></div></div>
-</div>
-<div class="jet-posts__item col-desk-3 col-tab-3">
-	<div class="jet-posts__inner-box"><div class="post-thumbnail"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/proactively-engaging/" class="post-thumbnail__link"><img class="post-thumbnail__img wp-post-image" src="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/post-landing1.jpg" alt="Proactively Engaging" width="770" height="460"></a></div><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/proactively-engaging/">Proactively Engaging</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:30:48+00:00" title="2019-07-05T13:30:48+00:00">July 5, 2019</time></a></span></div><div class="entry-excerpt">E-commerce sites have taken retail online and with such its audience. Once representatives used to be&hellip;</div></div></div>
-</div>
-</div>
-</div>		</div>
-				</div>
-						</div>
-			</div>
-		</div>
-						</div>
-			</div>
-		</section>
-				<section class="elementor-element elementor-element-fb40553 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="fb40553" data-element_type="section" id="contact" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
-						<div class="elementor-container elementor-column-gap-no">
-				<div class="elementor-row">
-				<div class="elementor-element elementor-element-6566648 elementor-column elementor-col-50 elementor-top-column" data-id="6566648" data-element_type="column">
-			<div class="elementor-column-wrap  elementor-element-populated">
-					<div class="elementor-widget-wrap">
-				<div class="elementor-element elementor-element-619c8b2e elementor-widget elementor-widget-heading" data-id="619c8b2e" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-			<h5 class="elementor-heading-title elementor-size-default">let`s get in touch</h5>		</div>
-				</div>
-				<div class="elementor-element elementor-element-5f287c80 elementor-widget elementor-widget-spacer" data-id="5f287c80" data-element_type="widget" data-widget_type="spacer.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
-		</div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-76f71b44 elementor-widget elementor-widget-heading" data-id="76f71b44" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-			<h2 class="elementor-heading-title elementor-size-default">Contact Details</h2>		</div>
-				</div>
-				<div class="elementor-element elementor-element-5b647a47 elementor-widget elementor-widget-divider" data-id="5b647a47" data-element_type="widget" data-widget_type="divider.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-divider">
-			<span class="elementor-divider-separator"></span>
-		</div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-5aa7fc0a elementor-widget elementor-widget-text-editor" data-id="5aa7fc0a" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-text-editor elementor-clearfix"><p>Phone:<a style="font-weight: 300;" href="callto:5551234567">(555)123-4567</a><br />E-mail: <a style="font-weight: 300;" href="mailto:info@demolink.org">info@demolink.org</a><br />Address: <span style="font-weight: 300;">Alexandria, 32 Washingtorn str, 22303</span><br />Opening hours:<br />Monday — Thursday 10:00 &#8211; 23:00<br />Friday — Sunday 10:00 &#8211; 19:00</p></div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-3516836e elementor-shape-circle elementor-widget elementor-widget-social-icons" data-id="3516836e" data-element_type="widget" data-widget_type="social-icons.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-social-icons-wrapper">
-							<a href="" class="elementor-icon elementor-social-icon elementor-social-icon-facebook-f elementor-repeater-item-f2c87bf" target="_blank">
-					<span class="elementor-screen-only">Facebook-f</span>
-					<i class="fab fa-facebook-f"></i>				</a>
-							<a href="" class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-7a54905" target="_blank">
-					<span class="elementor-screen-only">Twitter</span>
-					<i class="fab fa-twitter"></i>				</a>
-							<a href="" class="elementor-icon elementor-social-icon elementor-social-icon-google-plus-g elementor-repeater-item-34f1069" target="_blank">
-					<span class="elementor-screen-only">Google-plus-g</span>
-					<i class="fab fa-google-plus-g"></i>				</a>
-							<a href="" class="elementor-icon elementor-social-icon elementor-social-icon-vimeo-v elementor-repeater-item-419780b" target="_blank">
-					<span class="elementor-screen-only">Vimeo-v</span>
-					<i class="fab fa-vimeo-v"></i>				</a>
-							<a href="" class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-8419940" target="_blank">
-					<span class="elementor-screen-only">Youtube</span>
-					<i class="fab fa-youtube"></i>				</a>
-							<a href="" class="elementor-icon elementor-social-icon elementor-social-icon-pinterest elementor-repeater-item-0b14e9f" target="_blank">
-					<span class="elementor-screen-only">Pinterest</span>
-					<i class="fab fa-pinterest"></i>				</a>
-					</div>
-				</div>
-				</div>
-						</div>
-			</div>
-		</div>
-				<div class="elementor-element elementor-element-6fec9a73 elementor-column elementor-col-50 elementor-top-column" data-id="6fec9a73" data-element_type="column">
-			<div class="elementor-column-wrap  elementor-element-populated">
-					<div class="elementor-widget-wrap">
-				<div class="elementor-element elementor-element-4cb365f0 elementor-widget elementor-widget-contact-form-7" data-id="4cb365f0" data-element_type="widget" data-widget_type="contact-form-7.default">
-				<div class="elementor-widget-container">
-			<div class="elementor-contact-form-7 jet-elements"><div role="form" class="wpcf7" id="wpcf7-f5-p8-o1" lang="en-US" dir="ltr">
-<div class="screen-reader-response"></div>
-<form action="/imperion/corporatelanding/#wpcf7-f5-p8-o1" method="post" class="wpcf7-form" novalidate="novalidate">
-<div style="display: none;">
-<input type="hidden" name="_wpcf7" value="5" />
-<input type="hidden" name="_wpcf7_version" value="5.1.4" />
-<input type="hidden" name="_wpcf7_locale" value="en_US" />
-<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f5-p8-o1" />
-<input type="hidden" name="_wpcf7_container_post" value="8" />
-</div>
-<div><span class="wpcf7-form-control-wrap text-109"><input type="text" name="text-109" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Your Name" /></span></div>
-<div><span class="wpcf7-form-control-wrap email-684"><input type="email" name="email-684" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Your E-mail" /></span></div>
-<div><span class="wpcf7-form-control-wrap textarea-249"><textarea name="textarea-249" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Your Message"></textarea></span></div>
-<div><input type="submit" value="Send message" class="wpcf7-form-control wpcf7-submit" /></div>
-<div class="wpcf7-response-output wpcf7-display-none"></div></form></div></div>		</div>
-				</div>
-						</div>
-			</div>
-		</div>
-						</div>
-			</div>
-		</section>
-						</div>
-			</div>
-		</div>
+		
+	
+		
+		
+	
 		
 	</div><!-- #content -->
 <footer id="colophon" class="site-footer ">
@@ -1501,11 +892,11 @@ img.emoji {
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-31bcceb elementor-widget elementor-widget-heading" data-id="31bcceb" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h5 class="elementor-heading-title elementor-size-default">About</h5>		</div>
+			<h5 class="elementor-heading-title elementor-size-default">Acerca de Nosotros</h5>		</div>
 				</div>
 				<div class="elementor-element elementor-element-3a3a6667 elementor-widget elementor-widget-text-editor" data-id="3a3a6667" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-text-editor elementor-clearfix">Mei an pericula euripidis, hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix at, vel pertinax. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis eleifend lorem nec ultricies.</div>
+					<div class="elementor-text-editor elementor-clearfix">En GestionPro, ofrecemos un sistema integral de gestión de actividades empresariales diseñado para optimizar y transformar la forma en que las organizaciones operan. Nuestro software avanzado está diseñado para abordar las necesidades complejas de la gestión empresarial moderna, ayudando a empresas de todos los tamaños a alcanzar sus objetivos con eficiencia y eficacia.</div>
 				</div>
 				</div>
 						</div>
@@ -1517,15 +908,15 @@ img.emoji {
 				<div class="elementor-element elementor-element-13b8394a elementor-widget__width-initial elementor-widget elementor-widget-wp-widget-tag_cloud" data-id="13b8394a" data-element_type="widget" data-widget_type="wp-widget-tag_cloud.default">
 				<div class="elementor-widget-container">
 			<h5>Tags</h5><div class="tagcloud"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/blog/" class="tag-cloud-link tag-link-6 tag-link-position-1" style="font-size: 8pt;" aria-label="BLOG (1 item)">BLOG</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/business/" class="tag-cloud-link tag-link-7 tag-link-position-2" style="font-size: 8pt;" aria-label="BUSINESS (1 item)">BUSINESS</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/cities/" class="tag-cloud-link tag-link-8 tag-link-position-3" style="font-size: 8pt;" aria-label="CITIES (1 item)">CITIES</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/construction/" class="tag-cloud-link tag-link-9 tag-link-position-4" style="font-size: 8pt;" aria-label="CONSTRUCTION (1 item)">CONSTRUCTION</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/design/" class="tag-cloud-link tag-link-10 tag-link-position-5" style="font-size: 8pt;" aria-label="DESIGN (1 item)">DESIGN</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/interiors/" class="tag-cloud-link tag-link-11 tag-link-position-6" style="font-size: 8pt;" aria-label="INTERIORS (1 item)">INTERIORS</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/news/" class="tag-cloud-link tag-link-12 tag-link-position-7" style="font-size: 8pt;" aria-label="NEWS (1 item)">NEWS</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/objects/" class="tag-cloud-link tag-link-13 tag-link-position-8" style="font-size: 8pt;" aria-label="OBJECTS (1 item)">OBJECTS</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/post/" class="tag-cloud-link tag-link-14 tag-link-position-9" style="font-size: 8pt;" aria-label="POST (1 item)">POST</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/projects/" class="tag-cloud-link tag-link-15 tag-link-position-10" style="font-size: 8pt;" aria-label="PROJECTS (1 item)">PROJECTS</a></div>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/business/" class="tag-cloud-link tag-link-7 tag-link-position-2" style="font-size: 8pt;" aria-label="BUSINESS (1 item)">GESTIÓN EMPRESARIAL</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/cities/" class="tag-cloud-link tag-link-8 tag-link-position-3" style="font-size: 8pt;" aria-label="CITIES (1 item)">OPTIMIZACIÓN</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/construction/" class="tag-cloud-link tag-link-9 tag-link-position-4" style="font-size: 8pt;" aria-label="CONSTRUCTION (1 item)">INNOVACIÓN</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/design/" class="tag-cloud-link tag-link-10 tag-link-position-5" style="font-size: 8pt;" aria-label="DESIGN (1 item)">RECURSOS HUMANOS</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/interiors/" class="tag-cloud-link tag-link-11 tag-link-position-6" style="font-size: 8pt;" aria-label="INTERIORS (1 item)">FINANZAS</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/news/" class="tag-cloud-link tag-link-12 tag-link-position-7" style="font-size: 8pt;" aria-label="NEWS (1 item)">PRODUCTIVIDAD</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/objects/" class="tag-cloud-link tag-link-13 tag-link-position-8" style="font-size: 8pt;" aria-label="OBJECTS (1 item)"></a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/post/" class="tag-cloud-link tag-link-14 tag-link-position-9" style="font-size: 8pt;" aria-label="POST (1 item)"></a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/projects/" class="tag-cloud-link tag-link-15 tag-link-position-10" style="font-size: 8pt;" aria-label="PROJECTS (1 item)"></a></div>
 		</div>
 				</div>
 						</div>
@@ -1536,15 +927,15 @@ img.emoji {
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-491e4ad elementor-widget elementor-widget-heading" data-id="491e4ad" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h5 class="elementor-heading-title elementor-size-default">RECENT COMMENTS</h5>		</div>
+			<h5 class="elementor-heading-title elementor-size-default">Comentarios Recientes</h5>		</div>
 				</div>
 				<div class="elementor-element elementor-element-87952dd elementor-widget elementor-widget-jet-posts" data-id="87952dd" data-element_type="widget" data-widget_type="jet-posts.default">
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-posts jet-elements"><div class="jet-posts col-row disable-rows-gap"><div class="jet-posts__item col-desk-1">
-	<div class="jet-posts__inner-box"><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/prioritizing-tax-benefits/">Prioritizing Tax Benefits</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:26+00:00" title="2019-07-05T13:32:26+00:00">July 5, 2019</time></a></span></div></div></div>
+	<div class="jet-posts__inner-box"><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/prioritizing-tax-benefits/">Beneficios de la Gestión Financiera Integrada</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:26+00:00" title="2019-07-05T13:32:26+00:00">5 de julio de 2024</time></a></span></div></div></div>
 </div>
 <div class="jet-posts__item col-desk-1">
-	<div class="jet-posts__inner-box"><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/the-sdn-effect-on-network/">The SDN Effect on Network</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:07+00:00" title="2019-07-05T13:32:07+00:00">July 5, 2019</time></a></span></div></div></div>
+	<div class="jet-posts__inner-box"><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/the-sdn-effect-on-network/">Mejora en la Coordinación de Proyectos</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:07+00:00" title="2019-07-05T13:32:07+00:00">4 de julio de 2024</time></a></span></div></div></div>
 </div>
 </div>
 </div>		</div>
@@ -1564,7 +955,7 @@ img.emoji {
 				<div class="elementor-element elementor-element-655171d2 elementor-widget elementor-widget-jet-logo" data-id="655171d2" data-element_type="widget" data-widget_type="jet-logo.default">
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-logo jet-blocks"><div class="jet-logo jet-logo-type-image jet-logo-display-block">
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="jet-logo__link"><img src="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/footer-logo.png" class="jet-logo__img" alt="Imperion" width="128" height="44" srcset="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/logo_footer_retina.png 2x"></a></div>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="jet-logo__link"><img src="img/logo2.png" class="jet-logo__img" alt="Imperion" width="128" height="44" srcset="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/logo_footer_retina.png 2x"></a></div>
 </div>		</div>
 				</div>
 						</div>
@@ -1575,7 +966,7 @@ img.emoji {
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-10ceac58 elementor-widget elementor-widget-text-editor" data-id="10ceac58" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-text-editor elementor-clearfix">© 2019. Imperion. All Rights Reserved.</div>
+					<div class="elementor-text-editor elementor-clearfix">© 2024. GestionPro. All Rights Reserved.</div>
 				</div>
 				</div>
 						</div>
@@ -1586,32 +977,7 @@ img.emoji {
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-55a575b1 elementor-shape-rounded elementor-widget elementor-widget-social-icons" data-id="55a575b1" data-element_type="widget" data-widget_type="social-icons.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-social-icons-wrapper">
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-949457f" target="_blank">
-					<span class="elementor-screen-only">Facebook</span>
-											<i class="fa fa-facebook"></i>
-									</a>
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-bafa546" target="_blank">
-					<span class="elementor-screen-only">Twitter</span>
-											<i class="fa fa-twitter"></i>
-									</a>
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-google-plus elementor-repeater-item-4e18694" target="_blank">
-					<span class="elementor-screen-only">Google-plus</span>
-											<i class="fa fa-google-plus"></i>
-									</a>
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-addf219" target="_blank">
-					<span class="elementor-screen-only">Instagram</span>
-											<i class="fa fa-instagram"></i>
-									</a>
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-649080f" target="_blank">
-					<span class="elementor-screen-only">Youtube</span>
-											<i class="fa fa-youtube"></i>
-									</a>
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-wordpress elementor-repeater-item-28cb662" target="_blank">
-					<span class="elementor-screen-only">Wordpress</span>
-											<i class="fa fa-wordpress"></i>
-									</a>
-					</div>
+					
 				</div>
 				</div>
 						</div>
