@@ -74,15 +74,17 @@ footer {
      width: 1500px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
 	margin-left: -20px; /* Ajusta este valor para mover el footer hacia la izquierda */
 }
+/* Contenedor principal */
 .main-content3 {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Cambia para alinear con el inicio verticalmente */
     height: auto;
     padding: 65px;
     gap: 20px;
 }
 
+/* Contenedor de contenido */
 .content-box {
     background-color: #fff;
     border-radius: 8px;
@@ -94,6 +96,7 @@ footer {
     overflow-x: auto; /* Añade scroll horizontal si el grid es muy ancho */
 }
 
+/* Título */
 .content-box h2 {
     color: #7154FC; /* Morado */
     font-weight: bold;
@@ -101,24 +104,27 @@ footer {
     text-align: center;
 }
 
+/* Contenedor de formulario */
 .form-group {
     margin-bottom: 15px;
 }
 
+/* Estilo del TextBox */
 .asp-control {
-    width: calc(100% - 40px); /* Ajusta para dejar espacio para el icono */
+    width: 100%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
 
+/* Contenedor de búsqueda */
 .search-container {
     position: relative;
 }
 
 .search-container input[type="text"] {
-    width: 100%;
+    width: calc(100% - 40px); /* Espacio para el icono */
     padding-right: 40px; /* Espacio para el icono */
 }
 
@@ -131,6 +137,7 @@ footer {
     pointer-events: none;
 }
 
+/* Botones */
 .btn {
     background-color: #7154FC;
     color: white;
@@ -147,12 +154,14 @@ footer {
     background-color: #5a005a;
 }
 
+/* Contenedor de botones */
 .btn-group {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
 }
 
+/* Contenedor de imagen */
 .image-box {
     width: 40%;
     max-width: 400px; /* Ajusta el ancho máximo de la imagen */
@@ -165,37 +174,32 @@ footer {
     object-fit: cover;
 }
 
-/* General styling for GridView */
+/* Estilo general para GridView */
 .gridview {
     width: 100%;
-    border-collapse: separate;
+    border-collapse: collapse; /* Cambiado para evitar bordes separados */
     margin-top: 30px;
 }
 
+/* Encabezados y celdas del GridView */
 .gridview th, .gridview td {
     border: 1px solid #ddd;
-    padding: 24px;
-	box-sizing: border-box;
-}
-.gridview .header-date, 
-.gridview .item-date {
-    width: 900px; /* Ajusta el valor según tus necesidades */
-    text-align: left; /* Ajusta la alineación del texto si es necesario */
-}
-/* Header styling */
-.gridview th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #7154FC;
-    color: white;
+    padding: 12px; /* Ajustado para mejorar la legibilidad */
+    box-sizing: border-box;
 }
 
-/* Adjusting width for date columns */
+/* Estilo de encabezados */
+.gridview th {
+    background-color: #7154FC;
+    color: white;
+    text-align: center;
+}
+
+/* Ajuste de columnas de fechas */
 .gridview td:nth-child(5),
 .gridview td:nth-child(6) {
-    width: 900px; /* Adjust as needed */
-    text-align: center; /* Optional: Center the text */
+    width: 120px; /* Ajusta el tamaño de las columnas de fechas según sea necesario */
+    text-align: center; /* Centra el texto en las columnas de fecha */
 }
 
 /* Selecciona el contenedor del menú */
@@ -489,34 +493,44 @@ footer {
     <!-- Incluye la biblioteca de iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <div class="main-content3">
-        <div class="image-box">
-            <img src="img/empleado.png" alt="Imagen de Ejemplo">
-        </div>
-        <div class="content-box">
-            <h2>Historico de puestos del empleado</h2>
-            <div class="form-group search-container">
-                <asp:TextBox ID="search" runat="server" CssClass="asp-control" TextMode="Search" />
-                <i class="fas fa-search icon"></i>
-            </div>
-            <asp:GridView ID="gridView" runat="server" CssClass="gridview">
-                <Columns>
-                    <asp:BoundField DataField="HistoricoID" HeaderText="ID" Visible="False" />
-                    <asp:BoundField DataField="NombreEmpleado" HeaderText="Nombre Empleado" />
-                    <asp:BoundField DataField="ApellidoEmpleado" HeaderText="Apellido Empleado" />
-                    <asp:BoundField DataField="NombrePuesto" HeaderText="Nombre Puesto" />
-                    <asp:BoundField DataField="FechaInicio" HeaderText="Fecha Inicio" DataFormatString="{0:yyyy-MM-dd}" 
-                                    HeaderStyle-CssClass="header-date" ItemStyle-CssClass="item-date" />
-                    <asp:BoundField DataField="FechaFin" HeaderText="Fecha Fin" DataFormatString="{0:yyyy-MM-dd}" 
-                                    HeaderStyle-CssClass="header-date" ItemStyle-CssClass="item-date" />
-                </Columns>
-            </asp:GridView>
-            <div class="btn-group">
-                <asp:Button ID="btnExport" runat="server" CssClass="btn" Text="Exportar" />
-                <asp:Button ID="btnFilter" runat="server" CssClass="btn" Text="Filtrar" />
-            </div>
-        </div>
+<div class="main-content3">
+    <div class="image-box">
+        <img src="img/empleado.png" alt="Imagen de Ejemplo">
     </div>
+    <div class="content-box">
+        <h2>Histórico de puestos del empleado</h2>
+        <div class="form-group search-container">
+            <asp:TextBox ID="search" runat="server" CssClass="asp-control" TextMode="Search" />
+            <i class="fas fa-search icon"></i>
+        </div>
+        <div class="filter-container">
+            <div class="filter-item">
+                <label for="startDate">Fecha Inicio:</label>
+                <asp:TextBox ID="startDateTextBox" runat="server" CssClass="asp-control date-picker" TextMode="Date" />
+            </div>
+            <div class="filter-item">
+                <label for="endDate">Fecha Fin:</label>
+                <asp:TextBox ID="endDateTextBox" runat="server" CssClass="asp-control date-picker" TextMode="Date" />
+            </div>
+        </div>
+        <div class="btn-group">
+            <asp:Button ID="btnExport" runat="server" CssClass="btn" OnClick="btnExport_Click" Text="Exportar" />
+            <asp:Button ID="btnFilter" runat="server" CssClass="btn" OnClick="btnFilter_Click" Text="Filtrar" />
+        </div>
+        <asp:GridView ID="gridView" runat="server" CssClass="gridview" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="HistoricoID" HeaderText="ID" Visible="False" />
+                <asp:BoundField DataField="NombreEmpleado" HeaderText="Nombre Empleado" />
+                <asp:BoundField DataField="ApellidoEmpleado" HeaderText="Apellido Empleado" />
+                <asp:BoundField DataField="NombrePuesto" HeaderText="Nombre Puesto" />
+                <asp:BoundField DataField="FechaInicio" HeaderText="Fecha Inicio" DataFormatString="{0:dd-MM-yyyy}" 
+                                HeaderStyle-CssClass="header-date" ItemStyle-CssClass="item-date" />
+                <asp:BoundField DataField="FechaFin" HeaderText="Fecha Fin" DataFormatString="{0:dd-MM-yyyy}" 
+                                HeaderStyle-CssClass="header-date" ItemStyle-CssClass="item-date" />
+            </Columns>
+        </asp:GridView>
+    </div>
+</div>
 </form>
   <!-- Círculo Inferior Izquierdo -->
   <div class="bottom-circle-container">

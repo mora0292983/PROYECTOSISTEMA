@@ -7,47 +7,50 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <title>Login</title>
      <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #fff;
-        }
+       /* Estilos generales del cuerpo */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+}
 
-        .header {
-            width: 100%;
-            height: 100px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            position: relative;
-        }
+/* Estilos de la cabecera */
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+}
 
-      .logo {
-        width: 200px; /* Ajusta el ancho como prefieras */
-        height: auto; /* Mantiene la relación de aspecto */
-        }
+.logo {
+    width: 200px; /* Ajusta el ancho como prefieras */
+    height: auto; /* Mantiene la relación de aspecto */
+}
 
-        .half-circle-container {
-            position: absolute;
-            top: 0;
-            right: -6px;
-            width: 790px;
-            height: 425px;
-            overflow: hidden;
-        }
+.half-circle-container {
+    position: absolute;
+    top: 0;
+    right: -6px;
+    width: 790px;
+    height: 425px;
+    overflow: hidden;
+}
 
-        .half-circle {
-            position: absolute;
-            width: 490px;
-            height: 300px;
-            background-color: #7154FC;
-            border-radius: 50%;
-            top: -125px;
-            right: 0;
-        }
+.half-circle {
+    position: absolute;
+    width: 490px;
+    height: 300px;
+    background-color: #7154FC;
+    border-radius: 50%;
+    top: -125px;
+    right: 0;
+}
 
-      .main-content3 {
+/* Estilos del contenido principal */
+.main-content3 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -122,7 +125,7 @@
 
 /* Estilos para la ventana modal */
 .modal {
-    display: none;
+    display: none; /* Ocultar el modal por defecto */
     position: fixed;
     z-index: 1;
     left: 0;
@@ -185,6 +188,31 @@
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+/* Estilo para el mensaje de éxito */
+.mensaje-exito {
+    color: #7154FC;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #7154FC;
+    border-radius: 5px;
+    background-color: #e6f9e6;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilo para el mensaje de error */
+.mensaje-error {
+    color: red;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+    background-color: #f9e6e6;
+    text-align: center;
+    margin-top: 10px;
 }
  /* Estilos para el círculo inferior izquierdo */
  .bottom-circle-container {
@@ -271,41 +299,53 @@
 
 </head>
 <body>
-    <div class="header">
-        <img src="img/logo2.png" alt="Logo" class="logo">
-        <div class="half-circle-container">
-            <div class="half-circle"></div>
+    <form id="loginForm" runat="server">
+        <div class="header">
+            <img src="img/logo2.png" alt="Logo" class="logo">
+            <div class="half-circle-container">
+                <div class="half-circle"></div>
+            </div>
         </div>
-    </div>
-    <div class="main-content3">
-        <div class="content-box">
-            <img src="img/imgM.png" alt="Imagen de Ejemplo">
-            <div class="login-form">
-               <h2>Inicio de Sesión</h2>
-             <form id="loginForm" runat="server">
-                <asp:TextBox ID="txtdescripcion" runat="server" CssClass="textbox" placeholder="Usuario" MaxLength="200" />
-                <asp:TextBox ID="txtpassword" runat="server" CssClass="textbox" TextMode="Password" placeholder="Contraseña" MaxLength="200" />
-                <asp:Button ID="continuar" runat="server" Text="INICIAR" CssClass="btn-buscar" OnClick="btncontinuar_Click" />
-                <asp:Label ID="lblMensaje" runat="server" Text="" />
-                <a href="#" id="register-link">Registrarse</a>
+        <div class="main-content3">
+            <div class="content-box">
+                <img src="img/imgM.png" alt="Imagen de Ejemplo">
+                <div class="login-form">
+                    <h2>Inicio de Sesión</h2>
+                    <asp:TextBox ID="txtdescripcion" runat="server" CssClass="textbox" placeholder="Usuario" MaxLength="200" />
+                    <asp:TextBox ID="txtpassword" runat="server" CssClass="textbox" TextMode="Password" placeholder="Contraseña" MaxLength="200" />
+                    <asp:Button ID="continuar" runat="server" Text="INICIAR" CssClass="btn-buscar" OnClick="btncontinuar_Click" />
+                    <asp:Label ID="lblMensaje" runat="server" Text="" />
+                    <a href="#" id="register-link">Registrarse</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ventana Modal para Verificación -->
+        <div id="verification-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Verificación de Código</h2>
+                <asp:TextBox ID="txtVerificationCode" runat="server" CssClass="textbox" placeholder="Ingrese el código" MaxLength="6" />
+                <asp:Button ID="btnVerifyCode" runat="server" Text="Verificar" CssClass="btn-buscar" OnClick="btnVerifyCode_Click" />
+                <asp:Label ID="lblVerificationMessage" runat="server" Text="" />
+            </div>
+        </div>
+
+        <!-- Ventana Modal para Registro -->
+        <div id="register-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Registrarse</h2>
+                <form>
+                    <input type="text" placeholder="Nombre Completo" required>
+                    <input type="email" placeholder="Correo Electrónico" required>
+                    <input type="password" placeholder="Contraseña" required>
+                    <button type="submit">Registrarse</button>
                 </form>
             </div>
         </div>
-    </div>
-
-    <!-- Ventana Modal para Registro -->
-    <div id="register-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Registrarse</h2>
-            <form>
-                <input type="text" placeholder="Nombre Completo" required>
-                <input type="email" placeholder="Correo Electrónico" required>
-                <input type="password" placeholder="Contraseña" required>
-                <button type="submit">Registrarse</button>
-            </form>
-        </div>
-    </div>
+    </form>
+</body>
   <!-- Círculo Inferior Izquierdo -->
   <div class="bottom-circle-container">
       <div class="bottom-circle"></div>
@@ -523,6 +563,54 @@
     }
 </script>
 <script type='text/javascript' src='https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/plugins/jet-blog/assets/js/jet-blog.min.js?ver=2.1.20'></script>
+<script>
+    // Obtener los modales
+    var verificationModal = document.getElementById("verification-modal");
+    var registerModal = document.getElementById("register-modal");
+
+    // Función para mostrar el modal de verificación
+    function showVerificationModal() {
+        // Ocultar otros modales
+        registerModal.style.display = "none";
+        // Mostrar el modal de verificación
+        verificationModal.style.display = "flex";
+    }
+
+    // Función para mostrar el modal de registro
+    function showRegisterModal() {
+        // Ocultar otros modales
+        verificationModal.style.display = "none";
+        // Mostrar el modal de registro
+        registerModal.style.display = "flex";
+    }
+
+    // Función para ocultar todos los modales
+    function closeModals() {
+        verificationModal.style.display = "none";
+        registerModal.style.display = "none";
+    }
+
+    // Agregar eventos de clic a los botones de cerrar
+    var closeButtons = document.getElementsByClassName("close");
+    for (var i = 0; i < closeButtons.length; i++) {
+        closeButtons[i].onclick = closeModals;
+    }
+
+    // Cerrar el modal si el usuario hace clic fuera de él
+    window.onclick = function (event) {
+        if (event.target == verificationModal || event.target == registerModal) {
+            closeModals();
+        }
+    }
+
+    // Asignar eventos a los botones
+    document.getElementById("continuar").onclick = function () {
+        showVerificationModal();
+    };
+    document.getElementById("register-link").onclick = function () {
+        showRegisterModal();
+    };
+</script>
 
 <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-P9FT69');</script><!-- End Google Tag Manager --></body>
 </html>

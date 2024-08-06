@@ -124,7 +124,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="HistoricoEmpPuestos.aspx" />
+    <Content Include="modulodepartamento.aspx" />
     <Content Include="historicopuestos.aspx" />
     <Content Include="img\control.jpg" />
     <Content Include="img\empleado.png" />
@@ -246,12 +246,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="HistoricoEmpPuestos.aspx.cs">
-      <DependentUpon>HistoricoEmpPuestos.aspx</DependentUpon>
+    <Compile Include="modulodepartamento.aspx.cs">
+      <DependentUpon>modulodepartamento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="HistoricoEmpPuestos.aspx.designer.cs">
-      <DependentUpon>HistoricoEmpPuestos.aspx</DependentUpon>
+    <Compile Include="modulodepartamento.aspx.designer.cs">
+      <DependentUpon>modulodepartamento.aspx</DependentUpon>
     </Compile>
     <Compile Include="historicopuestos.aspx.cs">
       <DependentUpon>historicopuestos.aspx</DependentUpon>

@@ -123,13 +123,22 @@ namespace proyectoC2
         protected global::System.Web.UI.WebControls.TextBox search;
 
         /// <summary>
-        /// Control gridView.
+        /// Control startDateTextBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridView;
+        protected global::System.Web.UI.WebControls.TextBox startDateTextBox;
+
+        /// <summary>
+        /// Control endDateTextBox.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox endDateTextBox;
 
         /// <summary>
         /// Control btnExport.
@@ -148,5 +157,14 @@ namespace proyectoC2
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnFilter;
+
+        /// <summary>
+        /// Control gridView.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gridView;
     }
 }
