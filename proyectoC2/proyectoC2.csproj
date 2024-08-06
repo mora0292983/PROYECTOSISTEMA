@@ -140,8 +140,11 @@
     <Content Include="img\rebajos.jpg" />
     <Content Include="img\vaca2.jpg" />
     <Content Include="JustificacionInconsistencias.aspx" />
+    <Content Include="pg_cin.aspx" />
     <Content Include="pg_controlincapacidades.aspx" />
+    <Content Include="pg_cua.aspx" />
     <Content Include="pg_departamentos.aspx" />
+    <Content Include="pg_dos.aspx" />
     <Content Include="pg_empexpediente.aspx" />
     <Content Include="pg_expediente.aspx" />
     <Content Include="pg_inicio.aspx" />
@@ -150,6 +153,9 @@
     <Content Include="pg_login.aspx" />
     <Content Include="pg_registrodiasfestivo.aspx" />
     <Content Include="pg_registroincapacidad.aspx" />
+    <Content Include="pg_seus.aspx" />
+    <Content Include="pg_tres.aspx" />
+    <Content Include="pg_uno.aspx" />
     <Content Include="pg_vacaciones.aspx" />
     <Content Include="pg_vacacionescolectivas.aspx" />
     <Content Include="RegistroActividadRealizada.aspx" />
@@ -274,6 +280,13 @@
     <Compile Include="PaginaMaestra.Master.designer.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
     </Compile>
+    <Compile Include="pg_cin.aspx.cs">
+      <DependentUpon>pg_cin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pg_cin.aspx.designer.cs">
+      <DependentUpon>pg_cin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pg_controlincapacidades.aspx.cs">
       <DependentUpon>pg_controlincapacidades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -281,12 +294,26 @@
     <Compile Include="pg_controlincapacidades.aspx.designer.cs">
       <DependentUpon>pg_controlincapacidades.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pg_cua.aspx.cs">
+      <DependentUpon>pg_cua.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pg_cua.aspx.designer.cs">
+      <DependentUpon>pg_cua.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pg_departamentos.aspx.cs">
       <DependentUpon>pg_departamentos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pg_departamentos.aspx.designer.cs">
       <DependentUpon>pg_departamentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pg_dos.aspx.cs">
+      <DependentUpon>pg_dos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pg_dos.aspx.designer.cs">
+      <DependentUpon>pg_dos.aspx</DependentUpon>
     </Compile>
     <Compile Include="pg_empexpediente.aspx.cs">
       <DependentUpon>pg_empexpediente.aspx</DependentUpon>
@@ -343,6 +370,27 @@
     </Compile>
     <Compile Include="pg_registroincapacidad.aspx.designer.cs">
       <DependentUpon>pg_registroincapacidad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pg_seus.aspx.cs">
+      <DependentUpon>pg_seus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pg_seus.aspx.designer.cs">
+      <DependentUpon>pg_seus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pg_tres.aspx.cs">
+      <DependentUpon>pg_tres.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pg_tres.aspx.designer.cs">
+      <DependentUpon>pg_tres.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pg_uno.aspx.cs">
+      <DependentUpon>pg_uno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pg_uno.aspx.designer.cs">
+      <DependentUpon>pg_uno.aspx</DependentUpon>
     </Compile>
     <Compile Include="pg_vacaciones.aspx.cs">
       <DependentUpon>pg_vacaciones.aspx</DependentUpon>
