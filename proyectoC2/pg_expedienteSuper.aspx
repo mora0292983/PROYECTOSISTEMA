@@ -1,241 +1,330 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="pg_login.aspx.cs" Inherits="proyectoC2.PG_Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="pg_expedienteSuper.aspx.cs" Inherits="proyectoC2.pg_uno" %>
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>Login</title>
-     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #fff;
-        }
+     <title></title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Imperion &raquo; Feed" href="https://ld-wp73.template-help.com/imperion/corporatelanding/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Imperion &raquo; Comments Feed" href="https://ld-wp73.template-help.com/imperion/corporatelanding/comments/feed/" />
+		<script type="text/javascript">
+            window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "https:\/\/ld-wp73.template-help.com\/imperion\/corporatelanding\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2" } };
+            !function (a, b, c) { function d(a, b) { var c = String.fromCharCode; l.clearRect(0, 0, k.width, k.height), l.fillText(c.apply(this, a), 0, 0); var d = k.toDataURL(); l.clearRect(0, 0, k.width, k.height), l.fillText(c.apply(this, b), 0, 0); var e = k.toDataURL(); return d === e } function e(a) { var b; if (!l || !l.fillText) return !1; switch (l.textBaseline = "top", l.font = "600 32px Arial", a) { case "flag": return !(b = d([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819])) && (b = d([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]), !b); case "emoji": return b = d([55357, 56424, 55356, 57342, 8205, 55358, 56605, 8205, 55357, 56424, 55356, 57340], [55357, 56424, 55356, 57342, 8203, 55358, 56605, 8203, 55357, 56424, 55356, 57340]), !b }return !1 } function f(a) { var c = b.createElement("script"); c.src = a, c.defer = c.type = "text/javascript", b.getElementsByTagName("head")[0].appendChild(c) } var g, h, i, j, k = b.createElement("canvas"), l = k.getContext && k.getContext("2d"); for (j = Array("flag", "emoji"), c.supports = { everything: !0, everythingExceptFlag: !0 }, i = 0; i < j.length; i++)c.supports[j[i]] = e(j[i]), c.supports.everything = c.supports.everything && c.supports[j[i]], "flag" !== j[i] && (c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && c.supports[j[i]]); c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && !c.supports.flag, c.DOMReady = !1, c.readyCallback = function () { c.DOMReady = !0 }, c.supports.everything || (h = function () { c.readyCallback() }, b.addEventListener ? (b.addEventListener("DOMContentLoaded", h, !1), a.addEventListener("load", h, !1)) : (a.attachEvent("onload", h), b.attachEvent("onreadystatechange", function () { "complete" === b.readyState && c.readyCallback() })), g = c.source || {}, g.concatemoji ? f(g.concatemoji) : g.wpemoji && g.twemoji && (f(g.twemoji), f(g.wpemoji))) }(window, document, window._wpemojiSettings);
+        </script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+  <style>
 
-        .header {
-            width: 100%;
-            height: 100px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            position: relative;
-        }
+     .half-circle-container {
+         position: absolute;
+         top: 0;
+         right: -80px;
+         width: 790px;
+         height: 425px;
+         overflow: hidden;
+     }
 
-      .logo {
-        width: 200px; /* Ajusta el ancho como prefieras */
-        height: auto; /* Mantiene la relación de aspecto */
-        }
+     .half-circle {
+         position: absolute;
+         width: 490px;
+         height: 300px;
+         background-color: #7154FC;
+         border-radius: 50%;
+         top: -125px;
+         right: 0;
+     }
+	 /* Estilos para el círculo inferior izquierdo */
+.bottom-circle-container {
+    position: relative;
+    width: 100%;
+	margin-top: 600px;
+    height: 10px; /* Ajusta la altura según sea necesario */
 
-        .half-circle-container {
-            position: absolute;
-            top: 0;
-            right: -6px;
-            width: 790px;
-            height: 425px;
-            overflow: hidden;
-        }
+}
 
-        .half-circle {
-            position: absolute;
-            width: 490px;
-            height: 300px;
-            background-color: #7154FC;
-            border-radius: 50%;
-            top: -125px;
-            right: 0;
-        }
+.bottom-circle {
+    position: absolute;
+	margin-top: 370px;
+    width: 1600px;
+    height: 380px;
+    background-color:#7154FC;
+    border-radius: 50%;
+    bottom: 0;
+    left: -110px;
+    transform: translateY(50%); /* Ajusta para que el círculo esté justo encima del footer */
+     z-index: -1; /* Asegura que el círculo esté detrás de otros elementos */
+}
+footer {
+    margin-top: 80px; /* Ajusta este valor para agregar más espacio debajo del contenido */
+     width: 1500px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
+	margin-left: -20px; /* Ajusta este valor para mover el footer hacia la izquierda */
+}
+.main-content3 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea el cuadro al inicio del contenedor verticalmente */
+    height: calc(100vh - 60px);
+    padding: 20px; /* Aumenta el padding del contenedor */
+    margin-top: 0px;
+}
 
-   /* Estilos del contenido principal */
-        .main-content3 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: calc(100vh - 60px);
-            padding: 100px;
-        }
+.content-box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Ajusta el ancho del cuadro blanco */
+    max-width: 800px; /* Ajusta el ancho máximo según sea necesario */
+    padding: 20px; /* Aumenta el padding para dar más espacio interno */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+}
 
-        .content-box {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 1100px;
-            display: flex;
-        }
+.form-section {
+    margin-bottom: 20px; /* Aumenta el margen inferior para separar las secciones */
+}
 
-        .content-box img {
-            border-top-left-radius: 8px;
-            border-bottom-left-radius: 8px;
-            width: 50%;
-            object-fit: cover;
-        }
+.form-section h3 {
+    background-color: #7154FC;
+    color: #fff;
+    padding: 10px; /* Aumenta el padding para hacer el cuadro morado más grande */
+    border-radius: 4px;
+    margin-top: 0;
+    text-align: center;
+    font-size: 24px; /* Ajusta el tamaño de la fuente del título */
+}
 
-        .login-form {
-            padding: 100px;
-            width: 50%;
-            border-radius: 8px;
-            box-sizing: border-box;
-        }
+label {
+    display: block;
+    margin: 5px 0; /* Ajusta el margen para mayor separación entre las etiquetas y los campos */
+}
 
-        .login-form h2 {
-            margin-bottom: 20px;
-            color: #333;
-        }
+.search-box {
+    width: 100%; /* Asegura que los campos de texto ocupen todo el ancho disponible */
+    padding: 8px; /* Ajusta el padding para que los campos sean más pequeños */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 40px; /* Ajusta la altura de los campos de texto */
+}
 
-        .login-form .textbox {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 20px; /* Bordes redondeados */
-            background-color: #f1f1f1; /* Color gris claro */
-            box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
-        }
+.small-box {
+    width: calc(100% - 20px); /* Ajusta el ancho de los campos para que sean más pequeños */
+    padding: 8px;
+}
 
-        .login-form .btn-buscar {
-            width: 100%;
-            padding: 15px;
-            background-color: #7154FC;
-            border: none;
-            color: #fff;
-            border-radius: 20px; /* Bordes redondeados */
-            font-size: 16px;
-            cursor: pointer;
-            margin-bottom: 10px;
-            transition: background-color 0.3s;
-        }
+.btn-buscar {
+    background-color: #7154FC;
+    color: #fff;
+    padding: 12px 20px; /* Ajusta el padding del botón */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Ajusta el tamaño de la fuente del botón */
+    display: inline-block; /* Asegura que el botón se alinee correctamente */
+    text-align: center; /* Centra el texto en el botón */
+    margin-top: 20px; /* Espacio arriba del botón */
+}
 
-        .login-form .btn-buscar:hover {
-            background-color: #5e35b1; /* Color morado más oscuro para el hover */
-        }
+.btn-buscar:hover {
+    background-color: #7154FC;
+}
 
-        .login-form a {
-            color: #7154FC;
-            text-decoration: none;
-            font-size: 14px;
-        }
+/* Estilo para el contenedor de dos columnas */
+.two-column {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Espacio entre columnas */
+    flex-wrap: wrap; /* Permite que las columnas se ajusten en pantallas más pequeñas */
+}
 
-        .login-form a:hover {
-            text-decoration: underline;
-        }
+/* Estilo para cada columna en el contenedor de dos columnas */
+.column {
+    flex: 1;
+    min-width: calc(50% - 20px); /* Ajusta el ancho mínimo de las columnas */
+}
 
-        /* Estilos para la ventana modal */
-        .modal {
-            display: none; /* Ocultar el modal por defecto */
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.4);
-            justify-content: center;
-            align-items: center;
-        }
+/* Estilo para centrar el botón */
+.button-container {
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+    margin-top: 30px; /* Espacio arriba del contenedor del botón */
+  
+}
+/* Selecciona el contenedor del menú */
+.jet-nav-wrap {
+    margin-left: -160px; /* Ajusta este valor según tus necesidades */
+}
 
-        .modal-content {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            width: 80%;
-            max-width: 600px;
-            margin: auto;
-        }
+/* Opcionalmente, puedes especificar la clase del menú principal si deseas más precisión */
+.jet-nav-wrap.jet-mobile-menu.jet-mobile-menu--right-side {
+    margin-left: -190px; /* Ajusta este valor según tus necesidades */
+}
+/* Estilo para el mensaje de éxito */
+.mensaje-exito {
+    color: #7154FC;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #7154FC;
+    border-radius: 5px;
+    background-color: #e6f9e6;
+    text-align: center;
+    margin-top: 10px;
+	   margin-left: auto;
+    margin-right: auto;
+}
 
-        .modal-content h2 {
-            margin-top: 0;
-        }
+/* Estilo para el mensaje de error */
+.mensaje-error {
+    color: red;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+    background-color: #f9e6e6;
+    text-align: center;
+    margin-top: 10px;
+}
 
-        .modal-content input {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 20px;
-            background-color: #f1f1f1;
-        }
+/* Contenedor del logo y el título */
+.elementor-jet-logo {
+    text-align: center; /* Centra el contenido dentro del contenedor */
+}
+/* Imagen del logo */
+.jet-logo__img {
+    display: block; /* Asegura que el logo se muestre como un bloque */
+    margin: 0 auto; /* Centra el logo horizontalmente */
+}
 
-        .modal-content button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            border: none;
-            color: #fff;
-            border-radius: 20px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+/* Título debajo del logo */
+.jet-logo__title {
+    font-size: 14px; /* Tamaño del texto del título */
+	font-weight: 500; /* Negrita moderada */
+    color: #333; /* Color del texto del título */
+    margin-top: 10px; /* Espacio entre el logo y el título */
+    text-transform: uppercase; /* Opcional: convierte el texto a mayúsculas */
+	 margin-left: -100px;
+}
+.form-actions {
+    display: flex; /* Usa Flexbox para el contenedor */
+    flex-direction: column; /* Organiza los elementos en una columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    margin-top: 30px; /* Espacio arriba del contenedor del botón */
+}
 
-        .modal-content button:hover {
-            background-color: #0056b3;
-        }
+.form-actions .btn-primary {
+    background-color: #7154FC; /* Color de fondo del botón */
+    color: #fff; /* Color del texto */
+    padding: 15px 25px; /* Tamaño del botón */
+    border: none; /* Sin borde */
+    border-radius: 25px; /* Bordes redondeados */
+    font-size: 18px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor a mano al pasar por encima */
+    text-align: center; /* Centra el texto */
+    display: inline-block; /* Asegura que el botón se alinee correctamente */
+    margin-bottom: 10px; /* Espacio debajo del botón para separar del mensaje */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
 
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
+.form-actions .btn-primary:hover {
+    background-color: #5a0cac; /* Color de fondo en hover */
+}
 
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
+.form-actions .lblMensaje {
+    margin-top: 10px; /* Espacio arriba del mensaje para separarlo del botón */
+    text-align: center; /* Centra el texto del mensaje */
+    color: red; /* Color del texto del mensaje de error */
+    font-size: 16px; /* Tamaño de la fuente del mensaje */
+}
+/* Estilos del submenú */
+.submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #fff; /* Color de fondo del submenú */
+    border-radius: 4px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    transition: opacity 0.3s, visibility 0.3s; /* Transiciones suaves */
+}
 
-        /* Estilos para el círculo inferior izquierdo */
-        .bottom-circle-container {
-            position: relative;
-            width: 100%;
-            height: 10px; /* Ajusta la altura según sea necesario */
-        }
+/* Estilos de los elementos del submenú */
+.submenu-item {
+    border-bottom: 1px solid #ddd; /* Línea divisoria entre elementos */
+}
 
-        .bottom-circle {
-            position: absolute;
-            width: 900px;
-            height: 500px;
-            background-color:#7154FC;
-            border-radius: 50%;
-            bottom: 0;
-            left: -115px;
-            transform: translateY(50%); /* Ajusta para que el círculo esté justo encima del footer */
-            z-index: -1; /* Asegura que el círculo esté detrás de otros elementos */
-        }
+.submenu-item:last-child {
+    border-bottom: none; /* Elimina la línea divisoria del último elemento */
+}
 
-        /* Estilo para el mensaje de éxito */
-        .mensaje-exito {
-            color: #7154FC;
-            font-weight: bold;
-            padding: 10px;
-            border: 1px solid #7154FC;
-            border-radius: 5px;
-            background-color: #e6f9e6;
-            text-align: center;
-            margin-top: 10px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+.submenu-item a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333; /* Color del texto del submenú */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+}
 
-        /* Estilo para el mensaje de error */
-        .mensaje-error {
-            color: red;
-            font-weight: bold;
-            padding: 10px;
-            border: 1px solid red;
-            border-radius: 5px;
-            background-color: #f9e6e6;
-            text-align: center;
-            margin-top: 10px;
-        }
-    </style>
+/* Cambia el color del texto del submenú al pasar el ratón por encima */
+.submenu-item a:hover {
+    background-color: #f0f0f0; /* Color de fondo al pasar el ratón */
+    color: #007bff; /* Color del texto al pasar el ratón */
+}
+
+/* Mostrar el submenú al pasar el ratón por encima del elemento del menú */
+.menu-item:hover .submenu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Contenedor del logo y el título */
+.elementor-jet-logo {
+    text-align: center; /* Centra el contenido dentro del contenedor */
+}
+/* Imagen del logo */
+.jet-logo__img {
+    display: block; /* Asegura que el logo se muestre como un bloque */
+    margin: 0 auto; /* Centra el logo horizontalmente */
+}
+
+/* Título debajo del logo */
+.jet-logo__title {
+    font-size: 14px; /* Tamaño del texto del título */
+	font-weight: 500; /* Negrita moderada */
+    color: #333; /* Color del texto del título */
+    margin-top: 10px; /* Espacio entre el logo y el título */
+    text-transform: uppercase; /* Opcional: convierte el texto a mayúsculas */
+	 margin-left: -100px;
+}
+
+</style>
+
+
+
+
 
 <style id='imperionthemestyleinlinecss' type='text/css'>
-/* #Typography */body {font-style: normal;font-weight: 150;font-size: 8px;line-height: 1.667;font-family: Lato, sans-serif;letter-spacing: 0px;text-align: left;color: #42474c;text-transform: none;}h1,.h1-style {font-style: normal;font-weight:150;font-size: 8px;line-height: 1.3;font-family: Montserrat, sans-serif;letter-spacing: 0px;text-align: inherit;color: #42474c;text-transform: none;}h2,.h2-style {font-style: normal;font-weight:150;font-size: 8px;line-height: 1.2;font-family: Montserrat, sans-serif;letter-spacing: 0px;text-align: inherit;color: #42474c;text-transform: none;}h3,.h3-style {font-style: normal;font-weight: 800;font-size: 26px;line-height: 1.4;font-family: Montserrat, sans-serif;letter-spacing: 0px;text-align: inherit;color: #42474c;text-transform: none;}h4,.h4-style {font-style: normal;font-weight: 600;font-size: 14px;line-height: 1.33;font-family: Montserrat, sans-serif;letter-spacing: 3px;text-align: inherit;color: #42474c;text-transform: none;}h5,.h5-style {font-style: normal;font-weight: 600;font-size: 14px;line-height: 1.33;font-family: Montserrat, sans-serif;letter-spacing: 3px;text-align: inherit;color: #42474c;text-transform: uppercase;}h6,.h6-style {font-style: normal;font-weight: 400;font-size: 14px;line-height: 1.2;font-family: Montserrat, sans-serif;letter-spacing: 0px;text-align: inherit;color: #42474c;text-transform: uppercase;}@media (min-width: 1200px) {h1,.h1-style { font-size: 60px; }h2,.h2-style { font-size: 40px; }h3,.h3-style { font-size: 34px; }}a,h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover { color: #899296; }a:hover, p a, dl a { color: #5e58f8; }/* #Blockquote */blockquote {color: #42474c;}blockquote {font-style: italic;font-weight: 400;font-family: 'Libre Baskerville', serif;letter-spacing: 0em;text-transform: none;}blockquote:before {font-family: Montserrat, sans-serif;color: rgb(199,199,199);}cite {font-style: normal;font-weight: 400;font-size: 14px;line-height: 1.2;font-family: Montserrat, sans-serif;letter-spacing: 0em;text-transform: uppercase;}blockquote cite {color: #899296;}.invert blockquote cite {color: /* Variable not found */;}cite span:not(.tm-testi__item-name) {font-style: normal;font-weight: 300;font-family: Lato, sans-serif;text-transform: none;}cite:before {background-color: rgb(89,98,102);top: calc((1.2*14px)/2);}/* #Invert Color Scheme */.invert, .invert h1, .invert h2, .invert h3, .invert h4, .invert h5, .invert h6 {color: #ffffff;}/* #Header */.site-header__wrap {background-color: #ffffff;background-repeat: repeat;background-position: center top;background-attachment: scroll;;}/* ##Top Panel */.top-panel {color: #42474c;background-color: #ffffff;}/* #Main Menu */.main-navigation {font-style: normal;font-weight: 400;font-size: 14px;line-height: 1.4;font-family: Hind, sans-serif;letter-spacing: 0px;}.main-navigation a{color: #42474c;}.menu-item-has-children a:after {background-color: #42474c;}.menu-item-has-children a:hover:after {background-color: #5e58f8;}.main-navigation a:hover,.main-navigation .current_page_item>a,.main-navigation .current-menu-item>a,.main-navigation .current_page_ancestor>a,.main-navigation .current-menu-ancestor>a {color: #5e58f8;}.main-navigation .sub-menu a:hover,.main-navigation .sub-menu li.menu-hover > a,.main-navigation .sub-menu li.current_page_item > a,.main-navigation .sub-menu li.current_page_ancestor > a,.main-navigation .sub-menu li.current-menu-item > a,.main-navigation .sub-menu li.current-menu-ancestor > a {background-color: #f7f7f7;}/* sub menu */.main-navigation .sub-menu li{border-color: #f7f7f7;}.menu-item-has-children a:hover:after,.main-navigation .current_page_item > a:after,.main-navigation .current-menu-item > a:after,.main-navigation .current_page_ancestor > a:after,.main-navigation .current-menu-ancestor > a:after{background-color: #5e58f8;}/* #Mobile Menu */.mobile-menu-toggle-button {color: #ffffff;background-color: #5e58f8;}/* #Social */.social-list a {color: #42474c;}.social-list a:hover {color: #5e58f8;}/* #Share btns */.share-btns__link svg {fill: #899296;}.share-btns__link:hover svg {fill: #ffffff;}.share-btns__link:hover {color: #ffffff;}.share-btns__link:hover:before {background-color: #5e58f8;}/* #Breadcrumbs */.breadcrumbs {background-color: #42474C;background-repeat: no-repeat;background-attachment: scroll;background-size: cover;background-image: url(http://%s/assets/images/breadcrumbs_bg.jpg);background-position: center;padding-top: 20px;padding-bottom: 20px;}@media (min-width: 768px) {.breadcrumbs {padding-top: 40px;padding-bottom: 40px;}}@media (min-width: 1200px) {.breadcrumbs {padding-top: 70px;padding-bottom: 70px;}}.breadcrumbs_wrap {font-style: normal;font-weight: 400;font-size: 14px;line-height: 1.5;font-family: Lato, sans-serif;letter-spacing: 0em;text-transform: none;}.invert.breadcrumbs {color: #ffffff;}.invert.breadcrumbs .breadcrumbs_item a:hover {border-bottom-color: #ffffff;color: #ffffff;text-decoration: underline;}/* #Post navigation */.post-navigation i {color: #42474c;}.post-navigation .nav-links a:hover .post-title,.post-navigation .nav-links a:hover .nav-text {color: #899296;}.post-navigation .nav-links a:hover i {color: #5e58f8;}/* Post Page Links */.page-links .post-page-numbers{color: #899296;}.page-links .post-page-numbers:hover{color: #5e58f8;}.page-links .post-page-numbers.current{color: #42474c;}/* #Pagination */.comment-navigation,.posts-navigation,.post-navigation {font-style: normal;font-weight: 600;font-size: 11px;line-height: 1.33;font-family: Montserrat, sans-serif;letter-spacing: 3em;text-align: inherit;text-transform: none;border-color: rgb(233,233,233);}.pagination .page-numbers{color: #899296;background-color: #f7f7f7;}.pagination a.page-numbers:hover,.pagination .page-numbers.current{color: #ffffff;background-color: #42474c;}.pagination .next path,.pagination .prev path{fill: #899296;}.pagination .next:hover path,.pagination .prev:hover path{fill: #ffffff;}.comment-navigation a:not(:hover),.posts-navigation a:not(:hover),.post-navigation a:not(:hover) {color: #42474c;}.comment-navigation .nav-previous a:before,.comment-navigation .nav-next a:before,.posts-navigation .nav-previous a:before,.posts-navigation .nav-next a:before,.post-navigation .nav-previous a:before,.post-navigation .nav-next a:before{color: rgb(214,214,214);}/* #Button Appearance Styles */.btn,.btn-link,.link,.elementor-widget .elementor-button,.cherry-projects-wrapper .projects-ajax-button-wrapper .projects-ajax-button span,a.button,form button,form input[type='button'],form input[type='reset'],form input[type='submit'] {font-family: Montserrat, sans-serif;}.btn-text-icon path,.btn-icon path{fill: #899296;}.btn-text-icon:hover path,.btn-icon:hover path{fill: #5e58f8;}.btn.btn-icon path,.btn.btn-icon:hover path{fill: #ffffff;}.btn,.btn-primary,.invert .btn-primary,.elementor-widget .elementor-button,.cherry-projects-wrapper .projects-ajax-button-wrapper .projects-ajax-button span,.tm-pg_front_gallery .load-more-button .btn,form button,form input[type='button'],form input[type='submit']{color: #ffffff;background-color: #5e58f8;border-color: #5e58f8;}.btn:hover,.btn-primary:hover,.invert .btn-primary:hover,.btn-primary.processing,.invert .btn-primary.processing,.elementor-widget .elementor-button:hover,.cherry-projects-wrapper .projects-ajax-button-wrapper .projects-ajax-button span:hover,.tm-pg_front_gallery .load-more-button .btn:hover,form button:hover,form input[type='button']:hover,form input[type='submit']:hover{color: #ffffff;border-color: rgb(69,63,223);background-color: rgb(69,63,223);}.btn-secondary,.invert .btn-secondary,form input[type="reset"]{color: #ffffff;background-color: /* Variable not found */;border-color: /* Variable not found */;}.btn-secondary:hover,.invert .btn-secondary:hover,.btn-secondary.processing,.invert .btn-secondary.processing,form input[type="reset"]:hover {color: #ffffff;background-color: #5e58f8;border-color: #5e58f8;}.btn-primary-transparent{color: /* Variable not found */;}.invert .btn-primary-transparent{color: #ffffff;border-color: #ffffff;}.btn-primary-transparent:hover,.invert .btn-primary-transparent:hover,.btn-primary-transparent.processing,.invert .btn-primary-transparent.processing{color: #ffffff;background-color: #5e58f8;border-color: #5e58f8;}.btn-grey,.invert .btn-grey {color: /* Variable not found */;background-color: #f7f7f7;border-color: #f7f7f7;}.btn-grey:hover,.invert .btn-grey:hover,.btn-grey.processing,.invert .btn-grey.processing{color: /* Variable not found */;background-color: rgb(222,222,222);border-color: rgb(222,222,222);}/* #ToTop button */#toTop:before{background-color: #42474c;}#toTop:hover {background-color: #5e58f8;}#toTop:hover:before{background-color: #ffffff;}input,select,textarea {font-style: normal;font-weight: 300;font-family: Lato, sans-serif;background-color: #f7f7f7;color: #42474c;}/* #Comment, Contact, Password Forms */.comment-form .submit,.wpcf7-submit,.post-password-form label + input {font-style: normal;font-weight: 900;font-size: 11px;line-height: 1;font-family: Hind, sans-serif;letter-spacing: 1px;color: #ffffff;background-color: #5e58f8;}.comment-form .submit:hover,.wpcf7-submit:hover,.post-password-form label + input:hover {color: #ffffff;border-color: rgb(69,63,223);background-color: rgb(69,63,223);}.comment-reply-title {font-style: normal;font-weight: 600;font-size: 14px;line-height: 1.33;font-family: Montserrat, sans-serif;letter-spacing: 3px;color: #42474c;text-transform: uppercase;}/* Cookies consent */.comment-form-cookies-consent input[type='checkbox']:checked ~ label[for=wp-comment-cookies-consent]:before {color: #ffffff;border-color: #5e58f8;background-color: #5e58f8;}/* #Comment Reply Link */#cancel-comment-reply-link {color: #42474c;}#cancel-comment-reply-link:hover {color: #5e58f8;}/* #Comment item */.comment-body .fn {font-style: normal;font-weight: 400;line-height: 1.2;font-family: Montserrat, sans-serif;letter-spacing: 0px;color: #899296;}.comment-date__time, .comment-date__link {color: #899296;}.comment-date__time:hover, .comment-date__link:hover {color: #5e58f8;}.logged-in-as a {color: #5e58f8;}.logged-in-as a:hover {color: #899296;}/* #Input Placeholders */::-webkit-input-placeholder { color: #42474c; }::-moz-placeholder{ color: #42474c; }:-moz-placeholder{ color: #42474c; }:-ms-input-placeholder{ color: #42474c; }input:focus,select:focus,textarea:focus {border-color: #5e58f8;}/* #WPCF7 */.wpcf7 input[type='text'],.wpcf7 input[type='email'],.wpcf7 input[type='url'],.wpcf7 input[type='password'],.wpcf7 input[type='search'],.wpcf7 input[type='tel'],.wpcf7 textarea {border-bottom-color: rgb(189,189,189);}.wpcf7 input[type='text']:focus,.wpcf7 input[type='email']:focus,.wpcf7 input[type='url']:focus,.wpcf7 input[type='password']:focus,.wpcf7 input[type='search']:focus,.wpcf7 input[type='tel']:focus,.wpcf7 textarea:focus {border-bottom-color: #5e58f8;}/* #Entry Meta */.posted-on,.cat-links,.byline,.tags-links {color: #899296;}.comments-button {color: #42474c;}.comments-button:hover {color: #ffffff;background-color: #5e58f8;}.btn-style .post-categories a {color: #ffffff;background-color: #5e58f8;}.btn-style .post-categories a:hover {color: #ffffff;background-color: rgb(132,126,255);}.sticky-label{color: #ffffff;background-color: #5e58f8;}.sticky-label path{fill: #ffffff;}/* #Entry Meta */.entry-meta, .btn-style .post-categories a {font-style: normal;font-weight: 400;font-size: 12px;line-height: 1.75;font-family: Montserrat, sans-serif;letter-spacing: 0em;text-transform: none;color: #899296;}.entry-meta .icon-svg {color: #ffffff;}.entry-meta .comments-link:hover .icon-svg path {fill: #5e58f8;}.btn-style .post-categories a {color: #ffffff;}.tags-links a:hover {color: #ffffff;border-color: #42474c;background-color: #42474c;}/* Posts List Item Invert */.invert-hover.has-post-thumbnail:hover,.invert-hover.has-post-thumbnail:hover .posted-on,.invert-hover.has-post-thumbnail:hover .cat-links,.invert-hover.has-post-thumbnail:hover .byline,.invert-hover.has-post-thumbnail:hover .tags-links,.invert-hover.has-post-thumbnail:hover .entry-meta,.invert-hover.has-post-thumbnail:hover a,.invert-hover.has-post-thumbnail:hover .btn-icon,.invert-item.has-post-thumbnail,.invert-item.has-post-thumbnail .posted-on,.invert-item.has-post-thumbnail .cat-links,.invert-item.has-post-thumbnail .byline,.invert-item.has-post-thumbnail .tags-links,.invert-item.has-post-thumbnail .entry-meta,.invert-item.has-post-thumbnail a,.invert-item.has-post-thumbnail .btn:hover,.invert-item.has-post-thumbnail .btn-style .post-categories a:hover,.invert,.invert .entry-title,.invert a,.invert .byline,.invert .posted-on,.invert .cat-links,.invert .tags-links {color: #ffffff;}.invert-hover.has-post-thumbnail:hover a:hover,.invert-hover.has-post-thumbnail:hover .btn-icon:hover,.invert-item.has-post-thumbnail a:hover,.invert a:hover {color: #5e58f8;}.invert-hover.has-post-thumbnail .btn,.invert-item.has-post-thumbnail .comments-button{color: #ffffff;background-color: #5e58f8;}.invert-hover.has-post-thumbnail .btn:hover,.invert-item.has-post-thumbnail .comments-button:hover{color: #899296;background-color: #ffffff;}/* Default Posts List */.entry-title a:hover {color: #5e58f8;}.posts-list--default .no-thumb .tags-links a:not(:hover) {border-color: rgb(214,214,214);}.posts-list--default .tags-links a {border-color: #f7f7f7;}.edit-link a:before{background-color: #899296;}.edit-link a:hover:before{background-color: #5e58f8;}/* Creative Posts List */.creative-item .entry-title a:hover {color: #899296;}.list-style-default .creative-item a,.creative-item .btn-icon {color: #42474c;}.list-style-default .creative-item a:hover,.creative-item .btn-icon:hover {color: #899296;}.list-style-default .creative-item .btn,.list-style-default .creative-item .btn:hover,.list-style-default .creative-item .comments-button:hover {color: #ffffff;}.creative-item__title-first-letter {font-style: normal;font-weight: 300;font-family: Montserrat, sans-serif;color: #42474c;}.posts-list--creative.list-style-v10 .creative-item:before {background-color: #5e58f8;box-shadow: 0px 0px 0px 8px rgba(94,88,248,0.25);}.posts-list--creative.list-style-v10 .creative-item__post-date {font-style: normal;font-weight: 600;font-size: 14px;line-height: 1.33;font-family: Montserrat, sans-serif;letter-spacing: 3px;color: #899296;}.posts-list--creative.list-style-v10 .creative-item__post-date a {color: #899296;}.posts-list--creative.list-style-v10 .creative-item__post-date a:hover {color: #5e58f8;}/* Post Author */.post-author__title a:hover {color: #5e58f8;}.invert .post-author__title a {color: #ffffff;}.invert .post-author__title a:hover {opacity: 0.7;}/* Single Post */.single-post blockquote {border-color: #5e58f8;}.single-post:not(.post-template-single-layout-4):not(.post-template-single-layout-7) .tags-links a:hover{color: #ffffff;border-color: #42474c;background-color: #42474c;}.post-template-single-layout-9 .cat-links a,.post-template-single-layout-9 .comments-link,.post-template-single-layout-9 .post-author-bio .post-author__title {color: #5e58f8;}.post-template-single-layout-9 .cat-links a:hover,.post-template-single-layout-9 .comments-link:hover,.post-template-single-layout-9 .post-author-bio .post-author__title a:hover {color: #899296;}.single-header-3 .post-author .byline,.single-header-4 .post-author .byline,.single-header-5 .post-author .byline {font-style: normal;font-weight: 600;font-size: 14px;line-height: 1.33;font-family: Montserrat, sans-serif;letter-spacing: 3px;}.single-header-3.invert .post-author__content a:hover,.single-header-4.invert .post-author a:hover,.single-header-4.invert .entry-meta a:hover,.single-header-5.invert .comments-link:hover,.single-header-5.invert .post-author__content a:hover,.single-header-6.invert a:hover,.single-header-7.invert .entry-header-bottom a:hover {color: #ffffff;opacity: 0.7;}.single-post .single-header-8.invert .tags-links a:hover {color: #ffffff;opacity: 0.7;background-color: transparent;border-color: transparent;}.single-header-4 .entry-meta .icon-svg path,.single-header-4 .entry-meta a:hover .icon-svg path,.single-header-7 .posted-on .icon-svg path,.single-header-7 .entry-meta .icon-svg path,.single-header-7 .entry-meta a:hover .icon-svg path,.single-header-8 .posted-on .icon-svg path,.single-header-8 .entry-meta .icon-svg path,.single-header-8 .entry-meta a:hover .icon-svg path {fill: #ffffff;}.single-header-7 .entry-header-top:not(:empty) .posted-on {font-style: normal;font-weight: 600;font-size: 14px;line-height: 1.33;font-family: Montserrat, sans-serif;letter-spacing: 3px;}.post-template-single-layout-6 #author-block .posted-on {font-family: Montserrat, sans-serif;}.single-header-8,.single-header-10 .entry-header {background-color: #5e58f8;}.single-header-8.invert a:hover,.single-header-10.invert a:hover {color: rgba(255,255,255,0.5);}.single-header-3 a.comments-button,.single-header-10 a.comments-button {border: 1px solid #ffffff;}.single-header-3 a.comments-button:hover,.single-header-10 a.comments-button:hover {color: #5e58f8;background-color: #ffffff;}.single-header-3 .comments-button path,.single-header-10 .comments-button path {fill: #ffffff;}.single-header-3 .comments-button:hover path,.single-header-10 .comments-button:hover path {fill: #5e58f8;}/* #Post */.no-thumb .posts-list__item-content,.posts-list--default .post-thumbnail:empty + .posts-list__item-content,.posts-list--grid .posts-list__item-content,.posts-list--masonry .posts-list__item-content,.posts-list--vertical-justify .posts-list__item-content,.related-post,.post-author-bio{background-color: #f7f7f7;}/* related-posts */.posts-list:not(.posts-list--default) .tags-links a,.related-post .tags-links a {background-color: rgba(66,71,76,0.4);color: #ffffff;font-style: normal;font-weight: 400;font-family: Montserrat, sans-serif;}.related-post .tags-links a {color: #ffffff;}.posts-list:not(.posts-list--default) .tags-links a:hover,.related-post .tags-links a:hover {background-color: rgba(66,71,76,0.7);}.related-posts .entry-title a:hover {color: #5e58f8;}/* #Comments */.comment-list .comment:before,.comment-list .pingback:before {background-color: rgb(181,181,181);}.comment-reply-link {font-style: normal;font-weight: 400;font-family: Montserrat, sans-serif;}.comment-body .reply .icon-svg__comments path {fill: #42474c;}.comment-list .comment-metadata {font-style: normal;font-weight: 400;font-size: 12px;line-height: 1.75;font-family: Montserrat, sans-serif;letter-spacing: 0em;text-transform: none;color: #899296;}#cancel-comment-reply-link {line-height: calc(1.33 * 14px);}/* #Page preloader */.page-preloader-cover .bar:before{background-color: #5e58f8;}.page-preloader-cover .bar {background-color: #f7f7f7;}/* Logo */.site-logo__link,.site-logo__link:hover {color: #5e58f8;}/* Page title */.page-title {font-style: normal;font-weight: 300;font-size: 24px;line-height: 1.2;font-family: Montserrat, sans-serif;letter-spacing: 0px;color: #42474c;}@media (min-width: 1200px) {.page-title { font-size: 40px; }}/* Grid Posts List *//* Posts List Grid Item Invert */.grid-item-wrap.invert,.grid-item-wrap.invert .posted-on,.grid-item-wrap.invert .cat-links,.grid-item-wrap.invert .byline,.grid-item-wrap.invert .tags-links,.grid-item-wrap.invert .entry-meta,.grid-item-wrap.invert a,.grid-item-wrap.invert .btn-icon,.grid-item-wrap.invert .comments-button {color: #ffffff;}.posts-list.posts-list--grid .posted-by a:not(:hover){color: #42474c;}/* Vertical Justify Posts List */.posts-list.posts-list--vertical-justify .posted-by a:not(:hover){color: #42474c;}/* masonry Posts List */.posts-list.list-style-v3 .comments-link {border-color: #899296;}.posts-list.list-style-v4 .comments-link {color: #42474c;}.posts-list.list-style-v4 .posts-list__item.masonry-item .masonry-item-wrap .comments-link:hover {color: #ffffff;background-color: #899296;}/* Posts List masonry Item Invert */.masonry-item-wrap.invert,.masonry-item-wrap.invert .posted-on,.masonry-item-wrap.invert .cat-links,.masonry-item-wrap.invert .byline,.masonry-item-wrap.invert .tags-links,.masonry-item-wrap.invert .entry-meta,.masonry-item-wrap.invert a,.masonry-item-wrap.invert .btn-icon,.masonry-item-wrap.invert .comments-button {color: #ffffff;}/* Posts List masonry-5 Item Invert */.list-style-v5 .masonry-item-wrap.invert .posted-on,.list-style-v5 .masonry-item-wrap.invert .cat-links,.list-style-v5 .masonry-item-wrap.invert .byline,.list-style-v5 .masonry-item-wrap.invert .tags-links,.list-style-v5 .masonry-item-wrap.invert .posted-on a,.list-style-v5 .masonry-item-wrap.invert .cat-links a,.list-style-v5 .masonry-item-wrap.invert .tags-links a,.list-style-v5 .masonry-item-wrap.invert .byline a,.list-style-v5 .masonry-item-wrap.invert .comments-link,.list-style-v5 .masonry-item-wrap.invert .entry-title a:hover {color: #5e58f8;}.list-style-v5 .masonry-item-wrap.invert .posted-on a:hover,.list-style-v5 .masonry-item-wrap.invert .cat-links a:hover,.list-style-v5 .masonry-item-wrap.invert .tags-links a:hover,.list-style-v5 .masonry-item-wrap.invert .byline a:hover,.list-style-v5 .masonry-item-wrap.invert .comments-link:hover {color: #ffffff;}.posts-list.list-style-v10 .masonry-item-inner .space-between-content .comments-link {color: #42474c;}.posts-list.list-style-v10 .masonry-item-inner .space-between-content .comments-link:hover {color: #5e58f8;}.wp-block-categories-list > li + li,.wp-block-archives-list > li + li,.widget_archive > ul > li + li,.widget_categories > ul > li + li,.widget-area:not(.footer-area) .widget_nav_menu div > ul > li + li,.elementor-widget-sidebar .widget_nav_menu div > ul > li + li,.widget_meta > ul > li + li,.widget_pages > ul > li + li{border-color: rgb(233,233,233);}.wp-block-categories-list li a:before,.wp-block-archives-list li a:before,.widget_archive > ul > li > a:before,.widget_categories > ul > li > a:before,.widget-area:not(.footer-area) .widget_nav_menu div > ul > li > a:before,.elementor-widget-sidebar .widget_nav_menu div > ul > li > a:before,.widget_meta > ul > li > a:before,.widget_pages > ul > li > a:before{background-color: rgb(181,181,181);}/* Widgets misc */.wp-block-categories-list,.wp-block-archives-list,.widget_archive > ul,.widget_categories > ul,.widget-area:not(.footer-area) .widget_nav_menu div > ul,.elementor-widget-sidebar .widget_nav_menu div > ul,.widget_meta > ul,.widget_pages > ul,.widget.woocommerce:not(.widget_top_rated_products) > ul,.widget_recent_entries a,.widget_recent_comments a{font-style: normal;font-weight: 400;font-size: 14px;font-family: Montserrat, sans-serif;letter-spacing: 0px;}.wp-block-archives-list li,.widget_archive ul li,.widget_categories ul li{color: #5e58f8;}.widget_recent_entries .post-date,.widget_recent_comments .recentcomments {color: #42474c;}/* #Widget Recent Posts - Comments*/.widget_recent_entries a:not(:hover),.widget_recent_comments a:not(:hover) {color: #42474c;}.invert .widget_recent_entries a:not(:hover),.invert .widget_recent_comments a:not(:hover) {color: #ffffff;}/* #Widget RSS */.widget_rss a.rsswidget {font-style: normal;font-weight: 600;font-family: Montserrat, sans-serif;letter-spacing: 3em;text-transform: none;color: h/* Variable not found */;}.widget_rss a.rsswidget:hover {color: #5e58f8;}.invert .widget_rss a.rsswidget,.invert .widget_rss a.rsswidget:hover {color: #ffffff;}/* #Widget date style*/.rss-date,.widget_recent_entries .post-date{font-style: normal;font-weight: 400;font-size: 12px;line-height: 1.75;font-family: Montserrat, sans-serif;letter-spacing: 0em;color: #899296;}.invert .rss-date,.invert .widget_recent_entries .post-date{color: /* Variable not found */;}/* #Widget Tags */.tagcloud a,.tags-links a{border-color: #f7f7f7;}.tagcloud a:hover,.tags-links a:hover{color: #ffffff;border-color: #42474c;background-color: #42474c;}/* #Widget Calendar */.invert .widget_calendar {color: #42474c;}.widget_calendar .calendar_wrap {background-color: #f7f7f7;}.widget_calendar tbody tr:nth-child(odd) {background-color: rgb(251,251,251);}.widget_calendar caption{color: #5e58f8;}.widget_calendar tfoot a:before{background-color: #5e58f8;}.widget_calendar tfoot a:hover:before {background-color: #42474c;}.widget_calendar tbody td#today,.widget_calendar tbody td a {color: #ffffff;}.widget_calendar tbody td#today,.widget_calendar tbody td a {background-color: #5e58f8;}.widget_calendar tbody td a:hover {background-color: #42474c;color: #ffffff;}/* Preloader */.jet-smart-listing-wrap.jet-processing + div.jet-smart-listing-loading,div.wpcf7 .ajax-loader {border-top-color: #5e58f8;border-right-color: #5e58f8;}/*--------------------------------------------------------------## Ecwid Plugin Styles--------------------------------------------------------------*//* Product Title, Product Price amount */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid-product__title-inner,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products .grid-product__image ~ .grid-product__price .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products .grid-product__image ~ .grid-product__title .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items.grid__products--layout-center .grid-product__price-compare,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__details,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__sku,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__sku-hover,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__tax,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .form__msg,html#ecwid_html body#ecwid_body .ec-size.ec-size--l .ec-wrapper .ec-store h1,html#ecwid_html body#ecwid_body.page .ec-size .ec-wrapper .ec-store .product-details__product-title,html#ecwid_html body#ecwid_body.page .ec-size .ec-wrapper .ec-store .product-details__product-price,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .product-details-module__title,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .ec-cart-summary__row--total .ec-cart-summary__title,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .ec-cart-summary__row--total .ec-cart-summary__price,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__categories * {font-style: normal;font-weight: 400;line-height: 1.2;font-family: Montserrat, sans-serif;letter-spacing: 0px;}html#ecwid_html body#ecwid_body .ecwid .ec-size .ec-wrapper .ec-store .product-details__product-description {font-style: normal;font-weight: 300;font-size: 18px;line-height: 1.667;font-family: Lato, sans-serif;letter-spacing: 0px;text-align: left;color: #42474c;}html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid-product__title-inner,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products .grid-product__image ~ .grid-product__price .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products .grid-product__image ~ .grid-product__title .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items.grid__products--layout-center .grid-product__price-compare,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__details,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__sku,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__sku-hover,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__tax,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .product-details-module__title,html#ecwid_html body#ecwid_body.page .ec-size .ec-wrapper .ec-store .product-details__product-price,html#ecwid_html body#ecwid_body.page .ec-size .ec-wrapper .ec-store .product-details__product-title,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .form-control__text,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .form-control__textarea,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .ec-link,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .ec-link:visited,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store input[type="radio"].form-control__radio:checked+.form-control__radio-view::after {color: #899296;}html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .ec-link:hover {color: #5e58f8;}/* Product Title, Price small state */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__title-inner,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__price-hover .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__image ~ .grid-product__price .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__image ~ .grid-product__title .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items.grid__products--layout-center .grid-product__price-compare,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__details,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__sku,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__sku-hover,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__tax {font-size: 12px;}/* Product Title, Price medium state */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__title-inner,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__price-hover .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__image ~ .grid-product__price .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__image ~ .grid-product__title .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items.grid__products--layout-center .grid-product__price-compare,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__details,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__sku,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__sku-hover,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__tax {font-size: 14px;}/* Product Title, Price large state */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__title-inner,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__price-hover .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__image ~ .grid-product__price .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__image ~ .grid-product__title .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items.grid__products--layout-center .grid-product__price-compare,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__details,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__sku,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__sku-hover,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__tax {font-size: 17px;}/* Product Add To Cart button */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store button {font-style: normal;font-weight: 900;line-height: 1;font-family: Hind, sans-serif;letter-spacing: 1px;}/* Product Add To Cart button normal state */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .form-control--secondary .form-control__button,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .form-control--primary .form-control__button {border-color: #5e58f8;background-color: transparent;color: #5e58f8;}/* Product Add To Cart button hover state, Product Category active state */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .form-control--secondary .form-control__button:hover,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .form-control--primary .form-control__button:hover,html#ecwid_html body#ecwid_body .horizontal-menu-container.horizontal-desktop .horizontal-menu-item.horizontal-menu-item--active>a {border-color: #5e58f8;background-color: #5e58f8;color: #ffffff;}/* Black Product Add To Cart button normal state */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--appearance-hover .grid-product--dark .form-control--secondary .form-control__button {border-color: #5e58f8;background-color: #5e58f8;color: #ffffff;}/* Black Product Add To Cart button normal state */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--appearance-hover .grid-product--dark .form-control--secondary .form-control__button:hover {border-color: #ffffff;background-color: #ffffff;color: #5e58f8;}/* Product Add To Cart button small label */html#ecwid_html body#ecwid_body .ec-size.ec-size--l .ec-wrapper .ec-store .form-control .form-control__button {font-size: 10px;}/* Product Add To Cart button medium label */html#ecwid_html body#ecwid_body .ec-size.ec-size--l .ec-wrapper .ec-store .form-control--small .form-control__button {font-size: 11px;}/* Product Add To Cart button large label */html#ecwid_html body#ecwid_body .ec-size.ec-size--l .ec-wrapper .ec-store .form-control--medium .form-control__button {font-size: 14px;}/* Mini Cart icon styles */html#ecwid_html body#ecwid_body .ec-minicart__body .ec-minicart__icon .icon-default path[stroke],html#ecwid_html body#ecwid_body .ec-minicart__body .ec-minicart__icon .icon-default circle[stroke] {stroke: #899296;}html#ecwid_html body#ecwid_body .ec-minicart:hover .ec-minicart__body .ec-minicart__icon .icon-default path[stroke],html#ecwid_html body#ecwid_body .ec-minicart:hover .ec-minicart__body .ec-minicart__icon .icon-default circle[stroke] {stroke: #5e58f8;}
+/* #Typography */body {font-style: normal;font-weight: 300;font-size: 18px;line-height: 1.667;font-family: Lato, sans-serif;letter-spacing: 0px;text-align: left;color: #42474c;text-transform: none;}h1,.h1-style {font-style: normal;font-weight: 300;font-size: 36px;line-height: 1.3;font-family: Montserrat, sans-serif;letter-spacing: 0px;text-align: inherit;color: #42474c;text-transform: none;}h2,.h2-style {font-style: normal;font-weight: 300;font-size: 24px;line-height: 1.2;font-family: Montserrat, sans-serif;letter-spacing: 0px;text-align: inherit;color: #42474c;text-transform: none;}h3,.h3-style {font-style: normal;font-weight: 800;font-size: 26px;line-height: 1.4;font-family: Montserrat, sans-serif;letter-spacing: 0px;text-align: inherit;color: #42474c;text-transform: none;}h4,.h4-style {font-style: normal;font-weight: 600;font-size: 14px;line-height: 1.33;font-family: Montserrat, sans-serif;letter-spacing: 3px;text-align: inherit;color: #42474c;text-transform: none;}h5,.h5-style {font-style: normal;font-weight: 600;font-size: 14px;line-height: 1.33;font-family: Montserrat, sans-serif;letter-spacing: 3px;text-align: inherit;color: #42474c;text-transform: uppercase;}h6,.h6-style {font-style: normal;font-weight: 400;font-size: 14px;line-height: 1.2;font-family: Montserrat, sans-serif;letter-spacing: 0px;text-align: inherit;color: #42474c;text-transform: uppercase;}@media (min-width: 1200px) {h1,.h1-style { font-size: 60px; }h2,.h2-style { font-size: 40px; }h3,.h3-style { font-size: 34px; }}a,h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover { color: #899296; }a:hover, p a, dl a { color: #5e58f8; }/* #Blockquote */blockquote {color: #42474c;}blockquote {font-style: italic;font-weight: 400;font-family: 'Libre Baskerville', serif;letter-spacing: 0em;text-transform: none;}blockquote:before {font-family: Montserrat, sans-serif;color: rgb(199,199,199);}cite {font-style: normal;font-weight: 400;font-size: 14px;line-height: 1.2;font-family: Montserrat, sans-serif;letter-spacing: 0em;text-transform: uppercase;}blockquote cite {color: #899296;}.invert blockquote cite {color: /* Variable not found */;}cite span:not(.tm-testi__item-name) {font-style: normal;font-weight: 300;font-family: Lato, sans-serif;text-transform: none;}cite:before {background-color: rgb(89,98,102);top: calc((1.2*14px)/2);}/* #Invert Color Scheme */.invert, .invert h1, .invert h2, .invert h3, .invert h4, .invert h5, .invert h6 {color: #ffffff;}/* #Header */.site-header__wrap {background-color: #ffffff;background-repeat: repeat;background-position: center top;background-attachment: scroll;;}/* ##Top Panel */.top-panel {color: #42474c;background-color: #ffffff;}/* #Main Menu */.main-navigation {font-style: normal;font-weight: 400;font-size: 14px;line-height: 1.4;font-family: Hind, sans-serif;letter-spacing: 0px;}.main-navigation a{color: #42474c;}.menu-item-has-children a:after {background-color: #42474c;}.menu-item-has-children a:hover:after {background-color: #5e58f8;}.main-navigation a:hover,.main-navigation .current_page_item>a,.main-navigation .current-menu-item>a,.main-navigation .current_page_ancestor>a,.main-navigation .current-menu-ancestor>a {color: #5e58f8;}.main-navigation .sub-menu a:hover,.main-navigation .sub-menu li.menu-hover > a,.main-navigation .sub-menu li.current_page_item > a,.main-navigation .sub-menu li.current_page_ancestor > a,.main-navigation .sub-menu li.current-menu-item > a,.main-navigation .sub-menu li.current-menu-ancestor > a {background-color: #f7f7f7;}/* sub menu */.main-navigation .sub-menu li{border-color: #f7f7f7;}.menu-item-has-children a:hover:after,.main-navigation .current_page_item > a:after,.main-navigation .current-menu-item > a:after,.main-navigation .current_page_ancestor > a:after,.main-navigation .current-menu-ancestor > a:after{background-color: #5e58f8;}/* #Mobile Menu */.mobile-menu-toggle-button {color: #ffffff;background-color: #5e58f8;}/* #Social */.social-list a {color: #42474c;}.social-list a:hover {color: #5e58f8;}/* #Share btns */.share-btns__link svg {fill: #899296;}.share-btns__link:hover svg {fill: #ffffff;}.share-btns__link:hover {color: #ffffff;}.share-btns__link:hover:before {background-color: #5e58f8;}/* #Breadcrumbs */.breadcrumbs {background-color: #42474C;background-repeat: no-repeat;background-attachment: scroll;background-size: cover;background-image: url(http://%s/assets/images/breadcrumbs_bg.jpg);background-position: center;padding-top: 20px;padding-bottom: 20px;}@media (min-width: 768px) {.breadcrumbs {padding-top: 40px;padding-bottom: 40px;}}@media (min-width: 1200px) {.breadcrumbs {padding-top: 70px;padding-bottom: 70px;}}.breadcrumbs_wrap {font-style: normal;font-weight: 400;font-size: 14px;line-height: 1.5;font-family: Lato, sans-serif;letter-spacing: 0em;text-transform: none;}.invert.breadcrumbs {color: #ffffff;}.invert.breadcrumbs .breadcrumbs_item a:hover {border-bottom-color: #ffffff;color: #ffffff;text-decoration: underline;}/* #Post navigation */.post-navigation i {color: #42474c;}.post-navigation .nav-links a:hover .post-title,.post-navigation .nav-links a:hover .nav-text {color: #899296;}.post-navigation .nav-links a:hover i {color: #5e58f8;}/* Post Page Links */.page-links .post-page-numbers{color: #899296;}.page-links .post-page-numbers:hover{color: #5e58f8;}.page-links .post-page-numbers.current{color: #42474c;}/* #Pagination */.comment-navigation,.posts-navigation,.post-navigation {font-style: normal;font-weight: 600;font-size: 11px;line-height: 1.33;font-family: Montserrat, sans-serif;letter-spacing: 3em;text-align: inherit;text-transform: none;border-color: rgb(233,233,233);}.pagination .page-numbers{color: #899296;background-color: #f7f7f7;}.pagination a.page-numbers:hover,.pagination .page-numbers.current{color: #ffffff;background-color: #42474c;}.pagination .next path,.pagination .prev path{fill: #899296;}.pagination .next:hover path,.pagination .prev:hover path{fill: #ffffff;}.comment-navigation a:not(:hover),.posts-navigation a:not(:hover),.post-navigation a:not(:hover) {color: #42474c;}.comment-navigation .nav-previous a:before,.comment-navigation .nav-next a:before,.posts-navigation .nav-previous a:before,.posts-navigation .nav-next a:before,.post-navigation .nav-previous a:before,.post-navigation .nav-next a:before{color: rgb(214,214,214);}/* #Button Appearance Styles */.btn,.btn-link,.link,.elementor-widget .elementor-button,.cherry-projects-wrapper .projects-ajax-button-wrapper .projects-ajax-button span,a.button,form button,form input[type='button'],form input[type='reset'],form input[type='submit'] {font-family: Montserrat, sans-serif;}.btn-text-icon path,.btn-icon path{fill: #899296;}.btn-text-icon:hover path,.btn-icon:hover path{fill: #5e58f8;}.btn.btn-icon path,.btn.btn-icon:hover path{fill: #ffffff;}.btn,.btn-primary,.invert .btn-primary,.elementor-widget .elementor-button,.cherry-projects-wrapper .projects-ajax-button-wrapper .projects-ajax-button span,.tm-pg_front_gallery .load-more-button .btn,form button,form input[type='button'],form input[type='submit']{color: #ffffff;background-color: #5e58f8;border-color: #5e58f8;}.btn:hover,.btn-primary:hover,.invert .btn-primary:hover,.btn-primary.processing,.invert .btn-primary.processing,.elementor-widget .elementor-button:hover,.cherry-projects-wrapper .projects-ajax-button-wrapper .projects-ajax-button span:hover,.tm-pg_front_gallery .load-more-button .btn:hover,form button:hover,form input[type='button']:hover,form input[type='submit']:hover{color: #ffffff;border-color: rgb(69,63,223);background-color: rgb(69,63,223);}.btn-secondary,.invert .btn-secondary,form input[type="reset"]{color: #ffffff;background-color: /* Variable not found */;border-color: /* Variable not found */;}.btn-secondary:hover,.invert .btn-secondary:hover,.btn-secondary.processing,.invert .btn-secondary.processing,form input[type="reset"]:hover {color: #ffffff;background-color: #5e58f8;border-color: #5e58f8;}.btn-primary-transparent{color: /* Variable not found */;}.invert .btn-primary-transparent{color: #ffffff;border-color: #ffffff;}.btn-primary-transparent:hover,.invert .btn-primary-transparent:hover,.btn-primary-transparent.processing,.invert .btn-primary-transparent.processing{color: #ffffff;background-color: #5e58f8;border-color: #5e58f8;}.btn-grey,.invert .btn-grey {color: /* Variable not found */;background-color: #f7f7f7;border-color: #f7f7f7;}.btn-grey:hover,.invert .btn-grey:hover,.btn-grey.processing,.invert .btn-grey.processing{color: /* Variable not found */;background-color: rgb(222,222,222);border-color: rgb(222,222,222);}/* #ToTop button */#toTop:before{background-color: #42474c;}#toTop:hover {background-color: #5e58f8;}#toTop:hover:before{background-color: #ffffff;}input,select,textarea {font-style: normal;font-weight: 300;font-family: Lato, sans-serif;background-color: #f7f7f7;color: #42474c;}/* #Comment, Contact, Password Forms */.comment-form .submit,.wpcf7-submit,.post-password-form label + input {font-style: normal;font-weight: 900;font-size: 11px;line-height: 1;font-family: Hind, sans-serif;letter-spacing: 1px;color: #ffffff;background-color: #5e58f8;}.comment-form .submit:hover,.wpcf7-submit:hover,.post-password-form label + input:hover {color: #ffffff;border-color: rgb(69,63,223);background-color: rgb(69,63,223);}.comment-reply-title {font-style: normal;font-weight: 600;font-size: 14px;line-height: 1.33;font-family: Montserrat, sans-serif;letter-spacing: 3px;color: #42474c;text-transform: uppercase;}/* Cookies consent */.comment-form-cookies-consent input[type='checkbox']:checked ~ label[for=wp-comment-cookies-consent]:before {color: #ffffff;border-color: #5e58f8;background-color: #5e58f8;}/* #Comment Reply Link */#cancel-comment-reply-link {color: #42474c;}#cancel-comment-reply-link:hover {color: #5e58f8;}/* #Comment item */.comment-body .fn {font-style: normal;font-weight: 400;line-height: 1.2;font-family: Montserrat, sans-serif;letter-spacing: 0px;color: #899296;}.comment-date__time, .comment-date__link {color: #899296;}.comment-date__time:hover, .comment-date__link:hover {color: #5e58f8;}.logged-in-as a {color: #5e58f8;}.logged-in-as a:hover {color: #899296;}/* #Input Placeholders */::-webkit-input-placeholder { color: #42474c; }::-moz-placeholder{ color: #42474c; }:-moz-placeholder{ color: #42474c; }:-ms-input-placeholder{ color: #42474c; }input:focus,select:focus,textarea:focus {border-color: #5e58f8;}/* #WPCF7 */.wpcf7 input[type='text'],.wpcf7 input[type='email'],.wpcf7 input[type='url'],.wpcf7 input[type='password'],.wpcf7 input[type='search'],.wpcf7 input[type='tel'],.wpcf7 textarea {border-bottom-color: rgb(189,189,189);}.wpcf7 input[type='text']:focus,.wpcf7 input[type='email']:focus,.wpcf7 input[type='url']:focus,.wpcf7 input[type='password']:focus,.wpcf7 input[type='search']:focus,.wpcf7 input[type='tel']:focus,.wpcf7 textarea:focus {border-bottom-color: #5e58f8;}/* #Entry Meta */.posted-on,.cat-links,.byline,.tags-links {color: #899296;}.comments-button {color: #42474c;}.comments-button:hover {color: #ffffff;background-color: #5e58f8;}.btn-style .post-categories a {color: #ffffff;background-color: #5e58f8;}.btn-style .post-categories a:hover {color: #ffffff;background-color: rgb(132,126,255);}.sticky-label{color: #ffffff;background-color: #5e58f8;}.sticky-label path{fill: #ffffff;}/* #Entry Meta */.entry-meta, .btn-style .post-categories a {font-style: normal;font-weight: 400;font-size: 12px;line-height: 1.75;font-family: Montserrat, sans-serif;letter-spacing: 0em;text-transform: none;color: #899296;}.entry-meta .icon-svg {color: #ffffff;}.entry-meta .comments-link:hover .icon-svg path {fill: #5e58f8;}.btn-style .post-categories a {color: #ffffff;}.tags-links a:hover {color: #ffffff;border-color: #42474c;background-color: #42474c;}/* Posts List Item Invert */.invert-hover.has-post-thumbnail:hover,.invert-hover.has-post-thumbnail:hover .posted-on,.invert-hover.has-post-thumbnail:hover .cat-links,.invert-hover.has-post-thumbnail:hover .byline,.invert-hover.has-post-thumbnail:hover .tags-links,.invert-hover.has-post-thumbnail:hover .entry-meta,.invert-hover.has-post-thumbnail:hover a,.invert-hover.has-post-thumbnail:hover .btn-icon,.invert-item.has-post-thumbnail,.invert-item.has-post-thumbnail .posted-on,.invert-item.has-post-thumbnail .cat-links,.invert-item.has-post-thumbnail .byline,.invert-item.has-post-thumbnail .tags-links,.invert-item.has-post-thumbnail .entry-meta,.invert-item.has-post-thumbnail a,.invert-item.has-post-thumbnail .btn:hover,.invert-item.has-post-thumbnail .btn-style .post-categories a:hover,.invert,.invert .entry-title,.invert a,.invert .byline,.invert .posted-on,.invert .cat-links,.invert .tags-links {color: #ffffff;}.invert-hover.has-post-thumbnail:hover a:hover,.invert-hover.has-post-thumbnail:hover .btn-icon:hover,.invert-item.has-post-thumbnail a:hover,.invert a:hover {color: #5e58f8;}.invert-hover.has-post-thumbnail .btn,.invert-item.has-post-thumbnail .comments-button{color: #ffffff;background-color: #5e58f8;}.invert-hover.has-post-thumbnail .btn:hover,.invert-item.has-post-thumbnail .comments-button:hover{color: #899296;background-color: #ffffff;}/* Default Posts List */.entry-title a:hover {color: #5e58f8;}.posts-list--default .no-thumb .tags-links a:not(:hover) {border-color: rgb(214,214,214);}.posts-list--default .tags-links a {border-color: #f7f7f7;}.edit-link a:before{background-color: #899296;}.edit-link a:hover:before{background-color: #5e58f8;}/* Creative Posts List */.creative-item .entry-title a:hover {color: #899296;}.list-style-default .creative-item a,.creative-item .btn-icon {color: #42474c;}.list-style-default .creative-item a:hover,.creative-item .btn-icon:hover {color: #899296;}.list-style-default .creative-item .btn,.list-style-default .creative-item .btn:hover,.list-style-default .creative-item .comments-button:hover {color: #ffffff;}.creative-item__title-first-letter {font-style: normal;font-weight: 300;font-family: Montserrat, sans-serif;color: #42474c;}.posts-list--creative.list-style-v10 .creative-item:before {background-color: #5e58f8;box-shadow: 0px 0px 0px 8px rgba(94,88,248,0.25);}.posts-list--creative.list-style-v10 .creative-item__post-date {font-style: normal;font-weight: 600;font-size: 14px;line-height: 1.33;font-family: Montserrat, sans-serif;letter-spacing: 3px;color: #899296;}.posts-list--creative.list-style-v10 .creative-item__post-date a {color: #899296;}.posts-list--creative.list-style-v10 .creative-item__post-date a:hover {color: #5e58f8;}/* Post Author */.post-author__title a:hover {color: #5e58f8;}.invert .post-author__title a {color: #ffffff;}.invert .post-author__title a:hover {opacity: 0.7;}/* Single Post */.single-post blockquote {border-color: #5e58f8;}.single-post:not(.post-template-single-layout-4):not(.post-template-single-layout-7) .tags-links a:hover{color: #ffffff;border-color: #42474c;background-color: #42474c;}.post-template-single-layout-9 .cat-links a,.post-template-single-layout-9 .comments-link,.post-template-single-layout-9 .post-author-bio .post-author__title {color: #5e58f8;}.post-template-single-layout-9 .cat-links a:hover,.post-template-single-layout-9 .comments-link:hover,.post-template-single-layout-9 .post-author-bio .post-author__title a:hover {color: #899296;}.single-header-3 .post-author .byline,.single-header-4 .post-author .byline,.single-header-5 .post-author .byline {font-style: normal;font-weight: 600;font-size: 14px;line-height: 1.33;font-family: Montserrat, sans-serif;letter-spacing: 3px;}.single-header-3.invert .post-author__content a:hover,.single-header-4.invert .post-author a:hover,.single-header-4.invert .entry-meta a:hover,.single-header-5.invert .comments-link:hover,.single-header-5.invert .post-author__content a:hover,.single-header-6.invert a:hover,.single-header-7.invert .entry-header-bottom a:hover {color: #ffffff;opacity: 0.7;}.single-post .single-header-8.invert .tags-links a:hover {color: #ffffff;opacity: 0.7;background-color: transparent;border-color: transparent;}.single-header-4 .entry-meta .icon-svg path,.single-header-4 .entry-meta a:hover .icon-svg path,.single-header-7 .posted-on .icon-svg path,.single-header-7 .entry-meta .icon-svg path,.single-header-7 .entry-meta a:hover .icon-svg path,.single-header-8 .posted-on .icon-svg path,.single-header-8 .entry-meta .icon-svg path,.single-header-8 .entry-meta a:hover .icon-svg path {fill: #ffffff;}.single-header-7 .entry-header-top:not(:empty) .posted-on {font-style: normal;font-weight: 600;font-size: 14px;line-height: 1.33;font-family: Montserrat, sans-serif;letter-spacing: 3px;}.post-template-single-layout-6 #author-block .posted-on {font-family: Montserrat, sans-serif;}.single-header-8,.single-header-10 .entry-header {background-color: #5e58f8;}.single-header-8.invert a:hover,.single-header-10.invert a:hover {color: rgba(255,255,255,0.5);}.single-header-3 a.comments-button,.single-header-10 a.comments-button {border: 1px solid #ffffff;}.single-header-3 a.comments-button:hover,.single-header-10 a.comments-button:hover {color: #5e58f8;background-color: #ffffff;}.single-header-3 .comments-button path,.single-header-10 .comments-button path {fill: #ffffff;}.single-header-3 .comments-button:hover path,.single-header-10 .comments-button:hover path {fill: #5e58f8;}/* #Post */.no-thumb .posts-list__item-content,.posts-list--default .post-thumbnail:empty + .posts-list__item-content,.posts-list--grid .posts-list__item-content,.posts-list--masonry .posts-list__item-content,.posts-list--vertical-justify .posts-list__item-content,.related-post,.post-author-bio{background-color: #f7f7f7;}/* related-posts */.posts-list:not(.posts-list--default) .tags-links a,.related-post .tags-links a {background-color: rgba(66,71,76,0.4);color: #ffffff;font-style: normal;font-weight: 400;font-family: Montserrat, sans-serif;}.related-post .tags-links a {color: #ffffff;}.posts-list:not(.posts-list--default) .tags-links a:hover,.related-post .tags-links a:hover {background-color: rgba(66,71,76,0.7);}.related-posts .entry-title a:hover {color: #5e58f8;}/* #Comments */.comment-list .comment:before,.comment-list .pingback:before {background-color: rgb(181,181,181);}.comment-reply-link {font-style: normal;font-weight: 400;font-family: Montserrat, sans-serif;}.comment-body .reply .icon-svg__comments path {fill: #42474c;}.comment-list .comment-metadata {font-style: normal;font-weight: 400;font-size: 12px;line-height: 1.75;font-family: Montserrat, sans-serif;letter-spacing: 0em;text-transform: none;color: #899296;}#cancel-comment-reply-link {line-height: calc(1.33 * 14px);}/* #Page preloader */.page-preloader-cover .bar:before{background-color: #5e58f8;}.page-preloader-cover .bar {background-color: #f7f7f7;}/* Logo */.site-logo__link,.site-logo__link:hover {color: #5e58f8;}/* Page title */.page-title {font-style: normal;font-weight: 300;font-size: 24px;line-height: 1.2;font-family: Montserrat, sans-serif;letter-spacing: 0px;color: #42474c;}@media (min-width: 1200px) {.page-title { font-size: 40px; }}/* Grid Posts List *//* Posts List Grid Item Invert */.grid-item-wrap.invert,.grid-item-wrap.invert .posted-on,.grid-item-wrap.invert .cat-links,.grid-item-wrap.invert .byline,.grid-item-wrap.invert .tags-links,.grid-item-wrap.invert .entry-meta,.grid-item-wrap.invert a,.grid-item-wrap.invert .btn-icon,.grid-item-wrap.invert .comments-button {color: #ffffff;}.posts-list.posts-list--grid .posted-by a:not(:hover){color: #42474c;}/* Vertical Justify Posts List */.posts-list.posts-list--vertical-justify .posted-by a:not(:hover){color: #42474c;}/* masonry Posts List */.posts-list.list-style-v3 .comments-link {border-color: #899296;}.posts-list.list-style-v4 .comments-link {color: #42474c;}.posts-list.list-style-v4 .posts-list__item.masonry-item .masonry-item-wrap .comments-link:hover {color: #ffffff;background-color: #899296;}/* Posts List masonry Item Invert */.masonry-item-wrap.invert,.masonry-item-wrap.invert .posted-on,.masonry-item-wrap.invert .cat-links,.masonry-item-wrap.invert .byline,.masonry-item-wrap.invert .tags-links,.masonry-item-wrap.invert .entry-meta,.masonry-item-wrap.invert a,.masonry-item-wrap.invert .btn-icon,.masonry-item-wrap.invert .comments-button {color: #ffffff;}/* Posts List masonry-5 Item Invert */.list-style-v5 .masonry-item-wrap.invert .posted-on,.list-style-v5 .masonry-item-wrap.invert .cat-links,.list-style-v5 .masonry-item-wrap.invert .byline,.list-style-v5 .masonry-item-wrap.invert .tags-links,.list-style-v5 .masonry-item-wrap.invert .posted-on a,.list-style-v5 .masonry-item-wrap.invert .cat-links a,.list-style-v5 .masonry-item-wrap.invert .tags-links a,.list-style-v5 .masonry-item-wrap.invert .byline a,.list-style-v5 .masonry-item-wrap.invert .comments-link,.list-style-v5 .masonry-item-wrap.invert .entry-title a:hover {color: #5e58f8;}.list-style-v5 .masonry-item-wrap.invert .posted-on a:hover,.list-style-v5 .masonry-item-wrap.invert .cat-links a:hover,.list-style-v5 .masonry-item-wrap.invert .tags-links a:hover,.list-style-v5 .masonry-item-wrap.invert .byline a:hover,.list-style-v5 .masonry-item-wrap.invert .comments-link:hover {color: #ffffff;}.posts-list.list-style-v10 .masonry-item-inner .space-between-content .comments-link {color: #42474c;}.posts-list.list-style-v10 .masonry-item-inner .space-between-content .comments-link:hover {color: #5e58f8;}.wp-block-categories-list > li + li,.wp-block-archives-list > li + li,.widget_archive > ul > li + li,.widget_categories > ul > li + li,.widget-area:not(.footer-area) .widget_nav_menu div > ul > li + li,.elementor-widget-sidebar .widget_nav_menu div > ul > li + li,.widget_meta > ul > li + li,.widget_pages > ul > li + li{border-color: rgb(233,233,233);}.wp-block-categories-list li a:before,.wp-block-archives-list li a:before,.widget_archive > ul > li > a:before,.widget_categories > ul > li > a:before,.widget-area:not(.footer-area) .widget_nav_menu div > ul > li > a:before,.elementor-widget-sidebar .widget_nav_menu div > ul > li > a:before,.widget_meta > ul > li > a:before,.widget_pages > ul > li > a:before{background-color: rgb(181,181,181);}/* Widgets misc */.wp-block-categories-list,.wp-block-archives-list,.widget_archive > ul,.widget_categories > ul,.widget-area:not(.footer-area) .widget_nav_menu div > ul,.elementor-widget-sidebar .widget_nav_menu div > ul,.widget_meta > ul,.widget_pages > ul,.widget.woocommerce:not(.widget_top_rated_products) > ul,.widget_recent_entries a,.widget_recent_comments a{font-style: normal;font-weight: 400;font-size: 14px;font-family: Montserrat, sans-serif;letter-spacing: 0px;}.wp-block-archives-list li,.widget_archive ul li,.widget_categories ul li{color: #5e58f8;}.widget_recent_entries .post-date,.widget_recent_comments .recentcomments {color: #42474c;}/* #Widget Recent Posts - Comments*/.widget_recent_entries a:not(:hover),.widget_recent_comments a:not(:hover) {color: #42474c;}.invert .widget_recent_entries a:not(:hover),.invert .widget_recent_comments a:not(:hover) {color: #ffffff;}/* #Widget RSS */.widget_rss a.rsswidget {font-style: normal;font-weight: 600;font-family: Montserrat, sans-serif;letter-spacing: 3em;text-transform: none;color: h/* Variable not found */;}.widget_rss a.rsswidget:hover {color: #5e58f8;}.invert .widget_rss a.rsswidget,.invert .widget_rss a.rsswidget:hover {color: #ffffff;}/* #Widget date style*/.rss-date,.widget_recent_entries .post-date{font-style: normal;font-weight: 400;font-size: 12px;line-height: 1.75;font-family: Montserrat, sans-serif;letter-spacing: 0em;color: #899296;}.invert .rss-date,.invert .widget_recent_entries .post-date{color: /* Variable not found */;}/* #Widget Tags */.tagcloud a,.tags-links a{border-color: #f7f7f7;}.tagcloud a:hover,.tags-links a:hover{color: #ffffff;border-color: #42474c;background-color: #42474c;}/* #Widget Calendar */.invert .widget_calendar {color: #42474c;}.widget_calendar .calendar_wrap {background-color: #f7f7f7;}.widget_calendar tbody tr:nth-child(odd) {background-color: rgb(251,251,251);}.widget_calendar caption{color: #5e58f8;}.widget_calendar tfoot a:before{background-color: #5e58f8;}.widget_calendar tfoot a:hover:before {background-color: #42474c;}.widget_calendar tbody td#today,.widget_calendar tbody td a {color: #ffffff;}.widget_calendar tbody td#today,.widget_calendar tbody td a {background-color: #5e58f8;}.widget_calendar tbody td a:hover {background-color: #42474c;color: #ffffff;}/* Preloader */.jet-smart-listing-wrap.jet-processing + div.jet-smart-listing-loading,div.wpcf7 .ajax-loader {border-top-color: #5e58f8;border-right-color: #5e58f8;}/*--------------------------------------------------------------## Ecwid Plugin Styles--------------------------------------------------------------*//* Product Title, Product Price amount */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid-product__title-inner,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products .grid-product__image ~ .grid-product__price .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products .grid-product__image ~ .grid-product__title .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items.grid__products--layout-center .grid-product__price-compare,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__details,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__sku,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__sku-hover,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__tax,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .form__msg,html#ecwid_html body#ecwid_body .ec-size.ec-size--l .ec-wrapper .ec-store h1,html#ecwid_html body#ecwid_body.page .ec-size .ec-wrapper .ec-store .product-details__product-title,html#ecwid_html body#ecwid_body.page .ec-size .ec-wrapper .ec-store .product-details__product-price,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .product-details-module__title,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .ec-cart-summary__row--total .ec-cart-summary__title,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .ec-cart-summary__row--total .ec-cart-summary__price,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__categories * {font-style: normal;font-weight: 400;line-height: 1.2;font-family: Montserrat, sans-serif;letter-spacing: 0px;}html#ecwid_html body#ecwid_body .ecwid .ec-size .ec-wrapper .ec-store .product-details__product-description {font-style: normal;font-weight: 300;font-size: 18px;line-height: 1.667;font-family: Lato, sans-serif;letter-spacing: 0px;text-align: left;color: #42474c;}html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid-product__title-inner,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products .grid-product__image ~ .grid-product__price .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products .grid-product__image ~ .grid-product__title .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items.grid__products--layout-center .grid-product__price-compare,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__details,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__sku,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__sku-hover,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__tax,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .product-details-module__title,html#ecwid_html body#ecwid_body.page .ec-size .ec-wrapper .ec-store .product-details__product-price,html#ecwid_html body#ecwid_body.page .ec-size .ec-wrapper .ec-store .product-details__product-title,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .form-control__text,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .form-control__textarea,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .ec-link,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .ec-link:visited,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store input[type="radio"].form-control__radio:checked+.form-control__radio-view::after {color: #899296;}html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .ec-link:hover {color: #5e58f8;}/* Product Title, Price small state */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__title-inner,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__price-hover .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__image ~ .grid-product__price .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__image ~ .grid-product__title .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items.grid__products--layout-center .grid-product__price-compare,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__details,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__sku,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__sku-hover,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__tax {font-size: 12px;}/* Product Title, Price medium state */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__title-inner,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__price-hover .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__image ~ .grid-product__price .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__image ~ .grid-product__title .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items.grid__products--layout-center .grid-product__price-compare,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__details,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__sku,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__sku-hover,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__tax {font-size: 14px;}/* Product Title, Price large state */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__title-inner,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__price-hover .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__image ~ .grid-product__price .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__image ~ .grid-product__title .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items.grid__products--layout-center .grid-product__price-compare,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__details,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__sku,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__sku-hover,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__tax {font-size: 17px;}/* Product Add To Cart button */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store button {font-style: normal;font-weight: 900;line-height: 1;font-family: Hind, sans-serif;letter-spacing: 1px;}/* Product Add To Cart button normal state */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .form-control--secondary .form-control__button,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .form-control--primary .form-control__button {border-color: #5e58f8;background-color: transparent;color: #5e58f8;}/* Product Add To Cart button hover state, Product Category active state */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .form-control--secondary .form-control__button:hover,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .form-control--primary .form-control__button:hover,html#ecwid_html body#ecwid_body .horizontal-menu-container.horizontal-desktop .horizontal-menu-item.horizontal-menu-item--active>a {border-color: #5e58f8;background-color: #5e58f8;color: #ffffff;}/* Black Product Add To Cart button normal state */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--appearance-hover .grid-product--dark .form-control--secondary .form-control__button {border-color: #5e58f8;background-color: #5e58f8;color: #ffffff;}/* Black Product Add To Cart button normal state */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--appearance-hover .grid-product--dark .form-control--secondary .form-control__button:hover {border-color: #ffffff;background-color: #ffffff;color: #5e58f8;}/* Product Add To Cart button small label */html#ecwid_html body#ecwid_body .ec-size.ec-size--l .ec-wrapper .ec-store .form-control .form-control__button {font-size: 10px;}/* Product Add To Cart button medium label */html#ecwid_html body#ecwid_body .ec-size.ec-size--l .ec-wrapper .ec-store .form-control--small .form-control__button {font-size: 11px;}/* Product Add To Cart button large label */html#ecwid_html body#ecwid_body .ec-size.ec-size--l .ec-wrapper .ec-store .form-control--medium .form-control__button {font-size: 14px;}/* Mini Cart icon styles */html#ecwid_html body#ecwid_body .ec-minicart__body .ec-minicart__icon .icon-default path[stroke],html#ecwid_html body#ecwid_body .ec-minicart__body .ec-minicart__icon .icon-default circle[stroke] {stroke: #899296;}html#ecwid_html body#ecwid_body .ec-minicart:hover .ec-minicart__body .ec-minicart__icon .icon-default path[stroke],html#ecwid_html body#ecwid_body .ec-minicart:hover .ec-minicart__body .ec-minicart__icon .icon-default circle[stroke] {stroke: #5e58f8;}
 </style>
 <link rel='stylesheet' id='bloglayoutsmodulecss'  href='https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/themes/imperion/inc/modules/blog-layouts/assets/css/blog-layouts-module.css?ver=1.0.4' type='text/css' media='all' />
 <link rel='stylesheet' id='cxgooglefontsimperioncss'  href='//fonts.googleapis.com/css?family=Lato%3A300%2C400%7CMontserrat%3A300%2C800%2C600%2C400%2C700%7CHind%3A400%2C900%7CLibre+Baskerville%3A400italic&#038;subset=latin&#038;ver=5.2.2' type='text/css' media='all' />
@@ -271,78 +360,304 @@
 <meta name="msapplication-TileImage" content="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/cropped-favicon-270x270.png" />
 
 </head>
-<body>
-    <form id="form1" runat="server">
-        <div class="header">
-            <img src="img/logo2.png" alt="Logo" class="logo">
-            <div class="half-circle-container">
-                <div class="half-circle"></div>
+<body class="home page-template page-template-elementor_header_footer page page-id-8 wp-custom-logo layout-fullwidth blog-default elementor-default elementor-template-full-width elementor-page elementor-page-8">
+<div class="page-preloader-cover"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="custom-logo-link" rel="home"><img width="128" height="44" src="img/logo2.png" class="custom-logo" alt="Imperion" /></a><div class="bar"></div></div><div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+	<header id="masthead" class="site-header ">
+		 <div class="half-circle-container">
+    <div class="half-circle"></div>
+</div>
+				<div data-elementor-type="jet_header" data-elementor-id="11" class="elementor elementor-11" data-elementor-settings="[]">
+			<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+							<section class="elementor-element elementor-element-1d784135 elementor-section-content-middle elementor-hidden-tablet elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="1d784135" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-41df4eba elementor-column elementor-col-33 elementor-top-column" data-id="41df4eba" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-7770e50a elementor-widget elementor-widget-jet-logo" data-id="7770e50a" data-element_type="widget" data-widget_type="jet-logo.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-jet-logo jet-blocks"><div class="jet-logo jet-logo-type-image jet-logo-display-block">
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="jet-logo__link"><img src="img/logo2.png" class="jet-logo__img" alt="Imperion" width="128" height="44" srcset="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/logo_retina.png 2x"></a></div>
+<p class="jet-logo__title">Empleado</p>
+</div>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-51c9b779 elementor-column elementor-col-33 elementor-top-column" data-id="51c9b779" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-73589fee jet-nav-align-flex-end jet-nav-tablet-align-center jet-nav-mobile-align-center elementor-widget elementor-widget-jet-nav-menu" data-id="73589fee" data-element_type="widget" data-widget_type="jet-nav-menu.default">
+				<div class="elementor-widget-container">
+			<div class="jet-nav-wrap jet-mobile-menu jet-mobile-menu--right-side" data-mobile-layout="right-side">
+<div class="jet-nav__mobile-trigger jet-nav-mobile-trigger-align-right">
+		<span class="jet-nav__mobile-trigger-open jet-blocks-icon"><i aria-hidden="true" class="fas fa-bars"></i></span>	<span class="jet-nav__mobile-trigger-close jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></span></div><div class="menu-main-container"><div class="jet-nav jet-nav--horizontal"><div class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item jet-nav__item-177 jet-nav__item"><a href="PG_InicioJe.aspx" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Home</span></a></div>
+
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
+    <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
+        <span class="jet-nav-link-text">Vacaciones</span>
+    </a>
+    <ul class="submenu">
+        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
+        <li class="submenu-item"><a href="PG_RegistroDiasFestivo.aspx">Dias Festivos</a></li>
+        <li class="submenu-item"><a href="PG_VacacionesColectivas.aspx">Vacaciones Colectivas</a></li>
+        <!-- Agrega más elementos del submenú aquí -->
+    </ul>
+</div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
+    <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
+        <span class="jet-nav-link-text">Actividades</span>
+    </a>
+    <ul class="submenu">
+        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
+        <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
+        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
+        <!-- Agrega más elementos del submenú aquí -->
+    </ul>
+</div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
+    <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
+        <span class="jet-nav-link-text">Inconsistencias</span>
+    </a>
+    <ul class="submenu">
+        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
+        <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
+        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
+        <!-- Agrega más elementos del submenú aquí -->
+    </ul>
+</div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
+    <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
+        <span class="jet-nav-link-text">Puestos    Rebajos</span>
+    </a>
+    <ul class="submenu">
+        <li class="submenu-item"><a href="PG_Departamentos.aspx">Departamentos</a></li>
+        <li class="submenu-item"><a href="RegistroTurnos.aspx">Turnos</a></li>
+        <li class="submenu-item"><a href="RegistroPuestos.aspx">Puestos</a></li>
+        <li class="submenu-item"><a href="HistoricoPuestos.aspx">Historicos de Puestos</a></li>
+<li class="submenu-item"><a href="HistoricoEmpPuestos.aspx">Modulo del empleado</a></li>
+        <!-- Agrega más elementos del submenú aquí -->
+    </ul>
+</div>
+<div class="jet-nav__mobile-close-btn jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></div></div></div></div>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-5d9564a3 elementor-column elementor-col-33 elementor-top-column" data-id="5d9564a3" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-733f1901 elementor-widget elementor-widget-jet-search" data-id="733f1901" data-element_type="widget" data-widget_type="jet-search.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-jet-search jet-blocks"><div class="jet-search"><div class="jet-search__popup jet-search__popup--full-screen jet-search__popup--move-up-effect">
+	<div class="jet-search__popup-content"><form role="search" method="get" class="jet-search__form" action="https://ld-wp73.template-help.com/imperion/corporatelanding/">
+	<label class="jet-search__label">
+		<input type="search" class="jet-search__field" placeholder="Search &hellip;" value="" name="s" />
+	</label>
+		<button type="submit" class="jet-search__submit"><span class="jet-search__submit-icon jet-blocks-icon"><i aria-hidden="true" class="fas fa-search"></i></span></button>
+		</form><button type="button" class="jet-search__popup-close"><span class="jet-search__popup-close-icon jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></span></button></div>
+</div>
+<div class="jet-search__popup-trigger-container">
+	<button type="button" class="jet-search__popup-trigger"><span class="jet-search__popup-trigger-icon jet-blocks-icon"><i aria-hidden="true" class="fas fa-search"></i></span></button>
+</div></div></div>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-66cde744 elementor-section-content-middle elementor-hidden-desktop elementor-hidden-phone elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="66cde744" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-2d44d1a elementor-column elementor-col-33 elementor-top-column" data-id="2d44d1a" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-2129f884 elementor-widget elementor-widget-jet-logo" data-id="2129f884" data-element_type="widget" data-widget_type="jet-logo.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-jet-logo jet-blocks"><div class="jet-logo jet-logo-type-image jet-logo-display-block">
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="jet-logo__link"><img src="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/logo.png" class="jet-logo__img" alt="Imperion" width="128" height="44" srcset="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/logo_retina.png 2x"></a></div>
+</div>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-3d9f63ec elementor-column elementor-col-33 elementor-top-column" data-id="3d9f63ec" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-57fbe2d7 jet-nav-align-flex-end jet-nav-tablet-align-center jet-nav-mobile-align-center elementor-widget elementor-widget-jet-nav-menu" data-id="57fbe2d7" data-element_type="widget" data-widget_type="jet-nav-menu.default">
+				<div class="elementor-widget-container">
+			<div class="jet-nav-wrap jet-mobile-menu jet-mobile-menu--default" data-mobile-layout="default">
+<div class="jet-nav__mobile-trigger jet-nav-mobile-trigger-align-center">
+	<span class="jet-nav__mobile-trigger-open jet-blocks-icon"><i aria-hidden="true" class="fas fa-bars"></i></span>	<span class="jet-nav__mobile-trigger-close jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></span></div><div class="menu-main-container"><div class="jet-nav jet-nav--horizontal"><div class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item jet-nav__item-177 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Home</span></a></div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-118 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Services</span></a></div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-119 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#projects" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Projects</span></a></div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-120 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#pricing" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Pricing</span></a></div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-121 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#contact" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Contact</span></a></div>
+</div></div></div>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-41c82fce elementor-column elementor-col-33 elementor-top-column" data-id="41c82fce" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-58cc2b89 elementor-widget elementor-widget-jet-search" data-id="58cc2b89" data-element_type="widget" data-widget_type="jet-search.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-jet-search jet-blocks"><div class="jet-search"><div class="jet-search__popup jet-search__popup--full-screen jet-search__popup--move-up-effect">
+	<div class="jet-search__popup-content"><form role="search" method="get" class="jet-search__form" action="https://ld-wp73.template-help.com/imperion/corporatelanding/">
+	<label class="jet-search__label">
+		<input type="search" class="jet-search__field" placeholder="Search &hellip;" value="" name="s" />
+	</label>
+		<button type="submit" class="jet-search__submit"><span class="jet-search__submit-icon jet-blocks-icon"><i aria-hidden="true" class="fas fa-search"></i></span></button>
+		</form><button type="button" class="jet-search__popup-close"><span class="jet-search__popup-close-icon jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></span></button></div>
+</div>
+<div class="jet-search__popup-trigger-container">
+	
+	<button type="button" class="jet-search__popup-trigger"><span class="jet-search__popup-trigger-icon jet-blocks-icon"><i aria-hidden="true" class="fas fa-search"></i></span></button>
+</div></div></div>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+			</header><!-- #masthead -->
+
+
+
+<form id="form1" runat="server">
+    <div class="main-content3">
+        <div class="content-box">
+            <div class="form-section">
+                <h3>Información Personal</h3>
+                <asp:Panel ID="PersonalPanel" runat="server">
+                    <!-- Información Personal en dos columnas -->
+                    <div class="form-group two-column">
+                        <div class="column">
+                            <label for="nombre">Nombre</label>
+                            <asp:TextBox ID="txtnombre" runat="server" CssClass="search-box small-box" placeholder="Nombre" MaxLength="200" />
+                            <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtnombre" ErrorMessage="Nombre es requerido" ForeColor="Red" Display="Dynamic" />
+                            <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="txtnombre" ValidationExpression=".{1,200}" ErrorMessage="El nombre no debe exceder 200 caracteres" ForeColor="Red" Display="Dynamic" />
+                        </div>
+                        <div class="column">
+                            <label for="apellido">Apellido</label>
+                            <asp:TextBox ID="txtapellido" runat="server" CssClass="search-box small-box" placeholder="Apellido" MaxLength="200" />
+                            <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ControlToValidate="txtapellido" ErrorMessage="Apellido es requerido" ForeColor="Red" Display="Dynamic" />
+                            <asp:RegularExpressionValidator ID="revApellido" runat="server" ControlToValidate="txtapellido" ValidationExpression=".{1,200}" ErrorMessage="El apellido no debe exceder 200 caracteres" ForeColor="Red" Display="Dynamic" />
+                        </div>
+                    </div>
+                    <div class="form-group two-column">
+                        <div class="column">
+                            <label for="cedula">Cédula</label>
+                            <asp:TextBox ID="txtcedula" runat="server" CssClass="search-box small-box" placeholder="Cédula" MaxLength="200" />
+                            <asp:RequiredFieldValidator ID="rfvCedula" runat="server" ControlToValidate="txtcedula" ErrorMessage="Cédula es requerida" ForeColor="Red" Display="Dynamic" />
+                            <asp:RegularExpressionValidator ID="revCedula" runat="server" ControlToValidate="txtcedula" ValidationExpression=".{1,200}" ErrorMessage="La cédula no debe exceder 200 caracteres" ForeColor="Red" Display="Dynamic" />
+                        </div>
+                        <div class="column">
+                            <label for="fecha-nacimiento">Fecha de Nacimiento</label>
+                            <asp:TextBox ID="txtfechaNacimiento" runat="server" CssClass="search-box small-box" TextMode="Date" />
+                            <asp:RequiredFieldValidator ID="rfvFechaNacimiento" runat="server" ControlToValidate="txtfechaNacimiento" ErrorMessage="Fecha de nacimiento es requerida" ForeColor="Red" Display="Dynamic" />
+                        </div>
+                    </div>
+                </asp:Panel>
+            </div>
+            <div class="form-section">
+                <h3>Información de Contacto</h3>
+                <asp:Panel ID="ContactPanel" runat="server">
+                    <!-- Información de Contacto en dos columnas -->
+                    <div class="form-group two-column">
+                        <div class="column">
+                            <label for="direccion">Dirección</label>
+                            <asp:TextBox ID="txtdireccion" runat="server" CssClass="search-box" placeholder="Dirección" MaxLength="200" />
+                            <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtdireccion" ErrorMessage="Dirección es requerida" ForeColor="Red" Display="Dynamic" />
+                        </div>
+                        <div class="column">
+                            <label for="provincia">Provincia</label>
+                            <asp:TextBox ID="txtprovincia" runat="server" CssClass="search-box" placeholder="Provincia" MaxLength="200" />
+                            <asp:RequiredFieldValidator ID="rfvProvincia" runat="server" ControlToValidate="txtprovincia" ErrorMessage="Provincia es requerida" ForeColor="Red" Display="Dynamic" />
+                        </div>
+                    </div>
+                    <div class="form-group two-column">
+                        <div class="column">
+                            <label for="ciudad">Ciudad</label>
+                            <asp:TextBox ID="txtciudad" runat="server" CssClass="search-box" placeholder="Ciudad" MaxLength="200" />
+                            <asp:RequiredFieldValidator ID="rfvCiudad" runat="server" ControlToValidate="txtciudad" ErrorMessage="Ciudad es requerida" ForeColor="Red" Display="Dynamic" />
+                        </div>
+                        <div class="column">
+                            <label for="telefono">Teléfono</label>
+                            <asp:TextBox ID="txttelefono" runat="server" CssClass="search-box" placeholder="Teléfono" MaxLength="200" />
+                            <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ControlToValidate="txttelefono" ErrorMessage="Teléfono es requerido" ForeColor="Red" Display="Dynamic" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo Electrónico</label>
+                        <asp:TextBox ID="txtcorreo" runat="server" CssClass="search-box" placeholder="Correo Electrónico" MaxLength="200" />
+                        <asp:RequiredFieldValidator ID="rfvCorreo" runat="server" ControlToValidate="txtcorreo" ErrorMessage="Correo electrónico es requerido" ForeColor="Red" Display="Dynamic" />
+                    </div>
+                </asp:Panel>
+            </div>
+            <div class="form-section">
+                <h3>Información Adicional</h3>
+                <asp:Panel ID="AdditionalPanel" runat="server">
+                    <!-- Información Adicional en una columna -->
+                    <div class="form-group">
+                        <div class="column">
+                            <label for="fecha-contratacion">Fecha de Contratación</label>
+                            <asp:TextBox ID="txtFechaContratacion" runat="server" CssClass="search-box" TextMode="Date" />
+                            <!-- Si es obligatorio, puedes añadir un RequiredFieldValidator -->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="column">
+                            <label for="departamento">Departamento</label>
+                            <asp:TextBox ID="txtDepartamento" runat="server" CssClass="search-box small-box" placeholder="Departamento" MaxLength="200" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="column">
+                            <label for="puesto">Puesto</label>
+                            <asp:TextBox ID="txtPuesto" runat="server" CssClass="search-box small-box" placeholder="Puesto" MaxLength="200" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="column">
+                            <label for="rol">Rol</label>
+                            <asp:TextBox ID="txtRol" runat="server" CssClass="search-box small-box" placeholder="Rol" MaxLength="200" />
+                        </div>
+                    </div>
+                </asp:Panel>
+            </div>
+            <div class="form-actions">
+                <asp:Button ID="btncontinuar" runat="server" Text="Actualizar" CssClass="btn-primary" OnClick="btncontinuar_Click"  style="
+                    background-color: #7154FC; /* Color de fondo */
+                    color: #fff; /* Color del texto */
+                    padding: 15px 25px; /* Tamaño del botón */
+                    border: none; /* Sin borde */
+                    border-radius: 25px; /* Bordes redondeados */
+                    font-size: 18px; /* Tamaño de fuente */
+                    cursor: pointer; /* Cambia el cursor a mano al pasar por encima */
+                    text-align: center; /* Centra el texto */
+                    display: inline-block; /* Asegura que el botón se alinee correctamente */
+                    margin-top: 20px; /* Espacio superior */
+                    margin-bottom: 20px; /* Espacio inferior */
+                    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+                "
+                onmouseover="this.style.backgroundColor='#5a0cac';" 
+                onmouseout="this.style.backgroundColor='#7154FC';" 
+                />
+                <asp:Label ID="lblMensaje" runat="server" />
             </div>
         </div>
-        <div class="main-content3">
-            <div class="content-box">
-                <img src="img/imgM.png" alt="Imagen de Ejemplo">
-                <div class="login-form">
-                    <h2>Inicio de Sesión</h2>
-                    <asp:TextBox ID="txtdescripcion" runat="server" CssClass="textbox" placeholder="Usuario" MaxLength="200" />
-                    <asp:TextBox ID="txtpassword" runat="server" CssClass="textbox" TextMode="Password" placeholder="Contraseña" MaxLength="200" />
-                    <asp:Button ID="continuar" runat="server" Text="Guardar" CssClass="btn-buscar" OnClientClick="return showCodeModal();" />
-                    <asp:Label ID="lblMensaje" runat="server" Text="" />
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal para el Código -->
-        <div id="code-modal" class="modal">
-            <div class="modal-content">
-                <span class="close" id="code-modal-close">&times;</span>
-                <h2>Ingresar Código</h2>
-                <form id="code-form">
-                    <input type="text" id="code-input" placeholder="Código" required>
-                    <button type="submit">Aceptar</button>
-                </form>
-                <asp:Label ID="lblMensajeModal" runat="server" Text="" CssClass="mensaje-error" />
-            </div>
-        </div>
-    </form>
-    
-    <script type='text/javascript'>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Modal del código
-            var codeModal = document.getElementById("code-modal");
-            var codeModalClose = document.getElementById("code-modal-close");
-            var codeForm = document.getElementById("code-form");
-
-            // Mostrar el modal de código cuando se hace clic en "Continuar"
-            window.showCodeModal = function () {
-                codeModal.style.display = "flex";
-                return false; // Evita que el botón haga submit del formulario original
-            }
-
-            codeModalClose.onclick = function () {
-                codeModal.style.display = "none";
-            }
-
-            window.onclick = function (event) {
-                if (event.target == codeModal) {
-                    codeModal.style.display = "none";
-                }
-            }
-
-            // Manejar el envío del código
-            codeForm.onsubmit = function (event) {
-                event.preventDefault();
-                var code = document.getElementById("code-input").value.trim();
-
-                // Redirigir según el código ingresado
-                if (code === "1234") { // Código de ejemplo, ajusta según tu lógica
-                    document.getElementById("form1").submit(); // Enviar el formulario original
-                } else {
-                    document.getElementById("lblMensajeModal").innerText = "Código incorrecto. Por favor, intenta de nuevo.";
-                }
-            }
-        });
-    </script>
+    </div>
+</form>
 
   <!-- Círculo Inferior Izquierdo -->
   <div class="bottom-circle-container">
@@ -360,11 +675,11 @@
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-31bcceb elementor-widget elementor-widget-heading" data-id="31bcceb" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h5 class="elementor-heading-title elementor-size-default">About</h5>		</div>
+			<h5 class="elementor-heading-title elementor-size-default">Acerca de Nosotros</h5>		</div>
 				</div>
 				<div class="elementor-element elementor-element-3a3a6667 elementor-widget elementor-widget-text-editor" data-id="3a3a6667" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-text-editor elementor-clearfix">Mei an pericula euripidis, hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix at, vel pertinax. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis eleifend lorem nec ultricies.</div>
+					<div class="elementor-text-editor elementor-clearfix">En GestionPro, ofrecemos un sistema integral de gestión de actividades empresariales diseñado para optimizar y transformar la forma en que las organizaciones operan. Nuestro software avanzado está diseñado para abordar las necesidades complejas de la gestión empresarial moderna, ayudando a empresas de todos los tamaños a alcanzar sus objetivos con eficiencia y eficacia.</div>
 				</div>
 				</div>
 						</div>
@@ -376,15 +691,15 @@
 				<div class="elementor-element elementor-element-13b8394a elementor-widget__width-initial elementor-widget elementor-widget-wp-widget-tag_cloud" data-id="13b8394a" data-element_type="widget" data-widget_type="wp-widget-tag_cloud.default">
 				<div class="elementor-widget-container">
 			<h5>Tags</h5><div class="tagcloud"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/blog/" class="tag-cloud-link tag-link-6 tag-link-position-1" style="font-size: 8pt;" aria-label="BLOG (1 item)">BLOG</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/business/" class="tag-cloud-link tag-link-7 tag-link-position-2" style="font-size: 8pt;" aria-label="BUSINESS (1 item)">BUSINESS</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/cities/" class="tag-cloud-link tag-link-8 tag-link-position-3" style="font-size: 8pt;" aria-label="CITIES (1 item)">CITIES</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/construction/" class="tag-cloud-link tag-link-9 tag-link-position-4" style="font-size: 8pt;" aria-label="CONSTRUCTION (1 item)">CONSTRUCTION</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/design/" class="tag-cloud-link tag-link-10 tag-link-position-5" style="font-size: 8pt;" aria-label="DESIGN (1 item)">DESIGN</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/interiors/" class="tag-cloud-link tag-link-11 tag-link-position-6" style="font-size: 8pt;" aria-label="INTERIORS (1 item)">INTERIORS</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/news/" class="tag-cloud-link tag-link-12 tag-link-position-7" style="font-size: 8pt;" aria-label="NEWS (1 item)">NEWS</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/objects/" class="tag-cloud-link tag-link-13 tag-link-position-8" style="font-size: 8pt;" aria-label="OBJECTS (1 item)">OBJECTS</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/post/" class="tag-cloud-link tag-link-14 tag-link-position-9" style="font-size: 8pt;" aria-label="POST (1 item)">POST</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/projects/" class="tag-cloud-link tag-link-15 tag-link-position-10" style="font-size: 8pt;" aria-label="PROJECTS (1 item)">PROJECTS</a></div>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/business/" class="tag-cloud-link tag-link-7 tag-link-position-2" style="font-size: 8pt;" aria-label="BUSINESS (1 item)">GESTIÓN EMPRESARIAL</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/cities/" class="tag-cloud-link tag-link-8 tag-link-position-3" style="font-size: 8pt;" aria-label="CITIES (1 item)">OPTIMIZACIÓN</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/construction/" class="tag-cloud-link tag-link-9 tag-link-position-4" style="font-size: 8pt;" aria-label="CONSTRUCTION (1 item)">INNOVACIÓN</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/design/" class="tag-cloud-link tag-link-10 tag-link-position-5" style="font-size: 8pt;" aria-label="DESIGN (1 item)">RECURSOS HUMANOS</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/interiors/" class="tag-cloud-link tag-link-11 tag-link-position-6" style="font-size: 8pt;" aria-label="INTERIORS (1 item)">FINANZAS</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/news/" class="tag-cloud-link tag-link-12 tag-link-position-7" style="font-size: 8pt;" aria-label="NEWS (1 item)">PRODUCTIVIDAD</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/objects/" class="tag-cloud-link tag-link-13 tag-link-position-8" style="font-size: 8pt;" aria-label="OBJECTS (1 item)"></a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/post/" class="tag-cloud-link tag-link-14 tag-link-position-9" style="font-size: 8pt;" aria-label="POST (1 item)"></a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/projects/" class="tag-cloud-link tag-link-15 tag-link-position-10" style="font-size: 8pt;" aria-label="PROJECTS (1 item)"></a></div>
 		</div>
 				</div>
 						</div>
@@ -395,15 +710,15 @@
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-491e4ad elementor-widget elementor-widget-heading" data-id="491e4ad" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h5 class="elementor-heading-title elementor-size-default">RECENT COMMENTS</h5>		</div>
+			<h5 class="elementor-heading-title elementor-size-default">Comentarios Recientes</h5>		</div>
 				</div>
 				<div class="elementor-element elementor-element-87952dd elementor-widget elementor-widget-jet-posts" data-id="87952dd" data-element_type="widget" data-widget_type="jet-posts.default">
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-posts jet-elements"><div class="jet-posts col-row disable-rows-gap"><div class="jet-posts__item col-desk-1">
-	<div class="jet-posts__inner-box"><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/prioritizing-tax-benefits/">Prioritizing Tax Benefits</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:26+00:00" title="2019-07-05T13:32:26+00:00">July 5, 2019</time></a></span></div></div></div>
+	<div class="jet-posts__inner-box"><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/prioritizing-tax-benefits/">Beneficios de la Gestión Financiera Integrada</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:26+00:00" title="2019-07-05T13:32:26+00:00">5 de julio de 2024</time></a></span></div></div></div>
 </div>
 <div class="jet-posts__item col-desk-1">
-	<div class="jet-posts__inner-box"><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/the-sdn-effect-on-network/">The SDN Effect on Network</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:07+00:00" title="2019-07-05T13:32:07+00:00">July 5, 2019</time></a></span></div></div></div>
+	<div class="jet-posts__inner-box"><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/the-sdn-effect-on-network/">Mejora en la Coordinación de Proyectos</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:07+00:00" title="2019-07-05T13:32:07+00:00">4 de julio de 2024</time></a></span></div></div></div>
 </div>
 </div>
 </div>		</div>
@@ -434,7 +749,7 @@
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-10ceac58 elementor-widget elementor-widget-text-editor" data-id="10ceac58" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-text-editor elementor-clearfix">© 2019. Imperion. All Rights Reserved.</div>
+					<div class="elementor-text-editor elementor-clearfix">© 2024. GestionPro. All Rights Reserved.</div>
 				</div>
 				</div>
 						</div>
@@ -445,32 +760,7 @@
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-55a575b1 elementor-shape-rounded elementor-widget elementor-widget-social-icons" data-id="55a575b1" data-element_type="widget" data-widget_type="social-icons.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-social-icons-wrapper">
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-949457f" target="_blank">
-					<span class="elementor-screen-only">Facebook</span>
-											<i class="fa fa-facebook"></i>
-									</a>
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-bafa546" target="_blank">
-					<span class="elementor-screen-only">Twitter</span>
-											<i class="fa fa-twitter"></i>
-									</a>
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-google-plus elementor-repeater-item-4e18694" target="_blank">
-					<span class="elementor-screen-only">Google-plus</span>
-											<i class="fa fa-google-plus"></i>
-									</a>
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-addf219" target="_blank">
-					<span class="elementor-screen-only">Instagram</span>
-											<i class="fa fa-instagram"></i>
-									</a>
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-649080f" target="_blank">
-					<span class="elementor-screen-only">Youtube</span>
-											<i class="fa fa-youtube"></i>
-									</a>
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-wordpress elementor-repeater-item-28cb662" target="_blank">
-					<span class="elementor-screen-only">Wordpress</span>
-											<i class="fa fa-wordpress"></i>
-									</a>
-					</div>
+					
 				</div>
 				</div>
 						</div>
@@ -482,7 +772,8 @@
 						</div>
 			</div>
 		</div>
-</footer><!-- #colophon -->
+			</footer><!-- #colophon -->
+
 
 </div><!-- #page -->
 
@@ -499,7 +790,7 @@
     var ui_init_object = { "auto_init": "false", "targets": [] };
     /* ]]> */
 </script>
-<script type='text/javascript' src='"img/logo2.png"'></script>
+<script type='text/javascript' src='https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/plugins/jet-menu/cherry-framework/modules/cherry-js-core/assets/js/min/cherry-js-core.min.js?ver=1.5.11'></script>
 <script type='text/javascript'>
     function CherryCSSCollector() { "use strict"; var t, e = window.CherryCollectedCSS; void 0 !== e && (t = document.createElement("style"), t.setAttribute("title", e.title), t.setAttribute("type", e.type), t.textContent = e.css, document.head.appendChild(t)) } CherryCSSCollector();
 </script>
@@ -562,7 +853,11 @@
     /* ]]> */
 </script>
 <script type='text/javascript' src='https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/plugins/jet-tricks/assets/js/jet-tricks-frontend.js?ver=1.2.0'></script>
-
+<script type='text/javascript'>
+    /* <![CDATA[ */
+    var JetBlogSettings = { "ajaxurl": "https:\/\/ld-wp73.template-help.com\/imperion\/corporatelanding\/wp-admin\/admin-ajax.php" };
+    /* ]]> */
+</script>
 <script type='text/javascript' src='https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/plugins/jet-blog/assets/js/jet-blog.min.js?ver=2.1.20'></script>
 
 <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-P9FT69');</script><!-- End Google Tag Manager --></body>

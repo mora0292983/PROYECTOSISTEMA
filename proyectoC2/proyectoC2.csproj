@@ -144,7 +144,7 @@
     <Content Include="pg_controlincapacidades.aspx" />
     <Content Include="pg_cua.aspx" />
     <Content Include="pg_departamentos.aspx" />
-    <Content Include="pg_dos.aspx" />
+    <Content Include="pg_configCorreo.aspx" />
     <Content Include="pg_empexpediente.aspx" />
     <Content Include="pg_expediente.aspx" />
     <Content Include="pg_inicio.aspx" />
@@ -155,7 +155,7 @@
     <Content Include="pg_registroincapacidad.aspx" />
     <Content Include="pg_seus.aspx" />
     <Content Include="pg_tres.aspx" />
-    <Content Include="pg_uno.aspx" />
+    <Content Include="pg_expedienteSuper.aspx" />
     <Content Include="pg_vacaciones.aspx" />
     <Content Include="pg_vacacionescolectivas.aspx" />
     <Content Include="RegistroActividadRealizada.aspx" />
@@ -308,12 +308,12 @@
     <Compile Include="pg_departamentos.aspx.designer.cs">
       <DependentUpon>pg_departamentos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pg_dos.aspx.cs">
-      <DependentUpon>pg_dos.aspx</DependentUpon>
+    <Compile Include="pg_configCorreo.aspx.cs">
+      <DependentUpon>pg_configCorreo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pg_dos.aspx.designer.cs">
-      <DependentUpon>pg_dos.aspx</DependentUpon>
+    <Compile Include="pg_configCorreo.aspx.designer.cs">
+      <DependentUpon>pg_configCorreo.aspx</DependentUpon>
     </Compile>
     <Compile Include="pg_empexpediente.aspx.cs">
       <DependentUpon>pg_empexpediente.aspx</DependentUpon>
@@ -385,12 +385,12 @@
     <Compile Include="pg_tres.aspx.designer.cs">
       <DependentUpon>pg_tres.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pg_uno.aspx.cs">
-      <DependentUpon>pg_uno.aspx</DependentUpon>
+    <Compile Include="pg_expedienteSuper.aspx.cs">
+      <DependentUpon>pg_expedienteSuper.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pg_uno.aspx.designer.cs">
-      <DependentUpon>pg_uno.aspx</DependentUpon>
+    <Compile Include="pg_expedienteSuper.aspx.designer.cs">
+      <DependentUpon>pg_expedienteSuper.aspx</DependentUpon>
     </Compile>
     <Compile Include="pg_vacaciones.aspx.cs">
       <DependentUpon>pg_vacaciones.aspx</DependentUpon>
