@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="JustificacionInconsistencias.aspx.cs" Inherits="proyectoC2.JustificacionInconsistencias" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="gestionInconsistencias.aspx.cs" Inherits="proyectoC2.gestionInconsistencias" %>
 
 <!DOCTYPE html>
 
@@ -144,6 +144,17 @@ footer {
      font-size: 16px;
  }
 
+ .btn-submit2 {
+    background-color: #D5D8DC;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
  .btn-pdf {
     background-color: #7154FC;
     color: white;
@@ -157,6 +168,19 @@ footer {
  .btn-submit:hover {
      background-color: #5a005a;
  }
+ .btn-submit2:hover {
+    background-color: #ABB2B9;
+}
+
+/* Regla adicional para aumentar la especificidad */
+form .btn-submit2 {
+    background-color: #ABB2B9 !important;
+    color: white !important;
+}
+
+form .btn-submit2:hover {
+    background-color: #808B96 !important;
+}
 
  .image-box {
      position: relative; /* Añade esto para permitir el ajuste de 'left' */
@@ -238,14 +262,6 @@ footer {
     text-align: center; /* Centra el texto del mensaje */
     color: red; /* Color del texto del mensaje de error */
     font-size: 16px; /* Tamaño de la fuente del mensaje */
-}
-
-/* Estilo para el mensaje */
-.mensaje {
-    display: block; /* Asegura que el mensaje se muestre en bloque */
-    margin-top: 10px; /* Espacio entre el botón y el mensaje */
-    color: red; /* Color del texto del mensaje (puedes ajustar esto según tu diseño) */
-    font-weight: bold; /* Estilo del texto del mensaje (opcional) */
 }
 /* Estilos del submenú */
 .submenu {
@@ -381,7 +397,7 @@ footer {
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-logo jet-blocks"><div class="jet-logo jet-logo-type-image jet-logo-display-block">
 <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="jet-logo__link"><img src="img/logo2.png" class="jet-logo__img" alt="Imperion" width="128" height="44" srcset="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/logo_retina.png 2x"></a></div>
-				<p class="jet-logo__title">Empleado</p>
+				<p class="jet-logo__title">Supervisora</p>
 
 			</div>		</div>
 				</div>
@@ -539,11 +555,11 @@ footer {
 
     <div class="main-content3">
         <div class="image-box">
-            <img src="img/empleado.png" alt="Imagen de Ejemplo">
+            <img src="img/jefe1.png" alt="Imagen de Ejemplo">
         </div>
         <div class="content-box">
             <h2>Justificación de Inconsistencia</h2>
-            <div class="small-title">Justifique su inconsistencia</div>
+            <div class="small-title">Apruebe o deniegue la justificación</div>
             <div class="form-inline">
                 <div class="form-group">
                     <label for="idInconsistencia">ID Inconsistencia:</label>
@@ -565,17 +581,12 @@ footer {
                 </div>
             </div>
             <div class="form-group">
-                <label for="pdfUpload">Adjuntar archivo:</label>
-                <asp:FileUpload ID="pdfUpload" runat="server" CssClass="btn-pdf" />
+            <asp:Button ID="btnVerArchivo" runat="server" CssClass="btn-submit" Text="Ver Archivo" />
             </div>
-            <div class="form-group">
-            <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Enviar" OnClick="btnSubmit_Click" />
-            </div>
-            <br />
-            <!-- Contenedor para el mensaje debajo del botón -->
-            <div class="form-group">
-                <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" />
-            </div>
+            <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Aprobar" />
+             <br><br>
+            <asp:Button ID="btnSubmit2" runat="server" CssClass="btn-submit2" Text="Denegar" />
+            <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" />
         </div>
     </div>
 

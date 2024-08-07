@@ -11,7 +11,7 @@ namespace proyectoC2
 {
 
 
-    public partial class RegistroActividadRealizada
+    public partial class historialActividadesEmpleado
     {
 
         /// <summary>
@@ -114,49 +114,22 @@ namespace proyectoC2
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control fecha.
+        /// Control empleadoIDtxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox fecha;
+        protected global::System.Web.UI.WebControls.TextBox empleadoIDtxt;
 
         /// <summary>
-        /// Control ddlTipoActividad.
+        /// Control gridView.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipoActividad;
-
-        /// <summary>
-        /// Control ddlHoraInicio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlHoraInicio;
-
-        /// <summary>
-        /// Control ddlHoraFin.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlHoraFin;
-
-        /// <summary>
-        /// Control pdfUpload.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload pdfUpload;
+        protected global::System.Web.UI.WebControls.GridView gridView;
 
         /// <summary>
         /// Control btnSubmit.

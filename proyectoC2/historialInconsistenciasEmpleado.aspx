@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="JustificacionInconsistencias.aspx.cs" Inherits="proyectoC2.JustificacionInconsistencias" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="historialInconsistenciasEmpleado.aspx.cs" Inherits="proyectoC2.historialInconsistenciasEmpleado" %>
 
 <!DOCTYPE html>
 
@@ -70,115 +70,133 @@ img.emoji {
      z-index: -1; /* Asegura que el círculo esté detrás de otros elementos */
 }
 footer {
-      margin-top: 61px; /* Reduce este valor para subir el footer */
-     width: 1550px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
+      margin-top: 62px; /* Reduce este valor para subir el footer */
+     width: 1500px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
 	margin-left: -20px; /* Ajusta este valor para mover el footer hacia la izquierda */
 }
-  .main-content3 {
-     display: flex;
-     justify-content: space-around;
-     align-items: center;
-     height: auto;
-     padding: 20px;
-     gap: 20px;
-	 margin-top: 55px; /* Ajusta este valor para mover la imagen hacia abajo */
- }
+.main-content3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 65px;
+    gap: 20px;
+}
 
- .content-box {
-     background-color: #fff;
-     border-radius: 8px;
-     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-     width: 45%;
-     max-width: 550px;
-     padding: 20px;
-     box-sizing: border-box;
- }
+.content-box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px; /* Ajusta el ancho del cuadro blanco */
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-x: auto; /* Añade scroll horizontal si el grid es muy ancho */
+}
 
- .content-box h2 {
-     color: #7154FC; /* Morado */
-     font-weight: bold;
-     margin-top: 0;
-     text-align: center;
- }
+.content-box h2 {
+    color: #7154FC; /* Morado */
+    font-weight: bold;
+    margin-top: 0;
+    text-align: center;
+}
 
- .small-title {
-     color: #585555;
-     font-size: 14px;
-     font-weight: bold;
-     margin: 10px 0;
- }
+.form-group {
+    margin-bottom: 15px;
+}
 
- .form-group {
-     margin-bottom: 15px;
- }
+.asp-control {
+    width: calc(100% - 40px); /* Ajusta para dejar espacio para el icono */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
 
- .form-group label {
-     display: block;
-    
-     margin-bottom: 5px;
- }
+.search-container {
+    position: relative;
+}
 
- .form-group input,
- .form-group select,
- .form-group textarea,
- .form-group .asp-control {
-     width: 100%;
-     padding: 10px;
-     border-radius: 5px;
-     border: 1px solid #ccc;
-     box-sizing: border-box;
- }
+.search-container input[type="text"] {
+    width: 100%;
+    padding-right: 40px; /* Espacio para el icono */
+}
 
- .form-group textarea {
-     resize: vertical;
- }
+.search-container .icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ccc;
+    pointer-events: none;
+}
 
- .btn-submit {
-     background-color: #7154FC;
-     color: white;
-     padding: 10px 15px;
-     border: none;
-     border-radius: 5px;
-     cursor: pointer;
-     width: 100%;
-     font-size: 16px;
- }
-
- .btn-pdf {
+.btn {
     background-color: #7154FC;
     color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 48%;
     font-size: 16px;
+    text-align: center;
 }
 
- .btn-submit:hover {
-     background-color: #5a005a;
- }
+.btn:hover {
+    background-color: #5a005a;
+}
 
- .image-box {
-     position: relative; /* Añade esto para permitir el ajuste de 'left' */
-     left: -50px; /* Ajusta este valor para mover solo la imagen a la izquierda */
-     margin-top: 70px;
- }
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
 
- .image-box img {
-     width: 120%;
-     height: auto;
-     border-radius: 8px;
-     object-fit: cover;
- }
+.image-box {
+    width: 40%;
+    max-width: 400px; /* Ajusta el ancho máximo de la imagen */
+}
 
- .form-inline {
-     display: flex;
-     justify-content: space-between;
- }
+.image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
 
- .form-inline .form-group {
-     width: 48%;
- }
+/* General styling for GridView */
+.gridview {
+    width: 100%;
+    border-collapse: separate;
+    margin-top: 30px;
+}
+
+.gridview th, .gridview td {
+    border: 1px solid #ddd;
+    padding: 24px;
+	box-sizing: border-box;
+}
+.gridview .header-date, 
+.gridview .item-date {
+    width: 900px; /* Ajusta el valor según tus necesidades */
+    text-align: left; /* Ajusta la alineación del texto si es necesario */
+}
+/* Header styling */
+.gridview th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #7154FC;
+    color: white;
+}
+
+/* Adjusting width for date columns */
+.gridview td:nth-child(5),
+.gridview td:nth-child(6) {
+    width: 900px; /* Adjust as needed */
+    text-align: center; /* Optional: Center the text */
+}
 
 /* Selecciona el contenedor del menú */
 .jet-nav-wrap {
@@ -188,64 +206,6 @@ footer {
 /* Opcionalmente, puedes especificar la clase del menú principal si deseas más precisión */
 .jet-nav-wrap.jet-mobile-menu.jet-mobile-menu--right-side {
     margin-left: -190px; /* Ajusta este valor según tus necesidades */
-}
-/* Contenedor del logo y el título */
-.elementor-jet-logo {
-    text-align: center; /* Centra el contenido dentro del contenedor */
-}
-/* Imagen del logo */
-.jet-logo__img {
-    display: block; /* Asegura que el logo se muestre como un bloque */
-    margin: 0 auto; /* Centra el logo horizontalmente */
-}
-.jet-logo__title {
-    font-size: 14px; /* Tamaño del texto del título */
-	font-weight: 500; /* Negrita moderada */
-    color: #333; /* Color del texto del título */
-    margin-top: 10px; /* Espacio entre el logo y el título */
-    text-transform: uppercase; /* Opcional: convierte el texto a mayúsculas */
-	 margin-left: -100px;
-}
-
-.form-actions {
-    display: flex; /* Usa Flexbox para el contenedor */
-    flex-direction: column; /* Organiza los elementos en una columna */
-    align-items: center; /* Centra los elementos horizontalmente */
-    margin-top: 30px; /* Espacio arriba del contenedor del botón */
-}
-
-.form-actions .btn-primary {
-    background-color: #7154FC; /* Color de fondo del botón */
-    color: #fff; /* Color del texto */
-    padding: 15px 25px; /* Tamaño del botón */
-    border: none; /* Sin borde */
-    border-radius: 25px; /* Bordes redondeados */
-    font-size: 18px; /* Tamaño de fuente */
-    cursor: pointer; /* Cambia el cursor a mano al pasar por encima */
-    text-align: center; /* Centra el texto */
-    display: inline-block; /* Asegura que el botón se alinee correctamente */
-    margin-bottom: 10px; /* Espacio debajo del botón para separar del mensaje */
-    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
-}
-
-.form-actions .btn-primary:hover {
-    background-color: #5a0cac; /* Color de fondo en hover */
-}
-
-.form-actions .lblMensaje {
-    margin-top: 10px; /* Espacio arriba del mensaje para separarlo del botón */
-    text-align: center; /* Centra el texto del mensaje */
-    color: red; /* Color del texto del mensaje de error */
-    font-size: 16px; /* Tamaño de la fuente del mensaje */
-}
-
-/* Estilo para el mensaje */
-.mensaje {
-    display: block; /* Asegura que el mensaje se muestre en bloque */
-    margin-top: 10px; /* Espacio entre el botón y el mensaje */
-    color: red; /* Color del texto del mensaje (puedes ajustar esto según tu diseño) */
-    font-weight: bold; /* Estilo del texto del mensaje (opcional) */
 }
 /* Estilos del submenú */
 .submenu {
@@ -293,30 +253,25 @@ footer {
     visibility: visible;
 }
 
-/* Estilo para el mensaje de éxito */
-.mensaje-exito {
-    color: #7154FC;
-    font-weight: bold;
-    padding: 10px;
-    border: 1px solid #7154FC;
-    border-radius: 5px;
-    background-color: #e6f9e6;
-    text-align: center;
-    margin-top: 10px;
-	   margin-left: auto;
-    margin-right: auto;
+
+/* Contenedor del logo y el título */
+.elementor-jet-logo {
+    text-align: center; /* Centra el contenido dentro del contenedor */
+}
+/* Imagen del logo */
+.jet-logo__img {
+    display: block; /* Asegura que el logo se muestre como un bloque */
+    margin: 0 auto; /* Centra el logo horizontalmente */
 }
 
-/* Estilo para el mensaje de error */
-.mensaje-error {
-    color: red;
-    font-weight: bold;
-    padding: 10px;
-    border: 1px solid red;
-    border-radius: 5px;
-    background-color: #f9e6e6;
-    text-align: center;
-    margin-top: 10px;
+/* Título debajo del logo */
+.jet-logo__title {
+    font-size: 14px; /* Tamaño del texto del título */
+	font-weight: 500; /* Negrita moderada */
+    color: #333; /* Color del texto del título */
+    margin-top: 10px; /* Espacio entre el logo y el título */
+    text-transform: uppercase; /* Opcional: convierte el texto a mayúsculas */
+	 margin-left: -100px;
 }
 </style>
 
@@ -381,9 +336,8 @@ footer {
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-logo jet-blocks"><div class="jet-logo jet-logo-type-image jet-logo-display-block">
 <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="jet-logo__link"><img src="img/logo2.png" class="jet-logo__img" alt="Imperion" width="128" height="44" srcset="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/logo_retina.png 2x"></a></div>
-				<p class="jet-logo__title">Empleado</p>
-
-			</div>		</div>
+<p class="jet-logo__title">Empleado</p>
+</div>		</div>
 				</div>
 						</div>
 			</div>
@@ -395,7 +349,7 @@ footer {
 				<div class="elementor-widget-container">
 			<div class="jet-nav-wrap jet-mobile-menu jet-mobile-menu--right-side" data-mobile-layout="right-side">
 <div class="jet-nav__mobile-trigger jet-nav-mobile-trigger-align-right">
-	<span class="jet-nav__mobile-trigger-open jet-blocks-icon"><i aria-hidden="true" class="fas fa-bars"></i></span>	<span class="jet-nav__mobile-trigger-close jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></span></div><div class="menu-main-container"><div class="jet-nav jet-nav--horizontal"><div class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item jet-nav__item-177 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Home</span></a></div>
+	<span class="jet-nav__mobile-trigger-open jet-blocks-icon"><i aria-hidden="true" class="fas fa-bars"></i></span>	<span class="jet-nav__mobile-trigger-close jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></span></div><div class="menu-main-container"><div class="jet-nav jet-nav--horizontal"><div class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item jet-nav__item-177 jet-nav__item"><a href="PG_Inicio.aspx" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Home</span></a></div>
 <div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
     <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
         <span class="jet-nav-link-text">Vacaciones</span>
@@ -531,54 +485,34 @@ footer {
 		</div>
 			</header><!-- #masthead -->
 
-
-
-	
-
-    <form id="form1" runat="server">
+<form id="form1" runat="server">
 
     <div class="main-content3">
-        <div class="image-box">
-            <img src="img/empleado.png" alt="Imagen de Ejemplo">
-        </div>
         <div class="content-box">
-            <h2>Justificación de Inconsistencia</h2>
-            <div class="small-title">Justifique su inconsistencia</div>
-            <div class="form-inline">
-                <div class="form-group">
-                    <label for="idInconsistencia">ID Inconsistencia:</label>
-                    <asp:TextBox ID="idInconsistencia" runat="server" CssClass="asp-control" ReadOnly="true" />
-                </div>
-                <div class="form-group">
-                    <label for="Empleado">ID Empleado:</label>
-                    <asp:TextBox ID="Empleado" runat="server" CssClass="asp-control" ReadOnly="true" />
-                </div>
-            </div>
-            <div class="form-inline">
-                <div class="form-group">
-                    <label for="fecha">Fecha de Inconsistencia:</label>
-                    <asp:TextBox ID="fecha" runat="server" CssClass="asp-control" ReadOnly="true" />
-                </div>
-                <div class="form-group">
-                    <label for="tipoInconsistencia">Tipo de Inconsistencia:</label>
-                    <asp:TextBox ID="tipoInconsistencia" runat="server" CssClass="asp-control" ReadOnly="true" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="pdfUpload">Adjuntar archivo:</label>
-                <asp:FileUpload ID="pdfUpload" runat="server" CssClass="btn-pdf" />
-            </div>
-            <div class="form-group">
-            <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Enviar" OnClick="btnSubmit_Click" />
-            </div>
-            <br />
-            <!-- Contenedor para el mensaje debajo del botón -->
-            <div class="form-group">
-                <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" />
-            </div>
+            <h2>Historial de Inconsistencias</h2>
+            
+            <asp:<div class="form-group">
+                <label for="empleadoIDtxt">ID Empleado:</label>
+                <asp:TextBox ID="empleadoIDtxt" runat="server" CssClass="asp-control" ReadOnly="true" />
+            <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" CssClass="gridview" OnRowDataBound="gridView_RowDataBound">
+                <Columns>
+                    <asp:BoundField DataField="IDInconsistencia" HeaderText="ID Inconsistencia" />
+                    <asp:BoundField DataField="TipoInconsistencia" HeaderText="Tipo Inconsistencia" />
+                    <asp:BoundField DataField="Fecha" HeaderText="Fecha" DataFormatString="{0:yyyy-MM-dd}" HtmlEncode="false" />
+                    <asp:BoundField DataField="Estado" HeaderText="Estado" />
+                    <asp:TemplateField HeaderText="Acción">
+                        <ItemTemplate>
+                            <!-- HiddenField para almacenar el ID del empleado (ahora se configurará desde el CodeBehind) -->
+                            <asp:HiddenField ID="HiddenEmpleadoID" runat="server" />
+
+                            <!-- Botón Justificar -->
+                            <asp:Button ID="btnJustificar" runat="server" Text="Justificar" CssClass="btn-accion" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
         </div>
     </div>
-
 </form>
 
   <!-- Círculo Inferior Izquierdo -->

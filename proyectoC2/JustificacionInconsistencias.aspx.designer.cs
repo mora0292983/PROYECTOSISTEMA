@@ -114,13 +114,13 @@ namespace proyectoC2
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control nombreDepartamento.
+        /// Control idInconsistencia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreDepartamento;
+        protected global::System.Web.UI.WebControls.TextBox idInconsistencia;
 
         /// <summary>
         /// Control Empleado.
@@ -141,13 +141,22 @@ namespace proyectoC2
         protected global::System.Web.UI.WebControls.TextBox fecha;
 
         /// <summary>
-        /// Control Motivo.
+        /// Control tipoInconsistencia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Motivo;
+        protected global::System.Web.UI.WebControls.TextBox tipoInconsistencia;
+
+        /// <summary>
+        /// Control pdfUpload.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload pdfUpload;
 
         /// <summary>
         /// Control btnSubmit.
@@ -157,5 +166,14 @@ namespace proyectoC2
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSubmit;
+
+        /// <summary>
+        /// Control lblMensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
     }
 }

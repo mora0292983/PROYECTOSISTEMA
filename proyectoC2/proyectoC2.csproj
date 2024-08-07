@@ -123,7 +123,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="gestionActividades.aspx" />
+    <Content Include="gestionInconsistencias.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="historialActividadesEmpleado.aspx" />
+    <Content Include="historialActividadesSupervisor.aspx" />
+    <Content Include="historialInconsistenciasEmpleado.aspx" />
+    <Content Include="historialInconsistenciasSupervisor.aspx" />
     <Content Include="modulodepartamento.aspx" />
     <Content Include="historicopuestos.aspx" />
     <Content Include="img\control.jpg" />
@@ -220,6 +226,7 @@
     <Content Include="Site.Master" />
     <Content Include="SolicitudHorasExtraEmpleados.aspx" />
     <Content Include="SolicitudHorasExtraJefatura.aspx" />
+    <Content Include="VerPDF.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -249,8 +256,50 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="gestionActividades.aspx.cs">
+      <DependentUpon>gestionActividades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gestionActividades.aspx.designer.cs">
+      <DependentUpon>gestionActividades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="gestionInconsistencias.aspx.cs">
+      <DependentUpon>gestionInconsistencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gestionInconsistencias.aspx.designer.cs">
+      <DependentUpon>gestionInconsistencias.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="historialActividadesEmpleado.aspx.cs">
+      <DependentUpon>historialActividadesEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="historialActividadesEmpleado.aspx.designer.cs">
+      <DependentUpon>historialActividadesEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="historialActividadesSupervisor.aspx.cs">
+      <DependentUpon>historialActividadesSupervisor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="historialActividadesSupervisor.aspx.designer.cs">
+      <DependentUpon>historialActividadesSupervisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="historialInconsistenciasEmpleado.aspx.cs">
+      <DependentUpon>historialInconsistenciasEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="historialInconsistenciasEmpleado.aspx.designer.cs">
+      <DependentUpon>historialInconsistenciasEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="historialInconsistenciasSupervisor.aspx.cs">
+      <DependentUpon>historialInconsistenciasSupervisor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="historialInconsistenciasSupervisor.aspx.designer.cs">
+      <DependentUpon>historialInconsistenciasSupervisor.aspx</DependentUpon>
     </Compile>
     <Compile Include="modulodepartamento.aspx.cs">
       <DependentUpon>modulodepartamento.aspx</DependentUpon>
@@ -455,6 +504,13 @@
     </Compile>
     <Compile Include="SolicitudHorasExtraJefatura.aspx.designer.cs">
       <DependentUpon>SolicitudHorasExtraJefatura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerPDF.aspx.cs">
+      <DependentUpon>VerPDF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerPDF.aspx.designer.cs">
+      <DependentUpon>VerPDF.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
