@@ -20,7 +20,7 @@ namespace proyectoC2
         protected void Page_Load(object sender, EventArgs e)
         {
         }
-        protected void btnVerificar_Click(object sender, EventArgs e)
+        protected void btncontinuar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -33,26 +33,56 @@ namespace proyectoC2
                 {
                     // Mostrar un mensaje de error si alguno de los campos está vacío
                     lblMensaje.Text = "Por favor, complete todos los campos.";
-                    lblMensaje.CssClass = "mensaje-error";
+                    lblMensaje.CssClass = "mensaje-error"; // Añadir una clase CSS para estilizar el mensaje
                 }
                 else if (usuario == "karina" && contraseña == "123")
                 {
-                    Response.Redirect("pg_inicio.aspx");
+                    // Redirigir a otra página si los datos son correctos
+                    Response.Redirect("PG_Inicio.aspx");
                 }
                 else if (usuario == "jazmin" && contraseña == "1234")
                 {
+                    // Redirigir a otra página si los datos son correctos
                     Response.Redirect("PG_InicioJe.aspx");
                 }
                 else
                 {
+                    // Mostrar un mensaje de error si los datos son incorrectos
                     lblMensaje.Text = "Usuario o contraseña incorrectos. Por favor, intenta de nuevo.";
-                    lblMensaje.CssClass = "mensaje-error";
+                    lblMensaje.CssClass = "mensaje-error"; // Añadir una clase CSS para estilizar el mensaje
                 }
             }
             catch (Exception ex)
             {
+                // Manejo de la excepción
                 lblMensaje.Text = "Se ha producido un error: " + ex.Message;
-                lblMensaje.CssClass = "mensaje-error";
+                lblMensaje.CssClass = "mensaje-error"; // Añadir una clase CSS para estilizar el mensaje
+            }
+        }
+        protected void btnButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Obtener el valor del TextBox para el código de verificación
+                string codigoVerificacion = txtVerificationCode.Text.Trim();
+
+                // Verificar el código
+                if (codigoVerificacion == "658674")
+                {
+                    // Redirigir a la página "inicio.aspx" si el código es correcto
+                    Response.Redirect("pg_panelEmpleado.aspx");
+                }
+                else
+                {
+                    // Redirigir a la página "contacto.aspx" si el código es incorrecto
+                    Response.Redirect("pg_panelsupervisora.aspx");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de la excepción
+                lblMensaje.Text = "Se ha producido un error: " + ex.Message;
+                lblMensaje.CssClass = "mensaje-error"; // Añadir una clase CSS para estilizar el mensaje
             }
         }
     }

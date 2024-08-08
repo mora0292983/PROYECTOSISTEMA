@@ -47,191 +47,190 @@
             right: 0;
         }
 
-   /* Estilos del contenido principal */
-        .main-content3 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: calc(100vh - 60px);
-            padding: 100px;
-        }
+      .main-content3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+    padding: 100px;
+}
 
-        .content-box {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 1100px;
-            display: flex;
-        }
+.content-box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 1100px;
+    display: flex;
+}
 
-        .content-box img {
-            border-top-left-radius: 8px;
-            border-bottom-left-radius: 8px;
-            width: 50%;
-            object-fit: cover;
-        }
+.content-box img {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    width: 50%;
+    object-fit: cover;
+}
 
-        .login-form {
-            padding: 100px;
-            width: 50%;
-            border-radius: 8px;
-            box-sizing: border-box;
-        }
+.login-form {
+    padding: 100px;
+    width: 50%;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
 
-        .login-form h2 {
-            margin-bottom: 20px;
-            color: #333;
-        }
+.login-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
 
-        .login-form .textbox {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 20px; /* Bordes redondeados */
-            background-color: #f1f1f1; /* Color gris claro */
-            box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
-        }
+.login-form .textbox {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px; /* Bordes redondeados */
+    background-color: #f1f1f1; /* Color gris claro */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
 
-        .login-form .btn-buscar {
-            width: 100%;
-            padding: 15px;
-            background-color: #7154FC;
-            border: none;
-            color: #fff;
-            border-radius: 20px; /* Bordes redondeados */
-            font-size: 16px;
-            cursor: pointer;
-            margin-bottom: 10px;
-            transition: background-color 0.3s;
-        }
+.login-form .btn-buscar {
+    width: 100%;
+    padding: 15px;
+    background-color: #7154FC;
+    border: none;
+    color: #fff;
+    border-radius: 20px; /* Bordes redondeados */
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
 
-        .login-form .btn-buscar:hover {
-            background-color: #5e35b1; /* Color morado más oscuro para el hover */
-        }
+.login-form .btn-buscar:hover {
+    background-color: #5e35b1; /* Color morado más oscuro para el hover */
+}
 
-        .login-form a {
-            color: #7154FC;
-            text-decoration: none;
-            font-size: 14px;
-        }
+.login-form a {
+    color: #7154FC;
+    text-decoration: none;
+    font-size: 14px;
+}
 
-        .login-form a:hover {
-            text-decoration: underline;
-        }
+.login-form a:hover {
+    text-decoration: underline;
+}
 
-        /* Estilos para la ventana modal */
-        .modal {
-            display: none; /* Ocultar el modal por defecto */
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.4);
-            justify-content: center;
-            align-items: center;
-        }
+/* Estilos para la ventana modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
 
-        .modal-content {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            width: 80%;
-            max-width: 600px;
-            margin: auto;
-        }
+.modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+}
 
-        .modal-content h2 {
-            margin-top: 0;
-        }
+.modal-content h2 {
+    margin-top: 0;
+}
 
-        .modal-content input {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 20px;
-            background-color: #f1f1f1;
-        }
+.modal-content input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background-color: #f1f1f1;
+}
 
-        .modal-content button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            border: none;
-            color: #fff;
-            border-radius: 20px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+.modal-content button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-        .modal-content button:hover {
-            background-color: #0056b3;
-        }
+.modal-content button:hover {
+    background-color: #0056b3;
+}
 
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
 
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+ /* Estilos para el círculo inferior izquierdo */
+ .bottom-circle-container {
+     position: relative;
+     width: 100%;
+     height: 10px; /* Ajusta la altura según sea necesario */
+ 
+ }
 
-        /* Estilos para el círculo inferior izquierdo */
-        .bottom-circle-container {
-            position: relative;
-            width: 100%;
-            height: 10px; /* Ajusta la altura según sea necesario */
-        }
+ .bottom-circle {
+     position: absolute;
 
-        .bottom-circle {
-            position: absolute;
-            width: 900px;
-            height: 500px;
-            background-color:#7154FC;
-            border-radius: 50%;
-            bottom: 0;
-            left: -115px;
-            transform: translateY(50%); /* Ajusta para que el círculo esté justo encima del footer */
-            z-index: -1; /* Asegura que el círculo esté detrás de otros elementos */
-        }
+     width: 900px;
+     height: 500px;
+     background-color:#7154FC;
+     border-radius: 50%;
+     bottom: 0;
+     left: -115px;
+     transform: translateY(50%); /* Ajusta para que el círculo esté justo encima del footer */
+      z-index: -1; /* Asegura que el círculo esté detrás de otros elementos */
+ }
+ /* Estilo para el mensaje de éxito */
+.mensaje-exito {
+    color: #7154FC;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #7154FC;
+    border-radius: 5px;
+    background-color: #e6f9e6;
+    text-align: center;
+    margin-top: 10px;
+	   margin-left: auto;
+    margin-right: auto;
+}
 
-        /* Estilo para el mensaje de éxito */
-        .mensaje-exito {
-            color: #7154FC;
-            font-weight: bold;
-            padding: 10px;
-            border: 1px solid #7154FC;
-            border-radius: 5px;
-            background-color: #e6f9e6;
-            text-align: center;
-            margin-top: 10px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Estilo para el mensaje de error */
-        .mensaje-error {
-            color: red;
-            font-weight: bold;
-            padding: 10px;
-            border: 1px solid red;
-            border-radius: 5px;
-            background-color: #f9e6e6;
-            text-align: center;
-            margin-top: 10px;
-        }
+/* Estilo para el mensaje de error */
+.mensaje-error {
+    color: red;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+    background-color: #f9e6e6;
+    text-align: center;
+    margin-top: 10px;
+}
     </style>
 
 <style id='imperionthemestyleinlinecss' type='text/css'>
@@ -272,78 +271,53 @@
 
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div class="header">
-            <img src="img/logo2.png" alt="Logo" class="logo">
-            <div class="half-circle-container">
-                <div class="half-circle"></div>
+    <div class="header">
+        <img src="img/logo2.png" alt="Logo" class="logo">
+        <div class="half-circle-container">
+            <div class="half-circle"></div>
+        </div>
+    </div>
+    <div class="main-content3">
+        <div class="content-box">
+            <img src="img/imgM.png" alt="Imagen de Ejemplo">
+            <div class="login-form">
+               <h2>Inicio de Sesión</h2>
+             <form id="loginForm" runat="server">
+                <asp:TextBox ID="txtdescripcion" runat="server" CssClass="textbox" placeholder="Usuario" MaxLength="200" />
+                <asp:TextBox ID="txtpassword" runat="server" CssClass="textbox" TextMode="Password" placeholder="Contraseña" MaxLength="200" />
+                <asp:Button ID="continuar" runat="server" Text="INICIAR" CssClass="btn-buscar" OnClick="btncontinuar_Click" data-url="1" />
+                <asp:Label ID="lblMensaje" runat="server" Text="" />
+                <a href="#" id="register-link">Registrarse</a>
+               
             </div>
         </div>
-        <div class="main-content3">
-            <div class="content-box">
-                <img src="img/imgM.png" alt="Imagen de Ejemplo">
-                <div class="login-form">
-                    <h2>Inicio de Sesión</h2>
-                    <asp:TextBox ID="txtdescripcion" runat="server" CssClass="textbox" placeholder="Usuario" MaxLength="200" />
-                    <asp:TextBox ID="txtpassword" runat="server" CssClass="textbox" TextMode="Password" placeholder="Contraseña" MaxLength="200" />
-                    <asp:Button ID="continuar" runat="server" Text="Guardar" CssClass="btn-buscar" OnClientClick="return showCodeModal();" />
-                    <asp:Label ID="lblMensaje" runat="server" Text="" />
-                </div>
-            </div>
+    </div>
+    <!-- Ventana Modal para Verificación -->
+<div id="verification-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="close-verification-modal">&times;</span>
+        <h2>Verificación de Código</h2>
+        <form id="verification-form">
+            <asp:TextBox ID="txtVerificationCode" runat="server" CssClass="textbox" TextMode="Password" placeholder="Contraseña" MaxLength="200" />
+            <asp:Button ID="Button1" runat="server" Text="INICIAR" CssClass="btn-buscar" OnClick="btnButton1_Click" />
+           
+        </form>
+    </div>
+</div>
+    <!-- Ventana Modal para Registro -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Registrarse</h2>
+            <form>
+                <input type="text" placeholder="Nombre Completo" required>
+                <input type="email" placeholder="Correo Electrónico" required>
+                <input type="password" placeholder="Contraseña" required>
+                <button type="submit">Registrarse</button>
+            </form>
         </div>
-
-        <!-- Modal para el Código -->
-        <div id="code-modal" class="modal">
-            <div class="modal-content">
-                <span class="close" id="code-modal-close">&times;</span>
-                <h2>Ingresar Código</h2>
-                <form id="code-form">
-                    <input type="text" id="code-input" placeholder="Código" required>
-                    <button type="submit">Aceptar</button>
-                </form>
-                <asp:Label ID="lblMensajeModal" runat="server" Text="" CssClass="mensaje-error" />
-            </div>
-        </div>
-    </form>
-    
-    <script type='text/javascript'>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Modal del código
-            var codeModal = document.getElementById("code-modal");
-            var codeModalClose = document.getElementById("code-modal-close");
-            var codeForm = document.getElementById("code-form");
-
-            // Mostrar el modal de código cuando se hace clic en "Continuar"
-            window.showCodeModal = function () {
-                codeModal.style.display = "flex";
-                return false; // Evita que el botón haga submit del formulario original
-            }
-
-            codeModalClose.onclick = function () {
-                codeModal.style.display = "none";
-            }
-
-            window.onclick = function (event) {
-                if (event.target == codeModal) {
-                    codeModal.style.display = "none";
-                }
-            }
-
-            // Manejar el envío del código
-            codeForm.onsubmit = function (event) {
-                event.preventDefault();
-                var code = document.getElementById("code-input").value.trim();
-
-                // Redirigir según el código ingresado
-                if (code === "1234") { // Código de ejemplo, ajusta según tu lógica
-                    document.getElementById("form1").submit(); // Enviar el formulario original
-                } else {
-                    document.getElementById("lblMensajeModal").innerText = "Código incorrecto. Por favor, intenta de nuevo.";
-                }
-            }
-        });
-    </script>
-
+    </div>
+     </form>
   <!-- Círculo Inferior Izquierdo -->
   <div class="bottom-circle-container">
       <div class="bottom-circle"></div>
@@ -360,11 +334,11 @@
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-31bcceb elementor-widget elementor-widget-heading" data-id="31bcceb" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h5 class="elementor-heading-title elementor-size-default">About</h5>		</div>
+			<h5 class="elementor-heading-title elementor-size-default">Acerca de Nosotros</h5>		</div>
 				</div>
 				<div class="elementor-element elementor-element-3a3a6667 elementor-widget elementor-widget-text-editor" data-id="3a3a6667" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-text-editor elementor-clearfix">Mei an pericula euripidis, hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix at, vel pertinax. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis eleifend lorem nec ultricies.</div>
+					<div class="elementor-text-editor elementor-clearfix">En GestionPro, ofrecemos un sistema integral de gestión de actividades empresariales diseñado para optimizar y transformar la forma en que las organizaciones operan. Nuestro software avanzado está diseñado para abordar las necesidades complejas de la gestión empresarial moderna, ayudando a empresas de todos los tamaños a alcanzar sus objetivos con eficiencia y eficacia.</div>
 				</div>
 				</div>
 						</div>
@@ -376,15 +350,15 @@
 				<div class="elementor-element elementor-element-13b8394a elementor-widget__width-initial elementor-widget elementor-widget-wp-widget-tag_cloud" data-id="13b8394a" data-element_type="widget" data-widget_type="wp-widget-tag_cloud.default">
 				<div class="elementor-widget-container">
 			<h5>Tags</h5><div class="tagcloud"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/blog/" class="tag-cloud-link tag-link-6 tag-link-position-1" style="font-size: 8pt;" aria-label="BLOG (1 item)">BLOG</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/business/" class="tag-cloud-link tag-link-7 tag-link-position-2" style="font-size: 8pt;" aria-label="BUSINESS (1 item)">BUSINESS</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/cities/" class="tag-cloud-link tag-link-8 tag-link-position-3" style="font-size: 8pt;" aria-label="CITIES (1 item)">CITIES</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/construction/" class="tag-cloud-link tag-link-9 tag-link-position-4" style="font-size: 8pt;" aria-label="CONSTRUCTION (1 item)">CONSTRUCTION</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/design/" class="tag-cloud-link tag-link-10 tag-link-position-5" style="font-size: 8pt;" aria-label="DESIGN (1 item)">DESIGN</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/interiors/" class="tag-cloud-link tag-link-11 tag-link-position-6" style="font-size: 8pt;" aria-label="INTERIORS (1 item)">INTERIORS</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/news/" class="tag-cloud-link tag-link-12 tag-link-position-7" style="font-size: 8pt;" aria-label="NEWS (1 item)">NEWS</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/objects/" class="tag-cloud-link tag-link-13 tag-link-position-8" style="font-size: 8pt;" aria-label="OBJECTS (1 item)">OBJECTS</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/post/" class="tag-cloud-link tag-link-14 tag-link-position-9" style="font-size: 8pt;" aria-label="POST (1 item)">POST</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/projects/" class="tag-cloud-link tag-link-15 tag-link-position-10" style="font-size: 8pt;" aria-label="PROJECTS (1 item)">PROJECTS</a></div>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/business/" class="tag-cloud-link tag-link-7 tag-link-position-2" style="font-size: 8pt;" aria-label="BUSINESS (1 item)">GESTIÓN EMPRESARIAL</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/cities/" class="tag-cloud-link tag-link-8 tag-link-position-3" style="font-size: 8pt;" aria-label="CITIES (1 item)">OPTIMIZACIÓN</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/construction/" class="tag-cloud-link tag-link-9 tag-link-position-4" style="font-size: 8pt;" aria-label="CONSTRUCTION (1 item)">INNOVACIÓN</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/design/" class="tag-cloud-link tag-link-10 tag-link-position-5" style="font-size: 8pt;" aria-label="DESIGN (1 item)">RECURSOS HUMANOS</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/interiors/" class="tag-cloud-link tag-link-11 tag-link-position-6" style="font-size: 8pt;" aria-label="INTERIORS (1 item)">FINANZAS</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/news/" class="tag-cloud-link tag-link-12 tag-link-position-7" style="font-size: 8pt;" aria-label="NEWS (1 item)">PRODUCTIVIDAD</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/objects/" class="tag-cloud-link tag-link-13 tag-link-position-8" style="font-size: 8pt;" aria-label="OBJECTS (1 item)"></a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/post/" class="tag-cloud-link tag-link-14 tag-link-position-9" style="font-size: 8pt;" aria-label="POST (1 item)"></a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/projects/" class="tag-cloud-link tag-link-15 tag-link-position-10" style="font-size: 8pt;" aria-label="PROJECTS (1 item)"></a></div>
 		</div>
 				</div>
 						</div>
@@ -395,15 +369,15 @@
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-491e4ad elementor-widget elementor-widget-heading" data-id="491e4ad" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h5 class="elementor-heading-title elementor-size-default">RECENT COMMENTS</h5>		</div>
+			<h5 class="elementor-heading-title elementor-size-default">Comentarios Recientes</h5>		</div>
 				</div>
 				<div class="elementor-element elementor-element-87952dd elementor-widget elementor-widget-jet-posts" data-id="87952dd" data-element_type="widget" data-widget_type="jet-posts.default">
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-posts jet-elements"><div class="jet-posts col-row disable-rows-gap"><div class="jet-posts__item col-desk-1">
-	<div class="jet-posts__inner-box"><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/prioritizing-tax-benefits/">Prioritizing Tax Benefits</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:26+00:00" title="2019-07-05T13:32:26+00:00">July 5, 2019</time></a></span></div></div></div>
+	<div class="jet-posts__inner-box"><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/prioritizing-tax-benefits/">Beneficios de la Gestión Financiera Integrada</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:26+00:00" title="2019-07-05T13:32:26+00:00">5 de julio de 2024</time></a></span></div></div></div>
 </div>
 <div class="jet-posts__item col-desk-1">
-	<div class="jet-posts__inner-box"><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/the-sdn-effect-on-network/">The SDN Effect on Network</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:07+00:00" title="2019-07-05T13:32:07+00:00">July 5, 2019</time></a></span></div></div></div>
+	<div class="jet-posts__inner-box"><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/the-sdn-effect-on-network/">Mejora en la Coordinación de Proyectos</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:07+00:00" title="2019-07-05T13:32:07+00:00">4 de julio de 2024</time></a></span></div></div></div>
 </div>
 </div>
 </div>		</div>
@@ -434,7 +408,7 @@
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-10ceac58 elementor-widget elementor-widget-text-editor" data-id="10ceac58" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-text-editor elementor-clearfix">© 2019. Imperion. All Rights Reserved.</div>
+					<div class="elementor-text-editor elementor-clearfix">© 2024. GestionPro. All Rights Reserved.</div>
 				</div>
 				</div>
 						</div>
@@ -445,32 +419,7 @@
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-55a575b1 elementor-shape-rounded elementor-widget elementor-widget-social-icons" data-id="55a575b1" data-element_type="widget" data-widget_type="social-icons.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-social-icons-wrapper">
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-949457f" target="_blank">
-					<span class="elementor-screen-only">Facebook</span>
-											<i class="fa fa-facebook"></i>
-									</a>
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-bafa546" target="_blank">
-					<span class="elementor-screen-only">Twitter</span>
-											<i class="fa fa-twitter"></i>
-									</a>
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-google-plus elementor-repeater-item-4e18694" target="_blank">
-					<span class="elementor-screen-only">Google-plus</span>
-											<i class="fa fa-google-plus"></i>
-									</a>
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-addf219" target="_blank">
-					<span class="elementor-screen-only">Instagram</span>
-											<i class="fa fa-instagram"></i>
-									</a>
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-649080f" target="_blank">
-					<span class="elementor-screen-only">Youtube</span>
-											<i class="fa fa-youtube"></i>
-									</a>
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-wordpress elementor-repeater-item-28cb662" target="_blank">
-					<span class="elementor-screen-only">Wordpress</span>
-											<i class="fa fa-wordpress"></i>
-									</a>
-					</div>
+					
 				</div>
 				</div>
 						</div>
@@ -482,7 +431,8 @@
 						</div>
 			</div>
 		</div>
-</footer><!-- #colophon -->
+			</footer><!-- #colophon -->
+
 
 </div><!-- #page -->
 
@@ -562,7 +512,63 @@
     /* ]]> */
 </script>
 <script type='text/javascript' src='https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/plugins/jet-tricks/assets/js/jet-tricks-frontend.js?ver=1.2.0'></script>
+<script type='text/javascript'>
+    /* <![CDATA[ */
+    var JetBlogSettings = { "ajaxurl": "https:\/\/ld-wp73.template-help.com\/imperion\/corporatelanding\/wp-admin\/admin-ajax.php" };
+    /* ]]> */
+    var modal = document.getElementById("register-modal");
+    var btn = document.getElementById("register-link");
+    var span = document.getElementsByClassName("close")[0];
 
+    btn.onclick = function () {
+        modal.style.display = "flex";
+    }
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Obtener elementos del DOM
+        var verificationModal = document.getElementById('verification-modal');
+        var closeVerificationModal = document.getElementById('close-verification-modal');
+        var continuarButton = document.getElementById('continuar');
+
+        // Función para abrir el modal
+        function openVerificationModal() {
+            verificationModal.style.display = 'block';
+        }
+
+        // Función para cerrar el modal
+        function closeVerificationModal() {
+            verificationModal.style.display = 'none';
+        }
+
+        // Manejar el clic en el botón de continuar
+        continuarButton.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevenir el envío del formulario hasta que se verifique el código
+            openVerificationModal();
+        });
+
+        // Manejar el clic en el botón de cerrar modal
+        closeVerificationModal.addEventListener('click', function () {
+            closeVerificationModal();
+        });
+
+        // Cerrar el modal si el usuario hace clic fuera de él
+        window.onclick = function (event) {
+            if (event.target === verificationModal) {
+                closeVerificationModal();
+            }
+        };
+    });
+</script>
 <script type='text/javascript' src='https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/plugins/jet-blog/assets/js/jet-blog.min.js?ver=2.1.20'></script>
 
 <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-P9FT69');</script><!-- End Google Tag Manager --></body>

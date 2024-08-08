@@ -148,7 +148,7 @@
     <Content Include="JustificacionInconsistencias.aspx" />
     <Content Include="pg_cin.aspx" />
     <Content Include="pg_controlincapacidades.aspx" />
-    <Content Include="pg_cua.aspx" />
+    <Content Include="pg_panelEmpleado.aspx" />
     <Content Include="pg_departamentos.aspx" />
     <Content Include="pg_configCorreo.aspx" />
     <Content Include="pg_empexpediente.aspx" />
@@ -160,7 +160,7 @@
     <Content Include="pg_registrodiasfestivo.aspx" />
     <Content Include="pg_registroincapacidad.aspx" />
     <Content Include="pg_seus.aspx" />
-    <Content Include="pg_tres.aspx" />
+    <Content Include="pg_panelsupervisora.aspx" />
     <Content Include="pg_expedienteSuper.aspx" />
     <Content Include="pg_vacaciones.aspx" />
     <Content Include="pg_vacacionescolectivas.aspx" />
@@ -343,12 +343,12 @@
     <Compile Include="pg_controlincapacidades.aspx.designer.cs">
       <DependentUpon>pg_controlincapacidades.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pg_cua.aspx.cs">
-      <DependentUpon>pg_cua.aspx</DependentUpon>
+    <Compile Include="pg_panelEmpleado.aspx.cs">
+      <DependentUpon>pg_panelEmpleado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pg_cua.aspx.designer.cs">
-      <DependentUpon>pg_cua.aspx</DependentUpon>
+    <Compile Include="pg_panelEmpleado.aspx.designer.cs">
+      <DependentUpon>pg_panelEmpleado.aspx</DependentUpon>
     </Compile>
     <Compile Include="pg_departamentos.aspx.cs">
       <DependentUpon>pg_departamentos.aspx</DependentUpon>
@@ -427,12 +427,12 @@
     <Compile Include="pg_seus.aspx.designer.cs">
       <DependentUpon>pg_seus.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pg_tres.aspx.cs">
-      <DependentUpon>pg_tres.aspx</DependentUpon>
+    <Compile Include="pg_panelsupervisora.aspx.cs">
+      <DependentUpon>pg_panelsupervisora.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pg_tres.aspx.designer.cs">
-      <DependentUpon>pg_tres.aspx</DependentUpon>
+    <Compile Include="pg_panelsupervisora.aspx.designer.cs">
+      <DependentUpon>pg_panelsupervisora.aspx</DependentUpon>
     </Compile>
     <Compile Include="pg_expedienteSuper.aspx.cs">
       <DependentUpon>pg_expedienteSuper.aspx</DependentUpon>
