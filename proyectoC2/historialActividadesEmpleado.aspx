@@ -377,9 +377,8 @@ footer {
         <span class="jet-nav-link-text">Actividades</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
-        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
+        <li class="submenu-item"><a href="PG_Login.aspx">Login</a></li>
+        <li class="submenu-item"><a href="historialActividadesEmpleado.aspx">Historial Actividades</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
@@ -388,9 +387,8 @@ footer {
         <span class="jet-nav-link-text">Inconsistencias</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
-        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
+        <li class="submenu-item"><a href="PG_Login.aspx">Login</a></li>
+        <li class="submenu-item"><a href="historialInconsistenciasEmpleado.aspx">Historial Inconsistencias</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>

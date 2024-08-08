@@ -123,40 +123,49 @@ namespace proyectoC2
         protected global::System.Web.UI.WebControls.TextBox idActividad;
 
         /// <summary>
-        /// Control Empleado.
+        /// Control idEmpleado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Empleado;
+        protected global::System.Web.UI.WebControls.TextBox idEmpleado;
 
         /// <summary>
-        /// Control fecha.
+        /// Control horaInicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox fecha;
+        protected global::System.Web.UI.WebControls.TextBox horaInicio;
 
         /// <summary>
-        /// Control tipoInconsistencia.
+        /// Control horaFinal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tipoInconsistencia;
+        protected global::System.Web.UI.WebControls.TextBox horaFinal;
 
         /// <summary>
-        /// Control btnVerArchivo.
+        /// Control lnkVerArchivo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVerArchivo;
+        protected global::System.Web.UI.WebControls.HyperLink lnkVerArchivo;
+
+        /// <summary>
+        /// Control ddlrendimiento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlrendimiento;
 
         /// <summary>
         /// Control btnSubmit.

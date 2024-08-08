@@ -155,21 +155,22 @@ footer {
     font-size: 16px;
 }
 
- .btn-pdf {
-    background-color: #7154FC;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
  .btn-submit:hover {
      background-color: #5a005a;
  }
  .btn-submit2:hover {
     background-color: #ABB2B9;
+}
+
+ .enlace-archivo {
+    font-size: 18px; /* Tamaño de la fuente */
+    color: blue; /* Color del texto */
+    text-decoration: none; /* Quitar subrayado */
+    cursor: pointer;
+}
+
+.enlace-archivo:hover {
+    text-decoration: underline; /* Subrayado al pasar el cursor por encima */
 }
 
 /* Regla adicional para aumentar la especificidad */
@@ -428,9 +429,8 @@ form .btn-submit2:hover {
         <span class="jet-nav-link-text">Actividades</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
-        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
+        <li class="submenu-item"><a href="PG_Login.aspx">Login</a></li>
+        <li class="submenu-item"><a href="historialActividadesSupervisor.aspx">Historial Actividades</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
@@ -439,9 +439,8 @@ form .btn-submit2:hover {
         <span class="jet-nav-link-text">Inconsistencias</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
-        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
+        <li class="submenu-item"><a href="PG_Login.aspx">Login</a></li>
+        <li class="submenu-item"><a href="historialInconsistenciasSupervisor.aspx">Historial Inconsistencias</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
@@ -548,11 +547,7 @@ form .btn-submit2:hover {
 			</header><!-- #masthead -->
 
 
-
-	
-
     <form id="form1" runat="server">
-
     <div class="main-content3">
         <div class="image-box">
             <img src="img/jefe1.png" alt="Imagen de Ejemplo">
@@ -581,12 +576,18 @@ form .btn-submit2:hover {
                 </div>
             </div>
             <div class="form-group">
-            <asp:Button ID="btnVerArchivo" runat="server" CssClass="btn-submit" Text="Ver Archivo" />
+                <asp:HyperLink ID="lnkVerArchivo" runat="server" CssClass="enlace-archivo" Text="Ver Archivo" />
             </div>
-            <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Aprobar" />
-             <br><br>
-            <asp:Button ID="btnSubmit2" runat="server" CssClass="btn-submit2" Text="Denegar" />
+            <br />
+            <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Aprobar" OnClick="btnSubmit_Click" />
+            <br />
+            <br /> 
+            <asp:Button ID="btnSubmit2" runat="server" CssClass="btn-submit2" Text="Denegar" OnClick="btnSubmit2_Click" />
+            <br />
+            <br />
+            <div class="form-group">
             <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" />
+            </div>
         </div>
     </div>
 

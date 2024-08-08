@@ -284,6 +284,29 @@ footer {
     opacity: 1;
     visibility: visible;
 }
+
+.mensaje {
+    display: block; /* Asegura que el mensaje se muestre en bloque */
+    margin-top: 10px; /* Espacio entre el botón y el mensaje */
+    color: red; /* Color del texto del mensaje (puedes ajustar esto según tu diseño) */
+    font-weight: bold; /* Estilo del texto del mensaje (opcional) */
+}
+
+
+/* Estilo para el mensaje de éxito */
+.mensaje-exito {
+    color: #7154FC;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #7154FC;
+    border-radius: 5px;
+    background-color: #e6f9e6;
+    text-align: center;
+    margin-top: 10px;
+	   margin-left: auto;
+    margin-right: auto;
+}
+
 </style>
 
 
@@ -377,9 +400,8 @@ footer {
         <span class="jet-nav-link-text">Actividades</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
-        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
+        <li class="submenu-item"><a href="PG_Login.aspx">Login</a></li>
+        <li class="submenu-item"><a href="historialActividadesEmpleado.aspx">Historial Actividades</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
@@ -388,9 +410,8 @@ footer {
         <span class="jet-nav-link-text">Inconsistencias</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
-        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
+        <li class="submenu-item"><a href="PG_Login.aspx">Login</a></li>
+        <li class="submenu-item"><a href="historialInconsistenciasEmpleado.aspx">Historial Inconsistencias</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
@@ -497,47 +518,51 @@ footer {
 			</header><!-- #masthead -->
 
 
-
-	
-
     <form id="form1" runat="server">
-    
-        <div class="main-content3">
-            <div class="image-box">
-                <img src="img/empleado.png" alt="Imagen de Ejemplo">
-            </div>
-            <div class="content-box">
-                <h2>Control de Actividades</h2>
-                <div class="small-title">Registro de actividad realizada</div>
-                <div class="form-inline">
-                    <div class="form-group">
-                        <label for="fecha">Fecha:</label>
-                        <asp:TextBox ID="fecha" runat="server" CssClass="asp-control" TextMode="Date" />
-                    </div>
-					<div class="form-group">
-						<label for="tipoActividad">Tipo de Actividad:</label>
-						<asp:DropDownList ID="ddlTipoActividad" runat="server" CssClass="asp-control" />
-					</div>
-					</div>
-					<div class="form-inline">
-						<div class="form-group">
-							<label for="horaInicio">Hora Inicio:</label>
-							<asp:DropDownList ID="ddlHoraInicio" runat="server" CssClass="asp-control" />
-						</div>
-						<div class="form-group">
-							<label for="horaFin">Hora Fin:</label>
-							<asp:DropDownList ID="ddlHoraFin" runat="server" CssClass="asp-control" />
-						</div>
-					</div>
+
+    <div class="main-content3">
+        <div class="image-box">
+            <img src="img/empleado.png" alt="Imagen de Ejemplo">
+        </div>
+        <div class="content-box">
+            <h2>Control de Actividades</h2>
+            <div class="small-title">Registro de actividad realizada</div>
+            <div class="form-inline">
                 <div class="form-group">
-                    <label for="pdfUpload">Adjuntar Evidencia:</label>
-                    <asp:FileUpload ID="pdfUpload" runat="server" CssClass="btn-pdf" /> 
+                    <label for="fecha">Fecha:</label>
+                    <asp:TextBox ID="fecha" runat="server" CssClass="asp-control" TextMode="Date" />
                 </div>
-                <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Enviar" />
+                <div class="form-group">
+                    <label for="tipoActividad">Tipo de Actividad:</label>
+                    <asp:DropDownList ID="ddlTipoActividad" runat="server" CssClass="asp-control" />
+                </div>
+            </div>
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="horaInicio">Hora Inicio:</label>
+                    <asp:DropDownList ID="ddlHoraInicio" runat="server" CssClass="asp-control" />
+                </div>
+                <div class="form-group">
+                    <label for="horaFin">Hora Fin:</label>
+                    <asp:DropDownList ID="ddlHoraFin" runat="server" CssClass="asp-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="pdfUpload">Adjuntar Evidencia:</label>
+                <asp:FileUpload ID="pdfUpload" runat="server" CssClass="btn-pdf" />
+            </div>
+            <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Enviar" OnClick="btnSubmit_Click" />
+            <br />
+            <br />
+            <!-- Label para mostrar mensajes -->
+            <div class="form-group">
+                <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" />
             </div>
         </div>
+    </div>
 
-    </form>
+</form>
+
   <!-- Círculo Inferior Izquierdo -->
   <div class="bottom-circle-container">
       <div class="bottom-circle"></div>

@@ -273,6 +273,15 @@ footer {
     text-transform: uppercase; /* Opcional: convierte el texto a mayúsculas */
 	 margin-left: -100px;
 }
+
+/* Estilo para el botón deshabilitado */
+.btn-disabled {
+    background-color: #d3d3d3; /* Gris claro */
+    border: 1px solid #a9a9a9; /* Gris oscuro */
+    color: #808080; /* Texto gris oscuro */
+    cursor: not-allowed; /* Cursor en forma de cruz */
+}
+
 </style>
 
 
@@ -366,9 +375,8 @@ footer {
         <span class="jet-nav-link-text">Actividades</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
-        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
+        <li class="submenu-item"><a href="PG_Login.aspx">Login</a></li>
+        <li class="submenu-item"><a href="historialActividadesSupervisor.aspx">Historial Actividades</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
@@ -377,9 +385,8 @@ footer {
         <span class="jet-nav-link-text">Inconsistencias</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
-        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
+        <li class="submenu-item"><a href="PG_Login.aspx">Login</a></li>
+        <li class="submenu-item"><a href="historialInconsistenciasSupervisor.aspx">Historial Inconsistencias</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
@@ -500,8 +507,9 @@ footer {
                     <asp:BoundField DataField="EstadoSolicitud" HeaderText="Estado" />
                     <asp:TemplateField HeaderText="Acción">
                         <ItemTemplate>
-                            <!-- Botón Justificar -->
-                            <asp:Button ID="btnGestionar" runat="server" Text="Gestionar" CssClass="btn-accion" />
+                            <asp:Button ID="btnGestionar" runat="server" Text="Gestionar" CssClass="btn-accion"
+                                        CommandArgument='<%# Eval("ActividadID") %>'
+                                        OnClick="btnGestionar_Click" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

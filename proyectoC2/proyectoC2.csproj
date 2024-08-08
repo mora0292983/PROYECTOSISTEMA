@@ -227,6 +227,7 @@
     <Content Include="SolicitudHorasExtraEmpleados.aspx" />
     <Content Include="SolicitudHorasExtraJefatura.aspx" />
     <Content Include="VerPDF.aspx" />
+    <Content Include="VerPDF2.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -511,6 +512,13 @@
     </Compile>
     <Compile Include="VerPDF.aspx.designer.cs">
       <DependentUpon>VerPDF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerPDF2.aspx.cs">
+      <DependentUpon>VerPDF2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerPDF2.aspx.designer.cs">
+      <DependentUpon>VerPDF2.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

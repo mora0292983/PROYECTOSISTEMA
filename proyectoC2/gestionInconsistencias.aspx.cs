@@ -38,38 +38,37 @@ namespace proyectoC2
                 {
                     tipoInconsistencia.Text = tipoInconsistenciaValor;
                 }
+                // Configurar el enlace para ver el archivo
+                if (int.TryParse(idInconsistencia.Text, out int inconsistenciaID))
+                {
+                    lnkVerArchivo.NavigateUrl = $"VerPDF.aspx?ID={inconsistenciaID}";
+                }
             }
-        }
-
-        protected void btnVerArchivo_Click(object sender, EventArgs e)
-        {
-            int inconsistenciaID = int.Parse(idInconsistencia.Text);
-            string url = $"VerPDF.aspx?ID={inconsistenciaID}";
-            ScriptManager.RegisterStartupScript(this, GetType(), "openWindow", "window.open('" + url + "', '_blank');", true);
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            ActualizarEstado("Aprobada");
+            ActualizarEstado("Aprobada", "Gestionada");
         }
 
         protected void btnSubmit2_Click(object sender, EventArgs e)
         {
-            ActualizarEstado("Denegada");
+            ActualizarEstado("Denegada", "Gestionada");
         }
 
-        private void ActualizarEstado(string nuevoEstado)
+        private void ActualizarEstado(string nuevoEstado, string nuevoEstadoSolicitud)
         {
             try
             {
                 int inconsistenciaID = int.Parse(idInconsistencia.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
-                string query = "UPDATE InconsistenciasFinal SET Estado = @Estado WHERE InconsistenciaID = @InconsistenciaID";
+                string query = "UPDATE InconsistenciasFinal SET Estado = @Estado, EstadoSolicitud = @EstadoSolicitud WHERE InconsistenciaID = @InconsistenciaID";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Estado", nuevoEstado);
+                    command.Parameters.AddWithValue("@EstadoSolicitud", nuevoEstadoSolicitud);
                     command.Parameters.AddWithValue("@InconsistenciaID", inconsistenciaID);
 
                     connection.Open();
@@ -78,23 +77,22 @@ namespace proyectoC2
 
                     if (rowsAffected > 0)
                     {
-                        lblMensaje.Text = "Estado actualizado con éxito";
+                        lblMensaje.Text = "Justificación gestionada con éxito";
                         lblMensaje.CssClass = "mensaje-exito";
                     }
                     else
                     {
-                        lblMensaje.Text = "Error al actualizar el estado";
+                        lblMensaje.Text = "Error al gestionar la justificación";
                         lblMensaje.CssClass = "mensaje-error";
                     }
                 }
             }
             catch (Exception ex)
             {
-                lblMensaje.Text = "Error al actualizar el estado: " + ex.Message;
+                lblMensaje.Text = "Error al gestionar la justificación: " + ex.Message;
                 lblMensaje.CssClass = "mensaje-error";
             }
         }
-
 
     }
 }

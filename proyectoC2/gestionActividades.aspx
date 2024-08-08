@@ -334,6 +334,17 @@ form .btn-submit2:hover {
     text-align: center;
     margin-top: 10px;
 }
+
+ .enlace-archivo {
+    font-size: 18px; /* Tamaño de la fuente */
+    color: blue; /* Color del texto */
+    text-decoration: none; /* Quitar subrayado */
+    cursor: pointer;
+}
+
+.enlace-archivo:hover {
+    text-decoration: underline; /* Subrayado al pasar el cursor por encima */
+}
 </style>
 
 
@@ -428,9 +439,8 @@ form .btn-submit2:hover {
         <span class="jet-nav-link-text">Actividades</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
-        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
+        <li class="submenu-item"><a href="PG_Login.aspx">Login</a></li>
+        <li class="submenu-item"><a href="historialActividadesSupervisor.aspx">Historial Actividades</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
@@ -439,9 +449,8 @@ form .btn-submit2:hover {
         <span class="jet-nav-link-text">Inconsistencias</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
-        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
+        <li class="submenu-item"><a href="PG_Login.aspx">Login</a></li>
+        <li class="submenu-item"><a href="historialInconsistenciasSupervisor.aspx">Historial Inconsistencias</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
@@ -562,27 +571,38 @@ form .btn-submit2:hover {
                     <asp:TextBox ID="idActividad" runat="server" CssClass="asp-control" ReadOnly="true" />
                 </div>
                 <div class="form-group">
-                    <label for="Empleado">ID Empleado:</label>
-                    <asp:TextBox ID="Empleado" runat="server" CssClass="asp-control" ReadOnly="true" />
+                    <label for="idEmpleado">ID Empleado:</label>
+                    <asp:TextBox ID="idEmpleado" runat="server" CssClass="asp-control" ReadOnly="true" />
                 </div>
             </div>
             <div class="form-inline">
                 <div class="form-group">
                     <label for="horaInicio">Hora Inicio:</label>
-                    <asp:TextBox ID="fecha" runat="server" CssClass="asp-control" ReadOnly="true" />
+                    <asp:TextBox ID="horaInicio" runat="server" CssClass="asp-control" ReadOnly="true" />
                 </div>
                 <div class="form-group">
-                    <label for="tipoInconsistencia">Hora Final:</label>
-                    <asp:TextBox ID="tipoInconsistencia" runat="server" CssClass="asp-control" ReadOnly="true" />
+                    <label for="horaFinal">Hora Final:</label>
+                    <asp:TextBox ID="horaFinal" runat="server" CssClass="asp-control" ReadOnly="true" />
                 </div>
             </div>
             <div class="form-group">
-            <asp:Button ID="btnVerArchivo" runat="server" CssClass="btn-submit" Text="Ver Archivo" />
+                <asp:HyperLink ID="lnkVerArchivo" runat="server" CssClass="enlace-archivo" Text="Ver Evidencia" />
             </div>
-            <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Aprobar" />
-             <br><br>
-            <asp:Button ID="btnSubmit2" runat="server" CssClass="btn-submit2" Text="Denegar" />
+            <div class="form-group">
+                <label for="rendimiento">Seleccione el rendimiento del empleado en la actividad realizada:</label>
+                <asp:DropDownList ID="ddlrendimiento" runat="server" CssClass="asp-control">
+                </asp:DropDownList>
+            </div>
+            <br />
+            <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Aprobar" OnClick="btnSubmit_Click" />
+             <br/>
+             <br/>
+            <asp:Button ID="btnSubmit2" runat="server" CssClass="btn-submit2" Text="Denegar" OnClick="btnSubmit2_Click" />
+            <br />
+            <br />
+            <div class="form-group">
             <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" />
+            </div>
         </div>
     </div>
 

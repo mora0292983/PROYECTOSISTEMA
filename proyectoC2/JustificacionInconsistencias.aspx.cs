@@ -40,7 +40,6 @@ namespace proyectoC2
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            // Verificar si se ha seleccionado un archivo
             if (pdfUpload.HasFile && pdfUpload.PostedFile.ContentLength > 0)
             {
                 try
@@ -57,20 +56,30 @@ namespace proyectoC2
                     int inconsistenciaID;
                     if (int.TryParse(idInconsistencia.Text, out inconsistenciaID))
                     {
+                        // Obtener el TipoInconsistenciaID a partir del NombreTipo
+                        int tipoInconsistenciaID = ObtenerTipoInconsistenciaID(tipoInconsistencia.Text);
+
+                        if (tipoInconsistenciaID == -1)
+                        {
+                            lblMensaje.Text = "Tipo de inconsistencia no válido";
+                            lblMensaje.CssClass = "mensaje-error";
+                            return;
+                        }
+
                         string connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
-                        string query = "UPDATE InconsistenciasFinal SET DocumentoPDF = @DocumentoPDF WHERE InconsistenciaID = @InconsistenciaID";
+                        string query = "UPDATE InconsistenciasFinal SET DocumentoPDF = @DocumentoPDF, TipoInconsistenciaID = @TipoInconsistenciaID, Estado = 'Pendiente', EstadoSolicitud = 'Sin Gestionar' WHERE InconsistenciaID = @InconsistenciaID";
 
                         using (SqlConnection connection = new SqlConnection(connectionString))
                         using (SqlCommand command = new SqlCommand(query, connection))
                         {
                             command.Parameters.AddWithValue("@DocumentoPDF", fileBytes);
+                            command.Parameters.AddWithValue("@TipoInconsistenciaID", tipoInconsistenciaID);
                             command.Parameters.AddWithValue("@InconsistenciaID", inconsistenciaID);
 
                             connection.Open();
                             int rowsAffected = command.ExecuteNonQuery();
                             connection.Close();
 
-                            // Mostrar un mensaje de éxito si se actualizó al menos una fila
                             if (rowsAffected > 0)
                             {
                                 lblMensaje.Text = "Justificación enviada con éxito";
@@ -85,25 +94,47 @@ namespace proyectoC2
                     }
                     else
                     {
-                        // Mensaje de error si el ID de inconsistencia no es válido
                         lblMensaje.Text = "ID de inconsistencia no válido";
                         lblMensaje.CssClass = "mensaje-error";
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Mensaje de error en caso de excepción
                     lblMensaje.Text = "Error al enviar la justificación: " + ex.Message;
                     lblMensaje.CssClass = "mensaje-error";
                 }
             }
             else
             {
-                // Mensaje de error si no se seleccionó un archivo
                 lblMensaje.Text = "Debe seleccionar un archivo para enviar la justificación";
                 lblMensaje.CssClass = "mensaje-error";
             }
         }
 
+        private int ObtenerTipoInconsistenciaID(string nombreTipo)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            string query = "SELECT TipoInconsistenciaID FROM TiposInconsistencias WHERE NombreTipo = @NombreTipo";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@NombreTipo", nombreTipo);
+
+                connection.Open();
+                object result = command.ExecuteScalar();
+                connection.Close();
+
+                if (result != null && int.TryParse(result.ToString(), out int tipoInconsistenciaID))
+                {
+                    return tipoInconsistenciaID;
+                }
+                else
+                {
+                    return -1; // Valor no encontrado
+                }
+            }
+        }
     }
 }
+

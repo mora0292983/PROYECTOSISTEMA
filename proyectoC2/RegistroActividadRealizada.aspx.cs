@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -15,6 +16,7 @@ namespace proyectoC2
         {
             if (!IsPostBack)
             {
+
                 // Cargar los tipos de actividad desde la base de datos
                 CargarTiposDeActividad();
 
@@ -59,5 +61,76 @@ namespace proyectoC2
 
             ddlTipoActividad.Items.Insert(0, new ListItem("-- Seleccione un tipo de actividad --", "0"));
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            // Verificar que todos los campos obligatorios estén completos
+            if (string.IsNullOrEmpty(fecha.Text) || ddlTipoActividad.SelectedIndex == -1 ||
+                ddlHoraInicio.SelectedIndex == -1 || ddlHoraFin.SelectedIndex == -1 || !pdfUpload.HasFile)
+            {
+                lblMensaje.Text = "Debe completar todos los campos y adjuntar un archivo.";
+                lblMensaje.CssClass = "mensaje";
+                return;
+            }
+
+            try
+            {
+                // Obtener los datos del formulario
+                DateTime fechaActividad = DateTime.Parse(fecha.Text);
+                int tipoActividadID = int.Parse(ddlTipoActividad.SelectedValue);
+                string horaInicio = ddlHoraInicio.SelectedValue;
+                string horaFin = ddlHoraFin.SelectedValue;
+
+                // Leer el archivo PDF
+                byte[] fileBytes;
+                using (Stream fileStream = pdfUpload.PostedFile.InputStream)
+                using (BinaryReader binaryReader = new BinaryReader(fileStream))
+                {
+                    fileBytes = binaryReader.ReadBytes((int)fileStream.Length);
+                }
+
+                // Conexión a la base de datos
+                string connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string query = "INSERT INTO ActividadesFinal (EmpleadoID, TipoActividadID, Fecha, horaInicio, horaFin, Estado, EstadoSolicitud, Rendimiento, DocumentoPDF) " +
+                                   "VALUES (@EmpleadoID, @TipoActividadID, @Fecha, @HoraInicio, @HoraFin, @Estado, @EstadoSolicitud, @Rendimiento, @DocumentoPDF)";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@EmpleadoID", 19);
+                        command.Parameters.AddWithValue("@TipoActividadID", tipoActividadID);
+                        command.Parameters.AddWithValue("@Fecha", fechaActividad);
+                        command.Parameters.AddWithValue("@HoraInicio", horaInicio);
+                        command.Parameters.AddWithValue("@HoraFin", horaFin);
+                        command.Parameters.AddWithValue("@Estado", "Pendiente");
+                        command.Parameters.AddWithValue("@EstadoSolicitud", "Sin Gestionar");
+                        command.Parameters.AddWithValue("@Rendimiento", "Pendiente");
+                        command.Parameters.AddWithValue("@DocumentoPDF", fileBytes);
+
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            lblMensaje.Text = "Actividad registrada con éxito.";
+                            lblMensaje.CssClass = "mensaje-exito";
+                        }
+                        else
+                        {
+                            lblMensaje.Text = "Error al registrar la actividad.";
+                            lblMensaje.CssClass = "mensaje";
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMensaje.Text = "Error al registrar la actividad: " + ex.Message;
+                lblMensaje.CssClass = "mensaje";
+            }
+        }
+
+
     }
 }

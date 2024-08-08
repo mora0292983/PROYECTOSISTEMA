@@ -70,8 +70,8 @@ img.emoji {
      z-index: -1; /* Asegura que el círculo esté detrás de otros elementos */
 }
 footer {
-      margin-top: 62px; /* Reduce este valor para subir el footer */
-     width: 1500px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
+      margin-top: 60px; /* Reduce este valor para subir el footer */
+     width: 1550px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
 	margin-left: -20px; /* Ajusta este valor para mover el footer hacia la izquierda */
 }
 .main-content3 {
@@ -273,6 +273,15 @@ footer {
     text-transform: uppercase; /* Opcional: convierte el texto a mayúsculas */
 	 margin-left: -100px;
 }
+
+/* Estilo para el botón deshabilitado */
+.btn-disabled {
+    background-color: #d3d3d3; /* Gris claro */
+    border: 1px solid #a9a9a9; /* Gris oscuro */
+    color: #808080; /* Texto gris oscuro */
+    cursor: not-allowed; /* Cursor en forma de cruz */
+}
+
 </style>
 
 
@@ -366,9 +375,8 @@ footer {
         <span class="jet-nav-link-text">Actividades</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
-        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
+        <li class="submenu-item"><a href="PG_Login.aspx">Login</a></li>
+        <li class="submenu-item"><a href="historialActividadesSupervisor.aspx">Historial Actividades</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
@@ -377,9 +385,8 @@ footer {
         <span class="jet-nav-link-text">Inconsistencias</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
-        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
+        <li class="submenu-item"><a href="PG_Login.aspx">Login</a></li>
+        <li class="submenu-item"><a href="historialInconsistenciasSupervisor.aspx">Historial Inconsistencias</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>

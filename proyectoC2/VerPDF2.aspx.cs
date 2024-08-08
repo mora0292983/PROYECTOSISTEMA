@@ -5,29 +5,29 @@ using System.Web.UI;
 
 namespace proyectoC2
 {
-    public partial class VerPDF : System.Web.UI.Page
+    public partial class VerPDF2 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                int inconsistenciaID;
-                if (int.TryParse(Request.QueryString["ID"], out inconsistenciaID))
+                int actividadID;
+                if (int.TryParse(Request.QueryString["ID"], out actividadID))
                 {
-                    MostrarPDF(inconsistenciaID);
+                    MostrarPDF(actividadID);
                 }
             }
         }
 
-        private void MostrarPDF(int inconsistenciaID)
+        private void MostrarPDF(int actividadID)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
-            string query = "SELECT DocumentoPDF FROM InconsistenciasFinal WHERE InconsistenciaID = @InconsistenciaID";
+            string query = "SELECT DocumentoPDF FROM ActividadesFinal WHERE ActividadID = @ActividadID";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             using (SqlCommand command = new SqlCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@InconsistenciaID", inconsistenciaID);
+                command.Parameters.AddWithValue("@ActividadID", actividadID);
                 connection.Open();
 
                 byte[] fileData = (byte[])command.ExecuteScalar();
@@ -36,7 +36,7 @@ namespace proyectoC2
                 {
                     Response.ContentType = "application/pdf";
                     Response.AddHeader("content-length", fileData.Length.ToString());
-                    Response.AddHeader("Content-Disposition", "inline; filename=justificacion.pdf");
+                    Response.AddHeader("Content-Disposition", "inline; filename=actividad.pdf");
                     Response.BinaryWrite(fileData);
                     Response.Flush();
                     Response.End();
@@ -49,4 +49,3 @@ namespace proyectoC2
         }
     }
 }
-

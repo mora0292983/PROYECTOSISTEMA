@@ -62,16 +62,33 @@ namespace proyectoC2
                 string rendimiento = DataBinder.Eval(e.Row.DataItem, "Rendimiento").ToString();
                 string estado = DataBinder.Eval(e.Row.DataItem, "EstadoSolicitud").ToString();
 
-                // Configurar la URL del botón "Gestionar"
-                //Button btnGestionar = (Button)e.Row.FindControl("btnGestionar");
-                // if (btnGestionar != null)
-                // {
-                // btnGestionar.PostBackUrl = $"~/gestionActividades.aspx?ActividadID={idActividad}&EmpleadoID={empleadoID}&Fecha={fecha}&Nombre={nombre}";
+                // Buscar el botón "Gestionar" en la fila actual
+                Button btnGestionar = (Button)e.Row.FindControl("btnGestionar");
 
-                // Habilitar el botón solo si el estado es "Pendiente"
-                // btnGestionar.Enabled = estado == "Pendiente";
-                // }
+                if (btnGestionar != null)
+                {
+                    // Deshabilitar el botón si el estado es "Gestionada"
+                    bool isEnabled = estado != "Gestionada";
+                    btnGestionar.Enabled = isEnabled;
+
+                    // Aplicar el estilo si el botón está deshabilitado
+                    if (!isEnabled)
+                    {
+                        btnGestionar.CssClass += " btn-disabled";
+                    }
+                }
             }
         }
+
+
+        protected void btnGestionar_Click(object sender, EventArgs e)
+        {
+            Button btnGestionar = (Button)sender;
+            string actividadID = btnGestionar.CommandArgument;
+
+            // Redirigir a gestionActividades.aspx pasando el ActividadID
+            Response.Redirect($"gestionActividades.aspx?ActividadID={actividadID}");
+        }
+
     }
 }

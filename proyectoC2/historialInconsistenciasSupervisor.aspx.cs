@@ -72,10 +72,18 @@ namespace proyectoC2
                     btnGestionar.PostBackUrl = $"~/gestionInconsistencias.aspx?IDInconsistencia={idInconsistencia}&EmpleadoID={empleadoID}&Fecha={fecha}&TipoInconsistencia={tipoInconsistencia}";
 
                     // Habilitar el botón solo si el estado es "Sin Gestionar"
-                    btnGestionar.Enabled = estado == "Sin Gestionar";
+                    bool isEnabled = estado == "Sin Gestionar";
+                    btnGestionar.Enabled = isEnabled;
+
+                    // Aplicar el estilo si el botón está deshabilitado
+                    if (!isEnabled)
+                    {
+                        btnGestionar.CssClass += " btn-disabled";
+                    }
                 }
             }
         }
+
 
     }
 }
