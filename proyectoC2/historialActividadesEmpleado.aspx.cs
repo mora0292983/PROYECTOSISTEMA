@@ -83,5 +83,12 @@ namespace proyectoC2
                 //btnAgregarActividad.Enabled = estado == "Pendiente";
             }
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            // Redirige al usuario a la página "RegistroActividadRealizada.aspx"
+            Response.Redirect("RegistroActividadRealizada.aspx");
+        }
+
     }
 }

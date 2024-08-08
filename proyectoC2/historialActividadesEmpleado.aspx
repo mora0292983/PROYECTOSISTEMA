@@ -516,9 +516,9 @@ footer {
                     <asp:BoundField DataField="Estado" HeaderText="Estado" />
                 </Columns>
             </asp:GridView>
-
+            <br />
             <div class="form-group">
-                <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Agregar actividad" />
+                <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Agregar Actividad" OnClick="btnSubmit_Click" />
             </div>
         </div>
     </div>

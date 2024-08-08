@@ -70,8 +70,8 @@ img.emoji {
      z-index: -1; /* Asegura que el círculo esté detrás de otros elementos */
 }
 footer {
-      margin-top: 62px; /* Reduce este valor para subir el footer */
-     width: 1500px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
+      margin-top: 60px; /* Reduce este valor para subir el footer */
+     width: 1550px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
 	margin-left: -20px; /* Ajusta este valor para mover el footer hacia la izquierda */
 }
 .main-content3 {

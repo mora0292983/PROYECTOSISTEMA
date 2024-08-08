@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -14,7 +16,7 @@ namespace proyectoC2
             if (!IsPostBack)
             {
                 // Cargar los tipos de actividad desde la base de datos
-                //CargarTiposDeActividad();
+                CargarTiposDeActividad();
 
                 // Cargar las horas en los DropDownLists de horaInicio y horaFin
                 CargarHoras(ddlHoraInicio);
@@ -35,6 +37,27 @@ namespace proyectoC2
                 }
             }
             ddl.Items.Insert(0, new ListItem("-- Selecciona una Hora --", "0"));
+        }
+
+        private void CargarTiposDeActividad()
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            string query = "SELECT TipoActividadID, NombreTipo FROM TipoActividadFinal";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    ddlTipoActividad.DataSource = reader;
+                    ddlTipoActividad.DataTextField = "NombreTipo"; // El nombre que se mostrará en el DropDownList
+                    ddlTipoActividad.DataValueField = "TipoActividadID"; // El valor que se almacenará para cada opción
+                    ddlTipoActividad.DataBind();
+                }
+            }
+
+            ddlTipoActividad.Items.Insert(0, new ListItem("-- Seleccione un tipo de actividad --", "0"));
         }
     }
 }
