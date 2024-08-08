@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,5 +14,14 @@ namespace proyectoC2
 		{
 
 		}
-	}
+        protected void btnEntrada_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void btnSalida_Click(object sender, EventArgs e)
+        {
+            
+    }
 }
+	}

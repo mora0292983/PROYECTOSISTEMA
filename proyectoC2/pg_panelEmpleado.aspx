@@ -347,47 +347,49 @@ footer ul li {
    </div>
   <div class="container">
     <div class="card">
-      <a href="PG_ControlMarcas.aspx">
+      <a href="pg_cin.aspx">
         <div class="icon">📅</div>
         <div class="text">Control de marcas empleados</div>
       </a>
     </div>
     <div class="card">
-      <a href="control_actividades.html">
+      <a href="JustificacionInconsistencias.aspx">
         <div class="icon">✔️</div>
-        <div class="text">Control de actividades de empleados</div>
+        <div class="text">Justificacion de la inconsistencia</div>
       </a>
     </div>
     <div class="card">
-      <a href="aprobacion_vacaciones.html">
-        <div class="icon">🗓️</div>
-        <div class="text">Aprobación de Vacaciones</div>
-      </a>
+      <a href="PG_RebajosSalariales">
+    <div class="icon">🔄</div>
+    <div class="text">Rebajos</div>
+  </a>
     </div>
     <div class="card">
-      <a href="aprobar_horas_extras.html">
-        <div class="icon">📖</div>
-        <div class="text">Aprobar Horas extras</div>
-      </a>
+   <a href="PG_VerMarcas">
+   <div class="icon">🔄</div>
+   <div class="text">Ver Marcas</div>
+ </a>
     </div>
     <div class="card">
-      <a href="aprobar_permisos.html">
+      <a href="RegistroActividadRealizada.aspx">
         <div class="icon">🔄</div>
-        <div class="text">Aprobar Permisos</div>
+        <div class="text">Registro de la actividad realizada</div>
       </a>
     </div>
   </div>
 	<div class="card">
-  <a href="PG_RebajosSalariales">
-    <div class="icon">🔄</div>
-    <div class="text">Rebajos</div>
+  <a href="historialInconsistenciasEmpleado.aspx">
+    <div class="icon">🗓️</div>
+    <div class="text">Historial de inconsistencias del empleado</div>
   </a>
+
 </div>
 	<div class="card">
-  <a href="PG_VerMarcas">
-    <div class="icon">🔄</div>
-    <div class="text">Ver Marcas</div>
-  </a>
+		    <a href="SolicitudHorasExtraEmpleados.aspx">
+      <div class="icon">📖</div>
+      <div class="text">Solicitud de horas extra</div>
+    </a>
+ 
 </div>
 	<div class="card">
   <a href="PS_RebajosSalariales">
@@ -396,7 +398,7 @@ footer ul li {
   </a>
 </div>
 		<div class="card">
-  <a href="PG_SolicitudReposicion">
+  <a href="solicitudReposicion.aspx">
     <div class="icon">🔄</div>
     <div class="text">Solicitud Reposición</div>
   </a>
@@ -423,6 +425,12 @@ footer ul li {
   <a href="modulodepartamento.aspx">
     <div class="icon">🔄</div>
     <div class="text">Historico de empleado por departamento</div>
+  </a>
+</div>
+		<div class="card">
+  <a href="historialActividadesEmpleado.aspx">
+    <div class="icon">🔄</div>
+    <div class="text">Historico de actividades del empleado</div>
   </a>
 </div>
 </main>

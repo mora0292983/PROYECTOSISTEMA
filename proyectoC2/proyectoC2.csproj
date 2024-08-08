@@ -159,7 +159,7 @@
     <Content Include="pg_login.aspx" />
     <Content Include="pg_registrodiasfestivo.aspx" />
     <Content Include="pg_registroincapacidad.aspx" />
-    <Content Include="pg_seus.aspx" />
+    <Content Include="solicitudReposicion.aspx" />
     <Content Include="pg_panelsupervisora.aspx" />
     <Content Include="pg_expedienteSuper.aspx" />
     <Content Include="pg_vacaciones.aspx" />
@@ -421,12 +421,12 @@
     <Compile Include="pg_registroincapacidad.aspx.designer.cs">
       <DependentUpon>pg_registroincapacidad.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pg_seus.aspx.cs">
-      <DependentUpon>pg_seus.aspx</DependentUpon>
+    <Compile Include="solicitudReposicion.aspx.cs">
+      <DependentUpon>solicitudReposicion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pg_seus.aspx.designer.cs">
-      <DependentUpon>pg_seus.aspx</DependentUpon>
+    <Compile Include="solicitudReposicion.aspx.designer.cs">
+      <DependentUpon>solicitudReposicion.aspx</DependentUpon>
     </Compile>
     <Compile Include="pg_panelsupervisora.aspx.cs">
       <DependentUpon>pg_panelsupervisora.aspx</DependentUpon>

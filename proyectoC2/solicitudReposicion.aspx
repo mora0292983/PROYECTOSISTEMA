@@ -1,4 +1,4 @@
-﻿ <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="pg_panelsupervisora.aspx.cs" Inherits="proyectoC2.pg_tres" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="solicitudReposicion.aspx.cs" Inherits="proyectoC2.pg_seus" %>
 
 <!DOCTYPE html>
 
@@ -29,128 +29,154 @@ img.emoji {
 }
 </style>
   <style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
 
-header {
-    background-color: #4a3aff;
-    padding: 10px 0;
-}
+     .half-circle-container {
+         position: absolute;
+         top: 0;
+         right: -80px;
+         width: 790px;
+         height: 425px;
+         overflow: hidden;
+     }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.card {
-  width: calc(20% - 10px);
-  margin: 10px;
-  background-color: #f7f7f7;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.card a {
-  text-decoration: none;
-  color: #333;
-}
-
-.card a:hover {
-  color: #337ab7;
-}
-
-.icon {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.text {
-  font-size: 16px;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 30px 0;
-    position: relative;
-    z-index: 1; /* Asegura que el footer esté delante del círculo */
-}
-
-footer ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-footer ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-.half-circle-container {
-    position: absolute;
-    top: 0;
-    right: -80px;
-    width: 790px;
-    height: 425px;
-    overflow: hidden;
-}
-
-.half-circle {
-    position: absolute;
-    width: 490px;
-    height: 300px;
-    background-color: #7154FC;
-    border-radius: 50%;
-    top: -125px;
-    right: 0;
-}
-
-/* Estilos para el círculo inferior izquierdo */
+     .half-circle {
+         position: absolute;
+         width: 490px;
+         height: 300px;
+         background-color: #7154FC;
+         border-radius: 50%;
+         top: -125px;
+         right: 0;
+     }
+	 /* Estilos para el círculo inferior izquierdo */
 .bottom-circle-container {
     position: relative;
     width: 100%;
-    margin-top: -100px; /* Reduce este valor para subir el footer */
+	 margin-top: -100px; /* Reduce este valor para subir el footer */
     height: 10px; /* Ajusta la altura según sea necesario */
+
 }
 
 .bottom-circle {
     position: absolute;
-    margin-top: 20px;
+	margin-top: 20px;
     width: 850px;
     height: 320px;
-    background-color: #7154FC;
+    background-color:#7154FC;
     border-radius: 50%;
     bottom: 0;
     left: -110px;
     transform: translateY(50%); /* Ajusta para que el círculo esté justo encima del footer */
-    z-index: -1; /* Asegura que el círculo esté detrás de otros elementos */
+     z-index: -1; /* Asegura que el círculo esté detrás de otros elementos */
+}
+footer {
+      margin-top: 25px; /* Reduce este valor para subir el footer */
+     width: 1500px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
+	margin-left: -20px; /* Ajusta este valor para mover el footer hacia la izquierda */
+}
+  .main-content3 {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: auto;
+     padding: 20px;
+     gap: 20px;
+	 margin-top: 55px; /* Ajusta este valor para mover la imagen hacia abajo */
+ }
+
+ .content-box {
+     background-color: #fff;
+     border-radius: 8px;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     width: 45%;
+     max-width: 550px;
+     padding: 20px;
+     box-sizing: border-box;
+ }
+
+ .content-box h2 {
+     color: #7154FC; /* Morado */
+     font-weight: bold;
+     margin-top: 0;
+     text-align: center;
+ }
+
+ .small-title {
+     color: #585555;
+     font-size: 14px;
+     font-weight: bold;
+     margin: 10px 0;
+ }
+
+ .form-group {
+     margin-bottom: 15px;
+ }
+
+ .form-group label {
+     display: block;
+    
+     margin-bottom: 5px;
+ }
+
+ .form-group input,
+ .form-group select,
+ .form-group textarea,
+ .form-group .asp-control {
+     width: 100%;
+     padding: 10px;
+     border-radius: 5px;
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+ }
+
+ .form-group textarea {
+     resize: vertical;
+ }
+
+ .btn-submit {
+     background-color: #7154FC;
+     color: white;
+     padding: 10px 15px;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     width: 100%;
+     font-size: 16px;
+ }
+
+ .btn-submit:hover {
+     background-color: #5a005a;
+ }
+
+ .image-box {
+     margin-top: 80px; /* Ajusta este valor para mover la imagen hacia abajo */
+     margin-left: 20px; /* Ajusta este valor para mover la imagen hacia la derecha */
+ }
+
+ .image-box img {
+     width: 100%;
+     height: 100%;
+     border-radius: 8px;
+     object-fit: cover;
+ }
+
+ .form-inline {
+     display: flex;
+     justify-content: space-between;
+ }
+
+ .form-inline .form-group {
+     width: 48%;
+ }
+
+/* Selecciona el contenedor del menú */
+.jet-nav-wrap {
+    margin-left: -160px; /* Ajusta este valor según tus necesidades */
+}
+
+/* Opcionalmente, puedes especificar la clase del menú principal si deseas más precisión */
+.jet-nav-wrap.jet-mobile-menu.jet-mobile-menu--right-side {
+    margin-left: -190px; /* Ajusta este valor según tus necesidades */
 }
 </style>
 
@@ -325,118 +351,31 @@ footer ul li {
 
 	
 
-<header>
-  <nav>
-    <ul>
-      <li><a href="#">Inicio</a></li>
-       <li><a href="pg_configCorreo.aspx">Configuraciones</a></li>
- <li><a href="pg_login.aspx">Cerrar</a></li>
-      <li><a href="#">Actividades</a></li>
-      <li><a href="pg_configCorreo.aspx">Incapacidades</a></li>
-      <li><a href="pg_login.aspx">Marcas</a></li>
-    </ul>
-  </nav>
-</header>
-<main>
-	 <div class="container">
-   <div class="card">
-     <a href="pg_expedienteSuper.aspx">
-       <div class="icon">📅</div>
-       <div class="text"> Registro del Perfil del empleado</div>
-     </a>
-   </div>
-  <div class="container">
-    <div class="card">
-      <a href="PG_ControlMarcas.aspx">
-        <div class="icon">📅</div>
-        <div class="text">Control de marcas empleados</div>
-      </a>
+  <form id="form1" runat="server">
+    <div class="main-content3">
+        <div class="image-box">
+            <img src="img/jefe1.png" alt="Imagen de Ejemplo">
+        </div>
+        <div class="content-box">
+            <h2>Solicitud de <span class="highlight">Reposición</span></h2>
+            <div class="form-group">
+                <label for="inicio">Inicio:</label>
+                <asp:TextBox ID="inicio" runat="server" CssClass="asp-control" TextMode="Date" />
+            </div>
+            <div class="form-group">
+                <label for="horasReponer">Horas para reponer:</label>
+                <asp:TextBox ID="horasReponer" runat="server" CssClass="asp-control" TextMode="Number" />
+            </div>
+            <div class="form-group">
+                <label for="inconsistencia">Inconsistencia:</label>
+                <asp:TextBox ID="inconsistencia" runat="server" CssClass="asp-control" placeholder="Digite la ID de la inconsistencia" />
+            </div>
+            <div class="form-group">
+                <asp:Button ID="btnEnviar" runat="server" CssClass="btn-submit" Text="Enviar" />
+            </div>
+        </div>
     </div>
-    <div class="card">
-      <a href="control_actividades.html">
-        <div class="icon">✔️</div>
-        <div class="text">Control de actividades de empleados</div>
-      </a>
-    </div>
- 
-  
-    <div class="card">
-    <a href="PG_VerMarcas">
-    <div class="icon">🔄</div>
-    <div class="text">Ver Marcas</div>
-  </a>
-    </div>
- 
-     <div class="card">
-      <a href="PG_RebajosSalariales">
-    <div class="icon">🔄</div>
-    <div class="text">Rebajos</div>
-  </a>
-   </div>
-	<div class="card">
-   <a href="gestionInconsistencias.aspx">
-     <div class="icon">🗓️</div>
-     <div class="text">gestion Inconsistencias</div>
-   </a>
-</div>
-	<div class="card">
-    <a href="SolicitudHorasExtraJefatura.aspx">
-      <div class="icon">📈</div>
-      <div class="text">Solicitud Horas Extra Jefatura</div>
-    </a>
-</div>
-	<div class="card">
-  <a href="solicitudReposicion.aspx">
-    <div class="icon">🔄</div>
-    <div class="text">Solicitud Reposición</div>
-  </a>
-</div>
-	
-  <div class="card">
-    <a href="historialInconsistenciasSupervisor.aspx">
-      <div class="icon">📖</div>
-      <div class="text">historial Inconsistencias Supervisor</div>
-    </a>
-  </div>
-		<div class="card">
-  <a href="registropuestos.aspx">
-    <div class="icon">🔄</div>
-    <div class="text">Registro de puestos</div>
-  </a>
-</div>
-</div>
-		<div class="card">
-  <a href="registroturnos.aspx">
-    <div class="icon">🔄</div>
-    <div class="text">Registro de Turnos</div>
-  </a>
-</div>
-		<div class="card">
-  <a href="pg_departamentos.aspx">
-    <div class="icon">🔄</div>
-    <div class="text">Registro de departamentos</div>
-  </a>
-</div>
-		<div class="card">
-  <a href="historialActividadesSupervisor.aspx">
-    <div class="icon">🔄</div>
-    <div class="text">historialActividadesSupervisor</div>
-  </a>
-</div>
-   <div class="card">
-     <a href="gestionActividades.aspx">
-       <div class="icon">🔔</div>
-       <div class="text">gestion Actividades</div>
-     </a>
-   </div>
-</main>
-<footer>
-  <ul>
-    <li>About</li>
-    <li>Tags</li>
-    <li>Recent Comment</li>
-  </ul>
-</footer>
+</form>
   <!-- Círculo Inferior Izquierdo -->
   <div class="bottom-circle-container">
       <div class="bottom-circle"></div>
