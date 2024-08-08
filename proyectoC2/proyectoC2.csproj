@@ -542,6 +542,20 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Capa de Acceso a Datos\Capa de Acceso a Datos.csproj">
+      <Project>{45ab50d7-b56f-45df-b8c3-3b5433aa36f1}</Project>
+      <Name>Capa de Acceso a Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Capa de Entidades\Capa de Entidades.csproj">
+      <Project>{03821e60-8d81-48fa-846e-3b5b53c03b87}</Project>
+      <Name>Capa de Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Capa de Negocio\Capa de Negocio.csproj">
+      <Project>{add665f3-d8dd-4cb4-b9b6-3ba9351912a1}</Project>
+      <Name>Capa de Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
