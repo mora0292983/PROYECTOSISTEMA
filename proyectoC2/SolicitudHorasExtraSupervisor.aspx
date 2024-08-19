@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="gestionActividades.aspx.cs" Inherits="proyectoC2.gestionActividades" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SolicitudHorasExtraSupervisor.aspx.cs" Inherits="proyectoC2.SolicitudHorasExtraSupervisor" %>
 
 <!DOCTYPE html>
 
@@ -155,21 +155,22 @@ footer {
     font-size: 16px;
 }
 
- .btn-pdf {
-    background-color: #7154FC;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
  .btn-submit:hover {
      background-color: #5a005a;
  }
  .btn-submit2:hover {
     background-color: #ABB2B9;
+}
+
+ .enlace-archivo {
+    font-size: 18px; /* Tamaño de la fuente */
+    color: blue; /* Color del texto */
+    text-decoration: none; /* Quitar subrayado */
+    cursor: pointer;
+}
+
+.enlace-archivo:hover {
+    text-decoration: underline; /* Subrayado al pasar el cursor por encima */
 }
 
 /* Regla adicional para aumentar la especificidad */
@@ -333,17 +334,6 @@ form .btn-submit2:hover {
     background-color: #f9e6e6;
     text-align: center;
     margin-top: 10px;
-}
-
- .enlace-archivo {
-    font-size: 18px; /* Tamaño de la fuente */
-    color: blue; /* Color del texto */
-    text-decoration: none; /* Quitar subrayado */
-    cursor: pointer;
-}
-
-.enlace-archivo:hover {
-    text-decoration: underline; /* Subrayado al pasar el cursor por encima */
 }
 </style>
 
@@ -556,56 +546,52 @@ form .btn-submit2:hover {
 		</div>
 			</header><!-- #masthead -->
 
-    <form id="form1" runat="server">
 
+    <form id="form1" runat="server">
     <div class="main-content3">
         <div class="image-box">
             <img src="img/jefe1.png" alt="Imagen de Ejemplo"/>
         </div>
         <div class="content-box">
-            <h2>Gestión de Actividades</h2>
-            <div class="small-title">Apruebe o deniegue la actividad realizada</div>
+            <h2>Solicitud de Horas Extra</h2>
+            <div class="small-title">Realiza la solicitud de horas extra a un empleado</div>
             <div class="form-inline">
                 <div class="form-group">
-                    <label for="idActividad">ID Actividad:</label>
-                    <asp:TextBox ID="idActividad" runat="server" CssClass="asp-control" ReadOnly="true" />
-                </div>
+					            <label for="empleado">Seleccione el empleado:</label>
+					            <asp:DropDownList ID="ddlempleado" runat="server" CssClass="asp-control" AutoPostBack="true" />
+				</div>
                 <div class="form-group">
-                    <label for="idEmpleado">ID Empleado:</label>
-                    <asp:TextBox ID="idEmpleado" runat="server" CssClass="asp-control" ReadOnly="true" />
+				            <label for="idHorario">Horario:</label>
+				            <asp:TextBox ID="idHorario" runat="server" CssClass="asp-control" ReadOnly="true" />
                 </div>
             </div>
+                <div class="form-group">
+                    <label for="fecha">Fecha:</label>
+                    <asp:TextBox ID="fecha" runat="server" CssClass="asp-control" TextMode="Date" />
+                </div>
             <div class="form-inline">
+				            <div class="form-group">
+					            <label for="horaInicio">Hora Inicio:</label>
+					            <asp:DropDownList ID="ddlHoraInicio" runat="server" CssClass="asp-control" />
+				            </div>
+				            <div class="form-group">
+					            <label for="horaFin">Hora Fin:</label>
+					            <asp:DropDownList ID="ddlHoraFin" runat="server" CssClass="asp-control" />
+				            </div>
+            </div>
                 <div class="form-group">
-                    <label for="horaInicio">Hora Inicio:</label>
-                    <asp:TextBox ID="horaInicio" runat="server" CssClass="asp-control" ReadOnly="true" />
+                    <label for="Motivo">Motivo:</label>
+                    <asp:TextBox ID="Motivo" runat="server" CssClass="asp-control" TextMode="MultiLine" Rows="4" />
                 </div>
-                <div class="form-group">
-                    <label for="horaFinal">Hora Final:</label>
-                    <asp:TextBox ID="horaFinal" runat="server" CssClass="asp-control" ReadOnly="true" />
-                </div>
-            </div>
-            <div class="form-group">
-                <asp:HyperLink ID="lnkVerArchivo" runat="server" CssClass="enlace-archivo" Text="Ver Evidencia" />
-            </div>
-            <div class="form-group">
-                <label for="rendimiento">Seleccione el rendimiento del empleado en la actividad realizada:</label>
-                <asp:DropDownList ID="ddlrendimiento" runat="server" CssClass="asp-control">
-                </asp:DropDownList>
-            </div>
-            <br />
-            <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Aprobar" OnClick="btnSubmit_Click" />
-             <br/>
-             <br/>
-            <asp:Button ID="btnSubmit2" runat="server" CssClass="btn-submit2" Text="Denegar" OnClick="btnSubmit2_Click" />
+                <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Enviar" OnClick="btnSubmit_Click" />
             <br />
             <br />
+            <!-- Contenedor para el mensaje debajo del botón -->
             <div class="form-group">
-            <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" />
+	            <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" />
             </div>
         </div>
     </div>
-
 </form>
 
   <!-- Círculo Inferior Izquierdo -->

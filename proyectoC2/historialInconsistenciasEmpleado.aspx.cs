@@ -91,6 +91,5 @@ namespace proyectoC2
                 btnJustificar.Enabled = estado == "Pendiente";
             }
         }
-
     }
 }

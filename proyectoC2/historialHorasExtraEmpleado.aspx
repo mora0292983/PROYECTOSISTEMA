@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="gestionActividades.aspx.cs" Inherits="proyectoC2.gestionActividades" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="historialHorasExtraEmpleado.aspx.cs" Inherits="proyectoC2.historialHorasExtraEmpleado" %>
 
 <!DOCTYPE html>
 
@@ -70,139 +70,133 @@ img.emoji {
      z-index: -1; /* Asegura que el círculo esté detrás de otros elementos */
 }
 footer {
-      margin-top: 61px; /* Reduce este valor para subir el footer */
+      margin-top: 60px; /* Reduce este valor para subir el footer */
      width: 1550px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
 	margin-left: -20px; /* Ajusta este valor para mover el footer hacia la izquierda */
 }
-  .main-content3 {
-     display: flex;
-     justify-content: space-around;
-     align-items: center;
-     height: auto;
-     padding: 20px;
-     gap: 20px;
-	 margin-top: 55px; /* Ajusta este valor para mover la imagen hacia abajo */
- }
-
- .content-box {
-     background-color: #fff;
-     border-radius: 8px;
-     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-     width: 45%;
-     max-width: 550px;
-     padding: 20px;
-     box-sizing: border-box;
- }
-
- .content-box h2 {
-     color: #7154FC; /* Morado */
-     font-weight: bold;
-     margin-top: 0;
-     text-align: center;
- }
-
- .small-title {
-     color: #585555;
-     font-size: 14px;
-     font-weight: bold;
-     margin: 10px 0;
- }
-
- .form-group {
-     margin-bottom: 15px;
- }
-
- .form-group label {
-     display: block;
-    
-     margin-bottom: 5px;
- }
-
- .form-group input,
- .form-group select,
- .form-group textarea,
- .form-group .asp-control {
-     width: 100%;
-     padding: 10px;
-     border-radius: 5px;
-     border: 1px solid #ccc;
-     box-sizing: border-box;
- }
-
- .form-group textarea {
-     resize: vertical;
- }
-
- .btn-submit {
-     background-color: #7154FC;
-     color: white;
-     padding: 10px 15px;
-     border: none;
-     border-radius: 5px;
-     cursor: pointer;
-     width: 100%;
-     font-size: 16px;
- }
-
- .btn-submit2 {
-    background-color: #D5D8DC;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 16px;
+.main-content3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 65px;
+    gap: 20px;
 }
 
- .btn-pdf {
+.content-box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px; /* Ajusta el ancho del cuadro blanco */
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-x: auto; /* Añade scroll horizontal si el grid es muy ancho */
+}
+
+.content-box h2 {
+    color: #7154FC; /* Morado */
+    font-weight: bold;
+    margin-top: 0;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.asp-control {
+    width: calc(100% - 40px); /* Ajusta para dejar espacio para el icono */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-container input[type="text"] {
+    width: 100%;
+    padding-right: 40px; /* Espacio para el icono */
+}
+
+.search-container .icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ccc;
+    pointer-events: none;
+}
+
+.btn {
     background-color: #7154FC;
     color: white;
-    padding: 10px 15px;
+    padding: 15px 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    width: 48%;
+    font-size: 14px;
+    text-align: center;
 }
 
- .btn-submit:hover {
-     background-color: #5a005a;
- }
- .btn-submit2:hover {
-    background-color: #ABB2B9;
+.btn:hover {
+    background-color: #5a005a;
 }
 
-/* Regla adicional para aumentar la especificidad */
-form .btn-submit2 {
-    background-color: #ABB2B9 !important;
-    color: white !important;
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
-form .btn-submit2:hover {
-    background-color: #808B96 !important;
+.image-box {
+    width: 40%;
+    max-width: 400px; /* Ajusta el ancho máximo de la imagen */
 }
 
- .image-box {
-     position: relative; /* Añade esto para permitir el ajuste de 'left' */
-     left: -50px; /* Ajusta este valor para mover solo la imagen a la izquierda */
-     margin-top: 70px;
- }
+.image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
 
- .image-box img {
-     width: 120%;
-     height: auto;
-     border-radius: 8px;
-     object-fit: cover;
- }
+/* General styling for GridView */
+.gridview {
+    width: 100%;
+    border-collapse: separate;
+    margin-top: 30px;
+}
 
- .form-inline {
-     display: flex;
-     justify-content: space-between;
- }
+.gridview th, .gridview td {
+    border: 1px solid #ddd;
+    padding: 24px;
+	box-sizing: border-box;
+}
+.gridview .header-date, 
+.gridview .item-date {
+    width: 900px; /* Ajusta el valor según tus necesidades */
+    text-align: left; /* Ajusta la alineación del texto si es necesario */
+}
+/* Header styling */
+.gridview th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #7154FC;
+    color: white;
+}
 
- .form-inline .form-group {
-     width: 48%;
- }
+/* Adjusting width for date columns */
+.gridview td:nth-child(5),
+.gridview td:nth-child(6) {
+    width: 900px; /* Adjust as needed */
+    text-align: center; /* Optional: Center the text */
+}
 
 /* Selecciona el contenedor del menú */
 .jet-nav-wrap {
@@ -212,56 +206,6 @@ form .btn-submit2:hover {
 /* Opcionalmente, puedes especificar la clase del menú principal si deseas más precisión */
 .jet-nav-wrap.jet-mobile-menu.jet-mobile-menu--right-side {
     margin-left: -190px; /* Ajusta este valor según tus necesidades */
-}
-/* Contenedor del logo y el título */
-.elementor-jet-logo {
-    text-align: center; /* Centra el contenido dentro del contenedor */
-}
-/* Imagen del logo */
-.jet-logo__img {
-    display: block; /* Asegura que el logo se muestre como un bloque */
-    margin: 0 auto; /* Centra el logo horizontalmente */
-}
-.jet-logo__title {
-    font-size: 14px; /* Tamaño del texto del título */
-	font-weight: 500; /* Negrita moderada */
-    color: #333; /* Color del texto del título */
-    margin-top: 10px; /* Espacio entre el logo y el título */
-    text-transform: uppercase; /* Opcional: convierte el texto a mayúsculas */
-	 margin-left: -100px;
-}
-
-.form-actions {
-    display: flex; /* Usa Flexbox para el contenedor */
-    flex-direction: column; /* Organiza los elementos en una columna */
-    align-items: center; /* Centra los elementos horizontalmente */
-    margin-top: 30px; /* Espacio arriba del contenedor del botón */
-}
-
-.form-actions .btn-primary {
-    background-color: #7154FC; /* Color de fondo del botón */
-    color: #fff; /* Color del texto */
-    padding: 15px 25px; /* Tamaño del botón */
-    border: none; /* Sin borde */
-    border-radius: 25px; /* Bordes redondeados */
-    font-size: 18px; /* Tamaño de fuente */
-    cursor: pointer; /* Cambia el cursor a mano al pasar por encima */
-    text-align: center; /* Centra el texto */
-    display: inline-block; /* Asegura que el botón se alinee correctamente */
-    margin-bottom: 10px; /* Espacio debajo del botón para separar del mensaje */
-    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
-}
-
-.form-actions .btn-primary:hover {
-    background-color: #5a0cac; /* Color de fondo en hover */
-}
-
-.form-actions .lblMensaje {
-    margin-top: 10px; /* Espacio arriba del mensaje para separarlo del botón */
-    text-align: center; /* Centra el texto del mensaje */
-    color: red; /* Color del texto del mensaje de error */
-    font-size: 16px; /* Tamaño de la fuente del mensaje */
 }
 /* Estilos del submenú */
 .submenu {
@@ -309,41 +253,31 @@ form .btn-submit2:hover {
     visibility: visible;
 }
 
-/* Estilo para el mensaje de éxito */
-.mensaje-exito {
-    color: #7154FC;
-    font-weight: bold;
-    padding: 10px;
-    border: 1px solid #7154FC;
-    border-radius: 5px;
-    background-color: #e6f9e6;
-    text-align: center;
-    margin-top: 10px;
-	   margin-left: auto;
-    margin-right: auto;
+
+/* Contenedor del logo y el título */
+.elementor-jet-logo {
+    text-align: center; /* Centra el contenido dentro del contenedor */
+}
+/* Imagen del logo */
+.jet-logo__img {
+    display: block; /* Asegura que el logo se muestre como un bloque */
+    margin: 0 auto; /* Centra el logo horizontalmente */
 }
 
-/* Estilo para el mensaje de error */
-.mensaje-error {
-    color: red;
-    font-weight: bold;
-    padding: 10px;
-    border: 1px solid red;
-    border-radius: 5px;
-    background-color: #f9e6e6;
-    text-align: center;
-    margin-top: 10px;
+/* Título debajo del logo */
+.jet-logo__title {
+    font-size: 14px; /* Tamaño del texto del título */
+	font-weight: 500; /* Negrita moderada */
+    color: #333; /* Color del texto del título */
+    margin-top: 10px; /* Espacio entre el logo y el título */
+    text-transform: uppercase; /* Opcional: convierte el texto a mayúsculas */
+	 margin-left: -100px;
 }
 
- .enlace-archivo {
-    font-size: 18px; /* Tamaño de la fuente */
-    color: blue; /* Color del texto */
-    text-decoration: none; /* Quitar subrayado */
-    cursor: pointer;
-}
-
-.enlace-archivo:hover {
-    text-decoration: underline; /* Subrayado al pasar el cursor por encima */
+.btn-submit:disabled {
+    background-color: #909497; /* Color gris para el botón deshabilitado */
+    cursor: not-allowed; /* Cambia el cursor para indicar que el botón está deshabilitado */
+    opacity: 0.6; /* Reduce la opacidad para indicar que está deshabilitado */
 }
 </style>
 
@@ -408,9 +342,8 @@ form .btn-submit2:hover {
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-logo jet-blocks"><div class="jet-logo jet-logo-type-image jet-logo-display-block">
 <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="jet-logo__link"><img src="img/logo2.png" class="jet-logo__img" alt="Imperion" width="128" height="44" srcset="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/logo_retina.png 2x"></a></div>
-				<p class="jet-logo__title">Supervisora</p>
-
-			</div>		</div>
+<p class="jet-logo__title">Empleado</p>
+</div>		</div>
 				</div>
 						</div>
 			</div>
@@ -422,7 +355,7 @@ form .btn-submit2:hover {
 				<div class="elementor-widget-container">
 			<div class="jet-nav-wrap jet-mobile-menu jet-mobile-menu--right-side" data-mobile-layout="right-side">
 <div class="jet-nav__mobile-trigger jet-nav-mobile-trigger-align-right">
-	<span class="jet-nav__mobile-trigger-open jet-blocks-icon"><i aria-hidden="true" class="fas fa-bars"></i></span>	<span class="jet-nav__mobile-trigger-close jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></span></div><div class="menu-main-container"><div class="jet-nav jet-nav--horizontal"><div class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item jet-nav__item-177 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Home</span></a></div>
+	<span class="jet-nav__mobile-trigger-open jet-blocks-icon"><i aria-hidden="true" class="fas fa-bars"></i></span>	<span class="jet-nav__mobile-trigger-close jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></span></div><div class="menu-main-container"><div class="jet-nav jet-nav--horizontal"><div class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item jet-nav__item-177 jet-nav__item"><a href="PG_Inicio.aspx" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Home</span></a></div>
 <div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
     <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
         <span class="jet-nav-link-text">Vacaciones</span>
@@ -440,7 +373,7 @@ form .btn-submit2:hover {
     </a>
     <ul class="submenu">
         <li class="submenu-item"><a href="PG_Login.aspx">Login</a></li>
-        <li class="submenu-item"><a href="historialActividadesSupervisor.aspx">Historial Actividades</a></li>
+        <li class="submenu-item"><a href="historialActividadesEmpleado.aspx">Historial Actividades</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
@@ -450,7 +383,7 @@ form .btn-submit2:hover {
     </a>
     <ul class="submenu">
         <li class="submenu-item"><a href="PG_Login.aspx">Login</a></li>
-        <li class="submenu-item"><a href="historialInconsistenciasSupervisor.aspx">Historial Inconsistencias</a></li>
+        <li class="submenu-item"><a href="historialInconsistenciasEmpleado.aspx">Historial Inconsistencias</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
@@ -556,57 +489,38 @@ form .btn-submit2:hover {
 		</div>
 			</header><!-- #masthead -->
 
-    <form id="form1" runat="server">
-
+<form id="form1" runat="server">
     <div class="main-content3">
-        <div class="image-box">
-            <img src="img/jefe1.png" alt="Imagen de Ejemplo"/>
-        </div>
         <div class="content-box">
-            <h2>Gestión de Actividades</h2>
-            <div class="small-title">Apruebe o deniegue la actividad realizada</div>
-            <div class="form-inline">
-                <div class="form-group">
-                    <label for="idActividad">ID Actividad:</label>
-                    <asp:TextBox ID="idActividad" runat="server" CssClass="asp-control" ReadOnly="true" />
-                </div>
-                <div class="form-group">
-                    <label for="idEmpleado">ID Empleado:</label>
-                    <asp:TextBox ID="idEmpleado" runat="server" CssClass="asp-control" ReadOnly="true" />
-                </div>
-            </div>
-            <div class="form-inline">
-                <div class="form-group">
-                    <label for="horaInicio">Hora Inicio:</label>
-                    <asp:TextBox ID="horaInicio" runat="server" CssClass="asp-control" ReadOnly="true" />
-                </div>
-                <div class="form-group">
-                    <label for="horaFinal">Hora Final:</label>
-                    <asp:TextBox ID="horaFinal" runat="server" CssClass="asp-control" ReadOnly="true" />
-                </div>
-            </div>
+            <h2>Historial Solicitudes Horas Extra</h2>
+            
             <div class="form-group">
-                <asp:HyperLink ID="lnkVerArchivo" runat="server" CssClass="enlace-archivo" Text="Ver Evidencia" />
+                <label for="empleadoIDtxt">ID Empleado:</label>
+                <asp:TextBox ID="empleadoIDtxt" runat="server" CssClass="asp-control" ReadOnly="true" />
             </div>
-            <div class="form-group">
-                <label for="rendimiento">Seleccione el rendimiento del empleado en la actividad realizada:</label>
-                <asp:DropDownList ID="ddlrendimiento" runat="server" CssClass="asp-control">
-                </asp:DropDownList>
-            </div>
-            <br />
-            <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Aprobar" OnClick="btnSubmit_Click" />
-             <br/>
-             <br/>
-            <asp:Button ID="btnSubmit2" runat="server" CssClass="btn-submit2" Text="Denegar" OnClick="btnSubmit2_Click" />
-            <br />
-            <br />
-            <div class="form-group">
-            <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" />
-            </div>
+            
+            <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" CssClass="gridview" OnRowDataBound="gridView_RowDataBound" >
+                <Columns>
+                    <asp:BoundField DataField="HoraExtraID" HeaderText="ID Solicitud" />
+                    <asp:BoundField DataField="Fecha" HeaderText="Fecha" DataFormatString="{0:yyyy-MM-dd}" HtmlEncode="false" />
+                    <asp:BoundField DataField="Estado" HeaderText="Estado Solicitud" />
+                    <asp:BoundField DataField="EstadoJefatura" HeaderText="Estado en Jefatura" />
+                    <asp:TemplateField HeaderText="Acción">
+                        <ItemTemplate>
+                            <asp:Button ID="btnGestionar" runat="server" Text="Gestionar" CssClass="btn btn-submit" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Acción">
+                        <ItemTemplate>
+                            <asp:Button ID="btnEvidencia" runat="server" Text="Evidenciar" CssClass="btn btn-submit" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
         </div>
     </div>
-
 </form>
+
 
   <!-- Círculo Inferior Izquierdo -->
   <div class="bottom-circle-container">

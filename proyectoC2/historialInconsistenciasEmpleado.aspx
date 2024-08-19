@@ -489,9 +489,11 @@ footer {
         <div class="content-box">
             <h2>Historial de Inconsistencias</h2>
             
-            <asp:<div class="form-group">
+            <div class="form-group">
                 <label for="empleadoIDtxt">ID Empleado:</label>
                 <asp:TextBox ID="empleadoIDtxt" runat="server" CssClass="asp-control" ReadOnly="true" />
+            </div>
+            
             <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" CssClass="gridview" OnRowDataBound="gridView_RowDataBound">
                 <Columns>
                     <asp:BoundField DataField="IDInconsistencia" HeaderText="ID Inconsistencia" />
@@ -512,6 +514,7 @@ footer {
         </div>
     </div>
 </form>
+
 
   <!-- Círculo Inferior Izquierdo -->
   <div class="bottom-circle-container">

@@ -122,12 +122,14 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="evidenciaHorasExtra.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="gestionActividades.aspx" />
     <Content Include="gestionInconsistencias.aspx" />
     <Content Include="Global.asax" />
     <Content Include="historialActividadesEmpleado.aspx" />
     <Content Include="historialActividadesSupervisor.aspx" />
+    <Content Include="historialHorasExtraEmpleado.aspx" />
     <Content Include="historialInconsistenciasEmpleado.aspx" />
     <Content Include="historialInconsistenciasSupervisor.aspx" />
     <Content Include="modulodepartamento.aspx" />
@@ -159,6 +161,7 @@
     <Content Include="pg_login.aspx" />
     <Content Include="pg_registrodiasfestivo.aspx" />
     <Content Include="pg_registroincapacidad.aspx" />
+    <Content Include="SolicitudHorasExtraSupervisor.aspx" />
     <Content Include="solicitudReposicion.aspx" />
     <Content Include="pg_panelsupervisora.aspx" />
     <Content Include="pg_expedienteSuper.aspx" />
@@ -225,7 +228,6 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="SolicitudHorasExtraEmpleados.aspx" />
-    <Content Include="SolicitudHorasExtraJefatura.aspx" />
     <Content Include="VerPDF.aspx" />
     <Content Include="VerPDF2.aspx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -257,6 +259,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="evidenciaHorasExtra.aspx.cs">
+      <DependentUpon>evidenciaHorasExtra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="evidenciaHorasExtra.aspx.designer.cs">
+      <DependentUpon>evidenciaHorasExtra.aspx</DependentUpon>
+    </Compile>
     <Compile Include="gestionActividades.aspx.cs">
       <DependentUpon>gestionActividades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -287,6 +296,13 @@
     </Compile>
     <Compile Include="historialActividadesSupervisor.aspx.designer.cs">
       <DependentUpon>historialActividadesSupervisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="historialHorasExtraEmpleado.aspx.cs">
+      <DependentUpon>historialHorasExtraEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="historialHorasExtraEmpleado.aspx.designer.cs">
+      <DependentUpon>historialHorasExtraEmpleado.aspx</DependentUpon>
     </Compile>
     <Compile Include="historialInconsistenciasEmpleado.aspx.cs">
       <DependentUpon>historialInconsistenciasEmpleado.aspx</DependentUpon>
@@ -421,6 +437,13 @@
     <Compile Include="pg_registroincapacidad.aspx.designer.cs">
       <DependentUpon>pg_registroincapacidad.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SolicitudHorasExtraSupervisor.aspx.cs">
+      <DependentUpon>SolicitudHorasExtraSupervisor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitudHorasExtraSupervisor.aspx.designer.cs">
+      <DependentUpon>SolicitudHorasExtraSupervisor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="solicitudReposicion.aspx.cs">
       <DependentUpon>solicitudReposicion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -498,13 +521,6 @@
     </Compile>
     <Compile Include="SolicitudHorasExtraEmpleados.aspx.designer.cs">
       <DependentUpon>SolicitudHorasExtraEmpleados.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SolicitudHorasExtraJefatura.aspx.cs">
-      <DependentUpon>SolicitudHorasExtraJefatura.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SolicitudHorasExtraJefatura.aspx.designer.cs">
-      <DependentUpon>SolicitudHorasExtraJefatura.aspx</DependentUpon>
     </Compile>
     <Compile Include="VerPDF.aspx.cs">
       <DependentUpon>VerPDF.aspx</DependentUpon>
