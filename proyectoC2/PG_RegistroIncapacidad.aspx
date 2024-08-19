@@ -81,6 +81,7 @@ footer {
      height: auto;
      padding: 0px;
      gap: 20px;
+	 padding: 75px;
 	 margin-top: -45px; /* Ajusta este valor para mover la imagen hacia abajo */
  }
 
@@ -90,7 +91,7 @@ footer {
      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
      width: 45%;
      max-width: 550px;
-     padding: 20px;
+     padding: 50px;
      box-sizing: border-box;
  }
 
@@ -396,7 +397,7 @@ footer {
 
     <form id="form1" runat="server">
     	 <div class="main-content-message">
-            <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Text="" />
+          
         </div>
         <div class="main-content3">
 			
@@ -431,7 +432,9 @@ footer {
                     <asp:TextBox ID="descripcion" runat="server" CssClass="asp-control" TextMode="MultiLine" Rows="4" />
                 </div>
                 <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Enviar" OnClick="btnEnviar_Click" />
-			
+							    <div class="main-content-message">
+    <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Text="" />
+</div>
             </div>
         </div>
    

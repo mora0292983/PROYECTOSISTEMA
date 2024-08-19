@@ -112,7 +112,7 @@ namespace proyectoC2
                         command.Parameters.AddWithValue("@FechaFin", fechaFinDate);
                         command.Parameters.AddWithValue("@Descripcion", descripcion.Text);
                         command.Parameters.AddWithValue("@DiasIncapacidad", diasIncapacidad); // Si necesitas almacenar los días en la base de datos
-
+                        command.Parameters.AddWithValue("@EstadoSolicitud", "Sin Gestionar");
                         connection.Open();
                         command.ExecuteNonQuery();
 
@@ -121,8 +121,7 @@ namespace proyectoC2
                         lblMensaje.CssClass = "mensaje-exito"; // Añadir una clase CSS para estilizar el mensaje
 
                         // Limpiar los campos
-                        nombreEmpleado.ClearSelection();
-                        DropDownList1.ClearSelection();
+
                         fechaInicio.Text = "";
                         fechaFin.Text = "";
                         descripcion.Text = "";
@@ -137,3 +136,4 @@ namespace proyectoC2
         }
     }
 }
+

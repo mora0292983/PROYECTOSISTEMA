@@ -79,7 +79,7 @@ footer {
        justify-content: center;
        align-items: center;
        height: auto;
-       padding: 20px;
+       padding: 60px;
        gap: 20px;
    }
 
@@ -87,10 +87,11 @@ footer {
        background-color: #fff;
        border-radius: 8px;
        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-       width: 45%;
-       max-width: 650px; /* Increased width for grid display */
-       padding: 20px;
+       width: 78%;
+       max-width: 950px; /* Increased width for grid display */
+       padding: 40px;
        box-sizing: border-box;
+	    margin-left: 10px; /* Alinea el contenido a la izquierda del contenedor */
    }
 
    .content-box h2 {
@@ -368,38 +369,34 @@ footer {
 		</div>
 			</header><!-- #masthead -->
 
-
-
-	
-
-    <form id="form1" runat="server">
     
         <!-- Incluye la biblioteca de iconos FontAwesome -->
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-     <div class="main-content3">
-         <div class="image-box">
-             <img src="img/jefe1.png" alt="Imagen de Ejemplo">
-         </div>
-         <div class="content-box">
-             <h2>Control de Incapacidades</h2>
-             <div class="form-group search-container">
-                 <asp:TextBox ID="search" runat="server" CssClass="asp-control" TextMode="Search" />
-                 <i class="fas fa-search icon"></i>
-             </div>
-             <asp:GridView ID="gridView" runat="server" CssClass="gridview">
-                
-             </asp:GridView>
-             <div class="btn-group">
-                 <asp:Button ID="btnExport" runat="server" CssClass="btn" Text="Exportar" />
-                 <asp:Button ID="btnFilter" runat="server" CssClass="btn" Text="Filtrar" />
-             </div>
-         </div>
-     </div>
- 
- 
+ <form id="form1" runat="server">
+    <div class="main-content3">
+        <div class="content-box">
+            <h2>Control de incapacidades</h2>
+            <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" CssClass="gridview" OnRowDataBound="gridView_RowDataBound">
+                <Columns>
+                    <asp:BoundField DataField="NombreEmpleado" HeaderText="Nombre" />
+                    <asp:BoundField DataField="ApellidoEmpleado" HeaderText="Apellido" />
+                    <asp:BoundField DataField="CedulaEmpleado" HeaderText="Cédula" />
+                    <asp:BoundField DataField="TipoIncapacidad" HeaderText="Tipo Incapacidad" />
+                    <asp:BoundField DataField="FechaInicio" HeaderText="Fecha Inicio" DataFormatString="{0:yyyy-MM-dd}" HtmlEncode="false" />
+                    <asp:BoundField DataField="FechaFin" HeaderText="Fecha Fin" DataFormatString="{0:yyyy-MM-dd}" HtmlEncode="false" />
+                    <asp:BoundField DataField="Descripcion" HeaderText="Descripción" />
+                    <asp:BoundField DataField="EstadoSolicitud" HeaderText="Estado Solicitud" />
+                    <asp:TemplateField HeaderText="Acción">
+                        <ItemTemplate>
+                            <asp:Button ID="btnGestionar" runat="server" Text="Gestionar" CssClass="btn-accion" CommandName="Gestionar" CommandArgument='<%# Eval("NombreEmpleado") %>' />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+        </div>
    
-    </form>
+    </div>
+</form>
   <!-- Círculo Inferior Izquierdo -->
   <div class="bottom-circle-container">
       <div class="bottom-circle"></div>

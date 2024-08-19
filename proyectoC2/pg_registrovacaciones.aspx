@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="modulodepartamento.aspx.cs" Inherits="proyectoC2.HistoricoEmpPuestos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="pg_registrovacaciones.aspx.cs" Inherits="proyectoC2.PG_InicioJe" %>
 
 <!DOCTYPE html>
 
@@ -70,33 +70,32 @@ img.emoji {
      z-index: -1; /* Asegura que el círculo esté detrás de otros elementos */
 }
 footer {
-      margin-top: 62px; /* Reduce este valor para subir el footer */
+      margin-top: 25px; /* Reduce este valor para subir el footer */
      width: 1500px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
 	margin-left: -20px; /* Ajusta este valor para mover el footer hacia la izquierda */
 }
-/* Contenedor principal */
 .main-content3 {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Cambia para alinear con el inicio verticalmente */
-    height: auto;
-    padding: 65px;
+    align-items: flex-start; /* Alinea los elementos al principio */
+    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+    padding: 0px;
     gap: 20px;
+    margin-top: 40px; /* Ajusta este valor para bajar el cuadro blanco desde el mensaje */
 }
 
-/* Contenedor de contenido */
 .content-box {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 650px; /* Ajusta el ancho del cuadro blanco */
+    max-width: 550px;
     padding: 20px;
     box-sizing: border-box;
-    overflow-x: auto; /* Añade scroll horizontal si el grid es muy ancho */
+    margin-top: 40px; /* Añadido para bajarlo un poco desde el centro */
+	  margin-left: -120px; /* Ajusta este valor para mover el cuadro blanco hacia la izquierda */
 }
 
-/* Título */
 .content-box h2 {
     color: #7154FC; /* Morado */
     font-weight: bold;
@@ -104,13 +103,26 @@ footer {
     text-align: center;
 }
 
-/* Contenedor de formulario */
+.small-title {
+    color: #585555;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
 .form-group {
     margin-bottom: 15px;
 }
 
-/* Estilo del TextBox */
-.asp-control {
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+.form-group .asp-control {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -118,146 +130,112 @@ footer {
     box-sizing: border-box;
 }
 
-/* Contenedor de búsqueda */
-.search-container {
-    position: relative;
+.form-group textarea {
+    resize: vertical;
 }
 
-.search-container input[type="text"] {
-    width: calc(100% - 40px); /* Espacio para el icono */
-    padding-right: 40px; /* Espacio para el icono */
-}
-
-.search-container .icon {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #ccc;
-    pointer-events: none;
-}
-
-/* Botones */
-.btn {
+.btn-submit {
     background-color: #7154FC;
     color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 48%;
+    width: 100%;
     font-size: 16px;
-    text-align: center;
 }
 
-.btn:hover {
+.btn-submit:hover {
     background-color: #5a005a;
 }
 
-/* Contenedor de botones */
-.btn-group {
+.form-inline {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
 }
 
-/* Contenedor de imagen */
-.image-box {
-    width: 10%;
-    max-width: 0px; /* Ajusta el ancho máximo de la imagen */
+.form-inline .form-group {
+    width: 48%;
 }
 
-.image-box img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-/* Estilo general para GridView */
-.gridview {
-    width: 100%;
-    border-collapse: collapse; /* Cambiado para evitar bordes separados */
-    margin-top: 30px;
-}
-
-/* Encabezados y celdas del GridView */
-.gridview th, .gridview td {
-    border: 1px solid #ddd;
-    padding: 12px; /* Ajustado para mejorar la legibilidad */
-    box-sizing: border-box;
-}
-
-/* Estilo de encabezados */
-.gridview th {
-    background-color: #7154FC;
-    color: white;
+/* Estilo para el contenedor del mensaje */
+.main-content-message {
+    padding: 0px;
+    margin-top: 40px; /* Ajusta este valor según sea necesario */
+    border-radius: 5px;
+    margin-bottom: 15px; /* Espacio debajo del mensaje */
     text-align: center;
+    width: 100%; /* Ancho completo del contenedor */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
 }
 
-/* Ajuste de columnas de fechas */
-.gridview td:nth-child(5),
-.gridview td:nth-child(6) {
-    width: 120px; /* Ajusta el tamaño de las columnas de fechas según sea necesario */
-    text-align: center; /* Centra el texto en las columnas de fecha */
+/* Estilo general para el mensaje */
+.mensaje {
+    padding: 15px; /* Ajustado para mostrar el mensaje de forma más compacta */
+    border-radius: 5px;
+    font-size: 18px; /* Ajustado para ser más pequeño */
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    border-width: 5px;
+    border-style: solid;
+    background-color: transparent; /* Fondo transparente por defecto */
+    color: #dc3545; /* Color del texto rojo por defecto (para errores) */
 }
 
-/* Selecciona el contenedor del menú */
-.jet-nav-wrap {
-    margin-left: -160px; /* Ajusta este valor según tus necesidades */
+/* Mostrar el mensaje solo cuando sea necesario */
+.mensaje:not(:empty) {
+    background-color: rgba(255, 99, 71, 0.2); /* Fondo rojo pastel (tomato con opacidad) */
 }
 
-/* Opcionalmente, puedes especificar la clase del menú principal si deseas más precisión */
-.jet-nav-wrap.jet-mobile-menu.jet-mobile-menu--right-side {
-    margin-left: -190px; /* Ajusta este valor según tus necesidades */
-}
-/* Estilos del submenú */
-.submenu {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    background-color: #fff; /* Color de fondo del submenú */
-    border-radius: 4px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
-    padding: 0;
-    list-style-type: none;
-    margin: 0;
-    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
-    transition: opacity 0.3s, visibility 0.3s; /* Transiciones suaves */
+/* Estilo para mensajes de éxito */
+.mensaje-exito {
+    background-color: rgba(40, 167, 69, 0.2); /* Fondo verde pastel */
+    border-color: #28a745; /* Verde */
+    color: #28a745; /* Color del texto verde */
 }
 
-/* Estilos de los elementos del submenú */
-.submenu-item {
-    border-bottom: 1px solid #ddd; /* Línea divisoria entre elementos */
+/* Estilo para mensajes de error */
+.mensaje-error {
+    background-color: rgba(220, 53, 69, 0.2); /* Fondo rojo pastel */
+    border-color: #dc3545; /* Rojo */
+    color: #dc3545; /* Color del texto rojo */
 }
 
-.submenu-item:last-child {
-    border-bottom: none; /* Elimina la línea divisoria del último elemento */
+.vacation-title {
+    text-align: center; /* Alinea el título y el número de días disponibles al centro */
+    margin-top: 90px;
+	  margin-left: 40px; 
+    position: relative; /* Permite posicionar el número de días disponibles más a la derecha */
 }
 
-.submenu-item a {
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #333; /* Color del texto del submenú */
-    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+.vacation-days {
+    position: absolute; /* Permite colocar el número de días disponibles en una posición específica */
+    right: -105px; /* Ajusta este valor para mover el número de días más a la derecha */
+    top: 50%; /* Alinea verticalmente al centro del contenedor */
+    transform: translateY(-50%); /* Ajusta la posición verticalmente para centrarlo mejor */
+    font-size: 158px; /* Tamaño del texto grande para el número de días disponibles */
+    color: #7154FC; /* Color morado para el número de días disponibles */
+    font-weight: bold; /* Estilo de fuente en negrita */
 }
 
-/* Cambia el color del texto del submenú al pasar el ratón por encima */
-.submenu-item a:hover {
-    background-color: #f0f0f0; /* Color de fondo al pasar el ratón */
-    color: #007bff; /* Color del texto al pasar el ratón */
+.title-part {
+    display: block; /* Hace que cada parte del título ocupe una línea */
+    font-size: 38px; /* Ajusta el tamaño del texto según sea necesario */
+    font-weight: bold;
+    margin: 0; /* Elimina el margen para que el texto esté más compacto */
+    line-height: 0.1; /* Ajusta la altura de la línea para reducir el espacio entre líneas */
 }
 
-/* Mostrar el submenú al pasar el ratón por encima del elemento del menú */
-.menu-item:hover .submenu {
-    display: block;
-    opacity: 1;
-    visibility: visible;
+.vacation {
+    color: #7154FC; /* Color morado para la palabra "Vacaciones" */
+}
+.highlight {
+    color: #42474c; /* Color morado para la palabra "Solicitud" */
+    font-weight: bold; /* Puedes ajustar esto según tus necesidades */
 }
 </style>
-
 
 
 
@@ -319,7 +297,6 @@ footer {
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-logo jet-blocks"><div class="jet-logo jet-logo-type-image jet-logo-display-block">
 <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="jet-logo__link"><img src="img/logo2.png" class="jet-logo__img" alt="Imperion" width="128" height="44" srcset="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/logo_retina.png 2x"></a></div>
-<p class="jet-logo__title">Supervisora</p>
 </div>		</div>
 				</div>
 						</div>
@@ -332,53 +309,11 @@ footer {
 				<div class="elementor-widget-container">
 			<div class="jet-nav-wrap jet-mobile-menu jet-mobile-menu--right-side" data-mobile-layout="right-side">
 <div class="jet-nav__mobile-trigger jet-nav-mobile-trigger-align-right">
-	<span class="jet-nav__mobile-trigger-open jet-blocks-icon"><i aria-hidden="true" class="fas fa-bars"></i></span>	<span class="jet-nav__mobile-trigger-close jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></span></div><div class="menu-main-container"><div class="jet-nav jet-nav--horizontal"><div class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item jet-nav__item-177 jet-nav__item"><a href="PG_Inicio.aspx" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Home</span></a></div>
-<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
-    <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
-        <span class="jet-nav-link-text">Vacaciones</span>
-    </a>
-    <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="PG_RegistroDiasFestivo.aspx">Dias Festivos</a></li>
-        <li class="submenu-item"><a href="PG_VacacionesColectivas.aspx">Vacaciones Colectivas</a></li>
-        <!-- Agrega más elementos del submenú aquí -->
-    </ul>
-</div>
-<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
-    <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
-        <span class="jet-nav-link-text">Actividades</span>
-    </a>
-    <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
-        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
-        <!-- Agrega más elementos del submenú aquí -->
-    </ul>
-</div>
-<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
-    <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
-        <span class="jet-nav-link-text">Inconsistencias</span>
-    </a>
-    <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
-        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
-        <!-- Agrega más elementos del submenú aquí -->
-    </ul>
-</div>
-<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
-    <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
-        <span class="jet-nav-link-text">Puestos    Rebajos</span>
-    </a>
-    <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Departamentos.aspx">Departamentos</a></li>
-        <li class="submenu-item"><a href="RegistroTurnos.aspx">Turnos</a></li>
-        <li class="submenu-item"><a href="RegistroPuestos.aspx">Puestos</a></li>
-        <li class="submenu-item"><a href="HistoricoPuestos.aspx">Historicos de Puestos</a></li>
-<li class="submenu-item"><a href="HistoricoEmpPuestos.aspx">Modulo del empleado</a></li>
-        <!-- Agrega más elementos del submenú aquí -->
-    </ul>
-</div>
+	<span class="jet-nav__mobile-trigger-open jet-blocks-icon"><i aria-hidden="true" class="fas fa-bars"></i></span>	<span class="jet-nav__mobile-trigger-close jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></span></div><div class="menu-main-container"><div class="jet-nav jet-nav--horizontal"><div class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item jet-nav__item-177 jet-nav__item"><a href="pg_panelEmpleado.aspx" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Home</span></a></div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-118 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Services</span></a></div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-119 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#projects" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Projects</span></a></div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-120 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#pricing" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Pricing</span></a></div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-121 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#contact" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Contact</span></a></div>
 <div class="jet-nav__mobile-close-btn jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></div></div></div></div>		</div>
 				</div>
 						</div>
@@ -429,7 +364,7 @@ footer {
 				<div class="elementor-widget-container">
 			<div class="jet-nav-wrap jet-mobile-menu jet-mobile-menu--default" data-mobile-layout="default">
 <div class="jet-nav__mobile-trigger jet-nav-mobile-trigger-align-center">
-	<span class="jet-nav__mobile-trigger-open jet-blocks-icon"><i aria-hidden="true" class="fas fa-bars"></i></span>	<span class="jet-nav__mobile-trigger-close jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></span></div><div class="menu-main-container"><div class="jet-nav jet-nav--horizontal"><div class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item jet-nav__item-177 jet-nav__item"><a href="pg_panelEmpleado.aspx" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Home</span></a></div>
+	<span class="jet-nav__mobile-trigger-open jet-blocks-icon"><i aria-hidden="true" class="fas fa-bars"></i></span>	<span class="jet-nav__mobile-trigger-close jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></span></div><div class="menu-main-container"><div class="jet-nav jet-nav--horizontal"><div class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item jet-nav__item-177 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Home</span></a></div>
 <div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-118 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Services</span></a></div>
 <div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-119 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#projects" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Projects</span></a></div>
 <div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-120 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#pricing" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Pricing</span></a></div>
@@ -468,49 +403,34 @@ footer {
 		</div>
 			</header><!-- #masthead -->
 
-<form id="form1" runat="server">
-    <!-- Incluye la biblioteca de iconos FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-   <div class="main-content3">
-            <div class="image-box">
-             
+<form id="form1" runat="server">
+    <div class="main-content-message">
+        <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Text="" />
+    </div>
+    <div class="main-content3">
+        <div class="content-box">
+            <h2><span class="highlight">Solicitud de</span> Vacaciones</h2>
+            <div class="small-title">Haz tu solicitud de vacaciones</div>
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="fechaInicio">Fecha Inicio:</label>
+                    <asp:TextBox ID="fechaInicio" runat="server" CssClass="asp-control" TextMode="Date" />
+                </div>
+                <div class="form-group">
+                    <label for="fechaFin">Fecha Fin:</label>
+                    <asp:TextBox ID="fechaFin" runat="server" CssClass="asp-control" TextMode="Date" />
+                </div>
             </div>
-            <div class="content-box">
-                <h2>Histórico del empleado por departamento</h2>
-                <div class="form-group search-container">
-                    <asp:TextBox ID="search" runat="server" CssClass="asp-control" TextMode="Search" />
-                    <i class="fas fa-search icon"></i>
-                </div>
-                <div class="filter-container">
-                    <div class="filter-item">
-                        <label for="assignmentDate">Fecha Asignación:</label>
-                        <asp:TextBox ID="assignmentDateTextBox" runat="server" CssClass="asp-control date-picker" TextMode="Date" />
-                    </div>
-                    <div class="filter-item">
-                        <label for="puesto">Puesto:</label>
-                        <asp:DropDownList ID="puestoDropDown" runat="server" CssClass="asp-control">
-                        
-                        </asp:DropDownList>
-                    </div>
-                </div>
-                <div class="btn-group">
-                    <asp:Button ID="btnExport" runat="server" CssClass="btn" OnClick="btnExport_Click" Text="Exportar" />
-                    <asp:Button ID="btnFilter" runat="server" CssClass="btn" OnClick="btnFilter_Click" Text="Filtrar" />
-                </div>
-                <asp:GridView ID="gridView" runat="server" CssClass="gridview" AutoGenerateColumns="False">
-                    <Columns>
-                        <asp:BoundField DataField="EmpleadoPuestoID" HeaderText="ID" Visible="False" />
-                        <asp:BoundField DataField="NombreEmpleado" HeaderText="Nombre Empleado" />
-                        <asp:BoundField DataField="ApellidoEmpleado" HeaderText="Apellido Empleado" />
-                        <asp:BoundField DataField="NombrePuesto" HeaderText="Nombre Puesto" />
-                        <asp:BoundField DataField="FechaAsignacion" HeaderText="Fecha Asignación" DataFormatString="{0:dd-MM-yyyy}" 
-                                        HeaderStyle-CssClass="header-date" ItemStyle-CssClass="item-date" />
-                        <asp:BoundField DataField="Departamento" HeaderText="Departamento" />
-                    </Columns>
-                </asp:GridView>
+            <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Enviar" OnClick="btnEnviar_Click" />
+        </div>
+        <div class="vacation-title">
+            <h3><span class="title-part">Días de</span><br><span class="title-part vacation">Vacaciones</span><br><span class="title-part">Disponibles</span></h3>
+            <div class="vacation-days">
+                <asp:Label ID="lblDiasDisponibles" runat="server" CssClass="dias-disponibles" Text="" />
             </div>
         </div>
+    </div>
 </form>
   <!-- Círculo Inferior Izquierdo -->
   <div class="bottom-circle-container">
@@ -739,4 +659,6 @@ footer {
 
 <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-P9FT69');</script><!-- End Google Tag Manager --></body>
 </html>
+
+
 

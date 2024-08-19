@@ -164,7 +164,7 @@ footer {
 /* Contenedor de imagen */
 .image-box {
     width: 40%;
-    max-width: 400px; /* Ajusta el ancho máximo de la imagen */
+    max-width: 0px; /* Ajusta el ancho máximo de la imagen */
 }
 
 .image-box img {
@@ -495,7 +495,7 @@ footer {
 
 <div class="main-content3">
     <div class="image-box">
-        <img src="img/empleado.png" alt="Imagen de Ejemplo">
+      
     </div>
     <div class="content-box">
         <h2>Histórico de puestos del empleado</h2>

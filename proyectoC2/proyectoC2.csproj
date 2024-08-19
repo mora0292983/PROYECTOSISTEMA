@@ -148,7 +148,7 @@
     <Content Include="img\rebajos.jpg" />
     <Content Include="img\vaca2.jpg" />
     <Content Include="JustificacionInconsistencias.aspx" />
-    <Content Include="pg_cin.aspx" />
+    <Content Include="pg_aprobacionincapacidad.aspx" />
     <Content Include="pg_controlincapacidades.aspx" />
     <Content Include="pg_panelEmpleado.aspx" />
     <Content Include="pg_departamentos.aspx" />
@@ -156,7 +156,7 @@
     <Content Include="pg_empexpediente.aspx" />
     <Content Include="pg_expediente.aspx" />
     <Content Include="pg_inicio.aspx" />
-    <Content Include="pg_iniciojefe.aspx" />
+    <Content Include="pg_registrovacaciones.aspx" />
     <Content Include="pg_iniciologin.aspx" />
     <Content Include="pg_login.aspx" />
     <Content Include="pg_registrodiasfestivo.aspx" />
@@ -346,12 +346,12 @@
     <Compile Include="PaginaMaestra.Master.designer.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
     </Compile>
-    <Compile Include="pg_cin.aspx.cs">
-      <DependentUpon>pg_cin.aspx</DependentUpon>
+    <Compile Include="pg_aprobacionincapacidad.aspx.cs">
+      <DependentUpon>pg_aprobacionincapacidad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pg_cin.aspx.designer.cs">
-      <DependentUpon>pg_cin.aspx</DependentUpon>
+    <Compile Include="pg_aprobacionincapacidad.aspx.designer.cs">
+      <DependentUpon>pg_aprobacionincapacidad.aspx</DependentUpon>
     </Compile>
     <Compile Include="pg_controlincapacidades.aspx.cs">
       <DependentUpon>pg_controlincapacidades.aspx</DependentUpon>
@@ -402,12 +402,12 @@
     <Compile Include="pg_inicio.aspx.designer.cs">
       <DependentUpon>pg_inicio.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pg_iniciojefe.aspx.cs">
-      <DependentUpon>pg_iniciojefe.aspx</DependentUpon>
+    <Compile Include="pg_registrovacaciones.aspx.cs">
+      <DependentUpon>pg_registrovacaciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pg_iniciojefe.aspx.designer.cs">
-      <DependentUpon>pg_iniciojefe.aspx</DependentUpon>
+    <Compile Include="pg_registrovacaciones.aspx.designer.cs">
+      <DependentUpon>pg_registrovacaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="pg_iniciologin.aspx.cs">
       <DependentUpon>pg_iniciologin.aspx</DependentUpon>

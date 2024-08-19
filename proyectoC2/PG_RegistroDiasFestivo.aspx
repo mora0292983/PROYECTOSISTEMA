@@ -182,6 +182,48 @@ footer {
     text-transform: uppercase; /* Opcional: convierte el texto a mayúsculas */
 	 margin-left: -100px;
 }
+* Estilo general para el mensaje */
+.mensaje {
+    padding: 75px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 27px;
+	height:25px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    border-width: 5px;
+    border-style: solid;
+    background-color: rgba(255, 99, 71, 0.2); /* Fondo rojo pastel (tomato con opacidad) */
+    color: #dc3545; /* Color del texto rojo por defecto (para errores) */
+}
+
+/* Estilo para mensajes de éxito */
+.mensaje-exito {
+    background-color: rgba(40, 167, 69, 0.2); /* Fondo verde pastel */
+    border-color: #28a745; /* Verde */
+    color: #28a745; /* Color del texto verde */
+}
+
+/* Estilo para mensajes de error */
+.mensaje-error {
+    background-color: rgba(220, 53, 69, 0.2); /* Fondo rojo pastel */
+    border-color: #dc3545; /* Rojo */
+    color: #dc3545; /* Color del texto rojo */
+}
+
+/* Estilo para el contenedor del mensaje */
+.main-content-message {
+    padding: 0px;
+	 margin-top: 75px; /* Espacio arriba del contenedor principal */
+    border-radius: 5px;
+    margin-bottom: 15px; /* Espacio debajo del mensaje */
+    text-align: center;
+    width: 100%; /* Ancho completo del contenedor */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
 </style>
 
 
@@ -366,7 +408,7 @@ footer {
      
             <div class="form-group">
                 <label for="fecha">Fecha:</label>
-                <asp:TextBox ID="fecha" runat="server" CssClass="asp-control" TextMode="Date" />
+                <asp:TextBox ID="fechaInicio" runat="server" CssClass="asp-control" TextMode="Date" />
             </div>
             <div class="form-group">
                 <label for="pago">Pago Obligatorio:</label>
@@ -378,16 +420,18 @@ footer {
             <div class="form-group">
                 <label for="estado">Estado:</label>
                 <asp:DropDownList ID="estado" runat="server" CssClass="asp-control">
-                    <asp:ListItem Value="activo" Text="Activo" />
-                    <asp:ListItem Value="inactivo" Text="Inactivo" />
+                    <asp:ListItem Value="activo" Text="Activado" />
+                    <asp:ListItem Value="inactivo" Text="Desactivado" />
                 </asp:DropDownList>
             </div>
             <div class="form-group">
                 <label for="descripcion">Descripción:</label>
                 <asp:TextBox ID="descripcion" runat="server" CssClass="asp-control" TextMode="MultiLine" Rows="4" />
             </div>
-            <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Registrar" />
-
+            <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Registrar" OnClick="btnSubmit_Click"/>
+				    <div class="main-content-message">
+    <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Text="" />
+</div>
     </div>
 </div>
     </form>

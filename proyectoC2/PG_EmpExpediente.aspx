@@ -400,9 +400,9 @@ label {
         <span class="jet-nav-link-text">Vacaciones</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="PG_RegistroDiasFestivo.aspx">Dias Festivos</a></li>
-        <li class="submenu-item"><a href="PG_VacacionesColectivas.aspx">Vacaciones Colectivas</a></li>
+        <li class="submenu-item"><a href="pg_registrovacaciones.aspx">Solicitud Vaciones</a></li>
+        <li class="submenu-item"><a href="pg_registrodiasfestivo.aspx">Dias Festivos</a></li>
+        <li class="submenu-item"><a href="pg_vacacionescolectivas.aspx">Vacaciones Colectivas</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
@@ -430,7 +430,7 @@ label {
 </div>
 <div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
     <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
-        <span class="jet-nav-link-text">Puestos    Rebajos</span>
+        <span class="jet-nav-link-text">Puestos </span>
     </a>
     <ul class="submenu">
         <li class="submenu-item"><a href="PG_Departamentos.aspx">Departamentos</a></li>
