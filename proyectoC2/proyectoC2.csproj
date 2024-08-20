@@ -153,6 +153,7 @@
     <Content Include="MenuCRUDS.aspx" />
     <Content Include="menuEmpleado.aspx" />
     <Content Include="menuSupervisor.aspx" />
+    <Content Include="modificaDepartamento.aspx" />
     <Content Include="modulodepartamento.aspx" />
     <Content Include="historicopuestos.aspx" />
     <Content Include="img\control.jpg" />
@@ -393,6 +394,13 @@
     </Compile>
     <Compile Include="menuSupervisor.aspx.designer.cs">
       <DependentUpon>menuSupervisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="modificaDepartamento.aspx.cs">
+      <DependentUpon>modificaDepartamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="modificaDepartamento.aspx.designer.cs">
+      <DependentUpon>modificaDepartamento.aspx</DependentUpon>
     </Compile>
     <Compile Include="modulodepartamento.aspx.cs">
       <DependentUpon>modulodepartamento.aspx</DependentUpon>
