@@ -199,6 +199,11 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="PaginaMaestra.Master" />
+    <Content Include="WebForm10977.aspx" />
+    <Content Include="WebForm12222234.aspx" />
+    <Content Include="WebForm1666.aspx" />
+    <Content Include="WebForm19845332.aspx" />
+    <Content Include="WebForm19999.aspx" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -542,6 +547,41 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm10977.aspx.cs">
+      <DependentUpon>WebForm10977.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm10977.aspx.designer.cs">
+      <DependentUpon>WebForm10977.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm12222234.aspx.cs">
+      <DependentUpon>WebForm12222234.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm12222234.aspx.designer.cs">
+      <DependentUpon>WebForm12222234.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1666.aspx.cs">
+      <DependentUpon>WebForm1666.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1666.aspx.designer.cs">
+      <DependentUpon>WebForm1666.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm19845332.aspx.cs">
+      <DependentUpon>WebForm19845332.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm19845332.aspx.designer.cs">
+      <DependentUpon>WebForm19845332.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm19999.aspx.cs">
+      <DependentUpon>WebForm19999.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm19999.aspx.designer.cs">
+      <DependentUpon>WebForm19999.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
