@@ -127,7 +127,7 @@ namespace proyectoC2
                 correo.Subject = "Notificación de Horas Extra en el Sistema de Control Empresarial";
                 correo.Body = $@"Hola,
 
-La solicitud de horas extra con el ID {horaExtraID} ha sido {estadoSolicitud}.
+La solicitud de horas extra con el ID '{horaExtraID}' ha sido '{estadoSolicitud}'.
 
 Saludos cordiales,
 
@@ -148,6 +148,5 @@ Gestión Pro";
                 lblMensaje.Text = "Error al enviar la notificación por correo.";
             }
         }
-
     }
 }
