@@ -1,4 +1,4 @@
-﻿+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="registropuestos.aspx.cs" Inherits="proyectoC2.RegistroPuestos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="pg_controlvacaciones.aspx.cs" Inherits="proyectoC2.WebForm10977" %>
 
 <!DOCTYPE html>
 
@@ -74,197 +74,122 @@ footer {
      width: 1500px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
 	margin-left: -20px; /* Ajusta este valor para mover el footer hacia la izquierda */
 }
- .main-content3 {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: auto;
-    padding: 60px;
-    gap: 20px;
-    max-width: 800px;
-    margin: 0 auto; /* Centra el contenedor */
-}
+   .main-content3 {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: auto;
+       padding: 60px;
+       gap: 20px;
+   }
 
-.content-box-container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 20px;
-    width: 100%;
-    max-width: 800px; /* Ajusta el tamaño máximo si es necesario */
-}
+   .content-box {
+       background-color: #fff;
+       border-radius: 8px;
+       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+       width: 78%;
+       max-width: 950px; /* Increased width for grid display */
+       padding: 40px;
+       box-sizing: border-box;
+	    margin-left: 10px; /* Alinea el contenido a la izquierda del contenedor */
+   }
 
-.content-box {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Asegúrate de que ocupe el ancho disponible */
-    max-width: 1000px; /* Ajusta el tamaño máximo si es necesario */
-    padding: 20px;
-    box-sizing: border-box;
-    position: relative;
-}
-/* Estilos para el encabezado en el cuadro de contenido */
-.content-box h2 {
-    color: #7154FC;
-    font-weight: bold;
-    margin-top: 0;
-    text-align: center;
-}
+   .content-box h2 {
+       color: #7154FC; /* Morado */
+       font-weight: bold;
+       margin-top: 0;
+       text-align: center;
+   }
 
-/* Estilos para los grupos de formulario */
-.form-group {
-    margin-bottom: 15px;
-}
+   .form-group {
+       margin-bottom: 15px;
+   }
 
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
+   .form-group label {
+       display: block;
+       font-weight: bold;
+       margin-bottom: 5px;
+   }
 
-/* Estilos para los TextBox */
-.search-box {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
+   .asp-control {
+       width: 100%;
+       padding: 10px;
+       border-radius: 5px;
+       border: 1px solid #ccc;
+       box-sizing: border-box;
+   }
 
-/* Estilos para los botones de enlace */
-.link-button, .link-button-eliminar, .link-button-editar {
-   display: inline-block;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-  margin-bottom: 10px;
-  border: none;
-  width: 100%;
-  box-sizing: border-box;
-}
+   .search-container {
+       position: relative;
+   }
 
-.link-button {
-    background-color: #7154FC;
-}
+   .search-container input[type="text"] {
+       width: 100%;
+       padding-right: 40px; /* Espacio para el icono */
+   }
 
-.link-button-eliminar {
-    background-color: #FF4C4C;
-}
+   .search-container .icon {
+       position: absolute;
+       right: 10px;
+       top: 50%;
+       transform: translateY(-50%);
+       color: #ccc;
+       pointer-events: none;
+   }
 
-.link-button-editar {
-    background-color: #7154FC;
-}
+   .btn {
+       background-color: #7154FC;
+       color: white;
+       padding: 10px 15px;
+       border: none;
+       border-radius: 5px;
+       cursor: pointer;
+       width: 48%;
+       font-size: 16px;
+       text-align: center;
+   }
 
-.link-button:hover {
-    background-color: #5a005a;
-}
+   .btn:hover {
+       background-color: #5a005a;
+   }
 
-.link-button-eliminar:hover {
-    background-color: #cc0000;
-}
+   .btn-group {
+       display: flex;
+       justify-content: space-between;
+       margin-top: 20px;
+   }
 
-.link-button-editar:hover {
-    background-color: #357ae8;
-}
+   .image-box {
+       width: 40%;
+       max-width: 400px; /* Increased width for grid display */
+       margin-left: 20px; /* Ajusta este valor para mover la imagen hacia la derecha */
+   }
 
-/* Estilos para el contenedor de botones de enlace */
-.link-buttons-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    position: absolute;
-    top: 20px; /* Ajusta la posición según sea necesario */
-    right: -130px; /* Ajusta la posición según sea necesario */
-}
+   .image-box img {
+       width: 100%;
+       height: auto;
+       border-radius: 8px;
+       object-fit: cover;
+   }
 
-/* Estilos para la caja de imagen */
-.image-box {
-    display: none; /* Oculta la caja de imagen */
-}
+   .gridview {
+       width: 100%;
+       border-collapse: collapse;
+       margin-top: 20px;
+   }
 
-.image-box img {
-    width: 300px;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-    margin-left: -150px;
-}
+   .gridview th, .gridview td {
+       border: 1px solid #ddd;
+       padding: 8px;
+   }
 
-/* Estilos para la tabla GridView */
-.gridview-style {
-    width: 100%;
-    border-collapse: collapse;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-}
-
-.gridview-style th {
-    background-color: #7154FC;
-    color: white;
-    padding: 10px;
-    text-align: left;
-    border-bottom: 2px solid #ddd;
-}
-
-.gridview-style td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-.gridview-style tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.gridview-style tr:hover {
-    background-color: #f1f1f1;
-}
-
-.gridview-style th, .gridview-style td {
-    border: 1px solid #ddd;
-}
-
-/* Estilos para los modales */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 90%;
-    max-width: 600px;
-    border-radius: 8px;
-}
-
-/* Estilos para el botón de cerrar */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
+   .gridview th {
+       padding-top: 12px;
+       padding-bottom: 12px;
+       text-align: left;
+       background-color: #7154FC;
+       color: white;
+   }
 
 /* Selecciona el contenedor del menú */
 .jet-nav-wrap {
@@ -274,31 +199,6 @@ footer {
 /* Opcionalmente, puedes especificar la clase del menú principal si deseas más precisión */
 .jet-nav-wrap.jet-mobile-menu.jet-mobile-menu--right-side {
     margin-left: -190px; /* Ajusta este valor según tus necesidades */
-}
-/* Estilo para el mensaje de éxito */
-.mensaje-exito {
-    color: #7154FC;
-    font-weight: bold;
-    padding: 10px;
-    border: 1px solid #7154FC;
-    border-radius: 5px;
-    background-color: #e6f9e6;
-    text-align: center;
-    margin-top: 10px;
-	   margin-left: auto;
-    margin-right: auto;
-}
-
-/* Estilo para el mensaje de error */
-.mensaje-error {
-    color: red;
-    font-weight: bold;
-    padding: 10px;
-    border: 1px solid red;
-    border-radius: 5px;
-    background-color: #f9e6e6;
-    text-align: center;
-    margin-top: 10px;
 }
 /* Estilos del submenú */
 .submenu {
@@ -366,8 +266,6 @@ footer {
     text-transform: uppercase; /* Opcional: convierte el texto a mayúsculas */
 	 margin-left: -100px;
 }
-
-
 </style>
 
 
@@ -473,7 +371,7 @@ footer {
         <span class="jet-nav-link-text">Incapacidades</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="pg_controlincapacidades.aspx">Control de la Incapacidad</a></li>
+        <li class="submenu-item"><a href="pg_controlincapacidades.aspx">Control de la incapacidades</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
@@ -579,153 +477,31 @@ footer {
 		</div>
 			</header><!-- #masthead -->
 
-
-
-	
-
+    
+        <!-- Incluye la biblioteca de iconos FontAwesome -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <form id="form1" runat="server">
     <div class="main-content3">
-        <div class="content-box-container">
-            <div class="content-box">
-                <h2>Registro de Puestos</h2>
-                <asp:GridView ID="gridPuestos" runat="server" AutoGenerateColumns="False" CssClass="gridview-style">
-                    <Columns>
-                        <asp:BoundField DataField="PuestoID" HeaderText="ID Puesto" ItemStyle-HorizontalAlign="Center" Visible="False" />
-                        <asp:BoundField DataField="NombrePuesto" HeaderText="Nombre Puesto" ItemStyle-HorizontalAlign="Center" />
-                        <asp:BoundField DataField="Departamento" HeaderText="Departamento" ItemStyle-HorizontalAlign="Center" />
-                        <asp:BoundField DataField="Descripcion" HeaderText="Descripción" ItemStyle-HorizontalAlign="Center" />
-                    </Columns>
-                </asp:GridView>
-                
-                <!-- Botones fuera del cuadro blanco -->
-                <div class="link-buttons-container">
-                    <a href="#modalNuevo" class="link-button" onclick="openModal('modalNuevo')">Nuevo</a>
-                    <a href="#modalEliminar" class="link-button-eliminar" onclick="openModal('modalEliminar')">Eliminar</a>
-                    <a href="#modalEditar" class="link-button-editar" onclick="openModal('modalEditar')">Editar</a>
-                </div>
-            </div>
+        <div class="content-box">
+            <h2>Control de Solicitudes de Vacaciones</h2>
+            <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" CssClass="gridview" OnRowDataBound="gridView_RowDataBound">
+                <Columns>
+                    <asp:BoundField DataField="NombreEmpleado" HeaderText="Nombre" />
+                    <asp:BoundField DataField="ApellidoEmpleado" HeaderText="Apellido" />
+                    <asp:BoundField DataField="CedulaEmpleado" HeaderText="Cédula" />
+                    <asp:BoundField DataField="FechaInicio" HeaderText="Fecha Inicio" DataFormatString="{0:yyyy-MM-dd}" HtmlEncode="false" />
+                    <asp:BoundField DataField="FechaFin" HeaderText="Fecha Fin" DataFormatString="{0:yyyy-MM-dd}" HtmlEncode="false" />
+                    <asp:BoundField DataField="EstadoSolicitud" HeaderText="Estado Solicitud" />
+                    <asp:TemplateField HeaderText="Acción">
+                        <ItemTemplate>
+                            <asp:Button ID="btnGestionar" runat="server" Text="Gestionar" CssClass="btn-accion" CommandName="Gestionar" CommandArgument='<%# Eval("NombreEmpleado") %>' />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
         </div>
     </div>
-
-    <!-- Modal Nuevo -->
-    <div id="modalNuevo" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modalNuevo')">&times;</span>
-            <h2>Nuevo Puesto</h2>
-            <div class="form-group">
-                <label for="nombrePuesto">Nombre del Puesto:</label>
-                <asp:TextBox ID="txtNombrePuesto" runat="server" CssClass="search-box" placeholder="Nombre del Puesto" MaxLength="100" />
-            </div>
-            <div class="form-group">
-                <label for="departamento">Departamento:</label>
-                <asp:TextBox ID="txtDepartamento" runat="server" CssClass="search-box" placeholder="Departamento" MaxLength="100" />
-            </div>
-            <div class="form-group">
-                <label for="descripcion">Descripción:</label>
-                <asp:TextBox ID="txtDescripcion" runat="server" CssClass="search-box" placeholder="Descripción" MaxLength="255" />
-            </div>
-           <asp:Button 
-    ID="btnGuardar" 
-    runat="server" 
-    Text="Guardar" 
-    OnClick="btnGuardar_Click" 
-    Style="background-color: #7154FC; 
-           color: #fff; 
-           border: none; 
-           border-radius: 20px; 
-           padding: 5px 20px; 
-           font-size: 16px; 
-           cursor: pointer; 
-           transition: background-color 0.3s ease;" 
-    OnMouseOver="this.style.backgroundColor='#7154FC';" 
-    OnMouseOut="this.style.backgroundColor='#7154FC';" />
-            <asp:Label ID="lblMensaje" runat="server" Text="" />
-        </div>
-    </div>
-
-    <!-- Modal Eliminar -->
-    <div id="modalEliminar" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modalEliminar')">&times;</span>
-            <h2>Eliminar Puesto</h2>
-            <div class="form-group">
-                <label for="nombrePuestoEliminar">Nombre del Puesto:</label>
-                <asp:TextBox ID="txtNombrePuestoEliminar" runat="server" CssClass="search-box" placeholder="Nombre del Puesto" MaxLength="100" />
-            </div>
-            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn-buscar" OnClick="btnEliminar_Click" Style="background-color: #7154FC; 
-       color: #fff; 
-       border: none; 
-       border-radius: 20px; 
-       padding: 5px 20px; 
-       font-size: 16px; 
-       cursor: pointer; 
-       transition: background-color 0.3s ease;" 
-OnMouseOver="this.style.backgroundColor='#7154FC';" 
-OnMouseOut="this.style.backgroundColor='#7154FC';" />
-        </div>
-    </div>
-
-    <!-- Modal Editar -->
-    <div id="modalEditar" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modalEditar')">&times;</span>
-            <h2>Editar Puesto</h2>
-            <div class="form-group">
-                <label for="nombrePuestoActual">Nombre Actual del Puesto:</label>
-                <asp:TextBox ID="txtNombrePuestoActual" runat="server" CssClass="search-box" placeholder="Nombre Actual" MaxLength="100" />
-            </div>
-            <div class="form-group">
-                <label for="nuevoNombrePuesto">Nuevo Nombre del Puesto:</label>
-                <asp:TextBox ID="txtNuevoNombrePuesto" runat="server" CssClass="search-box" placeholder="Nuevo Nombre" MaxLength="100" />
-            </div>
-            <div class="form-group">
-                <label for="nuevaDescripcion">Nueva Descripción:</label>
-                <asp:TextBox ID="txtNuevaDescripcion" runat="server" CssClass="search-box" placeholder="Nueva Descripción" MaxLength="255" />
-            </div>
-            <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" CssClass="btn-buscar" OnClick="btnActualizar_Click" Style="background-color: #7154FC; 
-       color: #fff; 
-       border: none; 
-       border-radius: 20px; 
-       padding: 5px 20px; 
-       font-size: 16px; 
-       cursor: pointer; 
-       transition: background-color 0.3s ease;" 
-OnMouseOver="this.style.backgroundColor='#7154FC';" 
-OnMouseOut="this.style.backgroundColor='#7154FC';" />
-        </div>
-    </div>
-
-  <script>
-      function openModal(modalId) {
-          document.getElementById(modalId).style.display = "block";
-      }
-
-      function closeModal(modalId) {
-          document.getElementById(modalId).style.display = "none";
-      }
-
-      window.onclick = function (event) {
-          if (event.target.classList.contains('modal')) {
-              closeModal(event.target.id);
-          }
-      }
-
-      function saveNewDepartment() {
-          // Implementa la lógica para guardar el nuevo departamento
-          closeModal('modalNuevo');
-      }
-
-      function deleteDepartment() {
-          // Implementa la lógica para eliminar el departamento
-          closeModal('modalEliminar');
-      }
-
-      function editDepartment() {
-          // Implementa la lógica para editar el departamento
-          closeModal('modalEditar');
-      }
-  </script>
-    </form>
+</form>
   <!-- Círculo Inferior Izquierdo -->
   <div class="bottom-circle-container">
       <div class="bottom-circle"></div>
@@ -742,11 +518,11 @@ OnMouseOut="this.style.backgroundColor='#7154FC';" />
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-31bcceb elementor-widget elementor-widget-heading" data-id="31bcceb" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h5 class="elementor-heading-title elementor-size-default">Acerca de Nosotros</h5>		</div>
+			<h5 class="elementor-heading-title elementor-size-default">About</h5>		</div>
 				</div>
 				<div class="elementor-element elementor-element-3a3a6667 elementor-widget elementor-widget-text-editor" data-id="3a3a6667" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-text-editor elementor-clearfix">En GestionPro, ofrecemos un sistema integral de gestión de actividades empresariales diseñado para optimizar y transformar la forma en que las organizaciones operan. Nuestro software avanzado está diseñado para abordar las necesidades complejas de la gestión empresarial moderna, ayudando a empresas de todos los tamaños a alcanzar sus objetivos con eficiencia y eficacia.</div>
+					<div class="elementor-text-editor elementor-clearfix">Mei an pericula euripidis, hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix at, vel pertinax. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis eleifend lorem nec ultricies.</div>
 				</div>
 				</div>
 						</div>
@@ -758,15 +534,15 @@ OnMouseOut="this.style.backgroundColor='#7154FC';" />
 				<div class="elementor-element elementor-element-13b8394a elementor-widget__width-initial elementor-widget elementor-widget-wp-widget-tag_cloud" data-id="13b8394a" data-element_type="widget" data-widget_type="wp-widget-tag_cloud.default">
 				<div class="elementor-widget-container">
 			<h5>Tags</h5><div class="tagcloud"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/blog/" class="tag-cloud-link tag-link-6 tag-link-position-1" style="font-size: 8pt;" aria-label="BLOG (1 item)">BLOG</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/business/" class="tag-cloud-link tag-link-7 tag-link-position-2" style="font-size: 8pt;" aria-label="BUSINESS (1 item)">GESTIÓN EMPRESARIAL</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/cities/" class="tag-cloud-link tag-link-8 tag-link-position-3" style="font-size: 8pt;" aria-label="CITIES (1 item)">OPTIMIZACIÓN</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/construction/" class="tag-cloud-link tag-link-9 tag-link-position-4" style="font-size: 8pt;" aria-label="CONSTRUCTION (1 item)">INNOVACIÓN</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/design/" class="tag-cloud-link tag-link-10 tag-link-position-5" style="font-size: 8pt;" aria-label="DESIGN (1 item)">RECURSOS HUMANOS</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/interiors/" class="tag-cloud-link tag-link-11 tag-link-position-6" style="font-size: 8pt;" aria-label="INTERIORS (1 item)">FINANZAS</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/news/" class="tag-cloud-link tag-link-12 tag-link-position-7" style="font-size: 8pt;" aria-label="NEWS (1 item)">PRODUCTIVIDAD</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/objects/" class="tag-cloud-link tag-link-13 tag-link-position-8" style="font-size: 8pt;" aria-label="OBJECTS (1 item)"></a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/post/" class="tag-cloud-link tag-link-14 tag-link-position-9" style="font-size: 8pt;" aria-label="POST (1 item)"></a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/projects/" class="tag-cloud-link tag-link-15 tag-link-position-10" style="font-size: 8pt;" aria-label="PROJECTS (1 item)"></a></div>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/business/" class="tag-cloud-link tag-link-7 tag-link-position-2" style="font-size: 8pt;" aria-label="BUSINESS (1 item)">BUSINESS</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/cities/" class="tag-cloud-link tag-link-8 tag-link-position-3" style="font-size: 8pt;" aria-label="CITIES (1 item)">CITIES</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/construction/" class="tag-cloud-link tag-link-9 tag-link-position-4" style="font-size: 8pt;" aria-label="CONSTRUCTION (1 item)">CONSTRUCTION</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/design/" class="tag-cloud-link tag-link-10 tag-link-position-5" style="font-size: 8pt;" aria-label="DESIGN (1 item)">DESIGN</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/interiors/" class="tag-cloud-link tag-link-11 tag-link-position-6" style="font-size: 8pt;" aria-label="INTERIORS (1 item)">INTERIORS</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/news/" class="tag-cloud-link tag-link-12 tag-link-position-7" style="font-size: 8pt;" aria-label="NEWS (1 item)">NEWS</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/objects/" class="tag-cloud-link tag-link-13 tag-link-position-8" style="font-size: 8pt;" aria-label="OBJECTS (1 item)">OBJECTS</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/post/" class="tag-cloud-link tag-link-14 tag-link-position-9" style="font-size: 8pt;" aria-label="POST (1 item)">POST</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/projects/" class="tag-cloud-link tag-link-15 tag-link-position-10" style="font-size: 8pt;" aria-label="PROJECTS (1 item)">PROJECTS</a></div>
 		</div>
 				</div>
 						</div>
@@ -777,15 +553,15 @@ OnMouseOut="this.style.backgroundColor='#7154FC';" />
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-491e4ad elementor-widget elementor-widget-heading" data-id="491e4ad" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h5 class="elementor-heading-title elementor-size-default">Comentarios Recientes</h5>		</div>
+			<h5 class="elementor-heading-title elementor-size-default">RECENT COMMENTS</h5>		</div>
 				</div>
 				<div class="elementor-element elementor-element-87952dd elementor-widget elementor-widget-jet-posts" data-id="87952dd" data-element_type="widget" data-widget_type="jet-posts.default">
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-posts jet-elements"><div class="jet-posts col-row disable-rows-gap"><div class="jet-posts__item col-desk-1">
-	<div class="jet-posts__inner-box"><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/prioritizing-tax-benefits/">Beneficios de la Gestión Financiera Integrada</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:26+00:00" title="2019-07-05T13:32:26+00:00">5 de julio de 2024</time></a></span></div></div></div>
+	<div class="jet-posts__inner-box"><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/prioritizing-tax-benefits/">Prioritizing Tax Benefits</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:26+00:00" title="2019-07-05T13:32:26+00:00">July 5, 2019</time></a></span></div></div></div>
 </div>
 <div class="jet-posts__item col-desk-1">
-	<div class="jet-posts__inner-box"><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/the-sdn-effect-on-network/">Mejora en la Coordinación de Proyectos</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:07+00:00" title="2019-07-05T13:32:07+00:00">4 de julio de 2024</time></a></span></div></div></div>
+	<div class="jet-posts__inner-box"><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/the-sdn-effect-on-network/">The SDN Effect on Network</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:07+00:00" title="2019-07-05T13:32:07+00:00">July 5, 2019</time></a></span></div></div></div>
 </div>
 </div>
 </div>		</div>
@@ -805,7 +581,7 @@ OnMouseOut="this.style.backgroundColor='#7154FC';" />
 				<div class="elementor-element elementor-element-655171d2 elementor-widget elementor-widget-jet-logo" data-id="655171d2" data-element_type="widget" data-widget_type="jet-logo.default">
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-logo jet-blocks"><div class="jet-logo jet-logo-type-image jet-logo-display-block">
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="jet-logo__link"><img src="img/logo2.png" class="jet-logo__img" alt="Imperion" width="128" height="44" srcset="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/logo_footer_retina.png 2x"></a></div>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="jet-logo__link"><img src="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/footer-logo.png" class="jet-logo__img" alt="Imperion" width="128" height="44" srcset="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/logo_footer_retina.png 2x"></a></div>
 </div>		</div>
 				</div>
 						</div>
@@ -816,7 +592,7 @@ OnMouseOut="this.style.backgroundColor='#7154FC';" />
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-10ceac58 elementor-widget elementor-widget-text-editor" data-id="10ceac58" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-text-editor elementor-clearfix">© 2024. GestionPro. All Rights Reserved.</div>
+					<div class="elementor-text-editor elementor-clearfix">© 2019. Imperion. All Rights Reserved.</div>
 				</div>
 				</div>
 						</div>
@@ -827,7 +603,32 @@ OnMouseOut="this.style.backgroundColor='#7154FC';" />
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-55a575b1 elementor-shape-rounded elementor-widget elementor-widget-social-icons" data-id="55a575b1" data-element_type="widget" data-widget_type="social-icons.default">
 				<div class="elementor-widget-container">
-					
+					<div class="elementor-social-icons-wrapper">
+							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-949457f" target="_blank">
+					<span class="elementor-screen-only">Facebook</span>
+											<i class="fa fa-facebook"></i>
+									</a>
+							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-bafa546" target="_blank">
+					<span class="elementor-screen-only">Twitter</span>
+											<i class="fa fa-twitter"></i>
+									</a>
+							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-google-plus elementor-repeater-item-4e18694" target="_blank">
+					<span class="elementor-screen-only">Google-plus</span>
+											<i class="fa fa-google-plus"></i>
+									</a>
+							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-addf219" target="_blank">
+					<span class="elementor-screen-only">Instagram</span>
+											<i class="fa fa-instagram"></i>
+									</a>
+							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-649080f" target="_blank">
+					<span class="elementor-screen-only">Youtube</span>
+											<i class="fa fa-youtube"></i>
+									</a>
+							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-wordpress elementor-repeater-item-28cb662" target="_blank">
+					<span class="elementor-screen-only">Wordpress</span>
+											<i class="fa fa-wordpress"></i>
+									</a>
+					</div>
 				</div>
 				</div>
 						</div>
@@ -839,8 +640,7 @@ OnMouseOut="this.style.backgroundColor='#7154FC';" />
 						</div>
 			</div>
 		</div>
-			</footer><!-- #colophon -->
-
+</footer><!-- #colophon -->
 
 </div><!-- #page -->
 
@@ -929,3 +729,5 @@ OnMouseOut="this.style.backgroundColor='#7154FC';" />
 
 <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-P9FT69');</script><!-- End Google Tag Manager --></body>
 </html>
+
+

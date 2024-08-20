@@ -218,8 +218,8 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="PaginaMaestra.Master" />
     <Content Include="VerPDF3.aspx" />
-    <Content Include="WebForm10977.aspx" />
-    <Content Include="WebForm12222234.aspx" />
+    <Content Include="pg_controlvacaciones.aspx" />
+    <Content Include="pg_aprobacionvacaciones.aspx" />
     <Content Include="WebForm1666.aspx" />
     <Content Include="WebForm19845332.aspx" />
     <Content Include="WebForm19999.aspx" />
@@ -602,19 +602,19 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm10977.aspx.cs">
-      <DependentUpon>WebForm10977.aspx</DependentUpon>
+    <Compile Include="pg_controlvacaciones.aspx.cs">
+      <DependentUpon>pg_controlvacaciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm10977.aspx.designer.cs">
-      <DependentUpon>WebForm10977.aspx</DependentUpon>
+    <Compile Include="pg_controlvacaciones.aspx.designer.cs">
+      <DependentUpon>pg_controlvacaciones.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm12222234.aspx.cs">
-      <DependentUpon>WebForm12222234.aspx</DependentUpon>
+    <Compile Include="pg_aprobacionvacaciones.aspx.cs">
+      <DependentUpon>pg_aprobacionvacaciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm12222234.aspx.designer.cs">
-      <DependentUpon>WebForm12222234.aspx</DependentUpon>
+    <Compile Include="pg_aprobacionvacaciones.aspx.designer.cs">
+      <DependentUpon>pg_aprobacionvacaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1666.aspx.cs">
       <DependentUpon>WebForm1666.aspx</DependentUpon>

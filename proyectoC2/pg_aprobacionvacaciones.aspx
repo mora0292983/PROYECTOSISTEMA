@@ -1,11 +1,11 @@
-﻿+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="registropuestos.aspx.cs" Inherits="proyectoC2.RegistroPuestos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="pg_aprobacionvacaciones.aspx.cs" Inherits="proyectoC2.WebForm12222234" %>
 
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-     <title></title>
+    <title></title>
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
 <link rel="alternate" type="application/rss+xml" title="Imperion &raquo; Feed" href="https://ld-wp73.template-help.com/imperion/corporatelanding/feed/" />
@@ -70,201 +70,142 @@ img.emoji {
      z-index: -1; /* Asegura que el círculo esté detrás de otros elementos */
 }
 footer {
-      margin-top: 62px; /* Reduce este valor para subir el footer */
-     width: 1500px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
+      margin-top: 61px; /* Reduce este valor para subir el footer */
+     width: 1550px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
 	margin-left: -20px; /* Ajusta este valor para mover el footer hacia la izquierda */
 }
- .main-content3 {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: auto;
-    padding: 60px;
-    gap: 20px;
-    max-width: 800px;
-    margin: 0 auto; /* Centra el contenedor */
-}
+  .main-content3 {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     height: auto;
+     padding: 20px;
+     gap: 20px;
+	 margin-top: 55px; /* Ajusta este valor para mover la imagen hacia abajo */
+ }
 
-.content-box-container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 20px;
-    width: 100%;
-    max-width: 800px; /* Ajusta el tamaño máximo si es necesario */
-}
+ .content-box {
+     background-color: #fff;
+     border-radius: 8px;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     width: 45%;
+     max-width: 550px;
+     padding: 60px;
+     box-sizing: border-box;
+     margin-left: -200px; /* Ajusta este valor para mover solo la imagen a la izquierda */
+ }
 
-.content-box {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Asegúrate de que ocupe el ancho disponible */
-    max-width: 1000px; /* Ajusta el tamaño máximo si es necesario */
-    padding: 20px;
-    box-sizing: border-box;
-    position: relative;
-}
-/* Estilos para el encabezado en el cuadro de contenido */
-.content-box h2 {
-    color: #7154FC;
-    font-weight: bold;
-    margin-top: 0;
-    text-align: center;
-}
+ .content-box h2 {
+     color: #7154FC; /* Morado */
+     font-weight: bold;
+     margin-top: 0;
+     text-align: center;
+ }
 
-/* Estilos para los grupos de formulario */
-.form-group {
-    margin-bottom: 15px;
-}
+ .small-title {
+     color: #585555;
+     font-size: 14px;
+     font-weight: bold;
+     margin: 10px 0;
+ }
 
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
+ .form-group {
+     margin-bottom: 15px;
+ }
 
-/* Estilos para los TextBox */
-.search-box {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
+ .form-group label {
+     display: block;
+    
+     margin-bottom: 5px;
+ }
 
-/* Estilos para los botones de enlace */
-.link-button, .link-button-eliminar, .link-button-editar {
-   display: inline-block;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-  margin-bottom: 10px;
-  border: none;
-  width: 100%;
-  box-sizing: border-box;
-}
+ .form-group input,
+ .form-group select,
+ .form-group textarea,
+ .form-group .asp-control {
+     width: 100%;
+     padding: 10px;
+     border-radius: 5px;
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+ }
 
-.link-button {
-    background-color: #7154FC;
-}
+ .form-group textarea {
+     resize: vertical;
+ }
 
-.link-button-eliminar {
-    background-color: #FF4C4C;
-}
+ .btn-submit {
+     background-color: #7154FC;
+     color: white;
+     padding: 10px 15px;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     width: 100%;
+     font-size: 16px;
+ }
 
-.link-button-editar {
-    background-color: #7154FC;
-}
-
-.link-button:hover {
-    background-color: #5a005a;
-}
-
-.link-button-eliminar:hover {
-    background-color: #cc0000;
-}
-
-.link-button-editar:hover {
-    background-color: #357ae8;
-}
-
-/* Estilos para el contenedor de botones de enlace */
-.link-buttons-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    position: absolute;
-    top: 20px; /* Ajusta la posición según sea necesario */
-    right: -130px; /* Ajusta la posición según sea necesario */
-}
-
-/* Estilos para la caja de imagen */
-.image-box {
-    display: none; /* Oculta la caja de imagen */
-}
-
-.image-box img {
-    width: 300px;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-    margin-left: -150px;
-}
-
-/* Estilos para la tabla GridView */
-.gridview-style {
-    width: 100%;
-    border-collapse: collapse;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-}
-
-.gridview-style th {
-    background-color: #7154FC;
+ .btn-submit2 {
+    background-color: #D5D8DC;
     color: white;
-    padding: 10px;
-    text-align: left;
-    border-bottom: 2px solid #ddd;
-}
-
-.gridview-style td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-.gridview-style tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.gridview-style tr:hover {
-    background-color: #f1f1f1;
-}
-
-.gridview-style th, .gridview-style td {
-    border: 1px solid #ddd;
-}
-
-/* Estilos para los modales */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
     width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
+    font-size: 16px;
 }
 
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 90%;
-    max-width: 600px;
-    border-radius: 8px;
+ .btn-submit:hover {
+     background-color: #5a005a;
+ }
+ .btn-submit2:hover {
+    background-color: #ABB2B9;
 }
 
-/* Estilos para el botón de cerrar */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
+ .enlace-archivo {
+    font-size: 18px; /* Tamaño de la fuente */
+    color: blue; /* Color del texto */
+    text-decoration: none; /* Quitar subrayado */
     cursor: pointer;
 }
+
+.enlace-archivo:hover {
+    text-decoration: underline; /* Subrayado al pasar el cursor por encima */
+}
+
+/* Regla adicional para aumentar la especificidad */
+form .btn-submit2 {
+    background-color: #ABB2B9 !important;
+    color: white !important;
+}
+
+form .btn-submit2:hover {
+    background-color: #808B96 !important;
+}
+
+ .image-box {
+     position: relative; /* Añade esto para permitir el ajuste de 'left' */
+     left: 70px; /* Ajusta este valor para mover solo la imagen a la izquierda */
+     margin-top: 20px;
+ }
+
+ .image-box img {
+     width: 80%;
+     height: auto;
+     border-radius: 8px;
+     object-fit: cover;
+   
+ }
+
+ .form-inline {
+     display: flex;
+     justify-content: space-between;
+ }
+
+ .form-inline .form-group {
+     width: 48%;
+ }
 
 /* Selecciona el contenedor del menú */
 .jet-nav-wrap {
@@ -275,30 +216,55 @@ footer {
 .jet-nav-wrap.jet-mobile-menu.jet-mobile-menu--right-side {
     margin-left: -190px; /* Ajusta este valor según tus necesidades */
 }
-/* Estilo para el mensaje de éxito */
-.mensaje-exito {
-    color: #7154FC;
-    font-weight: bold;
-    padding: 10px;
-    border: 1px solid #7154FC;
-    border-radius: 5px;
-    background-color: #e6f9e6;
-    text-align: center;
-    margin-top: 10px;
-	   margin-left: auto;
-    margin-right: auto;
+/* Contenedor del logo y el título */
+.elementor-jet-logo {
+    text-align: center; /* Centra el contenido dentro del contenedor */
+}
+/* Imagen del logo */
+.jet-logo__img {
+    display: block; /* Asegura que el logo se muestre como un bloque */
+    margin: 0 auto; /* Centra el logo horizontalmente */
+}
+.jet-logo__title {
+    font-size: 14px; /* Tamaño del texto del título */
+	font-weight: 500; /* Negrita moderada */
+    color: #333; /* Color del texto del título */
+    margin-top: 10px; /* Espacio entre el logo y el título */
+    text-transform: uppercase; /* Opcional: convierte el texto a mayúsculas */
+	 margin-left: -100px;
 }
 
-/* Estilo para el mensaje de error */
-.mensaje-error {
-    color: red;
-    font-weight: bold;
-    padding: 10px;
-    border: 1px solid red;
-    border-radius: 5px;
-    background-color: #f9e6e6;
-    text-align: center;
-    margin-top: 10px;
+.form-actions {
+    display: flex; /* Usa Flexbox para el contenedor */
+    flex-direction: column; /* Organiza los elementos en una columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    margin-top: 30px; /* Espacio arriba del contenedor del botón */
+}
+
+.form-actions .btn-primary {
+    background-color: #7154FC; /* Color de fondo del botón */
+    color: #fff; /* Color del texto */
+    padding: 15px 25px; /* Tamaño del botón */
+    border: none; /* Sin borde */
+    border-radius: 25px; /* Bordes redondeados */
+    font-size: 18px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor a mano al pasar por encima */
+    text-align: center; /* Centra el texto */
+    display: inline-block; /* Asegura que el botón se alinee correctamente */
+    margin-bottom: 10px; /* Espacio debajo del botón para separar del mensaje */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.form-actions .btn-primary:hover {
+    background-color: #5a0cac; /* Color de fondo en hover */
+}
+
+.form-actions .lblMensaje {
+    margin-top: 10px; /* Espacio arriba del mensaje para separarlo del botón */
+    text-align: center; /* Centra el texto del mensaje */
+    color: red; /* Color del texto del mensaje de error */
+    font-size: 16px; /* Tamaño de la fuente del mensaje */
 }
 /* Estilos del submenú */
 .submenu {
@@ -346,28 +312,72 @@ footer {
     visibility: visible;
 }
 
-
-/* Contenedor del logo y el título */
-.elementor-jet-logo {
-    text-align: center; /* Centra el contenido dentro del contenedor */
-}
-/* Imagen del logo */
-.jet-logo__img {
-    display: block; /* Asegura que el logo se muestre como un bloque */
-    margin: 0 auto; /* Centra el logo horizontalmente */
-}
-
-/* Título debajo del logo */
-.jet-logo__title {
-    font-size: 14px; /* Tamaño del texto del título */
-	font-weight: 500; /* Negrita moderada */
-    color: #333; /* Color del texto del título */
-    margin-top: 10px; /* Espacio entre el logo y el título */
-    text-transform: uppercase; /* Opcional: convierte el texto a mayúsculas */
-	 margin-left: -100px;
+/* Estilo para el mensaje de éxito */
+.mensaje-exito {
+    color: #7154FC;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #7154FC;
+    border-radius: 5px;
+    background-color: #e6f9e6;
+    text-align: center;
+    margin-top: 10px;
+	   margin-left: auto;
+    margin-right: auto;
 }
 
+/* Estilo para el mensaje de error */
+.mensaje-error {
+    color: red;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+    background-color: #f9e6e6;
+    text-align: center;
+    margin-top: 10px;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+    gap: 20px; /* Espacio entre columnas y filas */
+}
 
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px; /* Espacio entre botones */
+}
+
+/* Estilos adicionales para mejorar el diseño */
+.asp-control {
+    display: block;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.btn-submit, .btn-submit2 {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-submit {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+}
+
+.btn-submit2 {
+    background-color: #f44336; /* Rojo */
+    color: white;
+}
 </style>
 
 
@@ -578,154 +588,49 @@ footer {
 			</div>
 		</div>
 			</header><!-- #masthead -->
-
-
-
-	
-
 <form id="form1" runat="server">
     <div class="main-content3">
-        <div class="content-box-container">
-            <div class="content-box">
-                <h2>Registro de Puestos</h2>
-                <asp:GridView ID="gridPuestos" runat="server" AutoGenerateColumns="False" CssClass="gridview-style">
-                    <Columns>
-                        <asp:BoundField DataField="PuestoID" HeaderText="ID Puesto" ItemStyle-HorizontalAlign="Center" Visible="False" />
-                        <asp:BoundField DataField="NombrePuesto" HeaderText="Nombre Puesto" ItemStyle-HorizontalAlign="Center" />
-                        <asp:BoundField DataField="Departamento" HeaderText="Departamento" ItemStyle-HorizontalAlign="Center" />
-                        <asp:BoundField DataField="Descripcion" HeaderText="Descripción" ItemStyle-HorizontalAlign="Center" />
-                    </Columns>
-                </asp:GridView>
-                
-                <!-- Botones fuera del cuadro blanco -->
-                <div class="link-buttons-container">
-                    <a href="#modalNuevo" class="link-button" onclick="openModal('modalNuevo')">Nuevo</a>
-                    <a href="#modalEliminar" class="link-button-eliminar" onclick="openModal('modalEliminar')">Eliminar</a>
-                    <a href="#modalEditar" class="link-button-editar" onclick="openModal('modalEditar')">Editar</a>
+        <div class="image-box">
+            <img src="img/imgM.png" alt="Imagen de Ejemplo" />
+        </div>
+        <div class="content-box">
+            <h2>Aprobación de Vacaciones</h2>
+            <div class="small-title">Solicitud de</div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="Empleado">Nombre:</label>
+                    <asp:Label ID="lblNombreCompleto" runat="server" CssClass="asp-control" />
+                </div>
+                <div class="form-group">
+                    <label for="Apellido">Apellido:</label>
+                    <asp:Label ID="lblApellido" runat="server" CssClass="asp-control" />
+                </div>
+                <div class="form-group">
+                    <label for="Cedula">Cédula:</label>
+                    <asp:Label ID="lblCedula" runat="server" CssClass="asp-control" />
+                </div>
+                <div class="form-group">
+                      <label for="fechaInicio">Fecha de Inicio:</label>
+                  <asp:Label ID="lblFechaInicio" runat="server" CssClass="asp-control" />
+                </div>
+                <div class="form-group">
+                     <label for="fechaFin">Fecha de Fin:</label>
+                  <asp:Label ID="lblFechaFin" runat="server" CssClass="asp-control" />
                 </div>
             </div>
+            <br />
+            <div class="form-actions">
+                <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Aprobar" OnClick="btnSubmit_Click" />
+                <asp:Button ID="btnSubmit2" runat="server" CssClass="btn-submit2" Text="Denegar" OnClick="btnSubmit2_Click" />
+            </div>
+            <br />
+            <div class="form-group">
+                <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" />
+            </div>
         </div>
     </div>
+</form>
 
-    <!-- Modal Nuevo -->
-    <div id="modalNuevo" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modalNuevo')">&times;</span>
-            <h2>Nuevo Puesto</h2>
-            <div class="form-group">
-                <label for="nombrePuesto">Nombre del Puesto:</label>
-                <asp:TextBox ID="txtNombrePuesto" runat="server" CssClass="search-box" placeholder="Nombre del Puesto" MaxLength="100" />
-            </div>
-            <div class="form-group">
-                <label for="departamento">Departamento:</label>
-                <asp:TextBox ID="txtDepartamento" runat="server" CssClass="search-box" placeholder="Departamento" MaxLength="100" />
-            </div>
-            <div class="form-group">
-                <label for="descripcion">Descripción:</label>
-                <asp:TextBox ID="txtDescripcion" runat="server" CssClass="search-box" placeholder="Descripción" MaxLength="255" />
-            </div>
-           <asp:Button 
-    ID="btnGuardar" 
-    runat="server" 
-    Text="Guardar" 
-    OnClick="btnGuardar_Click" 
-    Style="background-color: #7154FC; 
-           color: #fff; 
-           border: none; 
-           border-radius: 20px; 
-           padding: 5px 20px; 
-           font-size: 16px; 
-           cursor: pointer; 
-           transition: background-color 0.3s ease;" 
-    OnMouseOver="this.style.backgroundColor='#7154FC';" 
-    OnMouseOut="this.style.backgroundColor='#7154FC';" />
-            <asp:Label ID="lblMensaje" runat="server" Text="" />
-        </div>
-    </div>
-
-    <!-- Modal Eliminar -->
-    <div id="modalEliminar" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modalEliminar')">&times;</span>
-            <h2>Eliminar Puesto</h2>
-            <div class="form-group">
-                <label for="nombrePuestoEliminar">Nombre del Puesto:</label>
-                <asp:TextBox ID="txtNombrePuestoEliminar" runat="server" CssClass="search-box" placeholder="Nombre del Puesto" MaxLength="100" />
-            </div>
-            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn-buscar" OnClick="btnEliminar_Click" Style="background-color: #7154FC; 
-       color: #fff; 
-       border: none; 
-       border-radius: 20px; 
-       padding: 5px 20px; 
-       font-size: 16px; 
-       cursor: pointer; 
-       transition: background-color 0.3s ease;" 
-OnMouseOver="this.style.backgroundColor='#7154FC';" 
-OnMouseOut="this.style.backgroundColor='#7154FC';" />
-        </div>
-    </div>
-
-    <!-- Modal Editar -->
-    <div id="modalEditar" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modalEditar')">&times;</span>
-            <h2>Editar Puesto</h2>
-            <div class="form-group">
-                <label for="nombrePuestoActual">Nombre Actual del Puesto:</label>
-                <asp:TextBox ID="txtNombrePuestoActual" runat="server" CssClass="search-box" placeholder="Nombre Actual" MaxLength="100" />
-            </div>
-            <div class="form-group">
-                <label for="nuevoNombrePuesto">Nuevo Nombre del Puesto:</label>
-                <asp:TextBox ID="txtNuevoNombrePuesto" runat="server" CssClass="search-box" placeholder="Nuevo Nombre" MaxLength="100" />
-            </div>
-            <div class="form-group">
-                <label for="nuevaDescripcion">Nueva Descripción:</label>
-                <asp:TextBox ID="txtNuevaDescripcion" runat="server" CssClass="search-box" placeholder="Nueva Descripción" MaxLength="255" />
-            </div>
-            <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" CssClass="btn-buscar" OnClick="btnActualizar_Click" Style="background-color: #7154FC; 
-       color: #fff; 
-       border: none; 
-       border-radius: 20px; 
-       padding: 5px 20px; 
-       font-size: 16px; 
-       cursor: pointer; 
-       transition: background-color 0.3s ease;" 
-OnMouseOver="this.style.backgroundColor='#7154FC';" 
-OnMouseOut="this.style.backgroundColor='#7154FC';" />
-        </div>
-    </div>
-
-  <script>
-      function openModal(modalId) {
-          document.getElementById(modalId).style.display = "block";
-      }
-
-      function closeModal(modalId) {
-          document.getElementById(modalId).style.display = "none";
-      }
-
-      window.onclick = function (event) {
-          if (event.target.classList.contains('modal')) {
-              closeModal(event.target.id);
-          }
-      }
-
-      function saveNewDepartment() {
-          // Implementa la lógica para guardar el nuevo departamento
-          closeModal('modalNuevo');
-      }
-
-      function deleteDepartment() {
-          // Implementa la lógica para eliminar el departamento
-          closeModal('modalEliminar');
-      }
-
-      function editDepartment() {
-          // Implementa la lógica para editar el departamento
-          closeModal('modalEditar');
-      }
-  </script>
-    </form>
   <!-- Círculo Inferior Izquierdo -->
   <div class="bottom-circle-container">
       <div class="bottom-circle"></div>
@@ -841,7 +746,6 @@ OnMouseOut="this.style.backgroundColor='#7154FC';" />
 		</div>
 			</footer><!-- #colophon -->
 
-
 </div><!-- #page -->
 
 <script type='text/javascript'>
@@ -929,3 +833,4 @@ OnMouseOut="this.style.backgroundColor='#7154FC';" />
 
 <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-P9FT69');</script><!-- End Google Tag Manager --></body>
 </html>
+

@@ -9,10 +9,11 @@ using System.Web.UI.WebControls;
 
 namespace proyectoC2
 {
-	public partial class pg_cin : System.Web.UI.Page
+	public partial class WebForm12222234 : System.Web.UI.Page
 	{
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!IsPostBack)
             {
                 // Recuperar los valores desde la URL
@@ -21,17 +22,13 @@ namespace proyectoC2
                 string cedulaEmpleado = Request.QueryString["CedulaEmpleado"];
                 string fechaInicio = Request.QueryString["FechaInicio"];
                 string fechaFin = Request.QueryString["FechaFin"];
-                string tipoIncapacidad = Request.QueryString["TipoIncapacidad"];
-                string descripcion = Request.QueryString["Descripcion"];
 
                 // Verificar si los parámetros son válidos
                 if (!string.IsNullOrEmpty(nombreEmpleado) &&
                     !string.IsNullOrEmpty(apellidoEmpleado) &&
                     !string.IsNullOrEmpty(cedulaEmpleado) &&
                     !string.IsNullOrEmpty(fechaInicio) &&
-                    !string.IsNullOrEmpty(fechaFin) &&
-                    !string.IsNullOrEmpty(tipoIncapacidad) &&
-                    !string.IsNullOrEmpty(descripcion))
+                    !string.IsNullOrEmpty(fechaFin))
                 {
                     // Cargar los datos en los controles
                     lblNombreCompleto.Text = $"{nombreEmpleado}";
@@ -39,8 +36,6 @@ namespace proyectoC2
                     lblCedula.Text = cedulaEmpleado;
                     lblFechaInicio.Text = fechaInicio;
                     lblFechaFin.Text = fechaFin;
-                    lblTipoIncapacidad.Text = tipoIncapacidad;
-                    lblDescripcion.Text = descripcion;
                 }
                 else
                 {
@@ -65,15 +60,15 @@ namespace proyectoC2
         {
             try
             {
-                string descripcion = lblDescripcion.Text;
+                string fechainicio = lblFechaInicio.Text;
                 string connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
-                string query = "UPDATE sistemaGp8.Incapacidades SET EstadoSolicitud = @EstadoSolicitud WHERE Descripcion = @Descripcion";
+                string query = "UPDATE sistemaGp8.SolicitudVacaciones SET EstadoSolicitud = @EstadoSolicitud WHERE FechaInicio = @FechaInicio ";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@EstadoSolicitud", nuevoEstadoSolicitud);
-                    command.Parameters.AddWithValue("@Descripcion", descripcion);
+                    command.Parameters.AddWithValue("@FechaInicio", fechainicio);
 
                     connection.Open();
                     int rowsAffected = command.ExecuteNonQuery();
@@ -81,21 +76,22 @@ namespace proyectoC2
 
                     if (rowsAffected > 0)
                     {
-                        lblMensaje.Text = "Soliciud gestionada con éxito";
+                        lblMensaje.Text = "Solicitud gestionada con éxito";
                         lblMensaje.CssClass = "mensaje-exito";
                     }
                     else
                     {
-                        lblMensaje.Text = "Error al gestionar la soliciud";
+                        lblMensaje.Text = "Error al gestionar la solicitud";
                         lblMensaje.CssClass = "mensaje-error";
                     }
                 }
             }
             catch (Exception ex)
             {
-                lblMensaje.Text = "Error al gestionar la justificación: " + ex.Message;
+                lblMensaje.Text = "Error al gestionar la solicitud: " + ex.Message;
                 lblMensaje.CssClass = "mensaje-error";
             }
         }
+
     }
 }

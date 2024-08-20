@@ -380,7 +380,7 @@ label {
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-logo jet-blocks"><div class="jet-logo jet-logo-type-image jet-logo-display-block">
 <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="jet-logo__link"><img src="img/logo2.png" class="jet-logo__img" alt="Imperion" width="128" height="44" srcset="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/logo_retina.png 2x"></a></div>
-<p class="jet-logo__title">Empleado</p>
+<p class="jet-logo__title">Supervisora</p>
 </div>		</div>
 				</div>
 						</div>
@@ -400,9 +400,9 @@ label {
         <span class="jet-nav-link-text">Vacaciones</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="PG_RegistroDiasFestivo.aspx">Dias Festivos</a></li>
-        <li class="submenu-item"><a href="PG_VacacionesColectivas.aspx">Vacaciones Colectivas</a></li>
+        <li class="submenu-item"><a href="pg_conrolvaca.aspx">Control de vacaciones</a></li>
+        <li class="submenu-item"><a href="pg_registrodiasfestivo.aspx">Dias Festivos</a></li>
+        <li class="submenu-item"><a href="pg_vacacionescolectivas.aspx">Vacaciones Colectivas</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
@@ -419,25 +419,23 @@ label {
 </div>
 <div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
     <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
-        <span class="jet-nav-link-text">Inconsistencias</span>
+        <span class="jet-nav-link-text">Incapacidades</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
-        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
+        <li class="submenu-item"><a href="pg_controlincapacidades.aspx">Control de la Incapacidad</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
 <div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
     <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
-        <span class="jet-nav-link-text">Puestos    Rebajos</span>
+        <span class="jet-nav-link-text">Puestos</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Departamentos.aspx">Departamentos</a></li>
-        <li class="submenu-item"><a href="RegistroTurnos.aspx">Turnos</a></li>
-        <li class="submenu-item"><a href="RegistroPuestos.aspx">Puestos</a></li>
-        <li class="submenu-item"><a href="HistoricoPuestos.aspx">Historicos de Puestos</a></li>
-<li class="submenu-item"><a href="HistoricoEmpPuestos.aspx">Modulo del empleado</a></li>
+        <li class="submenu-item"><a href="pg_departamentos.aspx">Departamentos</a></li>
+        <li class="submenu-item"><a href="registroturnos.aspx">Turnos</a></li>
+        <li class="submenu-item"><a href="registropuestos.aspx">Puestos</a></li>
+              <li class="submenu-item"><a href="historicopuestos.aspx">Historicos de Puestos</a></li>
+<li class="submenu-item"><a href="modulodepartamento.aspx">Modulo del empleado por departameno</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>

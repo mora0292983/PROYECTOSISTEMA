@@ -353,15 +353,16 @@ footer {
 				<div class="elementor-widget-container">
 			<div class="jet-nav-wrap jet-mobile-menu jet-mobile-menu--right-side" data-mobile-layout="right-side">
 <div class="jet-nav__mobile-trigger jet-nav-mobile-trigger-align-right">
-	<span class="jet-nav__mobile-trigger-open jet-blocks-icon"><i aria-hidden="true" class="fas fa-bars"></i></span>	<span class="jet-nav__mobile-trigger-close jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></span></div><div class="menu-main-container"><div class="jet-nav jet-nav--horizontal"><div class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item jet-nav__item-177 jet-nav__item"><a href="pg_panelEmpleado.aspx" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Home</span></a></div>
+		<span class="jet-nav__mobile-trigger-open jet-blocks-icon"><i aria-hidden="true" class="fas fa-bars"></i></span>	<span class="jet-nav__mobile-trigger-close jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></span></div><div class="menu-main-container"><div class="jet-nav jet-nav--horizontal"><div class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item jet-nav__item-177 jet-nav__item"><a href="pg_panelsupervisora.aspx" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Home</span></a></div>
+
 <div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
     <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
         <span class="jet-nav-link-text">Vacaciones</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="PG_RegistroDiasFestivo.aspx">Dias Festivos</a></li>
-        <li class="submenu-item"><a href="PG_VacacionesColectivas.aspx">Vacaciones Colectivas</a></li>
+        <li class="submenu-item"><a href="pg_conrolvaca.aspx">Control de vacaciones</a></li>
+        <li class="submenu-item"><a href="pg_registrodiasfestivo.aspx">Dias Festivos</a></li>
+        <li class="submenu-item"><a href="pg_vacacionescolectivas.aspx">Vacaciones Colectivas</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
@@ -378,25 +379,23 @@ footer {
 </div>
 <div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
     <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
-        <span class="jet-nav-link-text">Inconsistencias</span>
+        <span class="jet-nav-link-text">Incapacidades</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
-        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
+        <li class="submenu-item"><a href="pg_controlincapacidades.aspx">Control de la Incapacidad</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
 <div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
     <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
-        <span class="jet-nav-link-text">Puestos    Rebajos</span>
+        <span class="jet-nav-link-text">Puestos</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Departamentos.aspx">Departamentos</a></li>
-        <li class="submenu-item"><a href="RegistroTurnos.aspx">Turnos</a></li>
-        <li class="submenu-item"><a href="RegistroPuestos.aspx">Puestos</a></li>
-        <li class="submenu-item"><a href="HistoricoPuestos.aspx">Historicos de Puestos</a></li>
-<li class="submenu-item"><a href="HistoricoEmpPuestos.aspx">Modulo del empleado</a></li>
+        <li class="submenu-item"><a href="pg_departamentos.aspx">Departamentos</a></li>
+        <li class="submenu-item"><a href="registroturnos.aspx">Turnos</a></li>
+        <li class="submenu-item"><a href="registropuestos.aspx">Puestos</a></li>
+              <li class="submenu-item"><a href="historicopuestos.aspx">Historicos de Puestos</a></li>
+<li class="submenu-item"><a href="modulodepartamento.aspx">Modulo del empleado por departameno</a></li>
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
@@ -734,4 +733,5 @@ footer {
 
 <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-P9FT69');</script><!-- End Google Tag Manager --></body>
 </html>
+
 

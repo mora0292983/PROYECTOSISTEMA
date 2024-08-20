@@ -7,13 +7,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net.Mail;
+using System.Net;
 
 namespace proyectoC2
 {
 	public partial class PG_RegistroIncapacidad : System.Web.UI.Page
 	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
+        protected void Page_Load(object sender, EventArgs e)
+        {
             if (!IsPostBack)
             {
                 LoadDropDownLists();
@@ -120,8 +122,10 @@ namespace proyectoC2
                         lblMensaje.Text = mensaje;
                         lblMensaje.CssClass = "mensaje-exito"; // Añadir una clase CSS para estilizar el mensaje
 
-                        // Limpiar los campos
+                        // Enviar correo electrónico
+                        EnviarCorreo("karina.mora.cortes@cuc.cr", "Nueva Solicitud de incapacidad", "Solicitud de incapacidad De kevin\tPérez\tCedula 307640983");
 
+                        // Limpiar los campos
                         fechaInicio.Text = "";
                         fechaFin.Text = "";
                         descripcion.Text = "";
@@ -131,6 +135,41 @@ namespace proyectoC2
             catch (Exception ex)
             {
                 lblMensaje.Text = "Error al registrar la incapacidad. Por favor, intenta de nuevo. Detalles: " + ex.Message;
+                lblMensaje.CssClass = "mensaje-error"; // Añadir una clase CSS para estilizar el mensaje
+            }
+        }
+
+        // Método para enviar correo electrónico
+        private void EnviarCorreo(string destinatario, string asunto, string cuerpo)
+        {
+            try
+            {
+                // Configurar el cliente SMTP para Gmail
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com")
+                {
+                    Port = 587, // Puerto para TLS
+                    Credentials = new NetworkCredential("morakarina708@gmail.com", "rldrddlgrblmhbee"), // Reemplaza con tu correo y contraseña de Gmail
+                    EnableSsl = true, // Habilitar SSL
+                };
+
+                // Crear el mensaje de correo
+                MailMessage mailMessage = new MailMessage
+                {
+                    From = new MailAddress("morakarina708@gmail.com"), // Reemplaza con tu correo
+                    Subject = asunto,
+                    Body = cuerpo,
+                    IsBodyHtml = true,
+                };
+
+                mailMessage.To.Add(destinatario);
+
+                // Enviar el correo
+                smtpClient.Send(mailMessage);
+            }
+            catch (Exception ex)
+            {
+                // Manejar el error de envío de correo
+                lblMensaje.Text = "Error al enviar el correo: " + ex.Message;
                 lblMensaje.CssClass = "mensaje-error"; // Añadir una clase CSS para estilizar el mensaje
             }
         }
