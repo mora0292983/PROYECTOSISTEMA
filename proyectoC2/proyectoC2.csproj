@@ -125,11 +125,13 @@
     <Content Include="evidenciaHorasExtra.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="gestionActividades.aspx" />
+    <Content Include="gestionHorasExtra.aspx" />
     <Content Include="gestionInconsistencias.aspx" />
     <Content Include="Global.asax" />
     <Content Include="historialActividadesEmpleado.aspx" />
     <Content Include="historialActividadesSupervisor.aspx" />
     <Content Include="historialHorasExtraEmpleado.aspx" />
+    <Content Include="historialHorasExtraSupervisor.aspx" />
     <Content Include="historialInconsistenciasEmpleado.aspx" />
     <Content Include="historialInconsistenciasSupervisor.aspx" />
     <Content Include="modulodepartamento.aspx" />
@@ -199,6 +201,7 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="PaginaMaestra.Master" />
+    <Content Include="VerPDF3.aspx" />
     <Content Include="WebForm10977.aspx" />
     <Content Include="WebForm12222234.aspx" />
     <Content Include="WebForm1666.aspx" />
@@ -278,6 +281,13 @@
     <Compile Include="gestionActividades.aspx.designer.cs">
       <DependentUpon>gestionActividades.aspx</DependentUpon>
     </Compile>
+    <Compile Include="gestionHorasExtra.aspx.cs">
+      <DependentUpon>gestionHorasExtra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gestionHorasExtra.aspx.designer.cs">
+      <DependentUpon>gestionHorasExtra.aspx</DependentUpon>
+    </Compile>
     <Compile Include="gestionInconsistencias.aspx.cs">
       <DependentUpon>gestionInconsistencias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -308,6 +318,13 @@
     </Compile>
     <Compile Include="historialHorasExtraEmpleado.aspx.designer.cs">
       <DependentUpon>historialHorasExtraEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="historialHorasExtraSupervisor.aspx.cs">
+      <DependentUpon>historialHorasExtraSupervisor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="historialHorasExtraSupervisor.aspx.designer.cs">
+      <DependentUpon>historialHorasExtraSupervisor.aspx</DependentUpon>
     </Compile>
     <Compile Include="historialInconsistenciasEmpleado.aspx.cs">
       <DependentUpon>historialInconsistenciasEmpleado.aspx</DependentUpon>
@@ -540,6 +557,13 @@
     </Compile>
     <Compile Include="VerPDF2.aspx.designer.cs">
       <DependentUpon>VerPDF2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerPDF3.aspx.cs">
+      <DependentUpon>VerPDF3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerPDF3.aspx.designer.cs">
+      <DependentUpon>VerPDF3.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

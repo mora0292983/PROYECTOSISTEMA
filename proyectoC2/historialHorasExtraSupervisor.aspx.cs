@@ -79,7 +79,5 @@ namespace proyectoC2
                 }
             }
         }
-
-
     }
 }

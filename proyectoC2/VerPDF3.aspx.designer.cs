@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace proyectoC2
-{
-
-
-    public partial class VerPDF3
-    {
-
+namespace proyectoC2 {
+    
+    
+    public partial class VerPDF3 {
+        
         /// <summary>
         /// control form1.
         /// </summary>
