@@ -461,7 +461,7 @@ form .btn-submit2:hover {
         <span class="jet-nav-link-text">Vacaciones</span>
     </a>
     <ul class="submenu">
-        <li class="submenu-item"><a href="pg_conrolvaca.aspx">Control de vacaciones</a></li>
+        <li class="submenu-item"><a href="pg_controlvacaciones.aspx">Control de vacaciones</a></li>
         <li class="submenu-item"><a href="pg_registrodiasfestivo.aspx">Dias Festivos</a></li>
         <li class="submenu-item"><a href="pg_vacacionescolectivas.aspx">Vacaciones Colectivas</a></li>
         <!-- Agrega más elementos del submenú aquí -->
