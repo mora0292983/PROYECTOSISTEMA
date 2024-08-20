@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="agregaDepartamento.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -122,6 +123,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="departamentoCRUD.aspx" />
     <Content Include="evidenciaHorasExtra.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="gestionActividades.aspx" />
@@ -148,6 +150,7 @@
     <Content Include="icons\registro.png" />
     <Content Include="icons\reposicion.png" />
     <Content Include="icons\vacaciones.png" />
+    <Content Include="MenuCRUDS.aspx" />
     <Content Include="menuEmpleado.aspx" />
     <Content Include="menuSupervisor.aspx" />
     <Content Include="modulodepartamento.aspx" />
@@ -260,6 +263,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="agregaDepartamento.aspx.cs">
+      <DependentUpon>agregaDepartamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="agregaDepartamento.aspx.designer.cs">
+      <DependentUpon>agregaDepartamento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -282,6 +292,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="departamentoCRUD.aspx.cs">
+      <DependentUpon>departamentoCRUD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="departamentoCRUD.aspx.designer.cs">
+      <DependentUpon>departamentoCRUD.aspx</DependentUpon>
     </Compile>
     <Compile Include="evidenciaHorasExtra.aspx.cs">
       <DependentUpon>evidenciaHorasExtra.aspx</DependentUpon>
@@ -355,6 +372,13 @@
     </Compile>
     <Compile Include="historialInconsistenciasSupervisor.aspx.designer.cs">
       <DependentUpon>historialInconsistenciasSupervisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuCRUDS.aspx.cs">
+      <DependentUpon>MenuCRUDS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuCRUDS.aspx.designer.cs">
+      <DependentUpon>MenuCRUDS.aspx</DependentUpon>
     </Compile>
     <Compile Include="menuEmpleado.aspx.cs">
       <DependentUpon>menuEmpleado.aspx</DependentUpon>
