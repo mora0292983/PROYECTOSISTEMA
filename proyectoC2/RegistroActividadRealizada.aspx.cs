@@ -17,6 +17,8 @@ namespace proyectoC2
         {
             if (!IsPostBack)
             {
+                // Establecer la fecha actual en el TextBox de fecha en el formato dd-MM-yyyy
+                fecha.Text = DateTime.Now.ToString("dd-MM-yyyy");
 
                 // Cargar los tipos de actividad desde la base de datos
                 CargarTiposDeActividad();
@@ -66,10 +68,39 @@ namespace proyectoC2
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             // Verificar que todos los campos obligatorios estén completos
-            if (string.IsNullOrEmpty(fecha.Text) || ddlTipoActividad.SelectedIndex == -1 ||
-                ddlHoraInicio.SelectedIndex == -1 || ddlHoraFin.SelectedIndex == -1 || !pdfUpload.HasFile)
+            if (string.IsNullOrEmpty(fecha.Text) || ddlTipoActividad.SelectedIndex == 0 ||
+                ddlHoraInicio.SelectedIndex == 0 || ddlHoraFin.SelectedIndex == 0 || !pdfUpload.HasFile)
             {
                 lblMensaje.Text = "Debe completar todos los campos y adjuntar un archivo.";
+                lblMensaje.CssClass = "mensaje";
+                return;
+            }
+
+            // Validar que la fecha esté en el formato correcto
+            DateTime fechaActividad;
+            if (!DateTime.TryParseExact(fecha.Text, "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None, out fechaActividad))
+            {
+                lblMensaje.Text = "Formato de fecha inválido. Utilice dd-MM-yyyy.";
+                lblMensaje.CssClass = "mensaje";
+                return;
+            }
+
+            // Validar que la hora de inicio y fin estén dentro del rango permitido (14:00 - 22:00)
+            DateTime horaInicio = DateTime.Parse(ddlHoraInicio.SelectedValue);
+            DateTime horaFin = DateTime.Parse(ddlHoraFin.SelectedValue);
+
+            if (horaInicio.Hour < 14 || horaInicio.Hour > 22 || (horaInicio.Hour == 22 && horaInicio.Minute > 0) ||
+                horaFin.Hour < 14 || horaFin.Hour > 22 || (horaFin.Hour == 22 && horaFin.Minute > 0))
+            {
+                lblMensaje.Text = "Las horas de inicio y fin deben estar dentro del horario establecido.";
+                lblMensaje.CssClass = "mensaje";
+                return;
+            }
+
+            // Validar que la hora de inicio no sea posterior a la hora de fin y que no sean iguales
+            if (horaInicio >= horaFin)
+            {
+                lblMensaje.Text = "La hora de inicio debe ser anterior a la hora de fin, y no pueden ser iguales.";
                 lblMensaje.CssClass = "mensaje";
                 return;
             }
@@ -77,10 +108,7 @@ namespace proyectoC2
             try
             {
                 // Obtener los datos del formulario
-                DateTime fechaActividad = DateTime.Parse(fecha.Text);
                 int tipoActividadID = int.Parse(ddlTipoActividad.SelectedValue);
-                string horaInicio = ddlHoraInicio.SelectedValue;
-                string horaFin = ddlHoraFin.SelectedValue;
 
                 // Leer el archivo PDF
                 byte[] fileBytes;
@@ -102,8 +130,8 @@ namespace proyectoC2
                         command.Parameters.AddWithValue("@EmpleadoID", 19);
                         command.Parameters.AddWithValue("@TipoActividadID", tipoActividadID);
                         command.Parameters.AddWithValue("@Fecha", fechaActividad);
-                        command.Parameters.AddWithValue("@HoraInicio", horaInicio);
-                        command.Parameters.AddWithValue("@HoraFin", horaFin);
+                        command.Parameters.AddWithValue("@HoraInicio", horaInicio.ToString("HH:mm"));
+                        command.Parameters.AddWithValue("@HoraFin", horaFin.ToString("HH:mm"));
                         command.Parameters.AddWithValue("@Estado", "Pendiente");
                         command.Parameters.AddWithValue("@EstadoSolicitud", "Sin Gestionar");
                         command.Parameters.AddWithValue("@Rendimiento", "Pendiente");
@@ -134,6 +162,7 @@ namespace proyectoC2
                 lblMensaje.CssClass = "mensaje";
             }
         }
+
 
         private void EnviarCorreoActividad()
         {

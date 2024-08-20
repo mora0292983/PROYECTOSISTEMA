@@ -530,7 +530,7 @@ footer {
             <div class="form-inline">
                 <div class="form-group">
                     <label for="fecha">Fecha:</label>
-                    <asp:TextBox ID="fecha" runat="server" CssClass="asp-control" TextMode="Date" />
+                    <asp:TextBox ID="fecha" runat="server" CssClass="asp-control" ReadOnly="true" />
                 </div>
                 <div class="form-group">
                     <label for="tipoActividad">Tipo de Actividad:</label>
