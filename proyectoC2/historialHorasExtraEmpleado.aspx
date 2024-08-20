@@ -489,7 +489,7 @@ footer {
             <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" CssClass="gridview" OnRowDataBound="gridView_RowDataBound" >
                 <Columns>
                     <asp:BoundField DataField="HoraExtraID" HeaderText="ID Solicitud" />
-                    <asp:BoundField DataField="Fecha" HeaderText="Fecha" DataFormatString="{0:yyyy-MM-dd}" HtmlEncode="false" />
+                    <asp:BoundField DataField="Fecha" HeaderText="Fecha" DataFormatString="{0:dd-MM-yyyy}" HtmlEncode="false" />
                     <asp:BoundField DataField="Estado" HeaderText="Estado Solicitud" />
                     <asp:BoundField DataField="EstadoJefatura" HeaderText="Estado en Jefatura" />
                     <asp:TemplateField HeaderText="Acción">

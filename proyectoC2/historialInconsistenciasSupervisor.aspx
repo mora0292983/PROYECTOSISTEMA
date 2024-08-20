@@ -516,7 +516,7 @@ footer {
                 <Columns>
                     <asp:BoundField DataField="IDInconsistencia" HeaderText="ID Inconsistencia" />
                     <asp:BoundField DataField="TipoInconsistencia" HeaderText="Tipo Inconsistencia" />
-                    <asp:BoundField DataField="Fecha" HeaderText="Fecha" DataFormatString="{0:yyyy-MM-dd}" HtmlEncode="false" />
+                    <asp:BoundField DataField="Fecha" HeaderText="Fecha" DataFormatString="{0:dd-MM-yyyy}" HtmlEncode="false" />
                     <asp:BoundField DataField="IDEmpleado" HeaderText="ID Empleado" />
                     <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
                     <asp:BoundField DataField="Estado" HeaderText="Estado" />

@@ -516,7 +516,7 @@ footer {
                 <Columns>
                     <asp:BoundField DataField="ActividadID" HeaderText="ID Act." />
                     <asp:BoundField DataField="EmpleadoID" HeaderText="ID Empleado" />
-                    <asp:BoundField DataField="Fecha" HeaderText="Fecha" DataFormatString="{0:yyyy-MM-dd}" HtmlEncode="false" />
+                    <asp:BoundField DataField="Fecha" HeaderText="Fecha" DataFormatString="{0:dd-MM-yyyy}" HtmlEncode="false" />
                     <asp:BoundField DataField="NombreCompletoEmpleado" HeaderText="Nombre" />
                     <asp:BoundField DataField="Rendimiento" HeaderText="Rendimiento" />
                     <asp:BoundField DataField="EstadoSolicitud" HeaderText="Estado" />
