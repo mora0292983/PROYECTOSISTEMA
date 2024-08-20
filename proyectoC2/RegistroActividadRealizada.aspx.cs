@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -115,6 +116,9 @@ namespace proyectoC2
                         {
                             lblMensaje.Text = "Actividad registrada con éxito.";
                             lblMensaje.CssClass = "mensaje-exito";
+
+                            // Enviar correo de notificación
+                            EnviarCorreoActividad();
                         }
                         else
                         {
@@ -131,6 +135,35 @@ namespace proyectoC2
             }
         }
 
+        private void EnviarCorreoActividad()
+        {
+            try
+            {
+                MailMessage correo = new MailMessage();
+                correo.From = new MailAddress("gestionprositiosweb@gmail.com");
+                correo.To.Add("cesar.gomez.calderon@cuc.cr");
+                correo.Subject = "Notificación de Actividad en el Sistema de Control Empresarial";
+                correo.Body = $@"Hola,
 
+Se ha registrado una nueva actividad realizada por el empleado con ID: '19'.
+
+Saludos cordiales,
+
+Atentamente,
+Gestión Pro";
+
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                smtp.Port = 587;
+                smtp.Credentials = new System.Net.NetworkCredential("gestionprositiosweb@gmail.com", "zpmkjyrxkdrgprfm");
+                smtp.EnableSsl = true;
+                smtp.Send(correo);
+            }
+            catch (Exception ex)
+            {
+                lblMensaje.CssClass = "mensaje-error";
+                lblMensaje.Text = "Error al enviar la notificación por correo: " + ex.Message;
+            }
+        }
     }
 }

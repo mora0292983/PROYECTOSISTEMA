@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -79,6 +80,9 @@ namespace proyectoC2
                     {
                         lblMensaje.Text = "Justificación gestionada con éxito";
                         lblMensaje.CssClass = "mensaje-exito";
+
+                        // Enviar el correo de notificación
+                        EnviarCorreoInconsistencia(inconsistenciaID, nuevoEstado);
                     }
                     else
                     {
@@ -91,6 +95,37 @@ namespace proyectoC2
             {
                 lblMensaje.Text = "Error al gestionar la justificación: " + ex.Message;
                 lblMensaje.CssClass = "mensaje-error";
+            }
+        }
+
+        private void EnviarCorreoInconsistencia(int inconsistenciaID, string nuevoEstado)
+        {
+            try
+            {
+                MailMessage correo = new MailMessage();
+                correo.From = new MailAddress("gestionprositiosweb@gmail.com");
+                correo.To.Add("cesar.gomez.calderon@cuc.cr");
+                correo.Subject = "Notificación de Inconsistencia en el Sistema de Control Empresarial";
+                correo.Body = $@"Hola,
+
+La justificación de inconsistencia con ID: '{inconsistenciaID}' ha sido '{nuevoEstado}'.
+
+Saludos cordiales,
+
+Atentamente,
+Gestión Pro";
+
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                smtp.Port = 587;
+                smtp.Credentials = new System.Net.NetworkCredential("gestionprositiosweb@gmail.com", "zpmkjyrxkdrgprfm");
+                smtp.EnableSsl = true;
+                smtp.Send(correo);
+            }
+            catch (Exception ex)
+            {
+                lblMensaje.CssClass = "mensaje-error";
+                lblMensaje.Text = "Error al enviar la notificación por correo: " + ex.Message;
             }
         }
 

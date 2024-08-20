@@ -537,7 +537,7 @@ footer {
 
     <div class="main-content3">
         <div class="image-box">
-            <img src="img/empleado.png" alt="Imagen de Ejemplo">
+            <img src="img/empleado.png" alt="Imagen de Ejemplo"/>
         </div>
         <div class="content-box">
             <h2>Justificación de Inconsistencia</h2>

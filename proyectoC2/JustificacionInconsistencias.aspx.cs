@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Data.SqlClient;
 using System.IO;
+using System.Net.Mail;
 using System.Web.UI;
 
 namespace proyectoC2
@@ -84,6 +85,9 @@ namespace proyectoC2
                             {
                                 lblMensaje.Text = "Justificación enviada con éxito";
                                 lblMensaje.CssClass = "mensaje-exito";
+
+                                // Enviar notificación por correo
+                                EnviarCorreoInconsistencia(inconsistenciaID);
                             }
                             else
                             {
@@ -135,6 +139,39 @@ namespace proyectoC2
                 }
             }
         }
+
+        private void EnviarCorreoInconsistencia(int inconsistenciaID)
+        {
+            try
+            {
+                MailMessage correo = new MailMessage();
+                correo.From = new MailAddress("gestionprositiosweb@gmail.com");
+                correo.To.Add("cesar.gomez.calderon@cuc.cr");
+                correo.Subject = "Notificación de Inconsistencia en el Sistema de Control Empresarial";
+                correo.Body = $@"Hola,
+
+La inconsistencia con ID: '{inconsistenciaID}' ha sido justificada por el empleado.
+Apruebe o deniegue la justificación lo antes posible para evitar inconvenientes.
+
+Saludos cordiales,
+
+Atentamente,
+Gestión Pro";
+
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                smtp.Port = 587;
+                smtp.Credentials = new System.Net.NetworkCredential("gestionprositiosweb@gmail.com", "zpmkjyrxkdrgprfm");
+                smtp.EnableSsl = true;
+                smtp.Send(correo);
+            }
+            catch (Exception ex)
+            {
+                lblMensaje.CssClass = "mensaje-error";
+                lblMensaje.Text = "Error al enviar la notificación por correo: " + ex.Message;
+            }
+        }
+
     }
 }
 

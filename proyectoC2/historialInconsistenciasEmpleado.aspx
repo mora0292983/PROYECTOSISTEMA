@@ -273,6 +273,28 @@ footer {
     text-transform: uppercase; /* Opcional: convierte el texto a mayúsculas */
 	 margin-left: -100px;
 }
+
+.btn-submit:disabled {
+    background-color: #909497; /* Color gris para el botón deshabilitado */
+    cursor: not-allowed; /* Cambia el cursor para indicar que el botón está deshabilitado */
+    opacity: 0.6; /* Reduce la opacidad para indicar que está deshabilitado */
+    width: 50%;
+    font-size: 16px;
+}
+
+.btn-submit:disabled:hover {
+    background-color: #909497; /* Mantén el color gris */
+}
+.btn-submit {
+    background-color: #7154FC;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 50%;
+    font-size: 16px;
+}
 </style>
 
 
@@ -506,7 +528,7 @@ footer {
                             <asp:HiddenField ID="HiddenEmpleadoID" runat="server" />
 
                             <!-- Botón Justificar -->
-                            <asp:Button ID="btnJustificar" runat="server" Text="Justificar" CssClass="btn-accion" />
+                            <asp:Button ID="btnJustificar" runat="server" Text="Justificar" CssClass="btn btn-submit" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

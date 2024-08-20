@@ -145,7 +145,7 @@ footer {
  }
 
  .btn-submit2 {
-    background-color: #D5D8DC;
+    background-color: #566573;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -169,17 +169,17 @@ footer {
      background-color: #5a005a;
  }
  .btn-submit2:hover {
-    background-color: #ABB2B9;
+    background-color: #2c3e50;
 }
 
 /* Regla adicional para aumentar la especificidad */
 form .btn-submit2 {
-    background-color: #ABB2B9 !important;
+    background-color: #566573 !important;
     color: white !important;
 }
 
 form .btn-submit2:hover {
-    background-color: #808B96 !important;
+    background-color: #2c3e50 !important;
 }
 
  .image-box {

@@ -145,7 +145,7 @@ footer {
  }
 
  .btn-submit2 {
-    background-color: #D5D8DC;
+    background-color: #566573;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -159,7 +159,7 @@ footer {
      background-color: #5a005a;
  }
  .btn-submit2:hover {
-    background-color: #ABB2B9;
+    background-color: #2c3e50;
 }
 
  .enlace-archivo {
@@ -175,12 +175,12 @@ footer {
 
 /* Regla adicional para aumentar la especificidad */
 form .btn-submit2 {
-    background-color: #ABB2B9 !important;
+    background-color: #566573 !important;
     color: white !important;
 }
 
 form .btn-submit2:hover {
-    background-color: #808B96 !important;
+    background-color: #2c3e50 !important;
 }
 
  .image-box {
@@ -550,7 +550,7 @@ form .btn-submit2:hover {
     <form id="form1" runat="server">
     <div class="main-content3">
         <div class="image-box">
-            <img src="img/jefe1.png" alt="Imagen de Ejemplo">
+            <img src="img/jefe1.png" alt="Imagen de Ejemplo"/>
         </div>
         <div class="content-box">
             <h2>Justificación de Inconsistencia</h2>

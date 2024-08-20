@@ -274,12 +274,26 @@ footer {
 	 margin-left: -100px;
 }
 
-/* Estilo para el botón deshabilitado */
-.btn-disabled {
-    background-color: #d3d3d3; /* Gris claro */
-    border: 1px solid #a9a9a9; /* Gris oscuro */
-    color: #808080; /* Texto gris oscuro */
-    cursor: not-allowed; /* Cursor en forma de cruz */
+.btn-submit:disabled {
+    background-color: #909497; /* Color gris para el botón deshabilitado */
+    cursor: not-allowed; /* Cambia el cursor para indicar que el botón está deshabilitado */
+    opacity: 0.6; /* Reduce la opacidad para indicar que está deshabilitado */
+    width: 100%;
+    font-size: 16px;
+}
+
+.btn-submit:disabled:hover {
+    background-color: #909497; /* Mantén el color gris */
+}
+.btn-submit {
+    background-color: #7154FC;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
 }
 
 </style>
@@ -508,7 +522,7 @@ footer {
                     <asp:TemplateField HeaderText="Acción">
                         <ItemTemplate>
                             <!-- Botón Justificar -->
-                            <asp:Button ID="btnGestionar" runat="server" Text="Gestionar" CssClass="btn-accion" />
+                            <asp:Button ID="btnGestionar" runat="server" Text="Gestionar" CssClass="btn btn-submit" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
