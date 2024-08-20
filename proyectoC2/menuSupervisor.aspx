@@ -568,7 +568,7 @@ footer {
                         <img src="icons/rebajo.png" alt="Rebajos">
                         <span>Rebajos</span>
                     </a>
-                    <a href="gestionDatos.aspx" class="icon-button">
+                    <a href="MenuCRUDS.aspx" class="icon-button">
                         <img src="icons/crud.png" alt="Gestión de datos">
                         <span>Gestión de datos</span>
                     </a>

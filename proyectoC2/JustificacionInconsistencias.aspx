@@ -398,14 +398,13 @@ footer {
 	<span class="jet-nav__mobile-trigger-open jet-blocks-icon"><i aria-hidden="true" class="fas fa-bars"></i></span>	<span class="jet-nav__mobile-trigger-close jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></span></div><div class="menu-main-container"><div class="jet-nav jet-nav--horizontal"><div class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item jet-nav__item-177 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Home</span></a></div>
 <div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
     <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
-        <span class="jet-nav-link-text">Vacaciones</span>
-    </a>
-    <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="PG_RegistroDiasFestivo.aspx">Dias Festivos</a></li>
-        <li class="submenu-item"><a href="PG_VacacionesColectivas.aspx">Vacaciones Colectivas</a></li>
-        <!-- Agrega más elementos del submenú aquí -->
-    </ul>
+                    <span class="jet-nav-link-text">Horas Extra</span>
+</a>
+<ul class="submenu">
+    <li class="submenu-item"><a href="PG_Login.aspx">Login</a></li>
+    <li class="submenu-item"><a href="historialHorasExtraEmpleado.aspx"> Historial</a></li>
+    <!-- Agrega más elementos del submenú aquí -->
+</ul>
 </div>
 <div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
     <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
@@ -427,19 +426,7 @@ footer {
         <!-- Agrega más elementos del submenú aquí -->
     </ul>
 </div>
-<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
-    <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
-        <span class="jet-nav-link-text">Puestos    Rebajos</span>
-    </a>
-    <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Departamentos.aspx">Departamentos</a></li>
-        <li class="submenu-item"><a href="RegistroTurnos.aspx">Turnos</a></li>
-        <li class="submenu-item"><a href="RegistroPuestos.aspx">Puestos</a></li>
-        <li class="submenu-item"><a href="HistoricoPuestos.aspx">Historicos de Puestos</a></li>
-<li class="submenu-item"><a href="HistoricoEmpPuestos.aspx">Modulo del empleado</a></li>
-        <!-- Agrega más elementos del submenú aquí -->
-    </ul>
-</div>
+
 <div class="jet-nav__mobile-close-btn jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></div></div></div></div>		</div>
 				</div>
 						</div>
