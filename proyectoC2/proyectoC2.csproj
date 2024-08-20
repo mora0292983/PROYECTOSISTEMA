@@ -134,6 +134,22 @@
     <Content Include="historialHorasExtraSupervisor.aspx" />
     <Content Include="historialInconsistenciasEmpleado.aspx" />
     <Content Include="historialInconsistenciasSupervisor.aspx" />
+    <Content Include="icons\actividades.png" />
+    <Content Include="icons\configuracion.png" />
+    <Content Include="icons\crud.png" />
+    <Content Include="icons\hora-extra.png" />
+    <Content Include="icons\incapacidad.png" />
+    <Content Include="icons\inconsistencia.png" />
+    <Content Include="icons\indicadores.png" />
+    <Content Include="icons\marcas.png" />
+    <Content Include="icons\permiso.png" />
+    <Content Include="icons\puesto-trabajo.png" />
+    <Content Include="icons\rebajo.png" />
+    <Content Include="icons\registro.png" />
+    <Content Include="icons\reposicion.png" />
+    <Content Include="icons\vacaciones.png" />
+    <Content Include="menuEmpleado.aspx" />
+    <Content Include="menuSupervisor.aspx" />
     <Content Include="modulodepartamento.aspx" />
     <Content Include="historicopuestos.aspx" />
     <Content Include="img\control.jpg" />
@@ -339,6 +355,20 @@
     </Compile>
     <Compile Include="historialInconsistenciasSupervisor.aspx.designer.cs">
       <DependentUpon>historialInconsistenciasSupervisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="menuEmpleado.aspx.cs">
+      <DependentUpon>menuEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menuEmpleado.aspx.designer.cs">
+      <DependentUpon>menuEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="menuSupervisor.aspx.cs">
+      <DependentUpon>menuSupervisor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menuSupervisor.aspx.designer.cs">
+      <DependentUpon>menuSupervisor.aspx</DependentUpon>
     </Compile>
     <Compile Include="modulodepartamento.aspx.cs">
       <DependentUpon>modulodepartamento.aspx</DependentUpon>
