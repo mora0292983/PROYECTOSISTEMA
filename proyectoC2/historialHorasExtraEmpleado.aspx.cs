@@ -76,12 +76,19 @@ namespace proyectoC2
                 Button btnEvidencia = (Button)e.Row.FindControl("btnEvidencia");
 
                 // Configurar el botón "Gestionar"
-                btnGestionar.Enabled = estado == "Pendiente";
+                btnGestionar.Enabled = estado == "Pendiente" && estadoJefatura == "Sin Gestionar";
                 btnGestionar.CssClass = btnGestionar.Enabled ? "btn btn-submit" : "btn btn-submit";
-                btnGestionar.PostBackUrl = btnGestionar.Enabled ? "~/SolicitudHorasExtraEmpleados.aspx" : "#";
+                if (btnGestionar.Enabled)
+                {
+                    btnGestionar.PostBackUrl = "~/SolicitudHorasExtraEmpleados.aspx?HoraExtraID=" + horaExtraID;
+                }
+                else
+                {
+                    btnGestionar.PostBackUrl = "#";
+                }
 
                 // Configurar el botón "Enviar Evidencia"
-                btnEvidencia.Enabled = estado == "Aprobada" && estadoJefatura == "Sin Gestionar";
+                btnEvidencia.Enabled = (estado == "Aceptada" || estado == "Denegada") && estadoJefatura == "Sin Gestionar";
                 btnEvidencia.CssClass = btnEvidencia.Enabled ? "btn btn-submit" : "btn btn-submit";
                 if (btnEvidencia.Enabled)
                 {
@@ -93,6 +100,5 @@ namespace proyectoC2
                 }
             }
         }
-
     }
 }

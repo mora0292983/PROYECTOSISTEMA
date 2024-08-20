@@ -70,13 +70,13 @@ img.emoji {
      z-index: -1; /* Asegura que el círculo esté detrás de otros elementos */
 }
 footer {
-      margin-top: 62px; /* Reduce este valor para subir el footer */
-     width: 1500px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
+      margin-top: 61px; /* Reduce este valor para subir el footer */
+     width: 1550px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
 	margin-left: -20px; /* Ajusta este valor para mover el footer hacia la izquierda */
 }
   .main-content3 {
      display: flex;
-     justify-content: center;
+     justify-content: space-around;
      align-items: center;
      height: auto;
      padding: 20px;
@@ -134,56 +134,42 @@ footer {
  }
 
  .btn-submit {
+     background-color: #7154FC;
+     color: white;
+     padding: 10px 15px;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     width: 100%;
+     font-size: 16px;
+ }
+
+ .btn-submit:hover {
+     background-color: #5a005a;
+ }
+
+  .btn-pdf {
     background-color: #7154FC;
     color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 100%;
     font-size: 16px;
-}
-
-.btn-submit2 {
-    background-color: #D5D8DC;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 16px;
-}
-
-.btn-submit:hover {
-    background-color: #5a005a;
-}
-
-.btn-submit2:hover {
-    background-color: #ABB2B9;
-}
-
-/* Regla adicional para aumentar la especificidad */
-form .btn-submit2 {
-    background-color: #ABB2B9 !important;
-    color: white !important;
-}
-
-form .btn-submit2:hover {
-    background-color: #808B96 !important;
 }
 
  .image-box {
-     margin-top: 70px; /* Ajusta este valor para mover la imagen hacia abajo */
-	 margin-left: 20px; /* Ajusta este valor para mover la imagen hacia la derecha */
- }
+    position: relative; /* Añade esto para permitir el ajuste de 'left' */
+    left: -50px; /* Ajusta este valor para mover solo la imagen a la izquierda */
+    margin-top: 70px;
+}
 
- .image-box img {
-     width: 100%;
-     height: 100%;
-     border-radius: 8px;
-     object-fit: cover;
- }
+.image-box img {
+    width: 120%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
 
  .form-inline {
      display: flex;
@@ -203,6 +189,160 @@ form .btn-submit2:hover {
 .jet-nav-wrap.jet-mobile-menu.jet-mobile-menu--right-side {
     margin-left: -190px; /* Ajusta este valor según tus necesidades */
 }
+/* Contenedor del logo y el título */
+.elementor-jet-logo {
+    text-align: center; /* Centra el contenido dentro del contenedor */
+}
+/* Imagen del logo */
+.jet-logo__img {
+    display: block; /* Asegura que el logo se muestre como un bloque */
+    margin: 0 auto; /* Centra el logo horizontalmente */
+}
+.jet-logo__title {
+    font-size: 14px; /* Tamaño del texto del título */
+	font-weight: 500; /* Negrita moderada */
+    color: #333; /* Color del texto del título */
+    margin-top: 10px; /* Espacio entre el logo y el título */
+    text-transform: uppercase; /* Opcional: convierte el texto a mayúsculas */
+	 margin-left: -100px;
+}
+
+.form-actions {
+    display: flex; /* Usa Flexbox para el contenedor */
+    flex-direction: column; /* Organiza los elementos en una columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    margin-top: 30px; /* Espacio arriba del contenedor del botón */
+}
+
+.form-actions .btn-primary {
+    background-color: #7154FC; /* Color de fondo del botón */
+    color: #fff; /* Color del texto */
+    padding: 15px 25px; /* Tamaño del botón */
+    border: none; /* Sin borde */
+    border-radius: 25px; /* Bordes redondeados */
+    font-size: 18px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor a mano al pasar por encima */
+    text-align: center; /* Centra el texto */
+    display: inline-block; /* Asegura que el botón se alinee correctamente */
+    margin-bottom: 10px; /* Espacio debajo del botón para separar del mensaje */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.form-actions .btn-primary:hover {
+    background-color: #5a0cac; /* Color de fondo en hover */
+}
+
+.form-actions .lblMensaje {
+    margin-top: 10px; /* Espacio arriba del mensaje para separarlo del botón */
+    text-align: center; /* Centra el texto del mensaje */
+    color: red; /* Color del texto del mensaje de error */
+    font-size: 16px; /* Tamaño de la fuente del mensaje */
+}
+/* Estilos del submenú */
+.submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #fff; /* Color de fondo del submenú */
+    border-radius: 4px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    transition: opacity 0.3s, visibility 0.3s; /* Transiciones suaves */
+}
+
+/* Estilos de los elementos del submenú */
+.submenu-item {
+    border-bottom: 1px solid #ddd; /* Línea divisoria entre elementos */
+}
+
+.submenu-item:last-child {
+    border-bottom: none; /* Elimina la línea divisoria del último elemento */
+}
+
+.submenu-item a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333; /* Color del texto del submenú */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+}
+
+/* Cambia el color del texto del submenú al pasar el ratón por encima */
+.submenu-item a:hover {
+    background-color: #f0f0f0; /* Color de fondo al pasar el ratón */
+    color: #007bff; /* Color del texto al pasar el ratón */
+}
+
+/* Mostrar el submenú al pasar el ratón por encima del elemento del menú */
+.menu-item:hover .submenu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.mensaje {
+    display: block; /* Asegura que el mensaje se muestre en bloque */
+    margin-top: 10px; /* Espacio entre el botón y el mensaje */
+    color: red; /* Color del texto del mensaje (puedes ajustar esto según tu diseño) */
+    font-weight: bold; /* Estilo del texto del mensaje (opcional) */
+}
+
+
+/* Estilo para el mensaje de éxito */
+.mensaje-exito {
+    color: #7154FC;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #7154FC;
+    border-radius: 5px;
+    background-color: #e6f9e6;
+    text-align: center;
+    margin-top: 10px;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.mensaje-error {
+    color: red;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+    background-color: #f9e6e6;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn-submit2 {
+    background-color: #566573;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+.btn-submit2:hover {
+    background-color: #2c3e50;
+}
+
+/* Regla adicional para aumentar la especificidad */
+form .btn-submit2 {
+    background-color: #566573 !important;
+    color: white !important;
+}
+
+form .btn-submit2:hover {
+    background-color: #2c3e50 !important;
+}
+
 </style>
 
 
@@ -266,6 +406,7 @@ form .btn-submit2:hover {
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-logo jet-blocks"><div class="jet-logo jet-logo-type-image jet-logo-display-block">
 <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="jet-logo__link"><img src="img/logo2.png" class="jet-logo__img" alt="Imperion" width="128" height="44" srcset="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/logo_retina.png 2x"></a></div>
+				<p class="jet-logo__title">Empleado</p>
 </div>		</div>
 				</div>
 						</div>
@@ -279,10 +420,50 @@ form .btn-submit2:hover {
 			<div class="jet-nav-wrap jet-mobile-menu jet-mobile-menu--right-side" data-mobile-layout="right-side">
 <div class="jet-nav__mobile-trigger jet-nav-mobile-trigger-align-right">
 	<span class="jet-nav__mobile-trigger-open jet-blocks-icon"><i aria-hidden="true" class="fas fa-bars"></i></span>	<span class="jet-nav__mobile-trigger-close jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></span></div><div class="menu-main-container"><div class="jet-nav jet-nav--horizontal"><div class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item jet-nav__item-177 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Home</span></a></div>
-<div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-118 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Services</span></a></div>
-<div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-119 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#projects" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Projects</span></a></div>
-<div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-120 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#pricing" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Pricing</span></a></div>
-<div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-121 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#contact" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Contact</span></a></div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
+    <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
+        <span class="jet-nav-link-text">Vacaciones</span>
+    </a>
+    <ul class="submenu">
+        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
+        <li class="submenu-item"><a href="PG_RegistroDiasFestivo.aspx">Dias Festivos</a></li>
+        <li class="submenu-item"><a href="PG_VacacionesColectivas.aspx">Vacaciones Colectivas</a></li>
+        <!-- Agrega más elementos del submenú aquí -->
+    </ul>
+</div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
+    <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
+        <span class="jet-nav-link-text">Actividades</span>
+    </a>
+    <ul class="submenu">
+        <li class="submenu-item"><a href="PG_Login.aspx">Login</a></li>
+        <li class="submenu-item"><a href="historialActividadesEmpleado.aspx">Historial Actividades</a></li>
+        <!-- Agrega más elementos del submenú aquí -->
+    </ul>
+</div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
+    <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
+        <span class="jet-nav-link-text">Inconsistencias</span>
+    </a>
+    <ul class="submenu">
+        <li class="submenu-item"><a href="PG_Login.aspx">Login</a></li>
+        <li class="submenu-item"><a href="historialInconsistenciasEmpleado.aspx">Historial Inconsistencias</a></li>
+        <!-- Agrega más elementos del submenú aquí -->
+    </ul>
+</div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
+    <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
+        <span class="jet-nav-link-text">Puestos    Rebajos</span>
+    </a>
+    <ul class="submenu">
+        <li class="submenu-item"><a href="PG_Departamentos.aspx">Departamentos</a></li>
+        <li class="submenu-item"><a href="RegistroTurnos.aspx">Turnos</a></li>
+        <li class="submenu-item"><a href="RegistroPuestos.aspx">Puestos</a></li>
+        <li class="submenu-item"><a href="HistoricoPuestos.aspx">Historicos de Puestos</a></li>
+<li class="submenu-item"><a href="HistoricoEmpPuestos.aspx">Modulo del empleado</a></li>
+        <!-- Agrega más elementos del submenú aquí -->
+    </ul>
+</div>
 <div class="jet-nav__mobile-close-btn jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></div></div></div></div>		</div>
 				</div>
 						</div>
@@ -372,40 +553,56 @@ form .btn-submit2:hover {
 		</div>
 			</header><!-- #masthead -->
 
-
-
-	
-
     <form id="form1" runat="server">
-    
-        <div class="main-content3">
-            <div class="image-box">
-                <img src="img/empleado.png" alt="Imagen de Ejemplo">
-            </div>
-            <div class="content-box">
-                <h2>Solicitud de Horas Extra</h2>
-                <div class="small-title">Nombre:</div>
-                <div class="form-inline">
-                    <div class="small-title">
-                        <label for="fecha">Fecha:</label>
-                    </div>
-                </div>
-                <div class="form-inline">
-                    <div class="small-title">
-                        <label for="cantHoras">Cantidad de horas:</label>
-                    </div>
+
+    <div class="main-content3">
+        <div class="image-box">
+            <img src="img/empleado.png" alt="Imagen de Ejemplo"/>
+        </div>
+        <div class="content-box">
+            <h2>Solicitud de Horas Extra</h2>
+            <div class="small-title">Gestiona la solicitud de horas extra</div>
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="idSolicitud">ID Solicitud:</label>
+                    <asp:TextBox ID="idSolicitud" runat="server" CssClass="asp-control" ReadOnly="true" />
                 </div>
                 <div class="form-group">
-                    <label for="Motivo">Motivo:</label>
-                    <asp:TextBox ID="Motivo" runat="server" CssClass="asp-control" TextMode="MultiLine" Rows="4" ReadOnly="true" />
+                    <label for="fecha">Fecha:</label>
+                    <asp:TextBox ID="fecha" runat="server" CssClass="asp-control" ReadOnly="true" />
                 </div>
-                <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Aceptar" />
-                 <br><br>
-                <asp:Button ID="btnSubmit2" runat="server" CssClass="btn-submit2" Text="Denegar" />
+            </div>
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="horaInicio">Hora Inicio:</label>
+                    <asp:TextBox ID="horaInicio" runat="server" CssClass="asp-control" ReadOnly="true" />
+                </div>
+                <div class="form-group">
+                    <label for="horaFin">Hora Fin:</label>
+                    <asp:TextBox ID="horaFin" runat="server" CssClass="asp-control" ReadOnly="true" />
+                </div>
+            </div>
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="cantidadHoras">Cantidad de horas:</label>
+                    <asp:TextBox ID="cantidadHoras" runat="server" CssClass="asp-control" ReadOnly="true" />
+                </div>
+            </div>
+            <br />
+            <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="Aceptar" OnClick="btnSubmit_Click" />
+            <br />
+            <br />
+            <asp:Button ID="btnSubmit2" runat="server" CssClass="btn-submit2" Text="Denegar" OnClick="btnSubmit2_Click" />
+            <br />
+            <br />
+            <!-- Label para mostrar mensajes -->
+            <div class="form-group">
+                <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" />
             </div>
         </div>
-   
-    </form>
+    </div>
+</form>
+
   <!-- Círculo Inferior Izquierdo -->
   <div class="bottom-circle-container">
       <div class="bottom-circle"></div>
@@ -422,11 +619,11 @@ form .btn-submit2:hover {
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-31bcceb elementor-widget elementor-widget-heading" data-id="31bcceb" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h5 class="elementor-heading-title elementor-size-default">About</h5>		</div>
+			<h5 class="elementor-heading-title elementor-size-default">Acerca de Nosotros</h5>		</div>
 				</div>
 				<div class="elementor-element elementor-element-3a3a6667 elementor-widget elementor-widget-text-editor" data-id="3a3a6667" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-text-editor elementor-clearfix">Mei an pericula euripidis, hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix at, vel pertinax. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis eleifend lorem nec ultricies.</div>
+					<div class="elementor-text-editor elementor-clearfix">En GestionPro, ofrecemos un sistema integral de gestión de actividades empresariales diseñado para optimizar y transformar la forma en que las organizaciones operan. Nuestro software avanzado está diseñado para abordar las necesidades complejas de la gestión empresarial moderna, ayudando a empresas de todos los tamaños a alcanzar sus objetivos con eficiencia y eficacia.</div>
 				</div>
 				</div>
 						</div>
@@ -438,15 +635,15 @@ form .btn-submit2:hover {
 				<div class="elementor-element elementor-element-13b8394a elementor-widget__width-initial elementor-widget elementor-widget-wp-widget-tag_cloud" data-id="13b8394a" data-element_type="widget" data-widget_type="wp-widget-tag_cloud.default">
 				<div class="elementor-widget-container">
 			<h5>Tags</h5><div class="tagcloud"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/blog/" class="tag-cloud-link tag-link-6 tag-link-position-1" style="font-size: 8pt;" aria-label="BLOG (1 item)">BLOG</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/business/" class="tag-cloud-link tag-link-7 tag-link-position-2" style="font-size: 8pt;" aria-label="BUSINESS (1 item)">BUSINESS</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/cities/" class="tag-cloud-link tag-link-8 tag-link-position-3" style="font-size: 8pt;" aria-label="CITIES (1 item)">CITIES</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/construction/" class="tag-cloud-link tag-link-9 tag-link-position-4" style="font-size: 8pt;" aria-label="CONSTRUCTION (1 item)">CONSTRUCTION</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/design/" class="tag-cloud-link tag-link-10 tag-link-position-5" style="font-size: 8pt;" aria-label="DESIGN (1 item)">DESIGN</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/interiors/" class="tag-cloud-link tag-link-11 tag-link-position-6" style="font-size: 8pt;" aria-label="INTERIORS (1 item)">INTERIORS</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/news/" class="tag-cloud-link tag-link-12 tag-link-position-7" style="font-size: 8pt;" aria-label="NEWS (1 item)">NEWS</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/objects/" class="tag-cloud-link tag-link-13 tag-link-position-8" style="font-size: 8pt;" aria-label="OBJECTS (1 item)">OBJECTS</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/post/" class="tag-cloud-link tag-link-14 tag-link-position-9" style="font-size: 8pt;" aria-label="POST (1 item)">POST</a>
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/projects/" class="tag-cloud-link tag-link-15 tag-link-position-10" style="font-size: 8pt;" aria-label="PROJECTS (1 item)">PROJECTS</a></div>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/business/" class="tag-cloud-link tag-link-7 tag-link-position-2" style="font-size: 8pt;" aria-label="BUSINESS (1 item)">GESTIÓN EMPRESARIAL</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/cities/" class="tag-cloud-link tag-link-8 tag-link-position-3" style="font-size: 8pt;" aria-label="CITIES (1 item)">OPTIMIZACIÓN</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/construction/" class="tag-cloud-link tag-link-9 tag-link-position-4" style="font-size: 8pt;" aria-label="CONSTRUCTION (1 item)">INNOVACIÓN</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/design/" class="tag-cloud-link tag-link-10 tag-link-position-5" style="font-size: 8pt;" aria-label="DESIGN (1 item)">RECURSOS HUMANOS</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/interiors/" class="tag-cloud-link tag-link-11 tag-link-position-6" style="font-size: 8pt;" aria-label="INTERIORS (1 item)">FINANZAS</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/news/" class="tag-cloud-link tag-link-12 tag-link-position-7" style="font-size: 8pt;" aria-label="NEWS (1 item)">PRODUCTIVIDAD</a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/objects/" class="tag-cloud-link tag-link-13 tag-link-position-8" style="font-size: 8pt;" aria-label="OBJECTS (1 item)"></a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/post/" class="tag-cloud-link tag-link-14 tag-link-position-9" style="font-size: 8pt;" aria-label="POST (1 item)"></a>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/tag/projects/" class="tag-cloud-link tag-link-15 tag-link-position-10" style="font-size: 8pt;" aria-label="PROJECTS (1 item)"></a></div>
 		</div>
 				</div>
 						</div>
@@ -457,15 +654,15 @@ form .btn-submit2:hover {
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-491e4ad elementor-widget elementor-widget-heading" data-id="491e4ad" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h5 class="elementor-heading-title elementor-size-default">RECENT COMMENTS</h5>		</div>
+			<h5 class="elementor-heading-title elementor-size-default">Comentarios Recientes</h5>		</div>
 				</div>
 				<div class="elementor-element elementor-element-87952dd elementor-widget elementor-widget-jet-posts" data-id="87952dd" data-element_type="widget" data-widget_type="jet-posts.default">
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-posts jet-elements"><div class="jet-posts col-row disable-rows-gap"><div class="jet-posts__item col-desk-1">
-	<div class="jet-posts__inner-box"><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/prioritizing-tax-benefits/">Prioritizing Tax Benefits</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:26+00:00" title="2019-07-05T13:32:26+00:00">July 5, 2019</time></a></span></div></div></div>
+	<div class="jet-posts__inner-box"><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/prioritizing-tax-benefits/">Beneficios de la Gestión Financiera Integrada</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:26+00:00" title="2019-07-05T13:32:26+00:00">5 de julio de 2024</time></a></span></div></div></div>
 </div>
 <div class="jet-posts__item col-desk-1">
-	<div class="jet-posts__inner-box"><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/the-sdn-effect-on-network/">The SDN Effect on Network</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:07+00:00" title="2019-07-05T13:32:07+00:00">July 5, 2019</time></a></span></div></div></div>
+	<div class="jet-posts__inner-box"><div class="jet-posts__inner-content"><h4 class="entry-title"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/the-sdn-effect-on-network/">Mejora en la Coordinación de Proyectos</a></h4><div class="post-meta"><span class="post__date post-meta__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/2019/07/05/"  class="post__date-link" ><time datetime="2019-07-05T13:32:07+00:00" title="2019-07-05T13:32:07+00:00">4 de julio de 2024</time></a></span></div></div></div>
 </div>
 </div>
 </div>		</div>
@@ -485,7 +682,7 @@ form .btn-submit2:hover {
 				<div class="elementor-element elementor-element-655171d2 elementor-widget elementor-widget-jet-logo" data-id="655171d2" data-element_type="widget" data-widget_type="jet-logo.default">
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-logo jet-blocks"><div class="jet-logo jet-logo-type-image jet-logo-display-block">
-<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="jet-logo__link"><img src="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/footer-logo.png" class="jet-logo__img" alt="Imperion" width="128" height="44" srcset="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/logo_footer_retina.png 2x"></a></div>
+<a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="jet-logo__link"><img src="img/logo2.png" class="jet-logo__img" alt="Imperion" width="128" height="44" srcset="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/logo_footer_retina.png 2x"></a></div>
 </div>		</div>
 				</div>
 						</div>
@@ -496,7 +693,7 @@ form .btn-submit2:hover {
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-10ceac58 elementor-widget elementor-widget-text-editor" data-id="10ceac58" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-text-editor elementor-clearfix">© 2019. Imperion. All Rights Reserved.</div>
+					<div class="elementor-text-editor elementor-clearfix">© 2024. GestionPro. All Rights Reserved.</div>
 				</div>
 				</div>
 						</div>
@@ -507,32 +704,7 @@ form .btn-submit2:hover {
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-55a575b1 elementor-shape-rounded elementor-widget elementor-widget-social-icons" data-id="55a575b1" data-element_type="widget" data-widget_type="social-icons.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-social-icons-wrapper">
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-949457f" target="_blank">
-					<span class="elementor-screen-only">Facebook</span>
-											<i class="fa fa-facebook"></i>
-									</a>
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-bafa546" target="_blank">
-					<span class="elementor-screen-only">Twitter</span>
-											<i class="fa fa-twitter"></i>
-									</a>
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-google-plus elementor-repeater-item-4e18694" target="_blank">
-					<span class="elementor-screen-only">Google-plus</span>
-											<i class="fa fa-google-plus"></i>
-									</a>
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-addf219" target="_blank">
-					<span class="elementor-screen-only">Instagram</span>
-											<i class="fa fa-instagram"></i>
-									</a>
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-649080f" target="_blank">
-					<span class="elementor-screen-only">Youtube</span>
-											<i class="fa fa-youtube"></i>
-									</a>
-							<a href="#" class="elementor-icon elementor-social-icon elementor-social-icon-wordpress elementor-repeater-item-28cb662" target="_blank">
-					<span class="elementor-screen-only">Wordpress</span>
-											<i class="fa fa-wordpress"></i>
-									</a>
-					</div>
+					
 				</div>
 				</div>
 						</div>
@@ -544,7 +716,7 @@ form .btn-submit2:hover {
 						</div>
 			</div>
 		</div>
-</footer><!-- #colophon -->
+			</footer><!-- #colophon -->
 
 </div><!-- #page -->
 
