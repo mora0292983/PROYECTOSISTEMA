@@ -45,6 +45,11 @@ namespace proyectoC2
                     // Redirigir a otra página si los datos son correctos
                     Response.Redirect("PG_InicioJe.aspx");
                 }
+                else if (usuario == "cesar" && contraseña == "1234")
+                {
+                    // Redirigir a otra página si los datos son correctos
+                    Response.Redirect("PG_OtraPagina.aspx");
+                }
                 else
                 {
                     // Mostrar un mensaje de error si los datos son incorrectos
@@ -69,13 +74,18 @@ namespace proyectoC2
                 // Verificar el código
                 if (codigoVerificacion == "658674")
                 {
-                    // Redirigir a la página "inicio.aspx" si el código es correcto
-                    Response.Redirect("pg_panelEmpleado.aspx");
+                    // Redirigir a la página "pg_panelEmpleado.aspx"
+                    Response.Redirect("menuEmpleado.aspx");
+                }
+                else if (codigoVerificacion == "123456")
+                {
+                    // Redirigir a una página adicional si el código es diferente
+                    Response.Redirect("menuSupervisor.aspx");
                 }
                 else
                 {
-                    // Redirigir a la página "contacto.aspx" si el código es incorrecto
-                    Response.Redirect("pg_panelsupervisora.aspx");
+                    // Redirigir a la página "pg_panelsupervisora.aspx" si el código es incorrecto
+                    Response.Redirect("menujefe.aspx");
                 }
             }
             catch (Exception ex)

@@ -521,7 +521,7 @@ button-container:hover {
                         <img src="icons/hora-extra.png" alt="Horas Extra">
                         <span>Horas Extra</span>
                     </a>
-                    <a href="vacaciones.aspx" class="icon-button">
+                    <a href="pg_registrovacaciones.aspx" class="icon-button">
                         <img src="icons/vacaciones.png" alt="Vacaciones">
                         <span>Vacaciones</span>
                     </a>
@@ -539,7 +539,7 @@ button-container:hover {
                         <img src="icons/inconsistencia.png" alt="Inconsistencias">
                         <span>Inconsistencias</span>
                     </a>
-                    <a href="incapacidades.aspx" class="icon-button">
+                    <a href="pg_registroincapacidad.aspx" class="icon-button">
                         <img src="icons/incapacidad.png" alt="Incapacidades">
                         <span>Incapacidades</span>
                     </a>
@@ -551,15 +551,15 @@ button-container:hover {
                         <img src="icons/actividades.png" alt="Control de actividades">
                         <span>Control de actividades</span>
                     </a>
-                    <a href="puestosTrabajo.aspx" class="icon-button">
+                    <a href="registropuestos.aspx" class="icon-button">
                         <img src="icons/puesto-trabajo.png" alt="Puestos de trabajo">
                         <span>Puestos de trabajo</span>
                     </a>
                 </div>
                 <div class="button-row single-button-row">
-                    <a href="indicadores.aspx" class="icon-button">
+                    <a href="pg_empexpediente.aspx" class="icon-button">
                         <img src="icons/indicadores.png" alt="Indicadores">
-                        <span>Indicadores</span>
+                        <span>Perfil empleado</span>
                     </a>
                 </div>
             </div>
