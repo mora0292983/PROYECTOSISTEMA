@@ -225,7 +225,7 @@
     <Content Include="pg_controlvacaciones.aspx" />
     <Content Include="pg_aprobacionvacaciones.aspx" />
     <Content Include="calendario.aspx" />
-    <Content Include="WebForm19845332.aspx" />
+    <Content Include="menujefe.aspx" />
     <Content Include="WebForm19999.aspx" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
@@ -655,12 +655,12 @@
     <Compile Include="calendario.aspx.designer.cs">
       <DependentUpon>calendario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm19845332.aspx.cs">
-      <DependentUpon>WebForm19845332.aspx</DependentUpon>
+    <Compile Include="menujefe.aspx.cs">
+      <DependentUpon>menujefe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm19845332.aspx.designer.cs">
-      <DependentUpon>WebForm19845332.aspx</DependentUpon>
+    <Compile Include="menujefe.aspx.designer.cs">
+      <DependentUpon>menujefe.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm19999.aspx.cs">
       <DependentUpon>WebForm19999.aspx</DependentUpon>

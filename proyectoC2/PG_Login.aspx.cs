@@ -22,6 +22,7 @@ namespace proyectoC2
         }
         protected void btncontinuar_Click(object sender, EventArgs e)
         {
+           
             try
             {
                 // Obtener los valores de los TextBox
@@ -31,6 +32,7 @@ namespace proyectoC2
                 // Verificar los datos
                 if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contraseña))
                 {
+                 
                     // Mostrar un mensaje de error si alguno de los campos está vacío
                     lblMensaje.Text = "Por favor, complete todos los campos.";
                     lblMensaje.CssClass = "mensaje-error"; // Añadir una clase CSS para estilizar el mensaje
@@ -38,17 +40,19 @@ namespace proyectoC2
                 else if (usuario == "karina" && contraseña == "123")
                 {
                     // Redirigir a otra página si los datos son correctos
-                    Response.Redirect("PG_Inicio.aspx");
+                    Response.Redirect("menuEmpleado.aspx");
+                    EnviarCorreo("karina.mora.cortes@cuc.cr", "Su codigo es", "658674");
+
                 }
                 else if (usuario == "jazmin" && contraseña == "1234")
                 {
                     // Redirigir a otra página si los datos son correctos
-                    Response.Redirect("PG_InicioJe.aspx");
+                    Response.Redirect("menuSupervisor.aspx");
                 }
                 else if (usuario == "cesar" && contraseña == "1234")
                 {
                     // Redirigir a otra página si los datos son correctos
-                    Response.Redirect("PG_OtraPagina.aspx");
+                    Response.Redirect("menujefe.aspx");
                 }
                 else
                 {
@@ -76,8 +80,9 @@ namespace proyectoC2
                 {
                     // Redirigir a la página "pg_panelEmpleado.aspx"
                     Response.Redirect("menuEmpleado.aspx");
+                  
                 }
-                else if (codigoVerificacion == "123456")
+                else if (codigoVerificacion == "658675")
                 {
                     // Redirigir a una página adicional si el código es diferente
                     Response.Redirect("menuSupervisor.aspx");
@@ -92,6 +97,40 @@ namespace proyectoC2
             {
                 // Manejo de la excepción
                 lblMensaje.Text = "Se ha producido un error: " + ex.Message;
+                lblMensaje.CssClass = "mensaje-error"; // Añadir una clase CSS para estilizar el mensaje
+            }
+        }
+        // Método para enviar correo electrónico
+        private void EnviarCorreo(string destinatario, string asunto, string cuerpo)
+        {
+            try
+            {
+                // Configurar el cliente SMTP para Gmail
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com")
+                {
+                    Port = 587, // Puerto para TLS
+                    Credentials = new NetworkCredential("morakarina708@gmail.com", "rldrddlgrblmhbee"), // Reemplaza con tu correo y contraseña de Gmail
+                    EnableSsl = true, // Habilitar SSL
+                };
+
+                // Crear el mensaje de correo
+                MailMessage mailMessage = new MailMessage
+                {
+                    From = new MailAddress("morakarina708@gmail.com"), // Reemplaza con tu correo
+                    Subject = asunto,
+                    Body = cuerpo,
+                    IsBodyHtml = true,
+                };
+
+                mailMessage.To.Add(destinatario);
+
+                // Enviar el correo
+                smtpClient.Send(mailMessage);
+            }
+            catch (Exception ex)
+            {
+                // Manejar el error de envío de correo
+                lblMensaje.Text = "Error al enviar el correo: " + ex.Message;
                 lblMensaje.CssClass = "mensaje-error"; // Añadir una clase CSS para estilizar el mensaje
             }
         }

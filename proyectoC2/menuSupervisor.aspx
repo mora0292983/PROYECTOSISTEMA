@@ -520,7 +520,7 @@ footer {
             <h2>Panel Principal</h2>
             <div class="button-container">
                 <div class="button-row">
-                    <a href="registro.aspx" class="icon-button">
+                    <a href="pg_expedienteSuper.aspx" class="icon-button">
                         <img src="icons/registro.png" alt="Registro">
                         <span>Registro</span>
                     </a>
@@ -532,7 +532,7 @@ footer {
                         <img src="icons/hora-extra.png" alt="Horas Extra">
                         <span>Horas Extra</span>
                     </a>
-                    <a href="vacaciones.aspx" class="icon-button">
+                    <a href="pg_controlvacaciones.aspx" class="icon-button">
                         <img src="icons/vacaciones.png" alt="Vacaciones">
                         <span>Vacaciones</span>
                     </a>
@@ -546,7 +546,7 @@ footer {
                         <img src="icons/inconsistencia.png" alt="Inconsistencias">
                         <span>Inconsistencias</span>
                     </a>
-                    <a href="incapacidades.aspx" class="icon-button">
+                    <a href="pg_controlincapacidades.aspx" class="icon-button">
                         <img src="icons/incapacidad.png" alt="Incapacidades">
                         <span>Incapacidades</span>
                     </a>
@@ -558,7 +558,7 @@ footer {
                         <img src="icons/actividades.png" alt="Control de actividades">
                         <span>Control de actividades</span>
                     </a>
-                    <a href="puestosTrabajo.aspx" class="icon-button">
+                    <a href="registropuestos.aspx" class="icon-button">
                         <img src="icons/puesto-trabajo.png" alt="Puestos de trabajo">
                         <span>Puestos de trabajo</span>
                     </a>
@@ -572,7 +572,7 @@ footer {
                         <img src="icons/crud.png" alt="Gestión de datos">
                         <span>Gestión de datos</span>
                     </a>
-                    <a href="configuraciones.aspx" class="icon-button">
+                    <a href="pg_configCorreo.aspx" class="icon-button">
                         <img src="icons/configuracion.png" alt="Configuraciones">
                         <span>Configuraciones</span>
                     </a>
@@ -580,6 +580,12 @@ footer {
                         <img src="icons/indicadores.png" alt="Indicadores">
                         <span>Indicadores</span>
                     </a>
+                       <div class="button-row single-button-row">
+ <a href="pg_login.aspx" class="icon-button">
+<img src="icons/indicadores.png" alt="Indicadores">
+  <span>Cerrar</span>
+ </a>
+</div>
                 </div>
             </div>
         </div>

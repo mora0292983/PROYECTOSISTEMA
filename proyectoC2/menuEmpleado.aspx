@@ -472,7 +472,7 @@ button-container:hover {
 <div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-118 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Services</span></a></div>
 <div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-119 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#projects" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Projects</span></a></div>
 <div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-120 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#pricing" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Pricing</span></a></div>
-<div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-121 jet-nav__item"><a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#contact" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Contact</span></a></div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home jet-nav__item-121 jet-nav__item"><a href="pg_login.aspx" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Cerrar</span></a></div>
 </div></div></div>		</div>
 				</div>
 						</div>
@@ -551,17 +551,24 @@ button-container:hover {
                         <img src="icons/actividades.png" alt="Control de actividades">
                         <span>Control de actividades</span>
                     </a>
-                    <a href="registropuestos.aspx" class="icon-button">
+                    <a href="historicopuestos.aspx" class="icon-button">
                         <img src="icons/puesto-trabajo.png" alt="Puestos de trabajo">
                         <span>Puestos de trabajo</span>
                     </a>
                 </div>
+
                 <div class="button-row single-button-row">
                     <a href="pg_empexpediente.aspx" class="icon-button">
                         <img src="icons/indicadores.png" alt="Indicadores">
                         <span>Perfil empleado</span>
                     </a>
                 </div>
+                              <div class="button-row single-button-row">
+    <a href="pg_login.aspx" class="icon-button">
+        <img src="icons/indicadores.png" alt="Indicadores">
+        <span>Cerrar</span>
+    </a>
+</div>
             </div>
         </div>
     </div>

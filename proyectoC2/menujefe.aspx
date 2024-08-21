@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="pg_empexpediente.aspx.cs" Inherits="proyectoC2.PG_EmpExpediente" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="menujefe.aspx.cs" Inherits="proyectoC2.WebForm19845332" %>
 
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-     <title></title>
+    <title></title>
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
 <link rel="alternate" type="application/rss+xml" title="Imperion &raquo; Feed" href="https://ld-wp73.template-help.com/imperion/corporatelanding/feed/" />
@@ -52,16 +52,16 @@ img.emoji {
 .bottom-circle-container {
     position: relative;
     width: 100%;
-	margin-top: 600px;
+	 margin-top: -100px; /* Reduce este valor para subir el footer */
     height: 10px; /* Ajusta la altura según sea necesario */
 
 }
 
 .bottom-circle {
     position: absolute;
-	margin-top: 370px;
-    width: 1600px;
-    height: 380px;
+	margin-top: 20px;
+    width: 850px;
+    height: 320px;
     background-color:#7154FC;
     border-radius: 50%;
     bottom: 0;
@@ -70,100 +70,145 @@ img.emoji {
      z-index: -1; /* Asegura que el círculo esté detrás de otros elementos */
 }
 footer {
-    margin-top: 80px; /* Ajusta este valor para agregar más espacio debajo del contenido */
-     width: 1500px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
+      margin-top: 60px; /* Reduce este valor para subir el footer */
+     width: 1550px; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
 	margin-left: -20px; /* Ajusta este valor para mover el footer hacia la izquierda */
 }
 .main-content3 {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Alinea el cuadro al inicio del contenedor verticalmente */
-    height: calc(100vh - 60px);
-    padding: 20px; /* Aumenta el padding del contenedor */
-    margin-top: 0px;
+    align-items: center;
+    height: auto;
+    padding: 65px;
+    gap: 20px;
 }
 
 .content-box {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 80%; /* Ajusta el ancho del cuadro blanco */
-    max-width: 800px; /* Ajusta el ancho máximo según sea necesario */
-    padding: 20px; /* Aumenta el padding para dar más espacio interno */
-    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+    width: 100%;
+    max-width: 1000px; /* Ajusta el ancho del cuadro blanco */
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-x: auto; /* Añade scroll horizontal si el grid es muy ancho */
 }
 
-.form-section {
-    margin-bottom: 20px; /* Aumenta el margen inferior para separar las secciones */
-}
-
-.form-section h3 {
-    background-color: #7154FC;
-    color: #fff;
-    padding: 10px; /* Aumenta el padding para hacer el cuadro morado más grande */
-    border-radius: 4px;
+.content-box h2 {
+    color: #7154FC; /* Morado */
+    font-weight: bold;
     margin-top: 0;
     text-align: center;
-    font-size: 24px; /* Ajusta el tamaño de la fuente del título */
 }
 
-label {
-    display: block;
-    margin: 5px 0; /* Ajusta el margen para mayor separación entre las etiquetas y los campos */
+.form-group {
+    margin-bottom: 15px;
 }
 
-.search-box {
-    width: 100%; /* Asegura que los campos de texto ocupen todo el ancho disponible */
-    padding: 8px; /* Ajusta el padding para que los campos sean más pequeños */
+.asp-control {
+    width: calc(100% - 40px); /* Ajusta para dejar espacio para el icono */
+    padding: 10px;
+    border-radius: 5px;
     border: 1px solid #ccc;
-    border-radius: 4px;
     box-sizing: border-box;
-    height: 40px; /* Ajusta la altura de los campos de texto */
 }
 
-.small-box {
-    width: calc(100% - 20px); /* Ajusta el ancho de los campos para que sean más pequeños */
-    padding: 8px;
+.search-container {
+    position: relative;
 }
 
-.btn-buscar {
+.search-container input[type="text"] {
+    width: 100%;
+    padding-right: 40px; /* Espacio para el icono */
+}
+
+.search-container .icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ccc;
+    pointer-events: none;
+}
+
+.btn {
     background-color: #7154FC;
-    color: #fff;
-    padding: 12px 20px; /* Ajusta el padding del botón */
+    color: white;
+    padding: 10px 15px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px; /* Ajusta el tamaño de la fuente del botón */
-    display: inline-block; /* Asegura que el botón se alinee correctamente */
-    text-align: center; /* Centra el texto en el botón */
-    margin-top: 20px; /* Espacio arriba del botón */
+    width: 48%;
+    font-size: 16px;
+    text-align: center;
 }
 
-.btn-buscar:hover {
+.btn-submit {
     background-color: #7154FC;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
 }
 
-/* Estilo para el contenedor de dos columnas */
-.two-column {
+.btn:hover {
+    background-color: #5a005a;
+}
+
+.btn-group {
     display: flex;
     justify-content: space-between;
-    gap: 20px; /* Espacio entre columnas */
-    flex-wrap: wrap; /* Permite que las columnas se ajusten en pantallas más pequeñas */
+    margin-top: 20px;
 }
 
-/* Estilo para cada columna en el contenedor de dos columnas */
-.column {
-    flex: 1;
-    min-width: calc(50% - 20px); /* Ajusta el ancho mínimo de las columnas */
+.image-box {
+    width: 40%;
+    max-width: 400px; /* Ajusta el ancho máximo de la imagen */
 }
 
-/* Estilo para centrar el botón */
-.button-container {
-    display: flex;
-    justify-content: center; /* Centra el botón horizontalmente */
-    margin-top: 30px; /* Espacio arriba del contenedor del botón */
-  
+.image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
 }
+
+/* General styling for GridView */
+.gridview {
+    width: 100%;
+    border-collapse: separate;
+    margin-top: 30px;
+}
+
+.gridview th, .gridview td {
+    border: 1px solid #ddd;
+    padding: 24px;
+	box-sizing: border-box;
+}
+.gridview .header-date, 
+.gridview .item-date {
+    width: 900px; /* Ajusta el valor según tus necesidades */
+    text-align: left; /* Ajusta la alineación del texto si es necesario */
+}
+/* Header styling */
+.gridview th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #7154FC;
+    color: white;
+}
+
+/* Adjusting width for date columns */
+.gridview td:nth-child(5),
+.gridview td:nth-child(6) {
+    width: 900px; /* Adjust as needed */
+    text-align: center; /* Optional: Center the text */
+}
+
 /* Selecciona el contenedor del menú */
 .jet-nav-wrap {
     margin-left: -160px; /* Ajusta este valor según tus necesidades */
@@ -172,83 +217,6 @@ label {
 /* Opcionalmente, puedes especificar la clase del menú principal si deseas más precisión */
 .jet-nav-wrap.jet-mobile-menu.jet-mobile-menu--right-side {
     margin-left: -190px; /* Ajusta este valor según tus necesidades */
-}
-/* Estilo para el mensaje de éxito */
-.mensaje-exito {
-    color: #7154FC;
-    font-weight: bold;
-    padding: 10px;
-    border: 1px solid #7154FC;
-    border-radius: 5px;
-    background-color: #e6f9e6;
-    text-align: center;
-    margin-top: 10px;
-	   margin-left: auto;
-    margin-right: auto;
-}
-
-/* Estilo para el mensaje de error */
-.mensaje-error {
-    color: red;
-    font-weight: bold;
-    padding: 10px;
-    border: 1px solid red;
-    border-radius: 5px;
-    background-color: #f9e6e6;
-    text-align: center;
-    margin-top: 10px;
-}
-
-/* Contenedor del logo y el título */
-.elementor-jet-logo {
-    text-align: center; /* Centra el contenido dentro del contenedor */
-}
-/* Imagen del logo */
-.jet-logo__img {
-    display: block; /* Asegura que el logo se muestre como un bloque */
-    margin: 0 auto; /* Centra el logo horizontalmente */
-}
-
-/* Título debajo del logo */
-.jet-logo__title {
-    font-size: 14px; /* Tamaño del texto del título */
-	font-weight: 500; /* Negrita moderada */
-    color: #333; /* Color del texto del título */
-    margin-top: 10px; /* Espacio entre el logo y el título */
-    text-transform: uppercase; /* Opcional: convierte el texto a mayúsculas */
-	 margin-left: -100px;
-}
-.form-actions {
-    display: flex; /* Usa Flexbox para el contenedor */
-    flex-direction: column; /* Organiza los elementos en una columna */
-    align-items: center; /* Centra los elementos horizontalmente */
-    margin-top: 30px; /* Espacio arriba del contenedor del botón */
-}
-
-.form-actions .btn-primary {
-    background-color: #7154FC; /* Color de fondo del botón */
-    color: #fff; /* Color del texto */
-    padding: 15px 25px; /* Tamaño del botón */
-    border: none; /* Sin borde */
-    border-radius: 25px; /* Bordes redondeados */
-    font-size: 18px; /* Tamaño de fuente */
-    cursor: pointer; /* Cambia el cursor a mano al pasar por encima */
-    text-align: center; /* Centra el texto */
-    display: inline-block; /* Asegura que el botón se alinee correctamente */
-    margin-bottom: 10px; /* Espacio debajo del botón para separar del mensaje */
-    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
-}
-
-.form-actions .btn-primary:hover {
-    background-color: #5a0cac; /* Color de fondo en hover */
-}
-
-.form-actions .lblMensaje {
-    margin-top: 10px; /* Espacio arriba del mensaje para separarlo del botón */
-    text-align: center; /* Centra el texto del mensaje */
-    color: red; /* Color del texto del mensaje de error */
-    font-size: 16px; /* Tamaño de la fuente del mensaje */
 }
 /* Estilos del submenú */
 .submenu {
@@ -317,6 +285,69 @@ label {
 	 margin-left: -100px;
 }
 
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-button {
+    background-color: #fff;
+    border: none;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.icon-button img {
+    width: 50px; /* Ajusta el tamaño del ícono según sea necesario */
+    height: 50px;
+    margin-bottom: 8px; /* Espacio entre el ícono y el texto */
+}
+
+.icon-button:hover {
+    transform: scale(1.1); /* Agranda el botón al pasar el cursor por encima */
+}
+
+.icon-button span {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* Solución para la alineación de la tercera fila */
+.button-row .icon-button {
+    flex: 1; /* Todos los botones dentro de una fila tienen el mismo tamaño */
+    margin-right: 10px;
+}
+
+.button-row .icon-button:last-child {
+    margin-right: 0; /* Elimina el margen del último botón en cada fila */
+}
+
+.button-container .button-row:last-child .icon-button {
+    flex: 1 1 calc(100% / 4 - 10px); /* Asegura que los botones en la última fila se distribuyan equitativamente */
+}
+
+
 </style>
 
 
@@ -380,7 +411,7 @@ label {
 				<div class="elementor-widget-container">
 			<div class="elementor-jet-logo jet-blocks"><div class="jet-logo jet-logo-type-image jet-logo-display-block">
 <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/" class="jet-logo__link"><img src="img/logo2.png" class="jet-logo__img" alt="Imperion" width="128" height="44" srcset="https://ld-wp73.template-help.com/imperion/corporatelanding/wp-content/uploads/2019/07/logo_retina.png 2x"></a></div>
-<p class="jet-logo__title">Empleado</p>
+<p class="jet-logo__title">Supervisor</p>
 </div>		</div>
 				</div>
 						</div>
@@ -393,53 +424,7 @@ label {
 				<div class="elementor-widget-container">
 			<div class="jet-nav-wrap jet-mobile-menu jet-mobile-menu--right-side" data-mobile-layout="right-side">
 <div class="jet-nav__mobile-trigger jet-nav-mobile-trigger-align-right">
-		<span class="jet-nav__mobile-trigger-open jet-blocks-icon"><i aria-hidden="true" class="fas fa-bars"></i></span>	<span class="jet-nav__mobile-trigger-close jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></span></div><div class="menu-main-container"><div class="jet-nav jet-nav--horizontal"><div class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item jet-nav__item-177 jet-nav__item"><a href="menuEmpleado.aspx" class="menu-item-link menu-item-link-depth-0 menu-item-link-top"><span class="jet-nav-link-text">Home</span></a></div>
-
-<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
-    <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
-        <span class="jet-nav-link-text">Vacaciones</span>
-    </a>
-    <ul class="submenu">
-        <li class="submenu-item"><a href="pg_registrovacaciones.aspx">Registro de Vacaciones</a></li>
-        <li class="submenu-item"><a href="PG_RegistroDiasFestivo.aspx">Dias Festivos</a></li>
-        <li class="submenu-item"><a href="PG_VacacionesColectivas.aspx">Vacaciones Colectivas</a></li>
-        <!-- Agrega más elementos del submenú aquí -->
-    </ul>
-</div>
-<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
-    <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
-        <span class="jet-nav-link-text">Actividades</span>
-    </a>
-    <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Login.aspx">Service 1</a></li>
-        <li class="submenu-item"><a href="service2.aspx">Service 2</a></li>
-        <li class="submenu-item"><a href="service3.aspx">Service 3</a></li>
-        <!-- Agrega más elementos del submenú aquí -->
-    </ul>
-</div>
-<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
-    <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
-        <span class="jet-nav-link-text">Incapacidades</span>
-    </a>
-    <ul class="submenu">
-        <li class="submenu-item"><a href="pg_registroincapacidad.aspx">Registrar Incapacidad</a></li>
-        <li class="submenu-item"><a href="service2.aspx">control de la Incapacidad</a></li>
-        <!-- Agrega más elementos del submenú aquí -->
-    </ul>
-</div>
-<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children jet-nav__item-118 jet-nav__item">
-    <a href="https://ld-wp73.template-help.com/imperion/corporatelanding/#services" class="menu-item-link menu-item-link-depth-0 menu-item-link-top">
-        <span class="jet-nav-link-text">Puestos</span>
-    </a>
-    <ul class="submenu">
-        <li class="submenu-item"><a href="PG_Departamentos.aspx">Departamentos</a></li>
-        <li class="submenu-item"><a href="RegistroTurnos.aspx">Turnos</a></li>
-        <li class="submenu-item"><a href="RegistroPuestos.aspx">Puestos</a></li>
-        <li class="submenu-item"><a href="historicopuestos.aspx">Historicos de Puestos</a></li>
-<li class="submenu-item"><a href="modulodepartamento.aspx">Modulo del empleado</a></li>
-        <!-- Agrega más elementos del submenú aquí -->
-    </ul>
-</div>
+	
 <div class="jet-nav__mobile-close-btn jet-blocks-icon"><i aria-hidden="true" class="fas fa-times"></i></div></div></div></div>		</div>
 				</div>
 						</div>
@@ -529,134 +514,87 @@ label {
 		</div>
 			</header><!-- #masthead -->
 
-
-
 <form id="form1" runat="server">
     <div class="main-content3">
         <div class="content-box">
-            <div class="form-section">
-                <h3>Información Personal</h3>
-                <asp:Panel ID="PersonalPanel" runat="server">
-                    <!-- Información Personal en dos columnas -->
-                    <div class="form-group two-column">
-                        <div class="column">
-                            <label for="nombre">Nombre</label>
-                            <asp:TextBox ID="txtnombre" runat="server" CssClass="search-box small-box" placeholder="Nombre" MaxLength="200" />
-                            <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtnombre" ErrorMessage="Nombre es requerido" ForeColor="Red" Display="Dynamic" />
-                            <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="txtnombre" ValidationExpression=".{1,200}" ErrorMessage="El nombre no debe exceder 200 caracteres" ForeColor="Red" Display="Dynamic" />
-                        </div>
-                        <div class="column">
-                            <label for="apellido">Apellido</label>
-                            <asp:TextBox ID="txtapellido" runat="server" CssClass="search-box small-box" placeholder="Apellido" MaxLength="200" />
-                            <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ControlToValidate="txtapellido" ErrorMessage="Apellido es requerido" ForeColor="Red" Display="Dynamic" />
-                            <asp:RegularExpressionValidator ID="revApellido" runat="server" ControlToValidate="txtapellido" ValidationExpression=".{1,200}" ErrorMessage="El apellido no debe exceder 200 caracteres" ForeColor="Red" Display="Dynamic" />
-                        </div>
-                    </div>
-                    <div class="form-group two-column">
-                        <div class="column">
-                            <label for="cedula">Cédula</label>
-                            <asp:TextBox ID="txtcedula" runat="server" CssClass="search-box small-box" placeholder="Cédula" MaxLength="200" />
-                            <asp:RequiredFieldValidator ID="rfvCedula" runat="server" ControlToValidate="txtcedula" ErrorMessage="Cédula es requerida" ForeColor="Red" Display="Dynamic" />
-                            <asp:RegularExpressionValidator ID="revCedula" runat="server" ControlToValidate="txtcedula" ValidationExpression=".{1,200}" ErrorMessage="La cédula no debe exceder 200 caracteres" ForeColor="Red" Display="Dynamic" />
-                        </div>
-                        <div class="column">
-                            <label for="fecha-nacimiento">Fecha de Nacimiento</label>
-                            <asp:TextBox ID="txtfechaNacimiento" runat="server" CssClass="search-box small-box" TextMode="Date" />
-                            <asp:RequiredFieldValidator ID="rfvFechaNacimiento" runat="server" ControlToValidate="txtfechaNacimiento" ErrorMessage="Fecha de nacimiento es requerida" ForeColor="Red" Display="Dynamic" />
-                        </div>
-                    </div>
-                </asp:Panel>
-            </div>
-            <div class="form-section">
-                <h3>Información de Contacto</h3>
-                <asp:Panel ID="ContactPanel" runat="server">
-                    <!-- Información de Contacto en dos columnas -->
-                    <div class="form-group two-column">
-                        <div class="column">
-                            <label for="direccion">Dirección</label>
-                            <asp:TextBox ID="txtdireccion" runat="server" CssClass="search-box" placeholder="Dirección" MaxLength="200" />
-                            <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtdireccion" ErrorMessage="Dirección es requerida" ForeColor="Red" Display="Dynamic" />
-                        </div>
-                        <div class="column">
-                            <label for="provincia">Provincia</label>
-                            <asp:TextBox ID="txtprovincia" runat="server" CssClass="search-box" placeholder="Provincia" MaxLength="200" />
-                            <asp:RequiredFieldValidator ID="rfvProvincia" runat="server" ControlToValidate="txtprovincia" ErrorMessage="Provincia es requerida" ForeColor="Red" Display="Dynamic" />
-                        </div>
-                    </div>
-                    <div class="form-group two-column">
-                        <div class="column">
-                            <label for="ciudad">Ciudad</label>
-                            <asp:TextBox ID="txtciudad" runat="server" CssClass="search-box" placeholder="Ciudad" MaxLength="200" />
-                            <asp:RequiredFieldValidator ID="rfvCiudad" runat="server" ControlToValidate="txtciudad" ErrorMessage="Ciudad es requerida" ForeColor="Red" Display="Dynamic" />
-                        </div>
-                        <div class="column">
-                            <label for="telefono">Teléfono</label>
-                            <asp:TextBox ID="txttelefono" runat="server" CssClass="search-box" placeholder="Teléfono" MaxLength="200" />
-                            <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ControlToValidate="txttelefono" ErrorMessage="Teléfono es requerido" ForeColor="Red" Display="Dynamic" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="correo">Correo Electrónico</label>
-                        <asp:TextBox ID="txtcorreo" runat="server" CssClass="search-box" placeholder="Correo Electrónico" MaxLength="200" />
-                        <asp:RequiredFieldValidator ID="rfvCorreo" runat="server" ControlToValidate="txtcorreo" ErrorMessage="Correo electrónico es requerido" ForeColor="Red" Display="Dynamic" />
-                    </div>
-                </asp:Panel>
-            </div>
-            <div class="form-section">
-                <h3>Información Adicional</h3>
-                <asp:Panel ID="AdditionalPanel" runat="server">
-                    <!-- Información Adicional en una columna -->
-                    <div class="form-group">
-             <div class="column">
-             <label for="fecha-contratacion">Fecha de Contratación</label>
-             <asp:TextBox ID="txtFechaContratacion" runat="server" CssClass="search-box" TextMode="Date" ReadOnly="true" />
-             </div>
-              </div>
-                    <div class="form-group">
-                        <div class="column">
-                            <label for="departamento">Departamento</label>
-                            <asp:TextBox ID="txtDepartamento" runat="server" CssClass="search-box small-box" placeholder="Departamento" MaxLength="200" ReadOnly="true" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="column">
-                            <label for="puesto">Puesto</label>
-                            <asp:TextBox ID="txtPuesto" runat="server" CssClass="search-box small-box" placeholder="Puesto" MaxLength="200" ReadOnly="true" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="column">
-                            <label for="rol">Rol</label>
-                            <asp:TextBox ID="txtRol" runat="server" CssClass="search-box small-box" placeholder="Rol" MaxLength="200" ReadOnly="true" />
-                        </div>
-                    </div>
-                </asp:Panel>
-            </div>
-            <div class="form-actions">
-                <asp:Button ID="btncontinuar" runat="server" Text="Actualizar" CssClass="btn-primary" OnClick="btncontinuar_Click"  style="
-        background-color: #7154FC; /* Color de fondo */
-        color: #fff; /* Color del texto */
-        padding: 15px 25px; /* Tamaño del botón */
-        border: none; /* Sin borde */
-        border-radius: 25px; /* Bordes redondeados */
-        font-size: 18px; /* Tamaño de fuente */
-        cursor: pointer; /* Cambia el cursor a mano al pasar por encima */
-        text-align: center; /* Centra el texto */
-        display: inline-block; /* Asegura que el botón se alinee correctamente */
-        margin-top: 20px; /* Espacio superior */
-       
-        margin-bottom: 20px; /* Espacio inferior */
-        transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
-    "
-    onmouseover="this.style.backgroundColor='#5a0cac';" 
-    onmouseout="this.style.backgroundColor='#7154FC';" 
-/>
-                <asp:Label ID="lblMensaje" runat="server" />
+            <h2>Panel Principal</h2>
+            <div class="button-container">
+                <div class="button-row">
+                    <a href="pg_expedienteSuper.aspx" class="icon-button">
+                        <img src="icons/registro.png" alt="Registro">
+                        <span>Registro</span>
+                    </a>
+                    <a href="controlMarcas.aspx" class="icon-button">
+                        <img src="icons/marcas.png" alt="Control de marcas">
+                        <span>Control de marcas</span>
+                    </a>
+                    <a href="historialHorasExtraSupervisor.aspx" class="icon-button">
+                        <img src="icons/hora-extra.png" alt="Horas Extra">
+                        <span>Horas Extra</span>
+                    </a>
+                    <a href="pg_controlvacaciones.aspx" class="icon-button">
+                        <img src="icons/vacaciones.png" alt="Vacaciones">
+                        <span>Vacaciones</span>
+                    </a>
+                    <a href="reposiciones.aspx" class="icon-button">
+                        <img src="icons/reposicion.png" alt="Reposiciones">
+                        <span>Reposiciones</span>
+                    </a>
+                </div>
+                <div class="button-row">
+                    <a href="historialInconsistenciasSupervisor.aspx" class="icon-button">
+                        <img src="icons/inconsistencia.png" alt="Inconsistencias">
+                        <span>Inconsistencias</span>
+                    </a>
+                    <a href="pg_controlincapacidades.aspx" class="icon-button">
+                        <img src="icons/incapacidad.png" alt="Incapacidades">
+                        <span>Incapacidades</span>
+                    </a>
+                    <a href="permisos.aspx" class="icon-button">
+                        <img src="icons/permiso.png" alt="Permisos">
+                        <span>Permisos</span>
+                    </a>
+                    <a href="historialActividadesSupervisor.aspx" class="icon-button">
+                        <img src="icons/actividades.png" alt="Control de actividades">
+                        <span>Control de actividades</span>
+                    </a>
+                    <a href="registropuestos.aspx" class="icon-button">
+                        <img src="icons/puesto-trabajo.png" alt="Puestos de trabajo">
+                        <span>Puestos de trabajo</span>
+                    </a>
+                </div>
+                <div class="button-row">
+                    <a href="rebajos.aspx" class="icon-button">
+                        <img src="icons/rebajo.png" alt="Rebajos">
+                        <span>Rebajos</span>
+                    </a>
+                    <a href="MenuCRUDS.aspx" class="icon-button">
+                        <img src="icons/crud.png" alt="Gestión de datos">
+                        <span>Gestión de datos</span>
+                    </a>
+                    <a href="pg_configCorreo.aspx" class="icon-button">
+                        <img src="icons/configuracion.png" alt="Configuraciones">
+                        <span>Configuraciones</span>
+                    </a>
+                    <a href="indicadores.aspx" class="icon-button">
+                        <img src="icons/indicadores.png" alt="Indicadores">
+                        <span>Indicadores</span>
+                    </a>
+                   <div class="button-row single-button-row">
+                 <a href="pg_login.aspx" class="icon-button">
+                <img src="icons/indicadores.png" alt="Indicadores">
+                  <span>Cerrar</span>
+                 </a>
+                </div>
+                </div>
             </div>
         </div>
     </div>
 </form>
+
+
+
+
 
   <!-- Círculo Inferior Izquierdo -->
   <div class="bottom-circle-container">
@@ -772,7 +710,6 @@ label {
 			</div>
 		</div>
 			</footer><!-- #colophon -->
-
 
 </div><!-- #page -->
 
