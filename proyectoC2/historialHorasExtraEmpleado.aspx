@@ -252,7 +252,9 @@ footer {
     opacity: 1;
     visibility: visible;
 }
-
+.btn-submit:disabled:hover {
+    background-color: #909497; /* Mantén el color gris */
+}
 
 /* Contenedor del logo y el título */
 .elementor-jet-logo {
