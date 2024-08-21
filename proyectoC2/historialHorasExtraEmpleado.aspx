@@ -281,6 +281,10 @@ footer {
     cursor: not-allowed; /* Cambia el cursor para indicar que el botón está deshabilitado */
     opacity: 0.6; /* Reduce la opacidad para indicar que está deshabilitado */
 }
+
+.btn-submit:disabled:hover {
+    background-color: #909497; /* Mantén el color gris */
+}
 </style>
 
 

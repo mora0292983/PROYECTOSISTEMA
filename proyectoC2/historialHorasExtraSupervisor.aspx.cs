@@ -35,11 +35,18 @@ namespace proyectoC2
                         DataTable dt = new DataTable();
                         dt.Load(reader);
 
-                        // Convertir la columna Fecha al formato dd-MM-yyyy
+                        // Convertir la columna Fecha al formato dd-MM-yyyy, manejando posibles errores de conversión
                         foreach (DataRow row in dt.Rows)
                         {
-                            DateTime fecha = Convert.ToDateTime(row["Fecha"]);
-                            row["Fecha"] = fecha.ToString("dd-MM-yyyy");
+                            if (DateTime.TryParse(row["Fecha"].ToString(), out DateTime fecha))
+                            {
+                                row["Fecha"] = fecha.ToString("dd-MM-yyyy");
+                            }
+                            else
+                            {
+                                // Manejar la conversión fallida según sea necesario, por ejemplo, asignar un valor por defecto o lanzar una excepción
+                                row["Fecha"] = "Fecha inválida";
+                            }
                         }
 
                         gridView.DataSource = dt;
@@ -48,6 +55,7 @@ namespace proyectoC2
                 }
             }
         }
+
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
